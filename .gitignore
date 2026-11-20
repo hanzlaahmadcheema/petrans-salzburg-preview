@@ -1,0 +1,17 @@
+# Dependencies
+website/node_modules/
+node_modules/
+
+# Logs
+website/server.log
+*.log
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.*.local
+
+# Archival raw camera files (>15MB)
+website/public/images/salzburg-hero-original.jpg

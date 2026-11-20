@@ -1,0 +1,191 @@
+=== PAGE 1 ===
+CLIENT REQUIREMENTS QUESTIONNAIRE
+Requirements Specification  |  Date: Nov 20, 2026
+Client ID: Contact Person: Phone / WhatsApp:
+Omer Farooq CEO PETRANS Taxi & Tour Salzburg +436606416464,+436606464164
+Pre-Submission Draft  |  Ready for Firestore Storing
+SECTION 1: 1. BUSINESS & PURPOSE
+Q1. What business or company name should appear on the website?
+Answer: PETRANS Taxi & Tour  Salzburg 
+Q2. What is the main purpose of the website? Please tick all that apply.
+Answer: Get online bookings; Get phone calls; Get WhatsApp enquiries; Show tours and destinations; Build trust with reviews and
+information
+Q3. Who is your main customer? Please tick all that apply.
+Answer: Airport tourists; Ski travellers; Families with children; Corporate / business travellers; Local residents; Other [Other / Detail:
+City transfer & Tour, Long Distance Transfer, private Tour, Chauffeur Service]
+Q4. What should a visitor do first on the homepage?
+Answer: Start a booking / get a fixed price
+Q5. Which competitor do you want your website to be closer to — ExuroTrip (premium tours and transfers) or Salzburg Cab
+(simple taxi booking) — or a mix, and why?
+Answer: A mix of both
+Q6. Please explain your answer above: why that direction, and what should we take from each competitor?
+Answer: Premium feel of Eurox Tour but Simple Booking like Salzburg cap
+Q7. What makes your service different from ExuroTrip and Salzburg Cab?
+Answer: Price and flexibility 
+SECTION 2: 2. SERVICES
+Q1. Which services should the website offer? Please tick all that apply.
+Answer: Airport Transfers; Intercity Transfers; Ski Transfers; Private Tours / Day Trips; City Taxi; Train Station Transfers; Corporate /
+Chauffeur
+Q2. Which destinations / routes must be listed on the website? Please tick all that apply.
+Answer: Hallstatt; Zell am See / Kaprun; Innsbruck; Munich; Vienna; Prague; Other [Other / Detail: Eagles Nest + König Lake
+(Germany ) Tour]
+Q3. Please list any other destinations or routes, and add the distance and driving time for each route if you know them.
+Answer: Yes
+Q4. Should each destination have its own page with its price, driving time and description?
+Answer: Yes
+Q5. Do you offer customised day trips (trips planned around what the customer wants to see)?
+Answer: No
+SECTION 3: 3. BOOKING FLOW
+Q1. What fields must the booking form ask for? Please tick all that apply.
+Answer: Pickup location; Destination; Date; Time; Number of passengers; Luggage (bags / suitcases); Flight number; Return trip;
+Child seats; Ski / snowboard equipment; Special requests
+Q2. Should the website show an instant fixed price / fare calculator before booking?
+Answer: Yes — show an instant fixed price / fare calculator before booking
+Confidential Client Requirements  *  Omer Farooq Page 1 of 4
+=== PAGE 2 ===
+Client Requirements Questionnaire Client: Omer Farooq
+Q3. Should customers pay online in advance, pay the driver, or both?
+Answer: Both — the customer chooses
+Q4. Which payment methods should be accepted? Please tick all that apply.
+Answer: Cash; Card
+Q5. Free cancellation — up to how many hours before pickup?
+Answer: Free cancellation up to 24 hours before pickup
+Q6. If your cancellation policy is different from the options above, please explain it here.
+Answer: Not answered
+Q7. How long will the driver wait at the airport after the flight lands?
+Answer: 60 minutes from landing 
+Q8. How long will the driver wait at a hotel pickup?
+Answer: 10 minutes 
+Q9. Where is the meeting point at Salzburg Airport, and what instructions should the booking confirmation show the
+customer?
+Answer: Arrival hall, Driver holding the Name Board 
+SECTION 4: 4. FLEET & VEHICLES
+Q1. What vehicles do you have? For each one, please give the type, brand / model, number of passengers, luggage capacity
+and ski-equipment space.
+Answer: Mercedes V class, Mercedes Vito, Max 8 persons, 8 big luggage, when have extra luggages then must tell to company 
+Q2. Should customers be able to choose a vehicle during booking?
+Answer: Yes
+Q3. Do you offer child / booster seats?
+Answer: Yes
+Q4. If you offer child / booster seats, what is the extra charge per seat? If they are included, please say so.
+Answer: No extra charges
+Q5. Ski / snowboard transport — is there an extra charge? If so, how much per set? If it is included, please say so.
+Answer: No extra charges 
+Q6. Are any of your vehicles wheelchair accessible?
+Answer: Yes
+Q7. Do you have photos of your fleet that we can use on the website?
+Answer: Yes
+SECTION 5: 5. PRICING
+Q1. Fixed price per route or metered fare?
+Answer: Fixed price per route
+Q2. Are VAT, tolls and tunnel fees included in the price shown to the customer?
+Answer: Yes
+Q3. If VAT, tolls or tunnel fees are not included, please explain what is charged separately.
+Answer: Not answered
+Q4. Please list your price for each main route if you have it. If you do not have prices yet, please say if you would like us to
+propose prices based on the competitors.
+Answer: Every transfer go out of city price calculate 2,80 € per KM. 
+Q5. Are there any extra charges? Please tick all that apply.
+Answer: Extra stops; Extra waiting time
+Q6. Currency — EUR only, or other currencies too?
+Answer: EUR only
+Q7. If other currencies should be shown, please list them here.
+Answer: Not answered
+Confidential Client Requirements  *  Omer Farooq Page 2 of 4
+=== PAGE 3 ===
+Client Requirements Questionnaire Client: Omer Farooq
+SECTION 6: 6. DRIVERS, TRUST & SAFETY
+Q1. Are your drivers licensed and insured?
+Answer: Yes
+Q2. Which languages do your drivers speak? Please tick all that apply.
+Answer: English; German; Other [Other / Detail: Hindi , Urdu , Punjabi]
+Q3. Do you offer certified tour guides?
+Answer: Yes
+Q4. Do you offer 24/7 support?
+Answer: Yes
+Q5. How should customers contact you for support? Please tick all that apply.
+Answer: Phone; WhatsApp; Email
+Q6. Do you have testimonials, reviews or ratings we can show on the website? If so, please share them or tell us where to
+find them (for example Google or TripAdvisor).
+Answer: Rating on Google 
+Q7. What safety measures should we mention on the website?
+Answer: Not answered
+SECTION 7: 7. TOURS CONTENT
+Q1. Which tours should be listed on the website? Please tick all that apply.
+Answer: Hallstatt (8 hours); Eagles Nest; Werfen Ice Caves; Zell am See / Kaprun; Innsbruck; Swarovski Crystal Worlds;
+Customised Day Trip; Other [Other / Detail: Dadgastein , Badhofgastein Tour]
+Q2. For each tour, please give: duration, itinerary / stops, what is included, what is NOT included (entrance fees, meals,
+lodging, tips), languages, price per group and maximum group size.
+Answer: Every Day tour in 8 hours , extra time charges 50€ per hour and stops include. Private driver, entry fees, meal is not
+included. Price 450 € day trip
+Q3. Should we copy any tours from ExuroTrip (for example Hallstatt 8h, Eagles Nest, Werfen Ice Caves, Swarovski, Walking
+Tour) as a starting point?
+Answer: Yes — copy the ExuroTrip tours as a starting point
+Q4. Do you have photos or videos for the tours that we can use on the website?
+Answer: No
+SECTION 8: 8. WEBSITE DESIGN & CONTENT
+Q1. What do you like and dislike about exurotrip.com (design, booking flow and content)?
+Answer: I like Designing,colour scheme and booking methods.
+Q2. What do you like and dislike about salzburgcab.com (design, booking flow and content)?
+Answer: I like give simply good information about every place and little bit place history also
+Q3. Do you have a logo, brand colours, photos or videos for the website? Please tick all that you have.
+Answer: None yet — please advise / create them
+Q4. Which languages should the website be in? Please tick all that apply.
+Answer: English
+Q5. Do you need a separate page for each route so customers can find you on Google (SEO)?
+Answer: Yes
+Q6. What contact details should the website show — company address, phone, WhatsApp, email and opening hours?
+Answer: Adress, phone, WhatsApp, Email.24/7
+Confidential Client Requirements  *  Omer Farooq Page 3 of 4
+=== PAGE 4 ===
+Client Requirements Questionnaire Client: Omer Farooq
+SECTION 9: 9. TECHNICAL & LAUNCH
+Q1. Do you already have a domain name for the website?
+Answer: No
+Q2. If you already have a domain name, what is it? If not, what domain name would you like?
+Answer: I need domain name to match my company name. My company name is   PETRANS Taxi & Tour Salzburg 
+Q3. Who will handle bookings after launch — you by email / phone, or do you need an admin dashboard / booking
+notifications?
+Answer: I will handle bookings by email / phone
+Q4. Do you need flight tracking, so pickup times adjust if a flight is delayed?
+Answer: Yes
+Q5. Do you need WhatsApp integration on the website (for example a WhatsApp button or chat)?
+Answer: Yes
+Q6. Is there a deadline or launch date for the website?
+Answer: 2026-11-30
+Q7. Our starting price for this whole website project is €300 — does that work for you?
+Answer: Not answered
+Q8. Is there anything else we should know before we start?
+Answer: When customer booked the ride or tour then website system send email automatically to customer and owner 
+SECTION 10: 10. AI ASSISTANT / CUSTOMER SUPPORT
+Q1. Do you want an AI assistant to handle your customer support / enquiries for you?
+Answer: Yes — 24/7
+Q2. Where should customers talk to the AI? Please tick all that apply.
+Answer: Website live chat; Email
+Q3. What should the AI be allowed to do? Please tick all that apply.
+Answer: Answer FAQs about services, prices and areas; Change or cancel a booking; Take a new booking; Give fixed-price quotes
+for a route; Send booking confirmation / meeting-point / driver details; Track flight and update pickup time; Answer in multiple
+languages; Collect customer details and pass them to you; Handle complaints / lost items
+Q4. What should the AI NEVER do, and always hand over to you / a human?
+Answer: Refunds, prices, negotiating 
+Q5. Should the AI take bookings directly by itself, or only collect the details and let you confirm?
+Answer: Only collect the details and let me confirm
+Q6. Which languages should the AI reply in? Please tick all that apply.
+Answer: English; German; Hindi; Other; Urdu
+Q7. When should the AI work?
+Answer: Only when you are busy — please specify the hours below
+Q8. What tone should the AI use with your customers?
+Answer: Friendly / casual
+Q9. What are the most common questions your customers ask that the AI should learn first?
+Answer: Where do we meet the driver
+Q10. Do you want the AI on WhatsApp as well — replying to WhatsApp messages automatically?
+Answer: No
+Q11. Who should get notified when the AI takes a booking or cannot answer a question — you by WhatsApp, email, or both?
+And what phone number / email address should it use?
+Answer: WhatsApp: +436606416464
+Company Email currently not to made , give you later.
+Private Email: farooqcheema64164@gmail.com
+Q12. Would you like a monthly AI Front Desk care plan where we keep the AI updated with your prices, routes, fleet and
+FAQs?
+Answer: No
+Confidential Client Requirements  *  Omer Farooq Page 4 of 4
