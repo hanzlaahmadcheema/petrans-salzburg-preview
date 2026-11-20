@@ -1,0 +1,2176 @@
+{
+  "testDate": "2026-11-20T21:54:28.137Z",
+  "viewports": {
+    "iPhone_SE_375x667": {
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "hasHorizontalOverflow": false,
+      "overflowingElementsCount": 87,
+      "overflowingElements": [
+        {
+          "tag": "ASIDE",
+          "id": "mobile-drawer",
+          "className": "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-m",
+          "right": 694,
+          "width": 319
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "right": 662,
+          "width": 262
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center justify-between pb-6 border-b bo",
+          "right": 662,
+          "width": 262
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center gap-3",
+          "right": 594,
+          "width": 194
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "w-9 h-9 rounded border border-gold/40 bg-surface f",
+          "right": 436,
+          "width": 36
+        }
+      ],
+      "touchTargets": {
+        "goldBtns": [
+          {
+            "text": "WhatsApp Chauffeur Dispat",
+            "width": 261.8,
+            "height": 64,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Configure & Book This Rid",
+            "width": 293,
+            "height": 48,
+            "fontSize": "16px",
+            "passed": true
+          },
+          {
+            "text": "Continue",
+            "width": 121.7,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select V-Class",
+            "width": 119.3,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "outlineBtns": [
+          {
+            "text": "Call +43 660 6416464",
+            "width": 261.8,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "btn-step-prev",
+            "width": 87.3,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select Vito",
+            "width": 105.4,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "quickChips": [
+          {
+            "text": "SZG Airport",
+            "width": 126.4,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Salzburg Hbf",
+            "width": 134,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Old Town Hotel",
+            "width": 148.5,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Hallstatt (73km)",
+            "width": 151,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Zell am See (85km)",
+            "width": 170.2,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Munich MUC (175km)",
+            "width": 180.6,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Innsbruck (185km)",
+            "width": 165.7,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Bad Gastein (100km)",
+            "width": 183.8,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          }
+        ],
+        "counterBtns": [
+          {
+            "text": "-",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          },
+          {
+            "text": "+",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          }
+        ],
+        "langSelect": [
+          {
+            "text": "EN — English\nDE — Deutsch",
+            "width": 122,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "hamburger": [
+          {
+            "text": "Open Navigation Menu",
+            "width": 44,
+            "height": 44,
+            "fontSize": "16px",
+            "passed": true
+          }
+        ]
+      },
+      "formInputs": [
+        {
+          "id": "calc-origin",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-dest",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-tour",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-pickup",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-dropoff",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-tour-select",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-flight",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-name",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-email",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-phone",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-lang",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-notes",
+          "tag": "TEXTAREA",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "ai-chat-input",
+          "tag": "INPUT",
+          "fontSize": "12px",
+          "meets16px": false
+        }
+      ],
+      "hero": {
+        "width": 383,
+        "height": 1116,
+        "objectFit": "cover",
+        "objectPosition": "50% 38%"
+      },
+      "fleet": {
+        "vClass": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        },
+        "vito": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        }
+      },
+      "screenshotPath": "/home/hanzlaahmad/OpenBot/Shared/PETRANS/audit/screenshots/iPhone_SE_375x667.png"
+    },
+    "iPhone_14_15_390x844": {
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "overflowingElementsCount": 87,
+      "overflowingElements": [
+        {
+          "tag": "ASIDE",
+          "id": "mobile-drawer",
+          "className": "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-m",
+          "right": 722,
+          "width": 332
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "right": 698,
+          "width": 283
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center justify-between pb-6 border-b bo",
+          "right": 698,
+          "width": 283
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center gap-3",
+          "right": 609,
+          "width": 194
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "w-9 h-9 rounded border border-gold/40 bg-surface f",
+          "right": 451,
+          "width": 36
+        }
+      ],
+      "touchTargets": {
+        "goldBtns": [
+          {
+            "text": "WhatsApp Chauffeur Dispat",
+            "width": 282.5,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Configure & Book This Rid",
+            "width": 308,
+            "height": 48,
+            "fontSize": "16px",
+            "passed": true
+          },
+          {
+            "text": "Continue",
+            "width": 121.7,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select V-Class",
+            "width": 119.3,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "outlineBtns": [
+          {
+            "text": "Call +43 660 6416464",
+            "width": 282.5,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "btn-step-prev",
+            "width": 87.3,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select Vito",
+            "width": 105.4,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "quickChips": [
+          {
+            "text": "SZG Airport",
+            "width": 126.4,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Salzburg Hbf",
+            "width": 134,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Old Town Hotel",
+            "width": 148.5,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Hallstatt (73km)",
+            "width": 151,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Zell am See (85km)",
+            "width": 170.2,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Munich MUC (175km)",
+            "width": 180.6,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Innsbruck (185km)",
+            "width": 165.7,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Bad Gastein (100km)",
+            "width": 183.8,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          }
+        ],
+        "counterBtns": [
+          {
+            "text": "-",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          },
+          {
+            "text": "+",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          }
+        ],
+        "langSelect": [
+          {
+            "text": "EN — English\nDE — Deutsch",
+            "width": 122,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "hamburger": [
+          {
+            "text": "Open Navigation Menu",
+            "width": 44,
+            "height": 44,
+            "fontSize": "16px",
+            "passed": true
+          }
+        ]
+      },
+      "formInputs": [
+        {
+          "id": "calc-origin",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-dest",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-tour",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-pickup",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-dropoff",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-tour-select",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-flight",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-name",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-email",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-phone",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-lang",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-notes",
+          "tag": "TEXTAREA",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "ai-chat-input",
+          "tag": "INPUT",
+          "fontSize": "12px",
+          "meets16px": false
+        }
+      ],
+      "hero": {
+        "width": 398,
+        "height": 1116,
+        "objectFit": "cover",
+        "objectPosition": "50% 38%"
+      },
+      "fleet": {
+        "vClass": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        },
+        "vito": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        }
+      },
+      "screenshotPath": "/home/hanzlaahmad/OpenBot/Shared/PETRANS/audit/screenshots/iPhone_14_15_390x844.png"
+    },
+    "Samsung_S22_412x915": {
+      "innerWidth": 412,
+      "scrollWidth": 412,
+      "hasHorizontalOverflow": false,
+      "overflowingElementsCount": 87,
+      "overflowingElements": [
+        {
+          "tag": "ASIDE",
+          "id": "mobile-drawer",
+          "className": "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-m",
+          "right": 762,
+          "width": 350
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "right": 738,
+          "width": 301
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center justify-between pb-6 border-b bo",
+          "right": 738,
+          "width": 301
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center gap-3",
+          "right": 631,
+          "width": 194
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "w-9 h-9 rounded border border-gold/40 bg-surface f",
+          "right": 473,
+          "width": 36
+        }
+      ],
+      "touchTargets": {
+        "goldBtns": [
+          {
+            "text": "WhatsApp Chauffeur Dispat",
+            "width": 301.2,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Configure & Book This Rid",
+            "width": 330,
+            "height": 48,
+            "fontSize": "16px",
+            "passed": true
+          },
+          {
+            "text": "Continue",
+            "width": 121.7,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select V-Class",
+            "width": 119.3,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "outlineBtns": [
+          {
+            "text": "Call +43 660 6416464",
+            "width": 301.2,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "btn-step-prev",
+            "width": 87.3,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Select Vito",
+            "width": 105.4,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "quickChips": [
+          {
+            "text": "SZG Airport",
+            "width": 126.4,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Salzburg Hbf",
+            "width": 134,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Old Town Hotel",
+            "width": 148.5,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Hallstatt (73km)",
+            "width": 151,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Zell am See (85km)",
+            "width": 170.2,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Munich MUC (175km)",
+            "width": 180.6,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Innsbruck (185km)",
+            "width": 165.7,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Bad Gastein (100km)",
+            "width": 183.8,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          }
+        ],
+        "counterBtns": [
+          {
+            "text": "-",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          },
+          {
+            "text": "+",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          }
+        ],
+        "langSelect": [
+          {
+            "text": "EN — English\nDE — Deutsch",
+            "width": 122,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "hamburger": [
+          {
+            "text": "Open Navigation Menu",
+            "width": 44,
+            "height": 44,
+            "fontSize": "16px",
+            "passed": true
+          }
+        ]
+      },
+      "formInputs": [
+        {
+          "id": "calc-origin",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-dest",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-tour",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-pickup",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-dropoff",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-tour-select",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-flight",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-name",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-email",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-phone",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-lang",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-notes",
+          "tag": "TEXTAREA",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "ai-chat-input",
+          "tag": "INPUT",
+          "fontSize": "12px",
+          "meets16px": false
+        }
+      ],
+      "hero": {
+        "width": 420,
+        "height": 1064,
+        "objectFit": "cover",
+        "objectPosition": "50% 38%"
+      },
+      "fleet": {
+        "vClass": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        },
+        "vito": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        }
+      },
+      "screenshotPath": "/home/hanzlaahmad/OpenBot/Shared/PETRANS/audit/screenshots/Samsung_S22_412x915.png"
+    },
+    "iPad_768x1024": {
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "overflowingElementsCount": 39,
+      "overflowingElements": [
+        {
+          "tag": "ASIDE",
+          "id": "mobile-drawer",
+          "className": "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-m",
+          "right": 1152,
+          "width": 384
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "right": 1128,
+          "width": 335
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center justify-between pb-6 border-b bo",
+          "right": 1128,
+          "width": 335
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center gap-3",
+          "right": 987,
+          "width": 194
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "w-9 h-9 rounded border border-gold/40 bg-surface f",
+          "right": 829,
+          "width": 36
+        }
+      ],
+      "touchTargets": {
+        "goldBtns": [
+          {
+            "text": "Book Chauffeur",
+            "width": 170.5,
+            "height": 44,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "WhatsApp Chauffeur Dispat",
+            "width": 335,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Configure & Book This Rid",
+            "width": 288.3,
+            "height": 48,
+            "fontSize": "16px",
+            "passed": true
+          },
+          {
+            "text": "Continue",
+            "width": 130,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Select V-Class",
+            "width": 119.3,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "outlineBtns": [
+          {
+            "text": "Call +43 660 6416464",
+            "width": 335,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "btn-step-prev",
+            "width": 92.2,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Select Vito",
+            "width": 105.4,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "quickChips": [
+          {
+            "text": "SZG Airport",
+            "width": 126.4,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Salzburg Hbf",
+            "width": 134,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Old Town Hotel",
+            "width": 148.5,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Hallstatt (73km)",
+            "width": 151,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Zell am See (85km)",
+            "width": 170.2,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Munich MUC (175km)",
+            "width": 180.6,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Innsbruck (185km)",
+            "width": 165.7,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Bad Gastein (100km)",
+            "width": 183.8,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          }
+        ],
+        "counterBtns": [
+          {
+            "text": "-",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          },
+          {
+            "text": "+",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          }
+        ],
+        "langSelect": [
+          {
+            "text": "EN — English\nDE — Deutsch",
+            "width": 122,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "hamburger": [
+          {
+            "text": "Open Navigation Menu",
+            "width": 44,
+            "height": 44,
+            "fontSize": "16px",
+            "passed": true
+          }
+        ]
+      },
+      "formInputs": [
+        {
+          "id": "calc-origin",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-dest",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-tour",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-pickup",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-dropoff",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-tour-select",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-flight",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-name",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-email",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-phone",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-lang",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-notes",
+          "tag": "TEXTAREA",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "ai-chat-input",
+          "tag": "INPUT",
+          "fontSize": "12px",
+          "meets16px": false
+        }
+      ],
+      "hero": {
+        "width": 783,
+        "height": 886,
+        "objectFit": "cover",
+        "objectPosition": "50% 38%"
+      },
+      "fleet": {
+        "vClass": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        },
+        "vito": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        }
+      },
+      "screenshotPath": "/home/hanzlaahmad/OpenBot/Shared/PETRANS/audit/screenshots/iPad_768x1024.png"
+    },
+    "Desktop_1280x800": {
+      "innerWidth": 1280,
+      "scrollWidth": 1272,
+      "hasHorizontalOverflow": false,
+      "overflowingElementsCount": 39,
+      "overflowingElements": [
+        {
+          "tag": "ASIDE",
+          "id": "mobile-drawer",
+          "className": "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-m",
+          "right": 1656,
+          "width": 384
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "right": 1632,
+          "width": 335
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center justify-between pb-6 border-b bo",
+          "right": 1632,
+          "width": 335
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "flex items-center gap-3",
+          "right": 1491,
+          "width": 194
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "w-9 h-9 rounded border border-gold/40 bg-surface f",
+          "right": 1333,
+          "width": 36
+        }
+      ],
+      "touchTargets": {
+        "goldBtns": [
+          {
+            "text": "Book Chauffeur",
+            "width": 170.5,
+            "height": 44,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "WhatsApp Chauffeur Dispat",
+            "width": 335,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Configure & Book This Rid",
+            "width": 268.3,
+            "height": 48,
+            "fontSize": "16px",
+            "passed": true
+          },
+          {
+            "text": "Continue",
+            "width": 130,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Select V-Class",
+            "width": 119.3,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book This Tour",
+            "width": 112.4,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "outlineBtns": [
+          {
+            "text": "Call +43 660 6416464",
+            "width": 335,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "btn-step-prev",
+            "width": 92.2,
+            "height": 48,
+            "fontSize": "14px",
+            "passed": true
+          },
+          {
+            "text": "Select Vito",
+            "width": 105.4,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          },
+          {
+            "text": "Book",
+            "width": 56.8,
+            "height": 48,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "quickChips": [
+          {
+            "text": "SZG Airport",
+            "width": 126.4,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Salzburg Hbf",
+            "width": 134,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Old Town Hotel",
+            "width": 148.5,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Hallstatt (73km)",
+            "width": 151,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Zell am See (85km)",
+            "width": 170.2,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Munich MUC (175km)",
+            "width": 180.6,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Innsbruck (185km)",
+            "width": 165.7,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          },
+          {
+            "text": "Bad Gastein (100km)",
+            "width": 183.8,
+            "height": 44,
+            "fontSize": "13.2px",
+            "passed": true
+          }
+        ],
+        "counterBtns": [
+          {
+            "text": "-",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          },
+          {
+            "text": "+",
+            "width": 44,
+            "height": 44,
+            "fontSize": "20px",
+            "passed": true
+          }
+        ],
+        "langSelect": [
+          {
+            "text": "EN — English\nDE — Deutsch",
+            "width": 122,
+            "height": 44,
+            "fontSize": "12px",
+            "passed": true
+          }
+        ],
+        "hamburger": []
+      },
+      "formInputs": [
+        {
+          "id": "calc-origin",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-dest",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "calc-tour",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-pickup",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-dropoff",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step1-tour-select",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-flight",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-date",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "step2-return-time",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-name",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-email",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-phone",
+          "tag": "INPUT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-lang",
+          "tag": "SELECT",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "cust-notes",
+          "tag": "TEXTAREA",
+          "fontSize": "16px",
+          "meets16px": true
+        },
+        {
+          "id": "ai-chat-input",
+          "tag": "INPUT",
+          "fontSize": "12px",
+          "meets16px": false
+        }
+      ],
+      "hero": {
+        "width": 1297,
+        "height": 964,
+        "objectFit": "cover",
+        "objectPosition": "50% 38%"
+      },
+      "fleet": {
+        "vClass": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        },
+        "vito": {
+          "naturalW": 0,
+          "naturalH": 0,
+          "complete": false
+        }
+      },
+      "screenshotPath": "/home/hanzlaahmad/OpenBot/Shared/PETRANS/audit/screenshots/Desktop_1280x800.png"
+    }
+  },
+  "assetVerification": {
+    "/images/salzburg-hero.jpg": {
+      "statusCode": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "551143"
+    },
+    "/images/salzburg-hero-mobile.jpg": {
+      "statusCode": 200,
+      "contentType": "image/jpeg",
+      "contentLength": "167535"
+    },
+    "/images/salzburg-hero.webp": {
+      "statusCode": 200,
+      "contentType": "image/webp",
+      "contentLength": "475992"
+    },
+    "/images/mercedes-v-class.png": {
+      "statusCode": 200,
+      "contentType": "image/png",
+      "contentLength": "1160132"
+    },
+    "/images/mercedes-vito.png": {
+      "statusCode": 200,
+      "contentType": "image/png",
+      "contentLength": "855448"
+    }
+  },
+  "touchTargetsSummary": {},
+  "drawerVerification": {
+    "stateBefore": {
+      "drawerHasOpen": false,
+      "backdropHasOpen": false
+    },
+    "stateAfterOpen": {
+      "drawerHasOpen": true,
+      "backdropHasOpen": true,
+      "bodyOverflow": "hidden"
+    },
+    "stateAfterClose": {
+      "drawerHasOpen": false,
+      "backdropHasOpen": false,
+      "bodyOverflow": ""
+    }
+  },
+  "bookingWizardVerification": {
+    "step1": {
+      "pickup": "Salzburg Airport W. A. Mozart (SZG)",
+      "dropoff": "Hallstatt Lahn Terminal",
+      "distance": 73,
+      "stops": 2
+    },
+    "step2": {
+      "date": "2026-11-20",
+      "time": "14:30",
+      "flight": "OS 204"
+    },
+    "step3": {
+      "paxCapMin": 1,
+      "paxCapMax": 8,
+      "paxFinal": 4,
+      "lugCapMin": 0,
+      "lugCapMax": 8,
+      "lugFinal": 4,
+      "vitoChosen": "VITO",
+      "vClassChosen": "V_CLASS"
+    },
+    "step4": {
+      "baby": 1,
+      "booster": 2,
+      "ski": 4,
+      "wheelchair": true
+    },
+    "step5": {
+      "name": "Chauffeur QA User",
+      "email": "qa@petrans.at",
+      "phone": "+436606416464"
+    },
+    "step6": {
+      "route": "Salzburg Airport W. A. Mozart (SZG) → Hallstatt Lahn Terminal",
+      "vehicle": "Mercedes V-Class VIP",
+      "pax": "4 Passengers",
+      "bags": "4 Large Bags",
+      "base": "€204.40",
+      "stops": "€40.00",
+      "net": "€203.67",
+      "vat": "€40.73",
+      "total": "€244.40"
+    }
+  },
+  "emojiAndIconifySummary": {
+    "totalEmojiCount": 0,
+    "emojisFound": [],
+    "iconifyCount": 93,
+    "uniqueIcons": [
+      "lucide:shield-check",
+      "lucide:plane",
+      "lucide:snowflake",
+      "lucide:phone-call",
+      "lucide:calendar",
+      "lucide:menu",
+      "lucide:x",
+      "lucide:calculator",
+      "lucide:car",
+      "lucide:compass",
+      "lucide:map-pin",
+      "lucide:plane-takeoff",
+      "lucide:help-circle",
+      "lucide:message-square",
+      "lucide:award",
+      "lucide:check-circle-2",
+      "lucide:arrow-right",
+      "lucide:check",
+      "lucide:train",
+      "lucide:building-2",
+      "lucide:mountain",
+      "lucide:landmark",
+      "lucide:sparkles",
+      "lucide:info",
+      "lucide:clock",
+      "lucide:check-circle",
+      "lucide:users",
+      "lucide:briefcase",
+      "lucide:circle",
+      "lucide:alert-triangle",
+      "lucide:gift",
+      "lucide:user-check",
+      "lucide:receipt",
+      "lucide:arrow-left",
+      "lucide:wifi",
+      "lucide:shield",
+      "lucide:coffee",
+      "lucide:zap",
+      "lucide:chevron-down",
+      "lucide:phone",
+      "lucide:mail",
+      "lucide:message-circle",
+      "lucide:send"
+    ],
+    "langPickerOptions": [
+      "EN — English",
+      "DE — Deutsch",
+      "HI — हिन्दी",
+      "UR — اردو"
+    ]
+  }
+}
