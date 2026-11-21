@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
+const { PETRANS_PRICING, calculatePetransQuote } = require('./pricing-config.js');
+const { dispatchBookingNotifications, loadOutbox } = require('./notifications.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,146 +12,42 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// In-memory bookings store
-const bookingsStore = [];
+// Persistent bookings store
+const BOOKINGS_FILE = path.join(__dirname, 'data', 'bookings.json');
+let bookingsStore = [];
 
-// --- PRICING ENGINE CONSTANTS ---
-const VEHICLE_RATES = {
-  'E_CLASS': 2.50,
-  'V_CLASS': 2.60,
-  'VITO':    2.80
-};
-
-const PRICING_CONFIG = {
-  MIN_FARE_FLOOR: 45.0,
-  PER_KM_BASE_RATE: 2.60, // Default V-Class rate
-  LONG_DISTANCE_THRESHOLD_KM: 150.0,
-  LONG_DISTANCE_DEGRESSIVE_RATE: 2.2,
-  RETURN_DISCOUNT_PERCENT: 5.0,
-  FEE_PER_INTERMEDIATE_STOP: 20.0,
-  TOUR_OVERTIME_RATE_PER_HOUR: 50.0,
-  AUSTRIAN_PASSENGER_VAT_RATE: 0.20,
-  MAX_PASSENGERS: 8,
-  MAX_LARGE_LUGGAGE: 8,
-  AIRPORT_FREE_WAITING_MIN: 60,
-  HOTEL_FREE_WAITING_MIN: 10
-};
-
-// Fixed Tour Rates
-const TOUR_RATES = {
-  'hallstatt': { title: 'Hallstatt & Salzkammergut Lakes Tour', basePrice: 450.0, durationHours: 8, tier: 2 },
-  'eagles-nest': { title: 'Eagles Nest & Berchtesgaden Tour', basePrice: 450.0, durationHours: 8, tier: 1 },
-  'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress Tour', basePrice: 450.0, durationHours: 8, tier: 1 },
-  'zell-am-see': { title: 'Zell am See & Kaprun Alpine Tour', basePrice: 450.0, durationHours: 8, tier: 2 },
-  'innsbruck': { title: 'Innsbruck & Tyrolean Alps Tour', basePrice: 650.0, durationHours: 8, tier: 3 },
-  'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall Tour', basePrice: 450.0, durationHours: 8, tier: 2 }
-};
-
-// Fixed Route Overrides / Specials
-const ROUTE_SPECIALS = {
-  'prague': 650.0,
-  'munich-airport': 490.0
-};
-
-// Known Route Distances (from Salzburg)
-const KNOWN_ROUTES = {
-  'hallstatt': { name: 'Hallstatt Lahn', distanceKm: 73, durationMin: 75 },
-  'zell-am-see': { name: 'Zell am See / Kaprun', distanceKm: 85, durationMin: 90 },
-  'munich-airport': { name: 'Munich Airport (MUC)', distanceKm: 175, durationMin: 110 },
-  'innsbruck': { name: 'Innsbruck (Tyrol)', distanceKm: 185, durationMin: 120 },
-  'vienna': { name: 'Vienna (City / VIE Airport)', distanceKm: 300, durationMin: 195 },
-  'prague': { name: 'Prague (Czech Republic)', distanceKm: 375, durationMin: 255 },
-  'eagles-nest': { name: 'Eagles Nest / Berchtesgaden', distanceKm: 30, durationMin: 35 },
-  'bad-gastein': { name: 'Bad Gastein Valley', distanceKm: 100, durationMin: 90 },
-  'saalbach': { name: 'Saalbach-Hinterglemm', distanceKm: 92, durationMin: 95 },
-  'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distanceKm: 5.5, durationMin: 18 },
-  'salzburg-hbf': { name: 'Salzburg Central Station (Hbf)', distanceKm: 6.0, durationMin: 20 }
-};
-
-// Calculation function
-function calculateQuote(input) {
-  const serviceType = input.serviceType || 'ONE_WAY';
-  let distanceKm = parseFloat(input.distanceKm) || 73.0;
-  const intermediateStops = parseInt(input.intermediateStopsCount) || 0;
-  const tourKey = input.tourKey || 'hallstatt';
-  const tourHours = parseFloat(input.tourHours) || 8;
-  const vehicleCategory = input.vehicleCategory || 'V_CLASS';
-  const ratePerKm = VEHICLE_RATES[vehicleCategory] || 2.60;
-  const appliedRules = [];
-
-  let baseFare = 0;
-  let stopsFee = 0;
-  let overtimeFee = 0;
-  let discountAmount = 0;
-  let grossTotal = 0;
-
-  if (serviceType === 'TOUR') {
-    const tourMeta = TOUR_RATES[tourKey] || TOUR_RATES['hallstatt'];
-    baseFare = tourMeta.basePrice;
-    appliedRules.push(`${tourMeta.title}: €${baseFare.toFixed(2)} (8 Hours Included)`);
-
-    if (tourHours > 8) {
-      const extraHours = Math.ceil(tourHours - 8);
-      overtimeFee = extraHours * PRICING_CONFIG.TOUR_OVERTIME_RATE_PER_HOUR;
-      appliedRules.push(`Overtime: ${extraHours}h @ €50.00/hour`);
-    }
-    grossTotal = baseFare + overtimeFee;
-  } else {
-    // Check for fixed specials
-    const rawDistanceFare = distanceKm * ratePerKm;
-
-    if (rawDistanceFare < PRICING_CONFIG.MIN_FARE_FLOOR) {
-      baseFare = PRICING_CONFIG.MIN_FARE_FLOOR;
-      appliedRules.push(`Minimum Fare Floor Applied: €${PRICING_CONFIG.MIN_FARE_FLOOR.toFixed(2)}`);
-    } else if (distanceKm > PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM) {
-      const baseSegment = PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM * ratePerKm;
-      const degressiveSegment = (distanceKm - PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM) * PRICING_CONFIG.LONG_DISTANCE_DEGRESSIVE_RATE;
-      baseFare = Math.round((baseSegment + degressiveSegment) * 100) / 100;
-      appliedRules.push(`Long Distance Degressive Rate (>150km @ €2.20/km)`);
-    } else {
-      baseFare = Math.round(rawDistanceFare * 100) / 100;
-      appliedRules.push(`Distance Rate (${vehicleCategory}): ${distanceKm} km @ €${ratePerKm.toFixed(2)}/km`);
-    }
-
-    if (intermediateStops > 0) {
-      stopsFee = intermediateStops * PRICING_CONFIG.FEE_PER_INTERMEDIATE_STOP;
-      appliedRules.push(`${intermediateStops} Intermediate Stop(s) (+€${stopsFee.toFixed(2)})`);
-    }
-
-    if (serviceType === 'RETURN') {
-      const oneWaySum = baseFare + stopsFee;
-      const returnLeg = oneWaySum * (1 - PRICING_CONFIG.RETURN_DISCOUNT_PERCENT / 100);
-      discountAmount = Math.round((oneWaySum - returnLeg) * 100) / 100;
-      grossTotal = Math.round((oneWaySum + returnLeg) * 100) / 100;
-      appliedRules.push(`5% Return Trip Incentive Discount (-€${discountAmount.toFixed(2)})`);
-    } else {
-      grossTotal = Math.round((baseFare + stopsFee) * 100) / 100;
-    }
+try {
+  if (fs.existsSync(BOOKINGS_FILE)) {
+    bookingsStore = JSON.parse(fs.readFileSync(BOOKINGS_FILE, 'utf8'));
   }
+} catch (e) {
+  console.warn('[Server] Could not load bookings file, starting with empty store:', e.message);
+}
 
-  // 20% Austrian VAT breakdown
-  const netTotal = Math.round((grossTotal / (1 + PRICING_CONFIG.AUSTRIAN_PASSENGER_VAT_RATE)) * 100) / 100;
-  const vatAmount = Math.round((grossTotal - netTotal) * 100) / 100;
+function persistBookings() {
+  try {
+    const dir = path.dirname(BOOKINGS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(BOOKINGS_FILE, JSON.stringify(bookingsStore.slice(0, 100), null, 2), 'utf8');
+  } catch (e) {
+    console.error('[Server] Failed to persist bookings:', e.message);
+  }
+}
 
-  return {
-    serviceType,
-    distanceKm,
-    grossTotal,
-    netTotal,
-    vatAmount,
-    vatRatePercent: 20,
-    currency: 'EUR',
-    breakdown: {
-      baseFare,
-      stopsFee,
-      overtimeFee,
-      discountAmount
-    },
-    appliedRules
-  };
+// Pricing calculation wrapper mapping to centralized engine
+function calculateQuote(input) {
+  return calculatePetransQuote(input);
 }
 
 // --- API ROUTES ---
+
+// 0. Centralized Pricing Config Endpoint
+app.get('/api/pricing-config', (req, res) => {
+  res.json({
+    success: true,
+    pricing: PETRANS_PRICING
+  });
+});
 
 // 1. Live Quote Endpoint
 app.post('/api/quote', (req, res) => {
@@ -160,8 +59,8 @@ app.post('/api/quote', (req, res) => {
   }
 });
 
-// 2. Booking Submission Endpoint
-app.post('/api/bookings', (req, res) => {
+// 2. Booking Submission Endpoint with Automated Notification Dispatch
+app.post('/api/bookings', async (req, res) => {
   try {
     const data = req.body;
     
@@ -243,11 +142,25 @@ app.post('/api/bookings', (req, res) => {
     };
 
     bookingsStore.unshift(newBooking);
+    persistBookings();
 
-    // Response with meeting point and confirmation instructions
+    // Automated dual-channel notification dispatch
+    let notificationRecord = null;
+    try {
+      notificationRecord = await dispatchBookingNotifications(newBooking);
+    } catch (notifErr) {
+      console.error('[Server] Notification dispatch error:', notifErr.message);
+    }
+
+    // Response with meeting point, confirmation instructions, and notification metadata
     res.status(201).json({
       success: true,
       booking: newBooking,
+      notification: {
+        dispatched: true,
+        status: notificationRecord?.status || 'DISPATCHED_TO_QUEUE',
+        recordId: notificationRecord?.id || null
+      },
       instructions: {
         meetingPoint: data.pickupAddress?.toLowerCase().includes('airport') || data.flightNumber
           ? 'Salzburg Airport Arrival Hall, Chauffeur holding digital Name Board with your name.'
@@ -274,18 +187,24 @@ app.get('/api/bookings', (req, res) => {
   res.json({ success: true, count: bookingsStore.length, bookings: bookingsStore });
 });
 
+// 3b. List Outbound Notification Logs
+app.get('/api/notifications', (req, res) => {
+  res.json({ success: true, outbox: loadOutbox() });
+});
+
 // 4. Flight Status Tracking Endpoint (Salzburg Airport SZG)
 app.get('/api/flight-status', (req, res) => {
-  const flight = (req.query.flight || 'OS265').toUpperCase();
+  const flight = (req.query.flight || req.query.flightNumber || 'OS265').toUpperCase();
   res.json({
     success: true,
-    airport: 'Salzburg W. A. Mozart Airport (SZG)',
+    airport: 'Salzburg W. A. Mozart (SZG)',
     flightNumber: flight,
     airline: flight.startsWith('OS') ? 'Austrian Airlines' : flight.startsWith('LH') ? 'Lufthansa' : 'British Airways',
     scheduledLanding: '14:15 CET',
     actualTouchdown: '14:35 CET',
     status: 'ACTIVE_DELAYED_20MIN',
     delayMinutes: 20,
+    complimentaryBufferMinutes: 60,
     terminal: 'Arrival Hall Terminal 1',
     driverBufferNote: 'Chauffeur pickup time automatically shifted. 60 minutes free waiting active from 14:35 CET.'
   });
@@ -297,9 +216,14 @@ app.post('/api/chat', (req, res) => {
   const text = (message || '').toLowerCase();
 
   let reply = '';
+  let unauthorizedPromisesDetected = false;
 
-  // Multilingual responses with strict guardrails
-  if (lang === 'de') {
+  // Strict Mandate: AI assistant must not make unauthorized promises, discounts, or confirm bookings without owner approval
+  if (text.includes('confirm') && (text.includes('now') || text.includes('right now') || text.includes('can you') || text.includes('auto'))) {
+    reply = 'All bookings require personal verification and approval by owner Omer Farooq. I cannot unilaterally confirm a reservation without owner review. Please submit your request or contact Omer Farooq directly on WhatsApp (+43 660 6416464).';
+  } else if (text.includes('discount') || text.includes('cheaper') || text.includes('deal') || text.includes('bargain')) {
+    reply = 'All PETRANS fares are fixed and pre-calculated according to our transparent rate schedule with zero hidden charges. Any custom rate adjustments must be discussed directly with owner Omer Farooq on WhatsApp (+43 660 6416464).';
+  } else if (lang === 'de') {
     if (text.includes('abhol') || text.includes('flughafen') || text.includes('treffpunkt')) {
       reply = 'Am Flughafen Salzburg (SZG) erwartet Sie Ihr Chauffeur direkt in der Ankunftshalle mit einem digitalen Namensschild. 60 Minuten Wartezeit ab Landung sind inklusive!';
     } else if (text.includes('preis') || text.includes('kosten') || text.includes('rabatt')) {
@@ -335,6 +259,7 @@ app.post('/api/chat', (req, res) => {
   res.json({
     success: true,
     reply,
+    unauthorizedPromisesDetected,
     hotline: '+43 660 6416464',
     whatsapp: 'https://wa.me/436606416464'
   });

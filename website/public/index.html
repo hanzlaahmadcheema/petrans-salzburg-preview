@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PETRANS Taxi & Tour Salzburg | Luxury Mercedes Transfers & Day Trips</title>
+  <title>PETRANS Taxi & Tour Salzburg | Luxury Mercedes Transfers</title>
   <meta name="description" content="Salzburg's premier Mercedes-Benz chauffeur service. Airport transfers & private Alpine day tours across Austria and Bavaria. Fixed rates, zero hidden fees.">
   <link rel="canonical" href="https://petrans-salzburg.at/">
   
@@ -132,12 +132,13 @@
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#hero-quick-book" class="hover:text-gold transition">Instant Quote</a>
         <a href="/tours.html" class="hover:text-gold transition">Day Tours (8h)</a>
         <a href="#fleet" class="hover:text-gold transition">Mercedes Fleet</a>
         <a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport</a>
         <a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna</a>
+        <a href="/destinations/prague.html" class="hover:text-gold transition">Prague</a>
         <a href="#faq" class="hover:text-gold transition">FAQ</a>
       </nav>
 
@@ -201,6 +202,10 @@
         <a href="/destinations/vienna.html" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
           <iconify-icon icon="lucide:navigation" width="20" height="20" class="text-gold"></iconify-icon>
           <span>Vienna VIP Chauffeur Transfer</span>
+        </a>
+        <a href="/destinations/prague.html" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
+          <iconify-icon icon="lucide:navigation" width="20" height="20" class="text-gold"></iconify-icon>
+          <span>Prague Cross-Border VIP Transfer</span>
         </a>
         <a href="#fleet" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
           <iconify-icon icon="lucide:car" width="20" height="20" class="text-gold"></iconify-icon>
@@ -296,8 +301,10 @@
                 <option value="Munich Airport (175 km)" data-km="175" data-name="Munich Airport (MUC)">Munich Airport MUC (175 km)</option>
                 <option value="Innsbruck (185 km)" data-km="185" data-name="Innsbruck">Innsbruck Highlights (185 km)</option>
                 <option value="Bad Gastein (100 km)" data-km="100" data-name="Bad Gastein">Bad Gastein Valley (100 km)</option>
+                <option value="Werfen (50 km)" data-km="50" data-name="Werfen Ice Caves">Werfen Ice Caves &amp; Fortress (50 km)</option>
                 <option value="Eagle's Nest (30 km)" data-km="30" data-name="Eagle's Nest">Eagle's Nest Berchtesgaden (30 km)</option>
                 <option value="Vienna (300 km)" data-km="300" data-name="Vienna">Vienna City / VIE (300 km)</option>
+                <option value="Prague (375 km)" data-km="375" data-name="Prague (Czech Republic)">Prague Cross-Border (375 km)</option>
               </select>
             </div>
             <div>
@@ -338,7 +345,10 @@
               <select id="hero-tour-select" class="form-input">
                 <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes — €450.00</option>
                 <option value="eagles-nest">Eagle's Nest & Berchtesgaden — €450.00</option>
+                <option value="werfen-ice-caves">Werfen Ice Caves & Fortress — €450.00</option>
                 <option value="zell-am-see">Zell am See & Alpine Glacier — €450.00</option>
+                <option value="bad-gastein">Bad Gastein & Thermal Waterfall — €450.00</option>
+                <option value="swarovski-crystal-worlds">Swarovski Crystal Worlds & Hall in Tirol — €550.00</option>
                 <option value="innsbruck">Innsbruck & Tyrolean Alps — €650.00</option>
               </select>
             </div>
@@ -770,7 +780,10 @@
               <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
               <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
             </div>
-            <button class="btn-gold text-xs py-2 px-4" onclick="selectTour('eagles-nest')">Book This Tour</button>
+            <div class="flex items-center gap-2">
+              <a href="/tours/eagles-nest.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=eagles-nest" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
           </div>
         </div>
 
@@ -796,7 +809,10 @@
               <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
               <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
             </div>
-            <button class="btn-gold text-xs py-2 px-4" onclick="selectTour('werfen-ice-caves')">Book This Tour</button>
+            <div class="flex items-center gap-2">
+              <a href="/tours/werfen-ice-caves.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=werfen-ice-caves" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
           </div>
         </div>
 
@@ -822,7 +838,10 @@
               <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
               <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
             </div>
-            <button class="btn-gold text-xs py-2 px-4" onclick="selectTour('zell-am-see')">Book This Tour</button>
+            <div class="flex items-center gap-2">
+              <a href="/tours/zell-am-see.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=zell-am-see" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
           </div>
         </div>
 
@@ -848,7 +867,10 @@
               <span class="text-[11px] text-slate-400 block">Tier 3 Special</span>
               <span class="text-2xl font-mono font-bold text-gold">€650.00</span>
             </div>
-            <button class="btn-gold text-xs py-2 px-4" onclick="selectTour('innsbruck')">Book This Tour</button>
+            <div class="flex items-center gap-2">
+              <a href="/tours/innsbruck.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=innsbruck" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
           </div>
         </div>
 
@@ -874,7 +896,39 @@
               <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
               <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
             </div>
-            <button class="btn-gold text-xs py-2 px-4" onclick="selectTour('bad-gastein')">Book This Tour</button>
+            <div class="flex items-center gap-2">
+              <a href="/tours/bad-gastein.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=bad-gastein" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour 7: Swarovski Crystal Worlds -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="badge-gold">8 Hours • Cultural Wonder</span>
+              <span class="text-xs text-slate-400">Max 8 Guests</span>
+            </div>
+            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Swarovski Crystal Worlds & Hall in Tirol</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Explore the iconic water-spouting Giant and Chambers of Wonder in Wattens, combined with the medieval minting town and cobblestone lanes of Hall in Tirol.
+            </p>
+            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div>• Iconic Water-Spouting Giant & Gardens</div>
+              <div>• 18 Chambers of Wonder Art Installations</div>
+              <div>• Medieval Hall in Tirol Historic Center</div>
+            </div>
+          </div>
+          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
+              <span class="text-2xl font-mono font-bold text-gold">€550.00</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="/tours/swarovski-crystal-worlds.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
+              <a href="/booking.html?service=tour&tour=swarovski-crystal-worlds" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            </div>
           </div>
         </div>
 
@@ -918,7 +972,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€204.40</td>
                 <td class="py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Hallstatt Lahn', 73)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/tours/hallstatt.html" class="text-xs text-gold hover:underline">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Hallstatt+Lahn" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -931,7 +985,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€238.00</td>
                 <td class="py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Zell am See / Kaprun', 85)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/tours/zell-am-see.html" class="text-xs text-gold hover:underline">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Zell+am+See+%2F+Kaprun" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -957,7 +1011,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€518.00</td>
                 <td class="py-4 px-6 text-xs text-slate-400">VAT + Autobahn Toll Included</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Innsbruck', 185)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/tours/innsbruck.html" class="text-xs text-gold hover:underline">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Innsbruck" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -970,7 +1024,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€280.00</td>
                 <td class="py-4 px-6 text-xs text-slate-400">Thermal Alps + Ski Transport</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Bad Gastein', 100)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/tours/bad-gastein.html" class="text-xs text-gold hover:underline">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Bad+Gastein" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -983,7 +1037,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€650.00</td>
                 <td class="py-4 px-6 text-xs text-slate-400">Fixed Special (Czech Vignette incl.)</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Prague', 375)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/destinations/prague.html" class="text-xs text-gold hover:underline">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Prague+(Czech+Republic)" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -996,7 +1050,7 @@
                 <td class="py-4 px-6 font-mono font-bold text-gold text-base">€45.00</td>
                 <td class="py-4 px-6 text-xs text-slate-400">Minimum Fare Floor Applied</td>
                 <td class="py-4 px-6 text-right">
-                  <button class="btn-outline-gold text-xs py-1.5 px-3" onclick="setQuickRoute('Salzburg Old Town', 5.5)">Book</button>
+                  <div class="flex items-center justify-end gap-2"><a href="/booking.html?service=one-way&pickup=Salzburg+Airport+(SZG)&dropoff=Salzburg+Old+Town" class="btn-outline-gold text-xs py-1.5 px-3 min-h-[36px]">Book</a></div>
                 </td>
               </tr>
 
@@ -1180,8 +1234,12 @@
         <ul class="space-y-2">
           <li><a href="/tours/hallstatt.html" class="hover:text-gold transition">Day Tour Hallstatt (€450.00)</a></li>
           <li><a href="/tours/eagles-nest.html" class="hover:text-gold transition">Eagle's Nest Tour (€450.00)</a></li>
+          <li><a href="/tours/werfen-ice-caves.html" class="hover:text-gold transition">Werfen Ice Caves Tour (€450.00)</a></li>
           <li><a href="/tours/zell-am-see.html" class="hover:text-gold transition">Zell am See Tour (€450.00)</a></li>
+          <li><a href="/tours/swarovski-crystal-worlds.html" class="hover:text-gold transition">Swarovski Crystal Worlds (€550.00)</a></li>
+          <li><a href="/tours/bad-gastein.html" class="hover:text-gold transition">Bad Gastein Alpine Tour (€450.00)</a></li>
           <li><a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport Transfer (€490.00)</a></li>
+          <li><a href="/destinations/prague.html" class="hover:text-gold transition">Prague VIP Transfer (€650.00)</a></li>
           <li><a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna VIP Transfer (€660.00)</a></li>
         </ul>
       </div>
@@ -1333,6 +1391,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Pricing Engine Configuration -->
+  <script src="/pricing-config.js"></script>
 
   <!-- Client Application Script -->
   <script src="/app.js"></script>

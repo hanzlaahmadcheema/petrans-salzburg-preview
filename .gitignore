@@ -15,3 +15,6 @@ Thumbs.db
 
 # Archival raw camera files (>15MB)
 website/public/images/salzburg-hero-original.jpg
+
+# Runtime Data Stores
+website/data/*.json

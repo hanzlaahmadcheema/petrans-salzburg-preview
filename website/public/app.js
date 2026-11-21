@@ -11,6 +11,8 @@ const ROUTES_DB = {
   'saalbach': { name: 'Saalbach-Hinterglemm', distance: 92, duration: '1h 35m' },
   'vienna': { name: 'Vienna City Center / VIE', distance: 300, duration: '3h 15m' },
   'prague': { name: 'Prague Cross-Border', distance: 375, duration: '4h 15m' },
+  'werfen-ice-caves': { name: 'Werfen Ice Caves & Fortress', distance: 50, duration: '45m' },
+  'swarovski-crystal-worlds': { name: 'Swarovski Crystal Worlds (Wattens)', distance: 165, duration: '1h 55m' },
   'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distance: 5.5, duration: '18m' }
 };
 
@@ -20,6 +22,7 @@ const TOURS_DB = {
   'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress (8 Hours)', price: 450.0, tier: 1 },
   'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 450.0, tier: 2 },
   'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall (8 Hours)', price: 450.0, tier: 2 },
+  'swarovski-crystal-worlds': { title: 'Swarovski Crystal Worlds & Hall in Tirol (8 Hours)', price: 550.0, tier: 2 },
   'innsbruck': { title: 'Innsbruck & Tyrolean Alps Highlights (8-9 Hours)', price: 650.0, tier: 3 }
 };
 
@@ -367,6 +370,39 @@ function initFleetCarousel() {
         nextFleetVehicle();
       }
     });
+
+    // Interactive 3D Perspective Tilt for 2D High-Res Fallback Cutout
+    const fallbackImg = document.getElementById('fallback-img');
+    if (fallbackImg) {
+      const handlePointerMove = (e) => {
+        const rect = stage.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
+        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
+        if (clientX === null || clientY === null) return;
+
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Subtle tilt: max ±7 deg Y, ±4 deg X
+        const rotateY = ((x - centerX) / centerX) * 7;
+        const rotateX = -((y - centerY) / centerY) * 4;
+
+        fallbackImg.style.transform = `perspective(1000px) rotateY(${rotateY.toFixed(2)}deg) rotateX(${rotateX.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        fallbackImg.style.transition = 'transform 0.08s ease-out';
+      };
+
+      const handlePointerReset = () => {
+        fallbackImg.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+        fallbackImg.style.transition = 'transform 0.4s ease-out';
+      };
+
+      stage.addEventListener('pointermove', handlePointerMove, { passive: true });
+      stage.addEventListener('pointerleave', handlePointerReset, { passive: true });
+      stage.addEventListener('touchmove', handlePointerMove, { passive: true });
+      stage.addEventListener('touchend', handlePointerReset, { passive: true });
+    }
   }
 
   // Model viewer error or absence resilience
@@ -596,12 +632,29 @@ function setupEventListeners() {
     if (!heroPlaceDest || !heroPlaceVehicle || !heroPlacePrice) return;
     const opt = heroPlaceDest.selectedOptions[0];
     const km = parseFloat(opt?.getAttribute('data-km') || '73');
-    const vehOpt = heroPlaceVehicle.selectedOptions[0];
-    const rate = parseFloat(vehOpt?.getAttribute('data-rate') || '2.60');
-    
-    // Formula: km * rate with €45 minimum base floor
-    const fare = Math.max(45, km * rate);
-    heroPlacePrice.textContent = `€${fare.toFixed(2)}`;
+    const vehVal = heroPlaceVehicle.value || 'v-class';
+    const vehKey = vehVal.toUpperCase().replace('-', '_');
+    const destName = opt?.getAttribute('data-name') || '';
+
+    // Route Specials and Centralized Pricing
+    if (destName.includes('Prague')) {
+      heroPlacePrice.textContent = '€650.00';
+    } else if (destName.includes('Munich Airport')) {
+      heroPlacePrice.textContent = '€490.00';
+    } else if (typeof window.calculatePetransQuote === 'function') {
+      const quote = window.calculatePetransQuote({
+        serviceType: 'ONE_WAY',
+        distanceKm: km,
+        vehicleCategory: vehKey
+      });
+      heroPlacePrice.textContent = `€${quote.grossTotal.toFixed(2)}`;
+    } else {
+      const vehOpt = heroPlaceVehicle.selectedOptions[0];
+      const rate = parseFloat(vehOpt?.getAttribute('data-rate') || '2.60');
+      const fare = Math.max(45, km * rate);
+      heroPlacePrice.textContent = `€${fare.toFixed(2)}`;
+    }
+
     if (heroPlaceMetrics) {
       const approxHours = Math.floor(km / 65);
       const approxMins = Math.round((km % 65) * 60 / 65);
@@ -633,11 +686,9 @@ function setupEventListeners() {
   if (heroTourSelect) {
     heroTourSelect.addEventListener('change', () => {
       const val = heroTourSelect.value;
-      if (val === 'innsbruck') {
-        if (heroTourPrice) heroTourPrice.textContent = '€650.00';
-      } else {
-        if (heroTourPrice) heroTourPrice.textContent = '€450.00';
-      }
+      const tourPrice = window.PETRANS_PRICING?.TOUR_RATES[val]?.basePrice 
+        || (val === 'innsbruck' ? 650.0 : (val === 'swarovski-crystal-worlds' ? 550.0 : 450.0));
+      if (heroTourPrice) heroTourPrice.textContent = `€${tourPrice.toFixed(2)}`;
       if (heroTourDetailsLink) {
         heroTourDetailsLink.href = `/tours/${val}.html`;
       }

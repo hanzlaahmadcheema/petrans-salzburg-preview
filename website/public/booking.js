@@ -21,6 +21,7 @@ const TOURS_DB = {
   'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress (8 Hours)', price: 450.0, tier: 1 },
   'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 450.0, tier: 2 },
   'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall (8 Hours)', price: 450.0, tier: 2 },
+  'swarovski-crystal-worlds': { title: 'Swarovski Crystal Worlds & Hall in Tirol (8 Hours)', price: 550.0, tier: 2 },
   'innsbruck': { title: 'Innsbruck & Tyrolean Alps Highlights (8-9 Hours)', price: 650.0, tier: 3 }
 };
 
@@ -246,8 +247,30 @@ function dismissPreselectionBanner() {
   if (banner) banner.classList.add('hidden');
 }
 
-// Pricing Formula Calculation (Calibrated 3-Tier Fleet Engine)
+// Pricing Formula Calculation (Calibrated Centralized Fleet Engine)
 function calculateClientPrice(serviceType, distanceKm, stopsCount, vehicleCategory, tourKey, tourHours) {
+  if (typeof window !== 'undefined' && typeof window.calculatePetransQuote === 'function') {
+    const q = window.calculatePetransQuote({
+      serviceType,
+      distanceKm,
+      intermediateStopsCount: stopsCount,
+      vehicleCategory,
+      tourKey,
+      tourHours
+    });
+    return {
+      grossTotal: q.grossTotal,
+      netTotal: q.netTotal,
+      vatAmount: q.vatAmount,
+      baseFare: q.breakdown.baseFare,
+      stopsFee: q.breakdown.stopsFee,
+      overtimeFee: q.breakdown.overtimeFee,
+      discountAmount: q.breakdown.discountAmount,
+      ratePerKm: q.ratePerKm
+    };
+  }
+
+  // Fallback if pricing-config.js is not loaded
   const MIN_FARE = 45.0; // Mandatory base floor
   const VEHICLE_RATES = {
     'E_CLASS': 2.50,
@@ -998,15 +1021,18 @@ async function submitBooking() {
       const confWaBtn = document.getElementById('conf-wa-btn');
 
       const meta = VEHICLE_META[appState.vehicleCategory];
+      const routeDisplay = appState.serviceType === 'TOUR'
+        ? (TOURS_DB[appState.tourKey]?.title || '8-Hour Private Day Tour')
+        : `${appState.pickupAddress} → ${appState.dropoffAddress}`;
 
       if (confRef) confRef.textContent = data.booking.reference;
-      if (confRoute) confRoute.textContent = `${appState.pickupAddress} → ${appState.dropoffAddress}`;
+      if (confRoute) confRoute.textContent = routeDisplay;
       if (confDateTime) confDateTime.textContent = `${appState.pickupDate} at ${appState.pickupTime} CET`;
       if (confVehicle) confVehicle.textContent = meta.name;
       if (confTotal) confTotal.textContent = `€${quote.grossTotal.toFixed(2)}`;
 
       const waText = encodeURIComponent(
-        `Hello Omer, I have submitted booking request ${data.booking.reference} for ${appState.pickupAddress} on ${appState.pickupDate} at ${appState.pickupTime}. Vehicle: ${meta.name}. Total: €${quote.grossTotal.toFixed(2)}.`
+        `Hello Omer, I have submitted booking request ${data.booking.reference} for ${routeDisplay} on ${appState.pickupDate} at ${appState.pickupTime}. Vehicle: ${meta.name}. Total: €${quote.grossTotal.toFixed(2)}.`
       );
       if (confWaBtn) confWaBtn.href = `https://wa.me/436606416464?text=${waText}`;
 
