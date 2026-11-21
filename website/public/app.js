@@ -91,6 +91,8 @@ const appState = {
   currentQuote: null
 };
 
+window.appState = appState;
+
 // Initialize Application
 document.addEventListener('DOMContentLoaded', () => {
   initDateDefaults();
@@ -293,12 +295,19 @@ const FLEET_VEHICLES = [
 
 let fleetActiveIndex = 0;
 let hasInteractedWithStage = false;
+window.fleetActiveIndex = 0;
 
 function initFleetCarousel() {
-  if (appState.vehicleCategory) {
-    const idx = FLEET_VEHICLES.findIndex(v => v.category === appState.vehicleCategory);
+  const params = new URLSearchParams(window.location.search);
+  const vehParam = params.get('vehicle');
+  if (vehParam) {
+    const key = vehParam.toUpperCase().replace('-', '_');
+    const idx = FLEET_VEHICLES.findIndex(v => v.category === key);
     if (idx !== -1) fleetActiveIndex = idx;
+  } else {
+    fleetActiveIndex = 0;
   }
+  window.fleetActiveIndex = fleetActiveIndex;
 
   const stage = document.getElementById('fleet-stage');
   const viewer = document.getElementById('vehicle-viewer');
@@ -373,6 +382,7 @@ function initFleetCarousel() {
 
 function switchFleetVehicle(index) {
   fleetActiveIndex = (index + FLEET_VEHICLES.length) % FLEET_VEHICLES.length;
+  window.fleetActiveIndex = fleetActiveIndex;
   renderFleetCarousel();
 }
 
@@ -509,6 +519,7 @@ function selectFleetVehicle(category) {
   const idx = FLEET_VEHICLES.findIndex(v => v.category === category);
   if (idx !== -1 && idx !== fleetActiveIndex) {
     fleetActiveIndex = idx;
+    window.fleetActiveIndex = fleetActiveIndex;
     renderFleetCarousel();
   }
 

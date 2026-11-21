@@ -1,0 +1,702 @@
+{
+  "testSuite": "TSK-PET-031: Interactive 3D Vehicle Carousel Browser QA",
+  "timestamp": "2026-11-21T03:59:24.916Z",
+  "assertionsPassed": 51,
+  "assertionsFailed": 0,
+  "tests": [
+    {
+      "title": "Pillar 1: #fleet section has .fleet-spotlight-section class",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 1: #fleet-stage exists with .fleet-stage-container class",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 1: Exactly ONE single vehicle spotlight is rendered (no multi-card grid)",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 1: Ambient radial gold scrim exists with pointer-events: none",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 1: Spotlight stage enforces overflow: hidden and border-radius",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 1: Exactly 2 floating glassmorphic chevrons present on stage",
+      "status": "PASSED",
+      "details": {
+        "fleetSecExists": true,
+        "fleetHasClass": true,
+        "stageExists": true,
+        "stageHasClass": true,
+        "singleVehicleRendered": true,
+        "noMultiCardGrid": true,
+        "scrimExists": true,
+        "scrimPointerEventsNone": true,
+        "stageAspectRatio": "21 / 9",
+        "stageBorderRadius": "24px",
+        "stageOverflowHidden": true,
+        "chevronsCount": 2
+      }
+    },
+    {
+      "title": "Pillar 2: <model-viewer> exists with valid attributes",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: <model-viewer> has 0.75 RPM auto-rotation (4.5deg/s)",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: <model-viewer> clamped vertical orbit pitch (72deg to 88deg)",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: <model-viewer> zoom disabled and touch-action: pan-y (prevents scroll trap)",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: Zero-CLS WebP poster hydration attribute matches /images/mercedes-e-class.webp",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: 2D WebP fallback is active with loaded high-res image",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: 360 drag interaction cue is initially displayed",
+      "status": "PASSED",
+      "details": {
+        "mvExists": true,
+        "mvTagName": "model-viewer",
+        "poster": "/images/mercedes-e-class.webp",
+        "autoRotate": true,
+        "rotationSpeed": "4.5deg",
+        "autoRotateDelay": "3000",
+        "cameraOrbit": "45deg 78deg 105%",
+        "minCameraOrbit": "auto 72deg auto",
+        "maxCameraOrbit": "auto 88deg auto",
+        "disableZoom": true,
+        "touchAction": "pan-y",
+        "shadowIntensity": "1.2",
+        "fallbackVisible": true,
+        "fallbackImgSrc": "/images/mercedes-e-class.webp",
+        "fallbackImgNaturalW": 1200,
+        "fallbackImgNaturalH": 465,
+        "cueVisible": true,
+        "cueText": "Interactive Showcase"
+      }
+    },
+    {
+      "title": "Pillar 2: 360 drag cue fades out / hides upon pointer interaction",
+      "status": "PASSED",
+      "details": {
+        "opacity": "0",
+        "hiddenClass": true
+      }
+    },
+    {
+      "title": "Pillar 3: 3 Model tabs exist and Tab 0 (E-Class) is initially active",
+      "status": "PASSED",
+      "details": {
+        "count": 3,
+        "tab0Active": true,
+        "tab1Active": false,
+        "tab2Active": false,
+        "indicator": "01 / 03 • Mercedes-Benz E-Class Sedan"
+      }
+    },
+    {
+      "title": "Pillar 3: Initial indicator text correctly reads E-Class Sedan",
+      "status": "PASSED",
+      "details": {
+        "count": 3,
+        "tab0Active": true,
+        "tab1Active": false,
+        "tab2Active": false,
+        "indicator": "01 / 03 • Mercedes-Benz E-Class Sedan"
+      }
+    },
+    {
+      "title": "Pillar 3: Clicking Tab 1 activates V-Class and updates poster to mercedes-v-class.webp",
+      "status": "PASSED",
+      "details": {
+        "tab0Active": false,
+        "tab1Active": true,
+        "imgSrc": "/images/mercedes-v-class.webp",
+        "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
+        "dash1Active": true
+      }
+    },
+    {
+      "title": "Pillar 3: Indicator text updates to 02 / 03 • Mercedes-Benz V-Class VIP",
+      "status": "PASSED",
+      "details": {
+        "tab0Active": false,
+        "tab1Active": true,
+        "imgSrc": "/images/mercedes-v-class.webp",
+        "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
+        "dash1Active": true
+      }
+    },
+    {
+      "title": "Pillar 3: Dash 1 becomes active on V-Class selection",
+      "status": "PASSED",
+      "details": {
+        "tab0Active": false,
+        "tab1Active": true,
+        "imgSrc": "/images/mercedes-v-class.webp",
+        "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
+        "dash1Active": true
+      }
+    },
+    {
+      "title": "Pillar 3: Clicking Tab 2 activates Vito and updates poster to mercedes-vito.webp",
+      "status": "PASSED",
+      "details": {
+        "tab2Active": true,
+        "imgSrc": "/images/mercedes-vito.webp",
+        "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
+        "dash2Active": true
+      }
+    },
+    {
+      "title": "Pillar 3: Indicator text updates to 03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
+      "status": "PASSED",
+      "details": {
+        "tab2Active": true,
+        "imgSrc": "/images/mercedes-vito.webp",
+        "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
+        "dash2Active": true
+      }
+    },
+    {
+      "title": "Pillar 3: Chevrons meet strict 48x48px hit area requirement",
+      "status": "PASSED",
+      "details": {
+        "prevExists": true,
+        "nextExists": true,
+        "prevW": 48,
+        "prevH": 48,
+        "nextW": 48,
+        "nextH": 48
+      }
+    },
+    {
+      "title": "Pillar 3: prevFleetVehicle() shifts from Vito (2) to V-Class (1)",
+      "status": "PASSED",
+      "details": {
+        "prevTo1": 1
+      }
+    },
+    {
+      "title": "Pillar 3: prevFleetVehicle() shifts from V-Class (1) to E-Class (0)",
+      "status": "PASSED",
+      "details": {
+        "prevTo0": 0
+      }
+    },
+    {
+      "title": "Pillar 3: prevFleetVehicle() wraps around from E-Class (0) to Vito (2)",
+      "status": "PASSED",
+      "details": {
+        "prevWrap": 2
+      }
+    },
+    {
+      "title": "Pillar 3: nextFleetVehicle() wraps around from Vito (2) to E-Class (0)",
+      "status": "PASSED",
+      "details": {
+        "nextWrap": 0
+      }
+    },
+    {
+      "title": "Pillar 3: All pagination dash buttons meet minimum 44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "count": 3,
+        "allMeet44px": true,
+        "rects": [
+          {
+            "w": 63.15625,
+            "h": 44
+          },
+          {
+            "w": 48,
+            "h": 44
+          },
+          {
+            "w": 48.578125,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 3: ArrowRight key advances carousel from index 0 to 1",
+      "status": "PASSED",
+      "details": {
+        "idx0": 0,
+        "idxAfterRight": 1,
+        "idxAfterLeft": 0
+      }
+    },
+    {
+      "title": "Pillar 3: ArrowLeft key retreats carousel from index 1 to 0",
+      "status": "PASSED",
+      "details": {
+        "idx0": 0,
+        "idxAfterRight": 1,
+        "idxAfterLeft": 0
+      }
+    },
+    {
+      "title": "Pillar 4: E-Class specification deck displays €2.50/km and Max 3 Pax / 2 Large Bags",
+      "status": "PASSED",
+      "details": {
+        "cat": "Executive Chauffeur Sedan",
+        "name": "Mercedes-Benz E-Class",
+        "sub": "Obsidian Black Metallic • W214 Series",
+        "rate": "€2.50",
+        "floor": "Mandatory Base Floor: €45.00",
+        "pax": "Max 3 Passengers",
+        "lug": "2 Large + 2 Cabin Bags"
+      }
+    },
+    {
+      "title": "Pillar 4: V-Class specification deck displays €2.60/km and Max 8 Pax / 8 Suitcases",
+      "status": "PASSED",
+      "details": {
+        "cat": "Exclusive VIP Chauffeur",
+        "name": "Mercedes-Benz V-Class",
+        "sub": "Obsidian Black Metallic • W447 Exclusive",
+        "rate": "€2.60",
+        "floor": "Mandatory Base Floor: €45.00",
+        "pax": "Max 8 Passengers",
+        "lug": "8 Large Suitcases"
+      }
+    },
+    {
+      "title": "Pillar 4: Vito Tourer specification deck displays €2.80/km and 4MATIC Specialist",
+      "status": "PASSED",
+      "details": {
+        "cat": "Alpine 4MATIC Specialist",
+        "name": "Mercedes-Benz Vito Tourer",
+        "sub": "Brilliant Silver • 4MATIC All-Wheel",
+        "rate": "€2.80",
+        "floor": "Mandatory Base Floor: €45.00",
+        "pax": "Max 8 Passengers",
+        "lug": "8 Large Suitcases"
+      }
+    },
+    {
+      "title": "Pillar 5: Clicking [Book This Vehicle] sets appState.vehicleCategory to V_CLASS and entrySource to fleet",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "entrySource": "fleet",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "isVClassCardSelected": true,
+        "url": "http://localhost:3000/?vehicle=v-class#book-step-1"
+      }
+    },
+    {
+      "title": "Pillar 5: Preselection banner is displayed with affirmative non-locking copy",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "entrySource": "fleet",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "isVClassCardSelected": true,
+        "url": "http://localhost:3000/?vehicle=v-class#book-step-1"
+      }
+    },
+    {
+      "title": "Pillar 5: V-Class card is highlighted in Stage 2 selection view",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "entrySource": "fleet",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "isVClassCardSelected": true,
+        "url": "http://localhost:3000/?vehicle=v-class#book-step-1"
+      }
+    },
+    {
+      "title": "Pillar 5: Zero Lock-In verified: customer can switch vehicle to E-Class without restriction",
+      "status": "PASSED",
+      "details": {
+        "newCategory": "E_CLASS",
+        "eclassSelected": true,
+        "vclassDeselected": true
+      }
+    },
+    {
+      "title": "Pillar 6 [iPhone SE]: 0px horizontal page overflow (375px)",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 375,
+        "innerW": 375,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [iPhone SE]: All interactive controls meet >=44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 375,
+        "innerW": 375,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [iPhone 14/15]: 0px horizontal page overflow (390px)",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 390,
+        "innerW": 390,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [iPhone 14/15]: All interactive controls meet >=44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 390,
+        "innerW": 390,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Samsung Galaxy S22]: 0px horizontal page overflow (412px)",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 412,
+        "innerW": 412,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Samsung Galaxy S22]: All interactive controls meet >=44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 412,
+        "innerW": 412,
+        "overflow": 0,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Tablet (iPad)]: 0px horizontal page overflow (768px)",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 760,
+        "innerW": 768,
+        "overflow": -8,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Tablet (iPad)]: All interactive controls meet >=44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 760,
+        "innerW": 768,
+        "overflow": -8,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Desktop HD]: 0px horizontal page overflow (1280px)",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 1272,
+        "innerW": 1280,
+        "overflow": -8,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6 [Desktop HD]: All interactive controls meet >=44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "scrollW": 1272,
+        "innerW": 1280,
+        "overflow": -8,
+        "chevronsPass": true,
+        "tabsPass": true,
+        "dashesPass": true,
+        "bookBtnPass": true
+      }
+    },
+    {
+      "title": "Pillar 6: Horizontal left touch swipe (>50px) advances carousel from index 0 to 1",
+      "status": "PASSED",
+      "details": {
+        "newIndex": 1
+      }
+    },
+    {
+      "title": "Pillar 6: Horizontal right touch swipe (>50px) retreats carousel from index 1 to 0",
+      "status": "PASSED",
+      "details": {
+        "newIndex": 0
+      }
+    },
+    {
+      "title": "Pillar 6: Vertical scroll pass-through preserved: vertical drag does NOT trigger slide change",
+      "status": "PASSED",
+      "details": {
+        "newIndex": 0
+      }
+    },
+    {
+      "title": "Pillar 7: Exactly 0% Unicode emojis in #fleet section",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "emojisFound": [],
+        "totalIconifyIcons": 14,
+        "nonLucideIcons": []
+      }
+    },
+    {
+      "title": "Pillar 7: Exactly 100% Lucide 2px stroke icons in #fleet section",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "emojisFound": [],
+        "totalIconifyIcons": 14,
+        "nonLucideIcons": []
+      }
+    }
+  ]
+}
