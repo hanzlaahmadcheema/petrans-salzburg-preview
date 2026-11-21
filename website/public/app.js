@@ -147,19 +147,25 @@ function parseUrlQueryParameters() {
   const params = new URLSearchParams(window.location.search);
   let preselectedNote = '';
 
-  // 1. Vehicle param (?vehicle=E_CLASS | V_CLASS | VITO)
+  // 1. Vehicle param (?vehicle=E_CLASS | V_CLASS | VITO or e-class | v-class)
   const vehParam = params.get('vehicle');
-  if (vehParam && VEHICLE_META[vehParam.toUpperCase()]) {
-    appState.vehicleCategory = vehParam.toUpperCase();
-    appState.entrySource = params.get('entry') || 'fleet';
-    const meta = VEHICLE_META[appState.vehicleCategory];
-    preselectedNote = `Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`;
+  if (vehParam) {
+    const key = vehParam.toUpperCase().replace('-', '_');
+    if (VEHICLE_META[key]) {
+      appState.vehicleCategory = key;
+      appState.entrySource = params.get('entry') || 'fleet';
+      const meta = VEHICLE_META[key];
+      preselectedNote = `Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`;
+    }
   }
 
-  // 2. Service param (?service=ONE_WAY | RETURN | TOUR)
+  // 2. Service param (?service=ONE_WAY | RETURN | TOUR or one-way | return | tour)
   const serviceParam = params.get('service');
-  if (serviceParam && ['ONE_WAY', 'RETURN', 'TOUR'].includes(serviceParam.toUpperCase())) {
-    appState.serviceType = serviceParam.toUpperCase();
+  if (serviceParam) {
+    const sKey = serviceParam.toUpperCase().replace('-', '_');
+    if (['ONE_WAY', 'RETURN', 'TOUR'].includes(sKey)) {
+      appState.serviceType = sKey;
+    }
   }
 
   // 3. Tour param (?tour=hallstatt | eagles-nest | ...)
@@ -236,6 +242,11 @@ function selectFleetVehicle(category) {
   const meta = VEHICLE_META[category];
   showPreselectionBanner(`Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`);
   
+  const slug = category.toLowerCase().replace('_', '-');
+  try {
+    window.history.replaceState({ stage: 1 }, '', `?vehicle=${slug}#booking-stepper`);
+  } catch (e) {}
+
   syncVehicleCardSelection();
   checkCapacityWarning();
   updateHeroCalculation();
@@ -263,6 +274,10 @@ function selectTour(tourKey) {
   if (tourSelect) tourSelect.value = tourKey;
 
   showPreselectionBanner(`Tour Pre-selected: ${tour.title} (€${tour.price.toFixed(2)}). You can customize your schedule or change services at any time.`);
+
+  try {
+    window.history.replaceState({ stage: 1 }, '', `?service=tour&tour=${tourKey}#booking-stepper`);
+  } catch (e) {}
 
   updateHeroCalculation();
   goToStep(1);
