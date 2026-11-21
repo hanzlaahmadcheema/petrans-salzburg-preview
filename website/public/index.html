@@ -673,11 +673,11 @@
               <iconify-icon icon="lucide:alert-triangle" width="18" height="18" class="text-amber-400 flex-shrink-0 mt-0.5"></iconify-icon>
               <div>
                 <strong class="font-bold text-amber-300">Party Size Exceeds Mercedes E-Class Capacity</strong>
-                <p class="text-amber-200/90 mt-0.5">The E-Class sedan accommodates max 3 passengers and 2 large suitcases. Upgrade to the V-Class for full party comfort.</p>
+                <p class="text-amber-200/90 mt-0.5">Luggage/Passenger capacity exceeded for Mercedes-Benz E-Class. Upgrade to V-Class recommended.</p>
               </div>
             </div>
             <button type="button" onclick="upgradeToVClass()" class="btn-gold text-xs py-2 px-4 whitespace-nowrap self-end sm:self-auto min-h-[44px]">
-              Switch to V-Class (+€0.10/km)
+              Upgrade to V-Class (+€0.10/km)
             </button>
           </div>
 
@@ -861,10 +861,10 @@
                 <iconify-icon id="invoice-chevron" icon="lucide:chevron-down" width="16" height="16" class="text-slate-400"></iconify-icon>
               </div>
               <div id="invoice-fields" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3">
-                <input type="text" id="cust-company" class="form-input text-xs" placeholder="Company Legal Name">
+                <input type="text" id="cust-company" class="form-input" placeholder="Company Legal Name">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <input type="text" id="cust-tax" class="form-input text-xs" placeholder="VAT / UID Number (e.g. ATU12345678)">
-                  <input type="text" id="cust-street" class="form-input text-xs" placeholder="Billing Address / City">
+                  <input type="text" id="cust-tax" class="form-input" placeholder="VAT / UID Number (e.g. ATU12345678)">
+                  <input type="text" id="cust-street" class="form-input" placeholder="Billing Address / City">
                 </div>
               </div>
             </div>
@@ -922,21 +922,21 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Pickup Location</label>
-                    <input type="text" id="inline-pickup" class="form-input text-xs" oninput="applyInlineRoute()">
+                    <input type="text" id="inline-pickup" class="form-input" oninput="applyInlineRoute()">
                   </div>
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Dropoff Destination</label>
-                    <input type="text" id="inline-dropoff" class="form-input text-xs" oninput="applyInlineRoute()">
+                    <input type="text" id="inline-dropoff" class="form-input" oninput="applyInlineRoute()">
                   </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Pickup Date</label>
-                    <input type="date" id="inline-date" class="form-input text-xs" onchange="applyInlineRoute()">
+                    <input type="date" id="inline-date" class="form-input" onchange="applyInlineRoute()">
                   </div>
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Pickup Time</label>
-                    <input type="time" id="inline-time" class="form-input text-xs" onchange="applyInlineRoute()">
+                    <input type="time" id="inline-time" class="form-input" onchange="applyInlineRoute()">
                   </div>
                 </div>
                 <div class="flex justify-end">
@@ -1100,16 +1100,16 @@
               <div id="inline-edit-contact" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
                 <div>
                   <label class="text-[10px] text-slate-400 uppercase">Full Name</label>
-                  <input type="text" id="inline-cust-name" class="form-input text-xs" oninput="applyInlineContact()">
+                  <input type="text" id="inline-cust-name" class="form-input" oninput="applyInlineContact()">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Email Address</label>
-                    <input type="email" id="inline-cust-email" class="form-input text-xs" oninput="applyInlineContact()">
+                    <input type="email" id="inline-cust-email" class="form-input" oninput="applyInlineContact()">
                   </div>
                   <div>
                     <label class="text-[10px] text-slate-400 uppercase">Phone Number</label>
-                    <input type="tel" id="inline-cust-phone" class="form-input text-xs" oninput="applyInlineContact()">
+                    <input type="tel" id="inline-cust-phone" class="form-input" oninput="applyInlineContact()">
                   </div>
                 </div>
                 <div class="flex justify-end">

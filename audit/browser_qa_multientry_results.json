@@ -1,0 +1,154 @@
+{
+  "testDate": "2026-11-21T03:34:55.571Z",
+  "entryPoints": {
+    "entry1_deepLink_eclass": {
+      "url": "http://localhost:3000/?vehicle=e-class",
+      "bannerVisible": true,
+      "bannerContent": "Vehicle Pre-selected: Mercedes-Benz E-Class (€2.50/km). You can change this at any time.",
+      "vehicleCategory": "E_CLASS",
+      "currentStep": 1
+    },
+    "entry2_bookByTour_click": {
+      "buttonFound": true,
+      "buttonText": "Book Tour",
+      "serviceType": "TOUR",
+      "tourKey": "hallstatt",
+      "bannerVisible": true,
+      "bannerContent": "Tour Pre-selected: Hallstatt & Salzkammergut Lakes (8 Hours) (€450.00). You can customize your schedule or change services at any time.",
+      "url": "http://localhost:3000/?service=tour&tour=hallstatt#book-step-1",
+      "currentStep": 1,
+      "flatRate": 450
+    },
+    "entry2_deepLink_tour": {
+      "url": "http://localhost:3000/?service=tour&tour=hallstatt",
+      "serviceType": "TOUR",
+      "tourKey": "hallstatt",
+      "bannerVisible": true,
+      "bannerContent": "Tour Pre-selected: Hallstatt & Salzkammergut Lakes (8 Hours) (€450.00). You can customize your schedule or change services at any time.",
+      "flatRate": 450,
+      "currentStep": 1
+    },
+    "entry3_bookByPlace_hero": {
+      "calcPrice": "€450.00",
+      "calcStat": "8 Hours Door-to-Door • Stops Included",
+      "step1Pickup": "Salzburg Airport W. A. Mozart (SZG)",
+      "step1Dropoff": "Zell am See / Kaprun",
+      "distanceKm": 85,
+      "durationText": "1h 30m",
+      "currentStep": 1
+    }
+  },
+  "eClassAudit": {
+    "metaName": "Mercedes-Benz E-Class",
+    "metaRate": 2.5,
+    "maxPax": 3,
+    "maxLuggage": 2,
+    "fleetImg": {
+      "src": "http://localhost:3000/images/mercedes-e-class.png",
+      "naturalWidth": 1200,
+      "naturalHeight": 465,
+      "complete": true
+    },
+    "stage2Img": {
+      "src": "http://localhost:3000/images/mercedes-e-class.png",
+      "naturalWidth": 1200,
+      "naturalHeight": 465,
+      "complete": true
+    }
+  },
+  "capacityAndUpgrade": {
+    "warningVisibleBefore": true,
+    "warningText": "Party Size Exceeds Mercedes E-Class Capacity\n\nLuggage/Passenger capacity exceeded for Mercedes-Benz E-Class. Upgrade to V-Class recommended.\n\nUpgrade to V-Class (+€0.10/km)",
+    "upgradeBtnText": "Upgrade to V-Class (+€0.10/km)",
+    "warningHiddenAfter": true,
+    "vehicleAfterUpgrade": "V_CLASS",
+    "rateAfterUpgrade": 2.6,
+    "reactiveRecalc": null
+  },
+  "stage5InlineEditing": {
+    "initialSummary": {
+      "route": "Salzburg Airport W. A. Mozart (SZG) → Zell am See / Kaprun",
+      "vehicle": "Mercedes-Benz V-Class",
+      "rateKm": "€2.60 / km",
+      "pax": "4 Passengers",
+      "total": "€189.80",
+      "customerName": "Dr. Alexander von Salzburg",
+      "customerEmail": "alexander.salzburg@luxury-travel.at"
+    },
+    "vehicleEditorVisible": true,
+    "priceAfterEClass": "€182.50",
+    "vehicleAfterEClass": "Mercedes-Benz E-Class",
+    "priceAfterVito": "€204.40",
+    "vehicleAfterVito": "Mercedes-Benz Vito Tourer",
+    "routeEditorVisible": true,
+    "routeAfterEdit": "Salzburg Airport W. A. Mozart (SZG) → Zell am See / Kaprun",
+    "priceAfterRoute": "€204.40",
+    "extrasEditorVisible": true,
+    "babySeatsAfter": "2x Seats Requested (€0.00)",
+    "contactEditorVisible": true,
+    "nameAfterEdit": "Dr. Alexander von Salzburg (Edited)",
+    "retainedEmail": "alexander.salzburg@luxury-travel.at",
+    "retainedPhone": "+436606416464"
+  },
+  "historyAndMobile": {
+    "historyNavigation": {
+      "historyStack": [
+        {
+          "step": 1,
+          "hash": "#book-step-1"
+        },
+        {
+          "step": 2,
+          "hash": "#book-step-2"
+        },
+        {
+          "step": 3,
+          "hash": "#book-step-3"
+        }
+      ],
+      "stepAfterBack": 2,
+      "stepAfterBack2": 1,
+      "stepAfterForward": 5,
+      "customerDataPreserved": true
+    },
+    "viewports": {
+      "iPhone_SE_375x667": {
+        "innerWidth": 375,
+        "scrollWidth": 375,
+        "hasHorizontalOverflow": false,
+        "touchTargetsPassed": true,
+        "allInputs16px": true,
+        "inputsCount": 23
+      },
+      "iPhone_14_15_390x844": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "hasHorizontalOverflow": false,
+        "touchTargetsPassed": true,
+        "allInputs16px": true,
+        "inputsCount": 23
+      },
+      "Samsung_S22_412x915": {
+        "innerWidth": 412,
+        "scrollWidth": 412,
+        "hasHorizontalOverflow": false,
+        "touchTargetsPassed": true,
+        "allInputs16px": true,
+        "inputsCount": 23
+      }
+    }
+  },
+  "faggSafetyAndBooking": {
+    "buttonAndFieldsAudit": {
+      "step5ButtonText": "Request Booking Confirmation — Pay After Approval",
+      "matchesExactCopy": true,
+      "creditCardFieldsFound": 0
+    },
+    "submissionResult": {
+      "step6Visible": true,
+      "bookingReference": "PET-2026-N3IP",
+      "statusText": "STATUS: PENDING OWNER CONFIRMATION",
+      "isPendingOwnerConfirmation": true
+    }
+  }
+}
