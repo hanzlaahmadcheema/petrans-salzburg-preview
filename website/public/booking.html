@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Chauffeur & Alpine Tours | PETRANS Salzburg</title>
+  <meta name="description" content="Reserve your private Mercedes chauffeur or private Alpine day tour from Salzburg. Fixed rates, zero deposit, free cancellation.">
+  <link rel="canonical" href="https://petrans-salzburg.at/booking.html">
+  
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="PETRANS Taxi & Tour Salzburg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petrans-salzburg.at/booking.html">
+  <meta property="og:title" content="Book Chauffeur & Alpine Tours | PETRANS Salzburg">
+  <meta property="og:description" content="Reserve your private Mercedes chauffeur or private Alpine day tour from Salzburg. Fixed rates, zero deposit, free cancellation.">
+  <meta property="og:image" content="https://petrans-salzburg.at/images/salzburg-hero.jpg">
+  <meta property="og:locale" content="en_AT">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://petrans-salzburg.at/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Booking Engine",
+        "item": "https://petrans-salzburg.at/booking.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0B0F19',
+            surface: '#161F30',
+            elevated: '#1E293B',
+            gold: '#C5A059',
+            goldHover: '#D4AF37',
+            goldSubtle: 'rgba(197, 160, 89, 0.15)',
+            snow: '#F8FAFC'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Distraction-Free Header -->
+  <header class="bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 px-4 sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo linking back to homepage -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg border border-gold/40 bg-surface flex items-center justify-center text-gold shadow-lg group-hover:border-gold transition">
+          <span class="font-cinzel text-lg font-bold tracking-tighter">P</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-snow block leading-none">PETRANS</span>
+          <span class="text-[9px] font-sans font-semibold tracking-widest text-gold uppercase block mt-1">Salzburg Chauffeur</span>
+        </div>
+      </a>
+
+      <!-- Security Trust Badge -->
+      <div class="hidden sm:flex items-center gap-2 text-xs text-slate-300 bg-midnight/80 border border-slate-700/80 px-3 py-1.5 rounded-full">
+        <iconify-icon icon="lucide:shield-check" width="16" height="16" class="text-emerald-400"></iconify-icon>
+        <span>SSL 256-Bit Encrypted Reservation</span>
+      </div>
+
+      <!-- Chauffeur Hotline -->
+      <div class="flex items-center gap-2">
+        <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
+          <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
+          <span class="hidden md:inline">+43 660 6416464</span>
+          <span class="md:hidden">Call Chauffeur</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Sticky Mobile Step Header (< 640px) -->
+  <div id="mobile-sticky-header" class="sm:hidden sticky top-[73px] z-30 bg-surface/95 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 shadow-md">
+    <div class="flex items-center justify-between mb-1.5">
+      <div class="flex items-center gap-2">
+        <span id="mobile-step-num" class="w-6 h-6 rounded-full bg-gold text-midnight font-bold text-xs flex items-center justify-center">1</span>
+        <span id="mobile-step-name" class="text-xs font-bold text-snow uppercase tracking-wider">Service & Route</span>
+      </div>
+      <span id="mobile-step-indicator" class="text-[11px] font-semibold text-gold">Step 1 of 6</span>
+    </div>
+    <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
+      <div id="mobile-sticky-progress-bar" class="bg-gold h-full w-[0%] transition-all duration-300"></div>
+    </div>
+  </div>
+
+  <!-- Main Booking Container -->
+  <main class="flex-1 py-8 sm:py-12 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Stepper Progress Tracker (Desktop & Tablet >= 640px) -->
+      <div class="hidden sm:block mb-8">
+        <div class="flex items-center justify-between relative px-4">
+          <!-- Connecting Line -->
+          <div class="absolute top-4 left-8 right-8 h-0.5 bg-slate-800 -z-0">
+            <div id="step-progress-bar" class="h-full bg-gold transition-all duration-300 w-[0%]"></div>
+          </div>
+          
+          <!-- Step 1 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="1">
+            <div class="step-bubble w-8 h-8 rounded-full bg-gold text-midnight font-bold flex items-center justify-center text-xs shadow-lg">1</div>
+            <span class="text-[11px] font-bold text-gold">Route & Date</span>
+          </div>
+          <!-- Step 2 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="2">
+            <div class="step-bubble w-8 h-8 rounded-full bg-elevated text-slate-400 font-bold flex items-center justify-center text-xs border border-slate-700">2</div>
+            <span class="text-[11px] font-medium text-slate-400">Vehicle</span>
+          </div>
+          <!-- Step 3 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="3">
+            <div class="step-bubble w-8 h-8 rounded-full bg-elevated text-slate-400 font-bold flex items-center justify-center text-xs border border-slate-700">3</div>
+            <span class="text-[11px] font-medium text-slate-400">Extras & Options</span>
+          </div>
+          <!-- Step 4 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="4">
+            <div class="step-bubble w-8 h-8 rounded-full bg-elevated text-slate-400 font-bold flex items-center justify-center text-xs border border-slate-700">4</div>
+            <span class="text-[11px] font-medium text-slate-400">Passenger Info</span>
+          </div>
+          <!-- Step 5 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="5">
+            <div class="step-bubble w-8 h-8 rounded-full bg-elevated text-slate-400 font-bold flex items-center justify-center text-xs border border-slate-700">5</div>
+            <span class="text-[11px] font-medium text-slate-400">Review & Quote</span>
+          </div>
+          <!-- Step 6 -->
+          <div class="step-indicator flex flex-col items-center gap-1.5 z-10" data-step="6">
+            <div class="step-bubble w-8 h-8 rounded-full bg-elevated text-slate-400 font-bold flex items-center justify-center text-xs border border-slate-700">6</div>
+            <span class="text-[11px] font-medium text-slate-400">Confirmation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Affirmative Pre-Selection Banner -->
+      <div id="preselection-banner" class="hidden mb-6 p-4 rounded-xl border border-gold/40 bg-gold/10 text-xs text-gold flex items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-center gap-2.5">
+          <iconify-icon icon="lucide:check-circle-2" width="20" height="20" class="text-gold flex-shrink-0"></iconify-icon>
+          <span id="preselection-banner-text">Vehicle Pre-selected. You can change this at any time.</span>
+        </div>
+        <button type="button" onclick="dismissPreselectionBanner()" class="text-gold/70 hover:text-gold p-1 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Dismiss banner">
+          <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+        </button>
+      </div>
+
+      <!-- Stepper Card Container -->
+      <section id="booking-stepper" class="glass-card p-5 sm:p-8 rounded-2xl border border-gold/30 shadow-2xl">
+        
+        <!-- STAGE 1: JOURNEY DETAILS & ROUTE -->
+        <div id="step-pane-1" class="step-pane">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
+              <iconify-icon icon="lucide:map-pin" width="20" height="20" class="text-gold"></iconify-icon>
+              <span>Stage 1: Journey Details & Schedule</span>
+            </h2>
+            <span class="text-xs text-slate-400">Step 1 of 6</span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="form-label">Service Type</label>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="service-opt-btn active p-3 rounded-lg border border-gold bg-gold/15 text-gold text-xs font-bold text-center min-h-[48px]" data-val="ONE_WAY">
+                  One-Way Transfer
+                </button>
+                <button type="button" class="service-opt-btn p-3 rounded-lg border border-slate-700 bg-midnight text-slate-300 text-xs font-semibold text-center hover:border-gold min-h-[48px]" data-val="RETURN">
+                  Return Trip (-5%)
+                </button>
+                <button type="button" class="service-opt-btn p-3 rounded-lg border border-slate-700 bg-midnight text-slate-300 text-xs font-semibold text-center hover:border-gold min-h-[48px]" data-val="TOUR">
+                  8-Hour Day Tour
+                </button>
+              </div>
+            </div>
+
+            <!-- Transfer Route Fields -->
+            <div id="step1-transfer-fields" class="space-y-4">
+              <div>
+                <label class="form-label">Pickup Location</label>
+                <input type="text" id="step1-pickup" class="form-input text-base" value="Salzburg Airport W. A. Mozart (SZG)" placeholder="Enter address, airport or hotel">
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg Airport W. A. Mozart (SZG)'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Airport (SZG)</button>
+                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg Central Train Station (Hbf)'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Hbf Station</button>
+                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg City Center / Hotel'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Old Town</button>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label">Destination Address</label>
+                <input type="text" id="step1-dropoff" class="form-input text-base" value="Hallstatt Lahn Terminal" placeholder="Enter ski resort, airport, hotel or city">
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Hallstatt Lahn Terminal'; appState.distanceKm=73;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Hallstatt (73 km)</button>
+                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Zell am See / Kaprun'; appState.distanceKm=85;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Zell am See (85 km)</button>
+                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Munich Airport MUC'; appState.distanceKm=175;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Munich Airport (175 km)</button>
+                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Vienna City Center / VIE'; appState.distanceKm=300;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Vienna (300 km)</button>
+                </div>
+              </div>
+
+              <!-- Intermediate Stops Counter -->
+              <div class="flex items-center justify-between p-3 rounded-lg bg-surface/50 border border-slate-800">
+                <div>
+                  <span class="text-xs font-semibold text-slate-200 block">Intermediate En-Route Stops (+€20 / stop)</span>
+                  <span class="text-[11px] text-slate-400">Grocery, ski hire pickup, or scenic photo pause</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <button type="button" onclick="adjustStops(-1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700" aria-label="Decrease stops">-</button>
+                  <span id="step1-stops-count" class="font-mono font-bold text-sm text-snow w-4 text-center">0</span>
+                  <button type="button" onclick="adjustStops(1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700" aria-label="Increase stops">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tour Selector Fields -->
+            <div id="step1-tour-fields" class="space-y-4 hidden">
+              <div>
+                <label class="form-label">Select 8-Hour Private Day Tour</label>
+                <select id="step1-tour-select" class="form-input text-base">
+                  <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes (8 Hours) — Flat €450.00</option>
+                  <option value="eagles-nest">Eagles Nest & Berchtesgaden (6-8 Hours) — Flat €450.00</option>
+                  <option value="werfen-ice-caves">Werfen Ice Caves & Fortress (8 Hours) — Flat €450.00</option>
+                  <option value="zell-am-see">Zell am See & Kaprun Alpine Glacier (8 Hours) — Flat €450.00</option>
+                  <option value="bad-gastein">Bad Gastein Thermal & Waterfall (8 Hours) — Flat €450.00</option>
+                  <option value="innsbruck">Innsbruck & Tyrolean Alps Highlights (8-9 Hours) — Flat €650.00</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Date & Time Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="form-label">Pickup Date</label>
+                <input type="date" id="step1-date" class="form-input text-base">
+              </div>
+              <div>
+                <label class="form-label">Pickup Time (CET)</label>
+                <input type="time" id="step1-time" class="form-input text-base" value="14:30">
+              </div>
+            </div>
+
+            <!-- Flight Tracking Field -->
+            <div>
+              <label class="form-label">Flight Number (Optional for Airport Touchdown Sync)</label>
+              <div class="relative">
+                <input type="text" id="step1-flight" class="form-input text-base uppercase" placeholder="e.g. OS 915 or LH 1104">
+                <span class="absolute right-3 top-3 text-[10px] text-emerald-400 font-semibold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/60">60m Free Waiting</span>
+              </div>
+            </div>
+
+            <!-- Return Date Box (Conditional) -->
+            <div id="step1-return-box" class="space-y-4 p-4 rounded-xl bg-midnight/70 border border-slate-800 hidden">
+              <span class="text-xs font-bold text-gold uppercase tracking-wider block">Return Journey Details (-5% Discount Applied)</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="form-label">Return Pickup Date</label>
+                  <input type="date" id="step1-return-date" class="form-input text-base">
+                </div>
+                <div>
+                  <label class="form-label">Return Pickup Time</label>
+                  <input type="time" id="step1-return-time" class="form-input text-base" value="10:00">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- STAGE 2: VEHICLE SELECTION & CAPACITY -->
+        <div id="step-pane-2" class="step-pane hidden">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
+              <iconify-icon icon="lucide:car" width="20" height="20" class="text-gold"></iconify-icon>
+              <span>Stage 2: Select Mercedes-Benz Vehicle</span>
+            </h2>
+            <span class="text-xs text-slate-400">Step 2 of 6</span>
+          </div>
+
+          <!-- Capacity Warning Banner for E-Class -->
+          <div id="eclass-warning-banner" class="hidden mb-4 p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-xs text-amber-300 flex items-start gap-3">
+            <iconify-icon icon="lucide:alert-triangle" width="18" height="18" class="text-amber-400 flex-shrink-0 mt-0.5"></iconify-icon>
+            <div class="flex-1">
+              <strong class="font-bold">Luggage / Passenger Limit for Mercedes E-Class</strong>
+              <p class="mt-0.5 text-amber-200/90">E-Class accommodates max 3 passengers and 2 large suitcases. Upgrade to V-Class for full party comfort.</p>
+            </div>
+            <button type="button" onclick="upgradeToVClass()" class="btn-gold text-xs py-2 px-3 whitespace-nowrap min-h-[44px]">Upgrade to V-Class (+€0.10/km)</button>
+          </div>
+
+          <!-- Fleet Capacity Max Warning -->
+          <div id="fleet-max-warning" class="hidden mb-4 p-4 rounded-xl border border-red-500/40 bg-red-500/10 text-xs text-red-300 flex items-center gap-2">
+            <iconify-icon icon="lucide:alert-circle" width="18" height="18" class="text-red-400 flex-shrink-0"></iconify-icon>
+            <span>Party size exceeds single-vehicle max (8 passengers). Please contact dispatch for multi-van convoy scheduling.</span>
+          </div>
+
+          <!-- Vehicle Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            
+            <!-- E-Class -->
+            <div class="vehicle-card p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="E_CLASS">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Executive Sedan</span>
+                  <iconify-icon icon="lucide:circle" width="18" height="18" class="text-slate-500 veh-check"></iconify-icon>
+                </div>
+                <h4 class="font-outfit font-bold text-lg text-snow">Mercedes E-Class</h4>
+                <p class="text-xs text-slate-300 mt-1">Sleek executive sedan for solo travelers, couples & corporate executives.</p>
+                <div class="mt-3 pt-3 border-t border-slate-800 space-y-1 text-xs text-slate-400">
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 3 Passengers</div>
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 2 Large + 2 Cabin Bags</div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
+                <span class="text-xs text-slate-400">Distance Rate</span>
+                <span class="text-lg font-mono font-bold text-gold">€2.50 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              </div>
+            </div>
+
+            <!-- V-Class -->
+            <div class="vehicle-card p-4 rounded-xl border border-gold bg-gold/10 hover:border-gold cursor-pointer transition flex flex-col justify-between active" data-veh="V_CLASS">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-gold">VIP Chauffeur Flagship</span>
+                  <iconify-icon icon="lucide:check-circle" width="18" height="18" class="text-gold veh-check"></iconify-icon>
+                </div>
+                <h4 class="font-outfit font-bold text-lg text-snow">Mercedes V-Class</h4>
+                <p class="text-xs text-slate-300 mt-1">Premium luxury minivan with nappa leather seating and rear climate control.</p>
+                <div class="mt-3 pt-3 border-t border-slate-800 space-y-1 text-xs text-slate-400">
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 8 Passengers</div>
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Large Suitcases</div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
+                <span class="text-xs text-slate-400">Distance Rate</span>
+                <span class="text-lg font-mono font-bold text-gold">€2.60 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              </div>
+            </div>
+
+            <!-- Vito Tourer -->
+            <div class="vehicle-card p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="VITO">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Alpine 4MATIC Specialist</span>
+                  <iconify-icon icon="lucide:circle" width="18" height="18" class="text-slate-500 veh-check"></iconify-icon>
+                </div>
+                <h4 class="font-outfit font-bold text-lg text-snow">Mercedes Vito Tourer</h4>
+                <p class="text-xs text-slate-300 mt-1">Heavy-luggage and ski transport minivan with permanent 4MATIC all-wheel drive.</p>
+                <div class="mt-3 pt-3 border-t border-slate-800 space-y-1 text-xs text-slate-400">
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 8 Passengers</div>
+                  <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:mountain" width="14" height="14" class="text-gold"></iconify-icon> 4MATIC All-Wheel</div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
+                <span class="text-xs text-slate-400">Distance Rate</span>
+                <span class="text-lg font-mono font-bold text-gold">€2.80 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Passenger and Luggage Stepper Counters -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-surface/50 border border-slate-800">
+            <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+              <span class="text-xs text-slate-300 font-medium">Adult Passengers</span>
+              <div class="flex items-center gap-3">
+                <button type="button" onclick="adjustPax(-1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Decrease passengers">-</button>
+                <span id="step2-pax-count" class="font-mono font-bold text-base text-snow w-4 text-center">4</span>
+                <button type="button" onclick="adjustPax(1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Increase passengers">+</button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+              <span class="text-xs text-slate-300 font-medium">Large Suitcases</span>
+              <div class="flex items-center gap-3">
+                <button type="button" onclick="adjustLuggage(-1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Decrease suitcases">-</button>
+                <span id="step2-luggage-count" class="font-mono font-bold text-base text-snow w-4 text-center">4</span>
+                <button type="button" onclick="adjustLuggage(1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Increase suitcases">+</button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+              <span class="text-xs text-slate-300 font-medium">Cabin Bags / Hand Luggage</span>
+              <div class="flex items-center gap-3">
+                <button type="button" onclick="adjustCabin(-1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Decrease cabin bags">-</button>
+                <span id="step2-cabin-count" class="font-mono font-bold text-base text-snow w-4 text-center">2</span>
+                <button type="button" onclick="adjustCabin(1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold flex items-center justify-center font-bold text-lg hover:bg-slate-700 min-h-[44px] min-w-[44px]" aria-label="Increase cabin bags">+</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STAGE 3: COMPLIMENTARY EXTRAS -->
+        <div id="step-pane-3" class="step-pane hidden">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
+              <iconify-icon icon="lucide:gift" width="20" height="20" class="text-gold"></iconify-icon>
+              <span>Stage 3: Complimentary Extras & Hospitality</span>
+            </h2>
+            <span class="text-xs text-slate-400">Step 3 of 6</span>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Child Seats -->
+            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-sm font-bold text-snow block">Infant & Child Safety Seats</span>
+                  <span class="text-xs text-emerald-400 font-semibold">100% Free of Charge (Austrian StVO Compliant)</span>
+                </div>
+                <iconify-icon icon="lucide:shield-check" width="20" height="20" class="text-emerald-400"></iconify-icon>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="flex items-center justify-between p-2 rounded bg-midnight border border-slate-800">
+                  <span class="text-xs text-slate-300">Baby Capsule (0–13 kg)</span>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="adjustAddon('baby', -1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">-</button>
+                    <span id="addon-baby-count" class="font-mono text-xs text-snow w-3 text-center">0</span>
+                    <button type="button" onclick="adjustAddon('baby', 1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">+</button>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded bg-midnight border border-slate-800">
+                  <span class="text-xs text-slate-300">Child Seat (9–18 kg)</span>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="adjustAddon('child', -1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">-</button>
+                    <span id="addon-child-count" class="font-mono text-xs text-snow w-3 text-center">0</span>
+                    <button type="button" onclick="adjustAddon('child', 1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">+</button>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded bg-midnight border border-slate-800">
+                  <span class="text-xs text-slate-300">Booster (15–36 kg)</span>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="adjustAddon('booster', -1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">-</button>
+                    <span id="addon-booster-count" class="font-mono text-xs text-snow w-3 text-center">0</span>
+                    <button type="button" onclick="adjustAddon('booster', 1)" class="w-8 h-8 rounded bg-slate-800 text-gold font-bold min-h-[36px] min-w-[36px] flex items-center justify-center">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ski Gear & Wheelchair -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-surface/50 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <span class="text-sm font-bold text-snow block">Ski & Snowboard Equipment</span>
+                  <span class="text-xs text-emerald-400">Free transport in Mercedes V-Class / Vito</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustAddon('ski', -1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold font-bold text-lg min-h-[44px] min-w-[44px] flex items-center justify-center">-</button>
+                  <span id="addon-ski-count" class="font-mono text-sm text-snow w-4 text-center">0</span>
+                  <button type="button" onclick="adjustAddon('ski', 1)" class="w-11 h-11 rounded-lg bg-slate-800 text-gold font-bold text-lg min-h-[44px] min-w-[44px] flex items-center justify-center">+</button>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surface/50 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <span class="text-sm font-bold text-snow block">Foldable Wheelchair</span>
+                  <span class="text-xs text-slate-400">Accommodated in boot at no extra cost</span>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer min-h-[44px] min-w-[44px]">
+                  <input type="checkbox" id="addon-wheelchair" class="sr-only peer">
+                  <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Water Preference -->
+            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800">
+              <span class="text-xs font-semibold text-slate-300 block mb-2">Complimentary Austrian Mineral Water</span>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" class="water-opt-btn active p-2.5 rounded-lg border border-gold bg-gold/15 text-gold text-xs font-bold min-h-[44px]" data-water="STILL">
+                  Still Natural Alpine Water
+                </button>
+                <button type="button" class="water-opt-btn p-2.5 rounded-lg border border-slate-700 bg-midnight text-slate-300 text-xs font-semibold hover:border-gold min-h-[44px]" data-water="SPARKLING">
+                  Sparkling Mineral Water
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- STAGE 4: PASSENGER INFO & INVOICING -->
+        <div id="step-pane-4" class="step-pane hidden">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
+              <iconify-icon icon="lucide:user" width="20" height="20" class="text-gold"></iconify-icon>
+              <span>Stage 4: Passenger Contact & Invoicing</span>
+            </h2>
+            <span class="text-xs text-slate-400">Step 4 of 6</span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="form-label">Lead Passenger Full Name</label>
+              <input type="text" id="cust-name" class="form-input text-base" placeholder="e.g. Dr. Alexander Weber">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="form-label">Email Address (for instant confirmation)</label>
+                <input type="email" id="cust-email" class="form-input text-base" placeholder="client@example.com">
+              </div>
+              <div>
+                <label class="form-label">Mobile Number (with country code)</label>
+                <input type="tel" id="cust-phone" class="form-input text-base" placeholder="+43 664 1234567">
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label">Preferred Communication Channel</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
+                  <input type="radio" name="comm-channel" value="WHATSAPP_EMAIL" checked class="text-gold">
+                  <span class="text-xs text-slate-200">WhatsApp & Email</span>
+                </label>
+                <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
+                  <input type="radio" name="comm-channel" value="EMAIL_ONLY" class="text-gold">
+                  <span class="text-xs text-slate-200">Email Only</span>
+                </label>
+                <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
+                  <input type="radio" name="comm-channel" value="PHONE_SMS" class="text-gold">
+                  <span class="text-xs text-slate-200">Phone Call / SMS</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Austrian B2B UStG § 11 Invoicing Toggle -->
+            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800">
+              <div class="flex items-center justify-between cursor-pointer min-h-[44px]" onclick="toggleCompanyInvoice()">
+                <div>
+                  <span class="text-xs font-bold text-snow">Need a Business Invoice? (Austrian UStG § 11 Compliant)</span>
+                  <span class="text-[11px] text-slate-400 block">Add Company Legal Name, UID / VAT ID, and Billing Address</span>
+                </div>
+                <iconify-icon id="invoice-chevron" icon="lucide:chevron-down" width="16" height="16" class="text-slate-400"></iconify-icon>
+              </div>
+              <div id="invoice-fields" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3">
+                <input type="text" id="cust-company" class="form-input text-base" placeholder="Company Legal Name">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input type="text" id="cust-tax" class="form-input text-base" placeholder="VAT / UID Number (e.g. ATU12345678)">
+                  <input type="text" id="cust-street" class="form-input text-base" placeholder="Billing Address / City">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label">Special Chauffeur Requests (Flight delays, luggage notes, greeting signs)</label>
+              <textarea id="cust-notes" class="form-input text-base" rows="2" placeholder="e.g. Please meet us at Exit B holding sign 'Dr. Weber'. 2 sets of ski poles."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 5: FINAL REVIEW & IN-LINE EDITING -->
+        <div id="step-pane-5" class="step-pane hidden">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" width="20" height="20" class="text-gold"></iconify-icon>
+              <span>Stage 5: Final Review & Confirmation Request</span>
+            </h2>
+            <span class="text-xs text-slate-400">Step 5 of 6</span>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Route Card with Inline Edit -->
+            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800/80">
+                <span class="text-xs uppercase tracking-wider text-gold font-bold" id="sum-service-badge">One-Way Chauffeur Transfer</span>
+                <button type="button" onclick="toggleInlineEdit('route')" class="text-xs text-gold hover:underline flex items-center gap-1 min-h-[44px]">
+                  <iconify-icon icon="lucide:edit-3" width="14" height="14"></iconify-icon> Edit Route
+                </button>
+              </div>
+              <div class="pt-2">
+                <h4 class="text-base font-bold text-snow" id="sum-route">Salzburg Airport → Hallstatt Lahn Terminal</h4>
+                <div class="flex items-center gap-3 text-xs text-slate-300 mt-1">
+                  <span id="sum-datetime">Selected Date at 14:30 CET</span>
+                  <span id="sum-flight-row" class="hidden text-emerald-400">• Flight: <strong id="sum-flight">OS 915</strong></span>
+                </div>
+              </div>
+
+              <!-- Inline Route Editor -->
+              <div id="inline-edit-route" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <label class="text-[10px] text-slate-400 uppercase">Pickup Location</label>
+                    <input type="text" id="inline-pickup" class="form-input text-base" oninput="applyInlineRoute()">
+                  </div>
+                  <div>
+                    <label class="text-[10px] text-slate-400 uppercase">Dropoff Destination</label>
+                    <input type="text" id="inline-dropoff" class="form-input text-base" oninput="applyInlineRoute()">
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <label class="text-[10px] text-slate-400 uppercase">Pickup Date</label>
+                    <input type="date" id="inline-date" class="form-input text-base" onchange="applyInlineRoute()">
+                  </div>
+                  <div>
+                    <label class="text-[10px] text-slate-400 uppercase">Pickup Time</label>
+                    <input type="time" id="inline-time" class="form-input text-base" onchange="applyInlineRoute()">
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  <button type="button" onclick="toggleInlineEdit('route')" class="btn-gold text-xs py-1 px-3 min-h-[44px]">Done</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle Card with Inline Edit -->
+            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800/80">
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Selected Vehicle</span>
+                <button type="button" onclick="toggleInlineEdit('vehicle')" class="text-xs text-gold hover:underline flex items-center gap-1 min-h-[44px]">
+                  <iconify-icon icon="lucide:edit-3" width="14" height="14"></iconify-icon> Switch Vehicle
+                </button>
+              </div>
+              <div class="pt-2 flex items-center justify-between">
+                <div>
+                  <h4 class="text-base font-bold text-snow" id="sum-vehicle-name">Mercedes-Benz V-Class</h4>
+                  <span class="text-xs text-slate-400" id="sum-vehicle-sub">VIP Chauffeur Minivan</span>
+                </div>
+                <span class="text-xs text-gold font-semibold" id="sum-capacity">4 Passengers • 4 Large Bags</span>
+              </div>
+
+              <!-- Inline Vehicle Switcher -->
+              <div id="inline-edit-vehicle" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
+                <div class="grid grid-cols-3 gap-2">
+                  <button type="button" id="inline-btn-eclass" onclick="setInlineVehicle('E_CLASS')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">E-Class (€2.50/km)</button>
+                  <button type="button" id="inline-btn-vclass" onclick="setInlineVehicle('V_CLASS')" class="p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center min-h-[44px]">V-Class (€2.60/km)</button>
+                  <button type="button" id="inline-btn-vito" onclick="setInlineVehicle('VITO')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">Vito (€2.80/km)</button>
+                </div>
+                <div class="flex justify-end">
+                  <button type="button" onclick="toggleInlineEdit('vehicle')" class="btn-gold text-xs py-1 px-3 min-h-[44px]">Done</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Financial Breakdown Box -->
+            <div class="p-5 rounded-xl bg-midnight border border-gold/40 space-y-2">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span id="sum-rate-note">Base Distance Rate</span>
+                <span id="sum-base-fare" class="font-mono text-slate-200">€189.80</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span>Austrian Road Tolls & Highway Vignette</span>
+                <span class="text-emerald-400 font-semibold">Included (€0.00)</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span>Austrian Passenger VAT (20%)</span>
+                <span id="sum-vat" class="font-mono text-slate-200">€31.63</span>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-baseline justify-between">
+                <div>
+                  <span class="text-sm font-bold text-snow block">Guaranteed Fixed Total</span>
+                  <span class="text-[11px] text-slate-400">All-inclusive Austrian statutory price</span>
+                </div>
+                <span id="sum-gross-total" class="text-3xl font-mono font-bold text-gold">€189.80</span>
+              </div>
+            </div>
+
+            <!-- Austrian FAGG § 8 Compliance Card -->
+            <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-xs text-emerald-300 space-y-1">
+              <div class="flex items-center gap-2 font-bold text-emerald-400">
+                <iconify-icon icon="lucide:check-shield" width="16" height="16"></iconify-icon>
+                <span>Zero Card Capture — Pay Chauffeur After Service</span>
+              </div>
+              <p class="text-slate-300 text-[11px] leading-relaxed">
+                In strict compliance with Austrian FAGG § 8, no credit card or advance deposit is charged at this step. Your reservation is submitted for instant operator verification. You pay your chauffeur directly upon arrival via Credit Card, Debit Card, or Cash.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- STAGE 6: SUBMISSION CONFIRMATION -->
+        <div id="step-pane-6" class="step-pane hidden text-center py-6">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+            <iconify-icon icon="lucide:check" width="32" height="32"></iconify-icon>
+          </div>
+
+          <span class="badge-gold">Reservation Request Registered</span>
+          <h3 class="text-2xl sm:text-3xl font-bold font-outfit text-snow mt-2 mb-2">Thank You, Your Transfer is Requested</h3>
+          <p class="text-sm text-slate-300 max-w-lg mx-auto mb-6">
+            Booking Reference: <strong id="conf-ref" class="text-gold font-mono font-bold">PET-202611-001</strong>
+          </p>
+
+          <div class="p-5 rounded-2xl bg-midnight border border-gold/30 text-left max-w-md mx-auto mb-6 space-y-2 text-xs">
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400">Status:</span>
+              <span class="text-amber-400 font-bold uppercase tracking-wider">Pending Owner Confirmation</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400">Dispatch SLA:</span>
+              <span class="text-snow font-semibold">15–30 Minutes via WhatsApp / Email</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400">Route:</span>
+              <span id="conf-route" class="text-snow font-semibold text-right">Salzburg → Hallstatt</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400">Date & Time:</span>
+              <span id="conf-datetime" class="text-snow font-semibold">2026-11-21 at 14:30 CET</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400">Vehicle:</span>
+              <span id="conf-vehicle" class="text-gold font-bold">Mercedes-Benz V-Class</span>
+            </div>
+            <div class="flex justify-between pt-1">
+              <span class="text-slate-400">Total Fare:</span>
+              <span id="conf-total" class="text-lg font-mono font-bold text-gold">€189.80</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a id="conf-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold w-full sm:w-auto text-xs sm:text-sm py-3 px-6 min-h-[44px] flex items-center justify-center gap-2">
+              <iconify-icon icon="lucide:message-circle" width="18" height="18"></iconify-icon>
+              <span>Connect on WhatsApp Dispatch</span>
+            </a>
+            <button type="button" onclick="resetBookingEngine()" class="btn-outline-gold w-full sm:w-auto text-xs sm:text-sm py-3 px-6 min-h-[44px]">
+              <iconify-icon icon="lucide:plus-circle" width="18" height="18"></iconify-icon>
+              <span>Book Another Transfer</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Stepper Navigation Footer -->
+        <div id="stepper-nav-footer" class="flex items-center justify-between border-t border-slate-800/80 pt-6 mt-6">
+          <button type="button" id="btn-step-prev" class="btn-outline-gold text-xs sm:text-sm py-2 px-4 invisible min-h-[44px]">
+            <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon> Back
+          </button>
+          
+          <button type="button" id="btn-step-next" class="btn-gold text-xs sm:text-sm py-2.5 px-6 min-h-[44px]">
+            <span>Continue</span> <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Distraction-Free Sub-Footer -->
+  <footer class="bg-midnight border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-400">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <div class="flex flex-wrap items-center justify-center gap-4 text-slate-300">
+        <a href="/" class="hover:text-gold transition">Home</a>
+        <span>•</span>
+        <a href="/tours.html" class="hover:text-gold transition">Day Tours</a>
+        <span>•</span>
+        <a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport Transfer</a>
+        <span>•</span>
+        <a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna Transfer</a>
+        <span>•</span>
+        <a href="tel:+436606416464" class="hover:text-gold transition">+43 660 6416464</a>
+      </div>
+      <p class="text-[11px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+        PETRANS Taxi & Tour Salzburg e.U. • Official Austrian Licensed Chauffeur & Passenger Transport (WKO Gewerbeberechtigung). In full compliance with Austrian FAGG § 8. All vehicle names and model designations are used solely for nominative fair use to describe fleet specifications.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/booking.js"></script>
+</body>
+</html>

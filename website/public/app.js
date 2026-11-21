@@ -498,90 +498,32 @@ function renderFleetCarousel() {
 
   const bookCta = document.getElementById('carousel-book-cta');
   if (bookCta && bookCta.tagName.toLowerCase() === 'a') {
-    bookCta.href = `#booking-stepper?vehicle=${v.slug}`;
+    bookCta.href = `/booking.html?vehicle=${v.slug}`;
   }
 }
 
 function bookCurrentFleetVehicle() {
   const v = FLEET_VEHICLES[fleetActiveIndex];
   if (v) {
-    selectFleetVehicle(v.category);
+    window.location.href = `/booking.html?vehicle=${v.slug}`;
   }
 }
 
 // Multi-Entry Point Trigger 1: Book by Car (Homepage Fleet Cards)
 function selectFleetVehicle(category) {
   if (!VEHICLE_META[category]) return;
-  appState.vehicleCategory = category;
-  appState.entrySource = 'fleet';
-
-  // Keep carousel active index in sync
-  const idx = FLEET_VEHICLES.findIndex(v => v.category === category);
-  if (idx !== -1 && idx !== fleetActiveIndex) {
-    fleetActiveIndex = idx;
-    window.fleetActiveIndex = fleetActiveIndex;
-    renderFleetCarousel();
-  }
-
-  // Adjust party size defaults if E-Class
-  if (category === 'E_CLASS' && appState.passengerCount > 3) {
-    appState.passengerCount = 3;
-    if (appState.largeLuggageCount > 2) appState.largeLuggageCount = 2;
-  }
-
-  const meta = VEHICLE_META[category];
-  showPreselectionBanner(`Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`);
-  
   const slug = category.toLowerCase().replace('_', '-');
-  try {
-    window.history.replaceState({ stage: 1 }, '', `?vehicle=${slug}#booking-stepper`);
-  } catch (e) {}
-
-  syncVehicleCardSelection();
-  checkCapacityWarning();
-  updateHeroCalculation();
-  goToStep(1);
-
-  const stepper = document.getElementById('booking-stepper');
-  if (stepper) stepper.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = `/booking.html?vehicle=${slug}`;
 }
 
 // Multi-Entry Point Trigger 2: Book by Tour (Homepage Tour Cards)
 function selectTour(tourKey) {
-  const tour = TOURS_DB[tourKey] || TOURS_DB['hallstatt'];
-  appState.serviceType = 'TOUR';
-  appState.tourKey = tourKey;
-  appState.entrySource = 'tour';
-
-  // Sync service tabs in Hero & Step 1
-  document.querySelectorAll('.service-opt-btn').forEach(b => {
-    if (b.getAttribute('data-val') === 'TOUR') {
-      b.click();
-    }
-  });
-
-  const tourSelect = document.getElementById('step1-tour-select');
-  if (tourSelect) tourSelect.value = tourKey;
-
-  showPreselectionBanner(`Tour Pre-selected: ${tour.title} (€${tour.price.toFixed(2)}). You can customize your schedule or change services at any time.`);
-
-  try {
-    window.history.replaceState({ stage: 1 }, '', `?service=tour&tour=${tourKey}#booking-stepper`);
-  } catch (e) {}
-
-  updateHeroCalculation();
-  goToStep(1);
-
-  const stepper = document.getElementById('booking-stepper');
-  if (stepper) stepper.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = `/booking.html?service=tour&tour=${tourKey}`;
 }
 
 // Multi-Entry Point Trigger 3: Book by Place (Hero Calculator Submit)
 function selectHeroBooking() {
-  appState.entrySource = 'calc';
-  goToStep(1);
-  const stepper = document.getElementById('booking-stepper');
-  if (stepper) stepper.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = '/booking.html';
 }
 
 // Event Listeners setup
@@ -624,65 +566,105 @@ function setupEventListeners() {
     link.addEventListener('click', closeDrawer);
   });
 
-  // Hero Tab Switcher
-  document.querySelectorAll('.hero-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.hero-tab').forEach(b => {
-        b.classList.remove('active', 'bg-gold', 'text-midnight');
-        b.classList.add('text-slate-300');
+  // 3-Option Quick Booking Module (Homepage Hero)
+  let quickSelectedCar = 'v-class';
+  const quickTabs = document.querySelectorAll('.quick-tab');
+  quickTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      quickTabs.forEach(t => {
+        t.classList.remove('active', 'bg-gold', 'text-midnight');
+        t.classList.add('text-slate-300');
       });
-      btn.classList.add('active', 'bg-gold', 'text-midnight');
-      btn.classList.remove('text-slate-300');
+      tab.classList.add('active', 'bg-gold', 'text-midnight');
+      tab.classList.remove('text-slate-300');
 
-      const tab = btn.getAttribute('data-tab');
-      appState.serviceType = tab;
-
-      const originContainer = document.getElementById('origin-container');
-      const destContainer = document.getElementById('dest-container');
-      const tourContainer = document.getElementById('tour-container');
-
-      if (tab === 'TOUR') {
-        if (originContainer) originContainer.classList.add('hidden');
-        if (destContainer) destContainer.classList.add('hidden');
-        if (tourContainer) tourContainer.classList.remove('hidden');
-      } else {
-        if (originContainer) originContainer.classList.remove('hidden');
-        if (destContainer) destContainer.classList.remove('hidden');
-        if (tourContainer) tourContainer.classList.add('hidden');
-      }
-
-      // Sync stepper buttons
-      document.querySelectorAll('.service-opt-btn').forEach(b => {
-        if (b.getAttribute('data-val') === tab) {
-          b.click();
-        }
-      });
-
-      updateHeroCalculation();
+      const mode = tab.getAttribute('data-mode');
+      document.querySelectorAll('.quick-panel').forEach(p => p.classList.add('hidden'));
+      const activePanel = document.getElementById(`mode-${mode}`);
+      if (activePanel) activePanel.classList.remove('hidden');
     });
   });
 
-  // Hero Dropdown Listeners
-  const destSelect = document.getElementById('calc-dest');
-  if (destSelect) {
-    destSelect.addEventListener('change', (e) => {
-      const route = ROUTES_DB[e.target.value] || { name: 'Custom Route', distance: 50, duration: '45m' };
-      appState.dropoffAddress = route.name;
-      appState.distanceKm = route.distance;
-      appState.durationText = route.duration;
-      const dropoffInput = document.getElementById('step1-dropoff');
-      if (dropoffInput) dropoffInput.value = route.name;
-      updateHeroCalculation();
+  // Mode 1: Place Calculator
+  const heroPlaceDest = document.getElementById('hero-place-dest');
+  const heroPlaceVehicle = document.getElementById('hero-place-vehicle');
+  const heroPlacePrice = document.getElementById('hero-place-price');
+  const heroPlaceMetrics = document.getElementById('hero-place-metrics');
+  const btnHeroPlaceBook = document.getElementById('btn-hero-place-book');
+
+  function updateHeroPlaceCalc() {
+    if (!heroPlaceDest || !heroPlaceVehicle || !heroPlacePrice) return;
+    const opt = heroPlaceDest.selectedOptions[0];
+    const km = parseFloat(opt?.getAttribute('data-km') || '73');
+    const vehOpt = heroPlaceVehicle.selectedOptions[0];
+    const rate = parseFloat(vehOpt?.getAttribute('data-rate') || '2.60');
+    
+    // Formula: km * rate with €45 minimum base floor
+    const fare = Math.max(45, km * rate);
+    heroPlacePrice.textContent = `€${fare.toFixed(2)}`;
+    if (heroPlaceMetrics) {
+      const approxHours = Math.floor(km / 65);
+      const approxMins = Math.round((km % 65) * 60 / 65);
+      const timeStr = approxHours > 0 ? `~${approxHours}h ${approxMins}m` : `~${approxMins}m`;
+      heroPlaceMetrics.textContent = `${km} km • ${timeStr}`;
+    }
+  }
+
+  if (heroPlaceDest) heroPlaceDest.addEventListener('change', updateHeroPlaceCalc);
+  if (heroPlaceVehicle) heroPlaceVehicle.addEventListener('change', updateHeroPlaceCalc);
+  updateHeroPlaceCalc();
+
+  if (btnHeroPlaceBook) {
+    btnHeroPlaceBook.addEventListener('click', () => {
+      const pickup = document.getElementById('hero-place-pickup')?.value || 'Salzburg';
+      const destOpt = heroPlaceDest?.selectedOptions[0];
+      const dest = destOpt?.getAttribute('data-name') || destOpt?.value || 'Hallstatt';
+      const veh = heroPlaceVehicle?.value || 'v-class';
+      window.location.href = `/booking.html?service=one-way&pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dest)}&vehicle=${veh}`;
     });
   }
 
-  const tourSelect = document.getElementById('calc-tour');
-  if (tourSelect) {
-    tourSelect.addEventListener('change', (e) => {
-      appState.tourKey = e.target.value;
-      const step1Tour = document.getElementById('step1-tour-select');
-      if (step1Tour) step1Tour.value = e.target.value;
-      updateHeroCalculation();
+  // Mode 2: Tour Selector
+  const heroTourSelect = document.getElementById('hero-tour-select');
+  const heroTourPrice = document.getElementById('hero-tour-price');
+  const heroTourDetailsLink = document.getElementById('hero-tour-details-link');
+  const btnHeroTourBook = document.getElementById('btn-hero-tour-book');
+
+  if (heroTourSelect) {
+    heroTourSelect.addEventListener('change', () => {
+      const val = heroTourSelect.value;
+      if (val === 'innsbruck') {
+        if (heroTourPrice) heroTourPrice.textContent = '€650.00';
+      } else {
+        if (heroTourPrice) heroTourPrice.textContent = '€450.00';
+      }
+      if (heroTourDetailsLink) {
+        heroTourDetailsLink.href = `/tours/${val}.html`;
+      }
+    });
+  }
+
+  if (btnHeroTourBook) {
+    btnHeroTourBook.addEventListener('click', () => {
+      const tourVal = heroTourSelect?.value || 'hallstatt';
+      window.location.href = `/booking.html?service=tour&tour=${tourVal}`;
+    });
+  }
+
+  // Mode 3: Car Selector
+  const carCards = document.querySelectorAll('.car-quick-card');
+  carCards.forEach(c => {
+    c.addEventListener('click', () => {
+      carCards.forEach(card => card.classList.remove('active'));
+      c.classList.add('active');
+      quickSelectedCar = c.getAttribute('data-vehicle') || 'v-class';
+    });
+  });
+
+  const btnHeroCarBook = document.getElementById('btn-hero-car-book');
+  if (btnHeroCarBook) {
+    btnHeroCarBook.addEventListener('click', () => {
+      window.location.href = `/booking.html?vehicle=${quickSelectedCar}`;
     });
   }
 
@@ -1412,9 +1394,7 @@ function setDropoff(addr, km) {
 }
 
 function setQuickRoute(destName, km) {
-  setDropoff(destName, km);
-  const stepper = document.getElementById('booking-stepper');
-  if (stepper) stepper.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = `/booking.html?service=one-way&pickup=Salzburg&dropoff=${encodeURIComponent(destName)}`;
 }
 
 // Stepper Adjusters
