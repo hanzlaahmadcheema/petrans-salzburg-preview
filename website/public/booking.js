@@ -95,10 +95,10 @@ window.appState = appState;
 
 // Initialize Application
 document.addEventListener('DOMContentLoaded', () => {
-  initDateDefaults();
-  hydrateBookingFromUrl();
-  restoreSessionState();
   setupBookingEventListeners();
+  initDateDefaults();
+  restoreSessionState();
+  hydrateBookingFromUrl();
   checkCapacityWarning();
 });
 
@@ -184,6 +184,12 @@ function hydrateBookingFromUrl() {
     if (optBtn) optBtn.click();
     const tourSelect = document.getElementById('step1-tour-select');
     if (tourSelect) tourSelect.value = appState.tourKey;
+    const transferFields = document.getElementById('step1-transfer-fields');
+    const tourFields = document.getElementById('step1-tour-fields');
+    const returnBox = document.getElementById('step1-return-box');
+    if (transferFields) transferFields.classList.add('hidden');
+    if (tourFields) tourFields.classList.remove('hidden');
+    if (returnBox) returnBox.classList.add('hidden');
   }
 
   // 4. Pickup and Dropoff

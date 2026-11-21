@@ -1,0 +1,529 @@
+{
+  "testSuite": "TSK-PET-036: Mobile-First Multi-Page Architecture Browser QA",
+  "timestamp": "2026-11-21T05:24:06.338Z",
+  "assertionsPassed": 36,
+  "assertionsFailed": 0,
+  "tests": [
+    {
+      "title": "Pillar 1: Embedded 450+ line booking stepper completely removed from index.html",
+      "status": "PASSED",
+      "details": {
+        "stepperRemoved": true,
+        "heroQuickExists": true,
+        "hasThreeTabs": true,
+        "placeVisible": true,
+        "tourHidden": true,
+        "carHidden": true
+      }
+    },
+    {
+      "title": "Pillar 1: Hero 3-Option Quick Booking Module exists with 3 tabs",
+      "status": "PASSED",
+      "details": {
+        "stepperRemoved": true,
+        "heroQuickExists": true,
+        "hasThreeTabs": true,
+        "placeVisible": true,
+        "tourHidden": true,
+        "carHidden": true
+      }
+    },
+    {
+      "title": "Pillar 1: Book by Place panel active by default, Tour and Car panels hidden",
+      "status": "PASSED",
+      "details": {
+        "stepperRemoved": true,
+        "heroQuickExists": true,
+        "hasThreeTabs": true,
+        "placeVisible": true,
+        "tourHidden": true,
+        "carHidden": true
+      }
+    },
+    {
+      "title": "Pillar 1 [Book by Place]: Fare recalculates upon vehicle selection change",
+      "status": "PASSED",
+      "details": {
+        "initialPrice": "€189.80",
+        "eClassPrice": "€182.50",
+        "btnExists": true
+      }
+    },
+    {
+      "title": "Pillar 1 [Book by Tour]: Tab switches to Tour panel, updates rate (€450 vs €650) and itinerary link",
+      "status": "PASSED",
+      "details": {
+        "tourPanelVisible": true,
+        "priceHallstatt": "€450.00",
+        "linkHallstatt": "/tours/hallstatt.html",
+        "priceInnsbruck": "€650.00",
+        "linkInnsbruck": "/tours/innsbruck.html"
+      }
+    },
+    {
+      "title": "Pillar 1 [Book by Car]: Tab switches to Car panel with 3 Mercedes cards and link to #fleet",
+      "status": "PASSED",
+      "details": {
+        "carPanelVisible": true,
+        "cardCount": 3,
+        "hasSpotlightLink": true
+      }
+    },
+    {
+      "title": "Pillar 1 [#fleet]: Single-vehicle spotlight stage & booking CTA present",
+      "status": "PASSED",
+      "details": {
+        "stageExists": true,
+        "bookBtnExists": true
+      }
+    },
+    {
+      "title": "Pillar 1 [Homepage iPhone SE]: 0px horizontal overflow (375px)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 1 [Homepage iPhone 14/15]: 0px horizontal overflow (390px)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 1 [Homepage Galaxy S22]: 0px horizontal overflow (412px)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 1 [Homepage iPad]: 0px horizontal overflow (768px)",
+      "status": "PASSED",
+      "details": {
+        "overflow": -8
+      }
+    },
+    {
+      "title": "Pillar 1 [Homepage Desktop]: 0px horizontal overflow (1280px)",
+      "status": "PASSED",
+      "details": {
+        "overflow": -8
+      }
+    },
+    {
+      "title": "Pillar 2: All 6 booking stages exist and Stage 1 is initially visible",
+      "status": "PASSED",
+      "details": {
+        "allPanesExist": true,
+        "pane1Visible": true,
+        "stickyHeaderExists": true
+      }
+    },
+    {
+      "title": "Pillar 2: Sticky mobile step header card exists in DOM",
+      "status": "PASSED",
+      "details": {
+        "allPanesExist": true,
+        "pane1Visible": true,
+        "stickyHeaderExists": true
+      }
+    },
+    {
+      "title": "Pillar 2: Mobile sticky header dynamically updates Step numbers, labels, and progress bar",
+      "status": "PASSED",
+      "details": {
+        "step1": {
+          "num": "1",
+          "ind": "Step 1 of 6",
+          "bar": ""
+        },
+        "step2": {
+          "num": "2",
+          "ind": "Step 2 of 6",
+          "bar": "20%"
+        },
+        "step3": {
+          "num": "3",
+          "bar": "40%"
+        }
+      }
+    },
+    {
+      "title": "Pillar 2: 100% of form inputs enforce >=16px font-size to prevent iOS Safari auto-zoom",
+      "status": "PASSED",
+      "details": {
+        "totalInputs": 23,
+        "allAtLeast16px": true,
+        "smallInputs": []
+      }
+    },
+    {
+      "title": "Pillar 2: All visible interactive buttons and touch controls meet >=44x44px target area",
+      "status": "PASSED",
+      "details": {
+        "totalButtons": 40,
+        "allMeet44px": true,
+        "smallButtons": []
+      }
+    },
+    {
+      "title": "Pillar 2: URL parameter ?service=tour&tour=hallstatt accurately preselects tour with affirmative banner",
+      "status": "PASSED",
+      "details": {
+        "serviceType": "TOUR",
+        "tourKey": "hallstatt",
+        "bannerVisible": true,
+        "bannerText": "Tour Pre-selected: Hallstatt & Salzkammergut Lakes (8 Hours) (€450.00). You can customize your schedule or change services at any time.",
+        "tourSelectVal": "hallstatt"
+      }
+    },
+    {
+      "title": "Pillar 2: URL parameter ?vehicle=v-class preselects V-Class with affirmative guidance",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "isVClassCardActive": true
+      }
+    },
+    {
+      "title": "Pillar 2: Non-locking vehicle selection verified: customer can switch to E-Class freely",
+      "status": "PASSED",
+      "details": {
+        "newCategory": "E_CLASS",
+        "isEClassActive": true
+      }
+    },
+    {
+      "title": "Pillar 2: Browser history navigation (popstate) steps back cleanly with zero customer data loss",
+      "status": "PASSED",
+      "details": {
+        "stepAt3": 2,
+        "stepAt2": 2,
+        "pane2Visible": true,
+        "stepAt1": 1,
+        "pane1Visible": true,
+        "pPreserved": "Salzburg Airport Terminal 1",
+        "dPreserved": "Zell am See Grand Hotel"
+      }
+    },
+    {
+      "title": "Pillar 3: /tours.html displays all 4 tours with accurate flat rates (€450 / €650)",
+      "status": "PASSED",
+      "details": {
+        "cardCount": 4,
+        "hasHallstatt": true,
+        "hasEaglesNest": true,
+        "hasZellAmSee": true,
+        "hasInnsbruck": true,
+        "hrefs": [
+          "/tours/hallstatt.html",
+          "/tours/eagles-nest.html",
+          "/tours/zell-am-see.html",
+          "/tours/innsbruck.html"
+        ]
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/hallstatt.html]: Hero photo loaded, CTA links to booking engine, TouristTrip Schema verified",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/hallstatt.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/eagles-nest.html]: Hero photo loaded, CTA links to booking engine, TouristTrip Schema verified",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/eagles-nest.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/zell-am-see.html]: Hero photo loaded, CTA links to booking engine, TouristTrip Schema verified",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/zell-am-see.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "450",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/innsbruck.html]: Hero photo loaded, CTA links to booking engine, TouristTrip Schema verified",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "650",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 3 [/tours/innsbruck.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "heroLoaded": true,
+        "stickyBarExists": true,
+        "bookLinksCount": 3,
+        "hasTouristTripSchema": true,
+        "schemaPrice": "650",
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 4 [/destinations/munich-airport.html]: Route metrics (180 km), promo rate (€490), vehicle tiers, and deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "has180km": true,
+        "hasPromoRate": true,
+        "hasVehicleTiers": true,
+        "heroLoaded": true,
+        "bookLinks": [
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=e-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=v-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=vito",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html"
+        ],
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 4 [/destinations/munich-airport.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "has180km": true,
+        "hasPromoRate": true,
+        "hasVehicleTiers": true,
+        "heroLoaded": true,
+        "bookLinks": [
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=e-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=v-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)&vehicle=vito",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)",
+          "/booking.html"
+        ],
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 4 [/destinations/vienna.html]: Route metrics (300 km), calculated rates, and deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "has300km": true,
+        "hasRate": true,
+        "heroLoaded": true,
+        "bookLinks": [
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=e-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=v-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=vito",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html"
+        ],
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 4 [/destinations/vienna.html]: 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "has300km": true,
+        "hasRate": true,
+        "heroLoaded": true,
+        "bookLinks": [
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=e-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=v-class",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna&vehicle=vito",
+          "/booking.html?service=one-way&pickup=Salzburg&dropoff=Vienna",
+          "/booking.html"
+        ],
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 0% Unicode emojis across all 9 canonical pages",
+      "status": "PASSED",
+      "details": {
+        "pageReports": [
+          {
+            "page": "/",
+            "emojiCount": 0,
+            "iconCount": 47,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/booking.html",
+            "emojiCount": 0,
+            "iconCount": 30,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/hallstatt.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/eagles-nest.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/zell-am-see.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/innsbruck.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/destinations/munich-airport.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/destinations/vienna.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 100% Lucide 2px stroke icons across all 9 canonical pages",
+      "status": "PASSED",
+      "details": {
+        "pageReports": [
+          {
+            "page": "/",
+            "emojiCount": 0,
+            "iconCount": 47,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/booking.html",
+            "emojiCount": 0,
+            "iconCount": 30,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/hallstatt.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/eagles-nest.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/zell-am-see.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/tours/innsbruck.html",
+            "emojiCount": 0,
+            "iconCount": 39,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/destinations/munich-airport.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          },
+          {
+            "page": "/destinations/vienna.html",
+            "emojiCount": 0,
+            "iconCount": 34,
+            "nonLucideCount": 0
+          }
+        ]
+      }
+    }
+  ]
+}
