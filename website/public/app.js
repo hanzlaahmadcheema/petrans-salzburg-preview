@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   parseUrlQueryParameters();
   restoreSessionState();
   setupEventListeners();
+  initFleetCarousel();
   updateHeroCalculation();
   checkCapacityWarning();
 });
@@ -227,11 +228,289 @@ function dismissPreselectionBanner() {
   if (banner) banner.classList.add('hidden');
 }
 
+// ============================================================
+// PETRANS INTERACTIVE VEHICLE SPOTLIGHT CAROUSEL CONTROLLER
+// ============================================================
+const FLEET_VEHICLES = [
+  {
+    category: 'E_CLASS',
+    slug: 'e-class',
+    badge: 'Executive Chauffeur Sedan',
+    name: 'Mercedes-Benz E-Class',
+    subtitle: 'Obsidian Black Metallic • W214 Series',
+    ratePerKm: 2.50,
+    baseFloor: 45.00,
+    pax: 'Max 3 Passengers',
+    luggage: '2 Large + 2 Cabin Bags',
+    amenity3: { icon: 'lucide:shield-check', text: 'Free Child Seats' },
+    amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
+    amenity5: { icon: 'lucide:wifi', text: 'High-Speed Wi-Fi' },
+    amenity6: { icon: 'lucide:coffee', text: 'Bottled Water' },
+    poster: '/images/mercedes-e-class.webp',
+    pngFallback: '/images/mercedes-e-class.png',
+    modelSrc: '/models/mercedes-e-class.glb',
+    indicator: '01 / 03 • Mercedes-Benz E-Class Sedan'
+  },
+  {
+    category: 'V_CLASS',
+    slug: 'v-class',
+    badge: 'Exclusive VIP Chauffeur',
+    name: 'Mercedes-Benz V-Class',
+    subtitle: 'Obsidian Black Metallic • W447 Exclusive',
+    ratePerKm: 2.60,
+    baseFloor: 45.00,
+    pax: 'Max 8 Passengers',
+    luggage: '8 Large Suitcases',
+    amenity3: { icon: 'lucide:shield-check', text: 'Free Child Seats' },
+    amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
+    amenity5: { icon: 'lucide:wifi', text: 'High-Speed Wi-Fi' },
+    amenity6: { icon: 'lucide:coffee', text: 'Bottled Water' },
+    poster: '/images/mercedes-v-class.webp',
+    pngFallback: '/images/mercedes-v-class.png',
+    modelSrc: '/models/mercedes-v-class.glb',
+    indicator: '02 / 03 • Mercedes-Benz V-Class VIP'
+  },
+  {
+    category: 'VITO',
+    slug: 'vito',
+    badge: 'Alpine 4MATIC Specialist',
+    name: 'Mercedes-Benz Vito Tourer',
+    subtitle: 'Brilliant Silver • 4MATIC All-Wheel',
+    ratePerKm: 2.80,
+    baseFloor: 45.00,
+    pax: 'Max 8 Passengers',
+    luggage: '8 Large Suitcases',
+    amenity3: { icon: 'lucide:mountain', text: '4MATIC All-Wheel' },
+    amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
+    amenity5: { icon: 'lucide:zap', text: 'USB Fast Power' },
+    amenity6: { icon: 'lucide:users', text: 'Group Expedition' },
+    poster: '/images/mercedes-vito.webp',
+    pngFallback: '/images/mercedes-vito.png',
+    modelSrc: '/models/mercedes-vito.glb',
+    indicator: '03 / 03 • Mercedes-Benz Vito Tourer 4MATIC'
+  }
+];
+
+let fleetActiveIndex = 0;
+let hasInteractedWithStage = false;
+
+function initFleetCarousel() {
+  if (appState.vehicleCategory) {
+    const idx = FLEET_VEHICLES.findIndex(v => v.category === appState.vehicleCategory);
+    if (idx !== -1) fleetActiveIndex = idx;
+  }
+
+  const stage = document.getElementById('fleet-stage');
+  const viewer = document.getElementById('vehicle-viewer');
+  const fallback = document.getElementById('stage-fallback');
+  const cue = document.getElementById('stage-cue');
+
+  // Dismiss interaction cue on first pointer / touch interaction
+  if (stage) {
+    const markInteraction = () => {
+      if (!hasInteractedWithStage && cue) {
+        hasInteractedWithStage = true;
+        cue.style.opacity = '0';
+        setTimeout(() => { if (cue) cue.classList.add('hidden'); }, 500);
+      }
+    };
+    stage.addEventListener('pointerdown', markInteraction, { passive: true });
+    stage.addEventListener('touchstart', markInteraction, { passive: true });
+
+    // Touch gesture navigation (horizontal swipe)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    stage.addEventListener('touchstart', (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }, { passive: true });
+
+    stage.addEventListener('touchend', (e) => {
+      if (!e.changedTouches || e.changedTouches.length === 0) return;
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      const duration = Date.now() - touchStartTime;
+
+      // Preserve natural vertical scrolling if vertical displacement dominates
+      if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+      // Swipe detection: displacement > 50px
+      if (Math.abs(deltaX) > 50 && (duration < 400 || Math.abs(deltaX) > 120)) {
+        if (deltaX < 0) {
+          nextFleetVehicle();
+        } else {
+          prevFleetVehicle();
+        }
+      }
+    }, { passive: true });
+
+    // Keyboard navigation
+    stage.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevFleetVehicle();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextFleetVehicle();
+      }
+    });
+  }
+
+  // Model viewer error or absence resilience
+  if (viewer) {
+    viewer.addEventListener('error', () => {
+      if (fallback) fallback.classList.remove('hidden');
+      viewer.classList.add('hidden');
+    });
+  }
+
+  renderFleetCarousel();
+}
+
+function switchFleetVehicle(index) {
+  fleetActiveIndex = (index + FLEET_VEHICLES.length) % FLEET_VEHICLES.length;
+  renderFleetCarousel();
+}
+
+function nextFleetVehicle() {
+  switchFleetVehicle(fleetActiveIndex + 1);
+}
+
+function prevFleetVehicle() {
+  switchFleetVehicle(fleetActiveIndex - 1);
+}
+
+function renderFleetCarousel() {
+  const v = FLEET_VEHICLES[fleetActiveIndex];
+  if (!v) return;
+
+  // 1. Update Tabs
+  document.querySelectorAll('.fleet-tab').forEach((tab, idx) => {
+    const isSelected = idx === fleetActiveIndex;
+    tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    if (isSelected) {
+      tab.classList.add('active');
+      tab.classList.remove('text-slate-300');
+    } else {
+      tab.classList.remove('active');
+      tab.classList.add('text-slate-300');
+    }
+  });
+
+  // 2. Update Stage Visuals (Fallback WebP & Model Viewer)
+  const fallbackImg = document.getElementById('fallback-img');
+  if (fallbackImg) {
+    fallbackImg.src = v.poster;
+    fallbackImg.alt = v.name;
+  }
+
+  const viewer = document.getElementById('vehicle-viewer');
+  if (viewer) {
+    viewer.poster = v.poster;
+    viewer.alt = v.name;
+    if (v.modelSrc) {
+      viewer.src = v.modelSrc;
+    }
+  }
+
+  // 3. Update Indicator Text & Dashes
+  const indText = document.getElementById('carousel-indicator-text');
+  if (indText) {
+    indText.textContent = v.indicator;
+  }
+
+  document.querySelectorAll('.carousel-dash').forEach((dash, idx) => {
+    const bar = dash.querySelector('.dash-bar');
+    if (idx === fleetActiveIndex) {
+      dash.classList.add('active');
+      if (bar) {
+        bar.className = 'dash-bar h-1.5 w-12 rounded-full bg-gold';
+      }
+    } else {
+      dash.classList.remove('active');
+      if (bar) {
+        bar.className = 'dash-bar h-1.5 w-8 rounded-full bg-slate-800 hover:bg-slate-700';
+      }
+    }
+  });
+
+  // 4. Update Specification Deck
+  const specCard = document.getElementById('fleet-spec-card');
+  if (specCard) {
+    specCard.classList.add('opacity-90');
+    setTimeout(() => specCard.classList.remove('opacity-90'), 150);
+  }
+
+  const catEl = document.getElementById('carousel-category');
+  if (catEl) catEl.textContent = v.badge;
+
+  const nameEl = document.getElementById('carousel-name');
+  if (nameEl) nameEl.textContent = v.name;
+
+  const subEl = document.getElementById('carousel-subtitle');
+  if (subEl) subEl.textContent = v.subtitle;
+
+  const rateEl = document.getElementById('carousel-rate');
+  if (rateEl) rateEl.textContent = `€${v.ratePerKm.toFixed(2)}`;
+
+  const floorEl = document.getElementById('carousel-floor');
+  if (floorEl) floorEl.textContent = `Mandatory Base Floor: €${v.baseFloor.toFixed(2)}`;
+
+  const paxEl = document.getElementById('carousel-pax');
+  if (paxEl) paxEl.textContent = v.pax;
+
+  const lugEl = document.getElementById('carousel-luggage');
+  if (lugEl) lugEl.textContent = v.luggage;
+
+  const a3Icon = document.getElementById('carousel-amenity-3-icon');
+  const a3Text = document.getElementById('carousel-amenity-3-text');
+  if (a3Icon && v.amenity3) a3Icon.setAttribute('icon', v.amenity3.icon);
+  if (a3Text && v.amenity3) a3Text.textContent = v.amenity3.text;
+
+  const a4Icon = document.getElementById('carousel-amenity-4-icon');
+  const a4Text = document.getElementById('carousel-amenity-4-text');
+  if (a4Icon && v.amenity4) a4Icon.setAttribute('icon', v.amenity4.icon);
+  if (a4Text && v.amenity4) a4Text.textContent = v.amenity4.text;
+
+  const a5Icon = document.getElementById('carousel-amenity-5-icon');
+  const a5Text = document.getElementById('carousel-amenity-5-text');
+  if (a5Icon && v.amenity5) a5Icon.setAttribute('icon', v.amenity5.icon);
+  if (a5Text && v.amenity5) a5Text.textContent = v.amenity5.text;
+
+  const a6Icon = document.getElementById('carousel-amenity-6-icon');
+  const a6Text = document.getElementById('carousel-amenity-6-text');
+  if (a6Icon && v.amenity6) a6Icon.setAttribute('icon', v.amenity6.icon);
+  if (a6Text && v.amenity6) a6Text.textContent = v.amenity6.text;
+
+  const bookCta = document.getElementById('carousel-book-cta');
+  if (bookCta && bookCta.tagName.toLowerCase() === 'a') {
+    bookCta.href = `#booking-stepper?vehicle=${v.slug}`;
+  }
+}
+
+function bookCurrentFleetVehicle() {
+  const v = FLEET_VEHICLES[fleetActiveIndex];
+  if (v) {
+    selectFleetVehicle(v.category);
+  }
+}
+
 // Multi-Entry Point Trigger 1: Book by Car (Homepage Fleet Cards)
 function selectFleetVehicle(category) {
   if (!VEHICLE_META[category]) return;
   appState.vehicleCategory = category;
   appState.entrySource = 'fleet';
+
+  // Keep carousel active index in sync
+  const idx = FLEET_VEHICLES.findIndex(v => v.category === category);
+  if (idx !== -1 && idx !== fleetActiveIndex) {
+    fleetActiveIndex = idx;
+    renderFleetCarousel();
+  }
 
   // Adjust party size defaults if E-Class
   if (category === 'E_CLASS' && appState.passengerCount > 3) {

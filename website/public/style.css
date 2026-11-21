@@ -404,3 +404,124 @@ iconify-icon {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
 }
+
+/* ============================================================
+   PETRANS INTERACTIVE VEHICLE SPOTLIGHT CAROUSEL STYLES
+   ============================================================ */
+
+/* Fleet Showcase Container */
+.fleet-spotlight-section {
+  position: relative;
+  background-color: #0B0F19;
+  overflow: hidden;
+}
+
+/* Stage Canvas Container */
+.fleet-stage-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem auto;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 50% 50%, #161F30 0%, #0B0F19 100%);
+  border: 1px solid rgba(197, 160, 89, 0.20);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .fleet-stage-container {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+/* Ambient Radial Gold Scrim */
+.stage-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 75% 45% at 50% 68%,
+    rgba(197, 160, 89, 0.18) 0%,
+    rgba(22, 31, 48, 0.45) 45%,
+    rgba(11, 15, 25, 0.0) 75%
+  );
+  z-index: 1;
+}
+
+/* Floating Navigation Chevrons (Strict 48x48px hit area) */
+.carousel-chevron {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 9999px;
+  background: rgba(22, 31, 48, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  touch-action: manipulation;
+  z-index: 15;
+}
+
+.carousel-chevron:hover {
+  border-color: #CAA328;
+  color: #CAA328;
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(202, 163, 40, 0.25);
+}
+
+.carousel-chevron:active {
+  transform: scale(0.95);
+}
+
+/* Direct Model Selector Tabs */
+.fleet-tab {
+  touch-action: manipulation;
+}
+
+.fleet-tab.active {
+  background: linear-gradient(135deg, #CAA328 0%, #D4AF37 50%, #B89045 100%);
+  color: #0B0F19;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 15px rgba(202, 163, 40, 0.35);
+}
+
+/* 360 Interaction Cue */
+.stage-cue {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Accessible Carousel Dashes */
+.carousel-dash {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+.carousel-dash .dash-bar {
+  transition: all 0.3s ease;
+}
+.carousel-dash.active .dash-bar {
+  background-color: #CAA328;
+  width: 3rem;
+  box-shadow: 0 0 10px rgba(202, 163, 40, 0.5);
+}
+
