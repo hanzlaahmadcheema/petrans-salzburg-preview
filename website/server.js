@@ -13,9 +13,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 const bookingsStore = [];
 
 // --- PRICING ENGINE CONSTANTS ---
+const VEHICLE_RATES = {
+  'E_CLASS': 2.50,
+  'V_CLASS': 2.60,
+  'VITO':    2.80
+};
+
 const PRICING_CONFIG = {
   MIN_FARE_FLOOR: 45.0,
-  PER_KM_BASE_RATE: 2.8,
+  PER_KM_BASE_RATE: 2.60, // Default V-Class rate
   LONG_DISTANCE_THRESHOLD_KM: 150.0,
   LONG_DISTANCE_DEGRESSIVE_RATE: 2.2,
   RETURN_DISCOUNT_PERCENT: 5.0,
@@ -66,6 +72,8 @@ function calculateQuote(input) {
   const intermediateStops = parseInt(input.intermediateStopsCount) || 0;
   const tourKey = input.tourKey || 'hallstatt';
   const tourHours = parseFloat(input.tourHours) || 8;
+  const vehicleCategory = input.vehicleCategory || 'V_CLASS';
+  const ratePerKm = VEHICLE_RATES[vehicleCategory] || 2.60;
   const appliedRules = [];
 
   let baseFare = 0;
@@ -87,19 +95,19 @@ function calculateQuote(input) {
     grossTotal = baseFare + overtimeFee;
   } else {
     // Check for fixed specials
-    const rawDistanceFare = distanceKm * PRICING_CONFIG.PER_KM_BASE_RATE;
+    const rawDistanceFare = distanceKm * ratePerKm;
 
     if (rawDistanceFare < PRICING_CONFIG.MIN_FARE_FLOOR) {
       baseFare = PRICING_CONFIG.MIN_FARE_FLOOR;
       appliedRules.push(`Minimum Fare Floor Applied: €${PRICING_CONFIG.MIN_FARE_FLOOR.toFixed(2)}`);
     } else if (distanceKm > PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM) {
-      const baseSegment = PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM * PRICING_CONFIG.PER_KM_BASE_RATE;
+      const baseSegment = PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM * ratePerKm;
       const degressiveSegment = (distanceKm - PRICING_CONFIG.LONG_DISTANCE_THRESHOLD_KM) * PRICING_CONFIG.LONG_DISTANCE_DEGRESSIVE_RATE;
       baseFare = Math.round((baseSegment + degressiveSegment) * 100) / 100;
       appliedRules.push(`Long Distance Degressive Rate (>150km @ €2.20/km)`);
     } else {
       baseFare = Math.round(rawDistanceFare * 100) / 100;
-      appliedRules.push(`Standard Out-of-City Rate: ${distanceKm} km @ €2.80/km`);
+      appliedRules.push(`Distance Rate (${vehicleCategory}): ${distanceKm} km @ €${ratePerKm.toFixed(2)}/km`);
     }
 
     if (intermediateStops > 0) {
@@ -157,22 +165,37 @@ app.post('/api/bookings', (req, res) => {
   try {
     const data = req.body;
     
-    // Strict validation: passengers & luggage
+    // Validation: passengers & luggage per vehicle category
     const passengers = parseInt(data.passengerCount) || 1;
     const luggage = parseInt(data.largeLuggageCount) || 0;
+    const vehicleCategory = data.vehicleCategory || 'V_CLASS';
 
-    if (passengers > 8) {
-      return res.status(422).json({
-        success: false,
-        error: 'Capacity exceeded: Maximum 8 passengers allowed per Mercedes V-Class or Vito.'
-      });
-    }
-
-    if (luggage > 8) {
-      return res.status(422).json({
-        success: false,
-        error: 'Luggage limit exceeded: Maximum 8 large suitcases allowed in our minivans.'
-      });
+    if (vehicleCategory === 'E_CLASS') {
+      if (passengers > 3) {
+        return res.status(422).json({
+          success: false,
+          error: 'Capacity exceeded: Maximum 3 passengers allowed in Mercedes-Benz E-Class Sedan. Please select V-Class or Vito.'
+        });
+      }
+      if (luggage > 2) {
+        return res.status(422).json({
+          success: false,
+          error: 'Luggage limit exceeded: Maximum 2 large suitcases allowed in Mercedes-Benz E-Class Sedan. Please select V-Class or Vito.'
+        });
+      }
+    } else {
+      if (passengers > 8) {
+        return res.status(422).json({
+          success: false,
+          error: 'Capacity exceeded: Maximum 8 passengers allowed per Mercedes V-Class or Vito.'
+        });
+      }
+      if (luggage > 8) {
+        return res.status(422).json({
+          success: false,
+          error: 'Luggage limit exceeded: Maximum 8 large suitcases allowed in our minivans.'
+        });
+      }
     }
 
     // Generate unique booking reference: PET-2026-XXXX
@@ -183,6 +206,7 @@ app.post('/api/bookings', (req, res) => {
       serviceType: data.serviceType,
       distanceKm: data.distanceKm,
       intermediateStopsCount: data.intermediateStopsCount,
+      vehicleCategory: vehicleCategory,
       tourKey: data.tourKey,
       tourHours: data.tourHours
     });
