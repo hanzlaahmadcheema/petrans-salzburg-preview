@@ -1,129 +1,446 @@
 {
-  "cardChecks": {
-    "hasStageContainer": false,
-    "hasSpecCard": false,
-    "fleetHasBorder": false,
-    "floorGlowExists": true,
-    "peekWrapperExists": true,
-    "peekImgExists": true
-  },
-  "overflowResults": [
+  "testSuite": "TSK-PET-043: Seamless Split Fleet Showcase Browser QA",
+  "timestamp": "2026-11-22T18:29:58.022Z",
+  "assertionsPassed": 27,
+  "assertionsFailed": 0,
+  "tests": [
     {
-      "viewport": "desktop-1280",
-      "clientWidth": 1272,
-      "scrollWidth": 1272,
-      "hasOverflow": false,
-      "fleetScrollWidth": 1571,
-      "fleetClientWidth": 1272
+      "title": "Pillar 1: Legacy .fleet-stage-container outer card box completely excised",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "viewport": "desktop-1024",
-      "clientWidth": 1016,
-      "scrollWidth": 1016,
-      "hasOverflow": false,
-      "fleetScrollWidth": 1209,
-      "fleetClientWidth": 1016
+      "title": "Pillar 1: Legacy #fleet-spec-card specification card box completely excised",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "viewport": "tablet-768",
-      "clientWidth": 768,
-      "scrollWidth": 768,
-      "hasOverflow": false,
-      "fleetScrollWidth": 890,
-      "fleetClientWidth": 768
+      "title": "Pillar 1: #fleet section has 0px container border (borderless continuous canvas)",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "viewport": "mobile-412",
-      "clientWidth": 412,
-      "scrollWidth": 412,
-      "hasOverflow": false,
-      "fleetScrollWidth": 477,
-      "fleetClientWidth": 412
+      "title": "Pillar 1: #fleet section renders directly on Deep Alpine Slate (#0B0F19)",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "viewport": "mobile-390",
-      "clientWidth": 390,
-      "scrollWidth": 390,
-      "hasOverflow": false,
-      "fleetScrollWidth": 451,
-      "fleetClientWidth": 390
+      "title": "Pillar 1: #fleet section enforces overflow: hidden to clip vehicle rear cleanly",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "viewport": "mobile-375",
-      "clientWidth": 375,
-      "scrollWidth": 375,
-      "hasOverflow": false,
-      "fleetScrollWidth": 433,
-      "fleetClientWidth": 375
-    }
-  ],
-  "vClassState": {
-    "category": "Exclusive VIP Chauffeur",
-    "name": "Mercedes-Benz V-Class",
-    "rate": "€2.60",
-    "floor": "Mandatory Base Floor: €45.00",
-    "imgSrc": "/images/mercedes-v-class-peek.webp",
-    "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
-    "pax": "Max 8 Passengers"
-  },
-  "vitoState": {
-    "category": "Alpine 4MATIC Specialist",
-    "name": "Mercedes-Benz Vito Tourer",
-    "rate": "€2.80",
-    "floor": "Mandatory Base Floor: €45.00",
-    "imgSrc": "/images/mercedes-vito-peek.webp",
-    "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
-    "pax": "Max 8 Passengers"
-  },
-  "touchTargets": [
-    {
-      "tag": "BUTTON",
-      "text": "E-Class Sedan",
-      "width": 105,
-      "height": 52,
-      "passes": true
+      "title": "Pillar 1: Theatrical floor glow (.fleet-floor-glow) ambient element present",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "stageCardRemoved": true,
+        "specCardRemoved": true,
+        "borderWidth": "0px",
+        "backgroundColor": "rgb(11, 15, 25)",
+        "overflow": "hidden",
+        "floorGlowExists": true,
+        "peekWrapperExists": true,
+        "peekImgExists": true,
+        "showcaseGridExists": true
+      }
     },
     {
-      "tag": "BUTTON",
-      "text": "V-Class Van",
-      "width": 105,
-      "height": 52,
-      "passes": true
+      "title": "Pillar 2: Left column contains 3-tab selector, badge, headline, subtitle, rate & floor lockup",
+      "status": "PASSED",
+      "details": {
+        "tabCount": 3,
+        "hasCategoryBadge": true,
+        "headlineText": "Mercedes-Benz E-Class",
+        "subtitleText": "Obsidian Black Metallic • W214 Series",
+        "rateText": "€2.50",
+        "floorText": "Mandatory Base Floor: €45.00",
+        "amenityCount": 6,
+        "chevronCount": 2,
+        "indicatorText": "01 / 03 • Mercedes-Benz E-Class Sedan",
+        "hasBookBtn": true,
+        "hasRoutesLink": true,
+        "infoLeft": 32,
+        "infoWidth": 664,
+        "visualLeft": 728,
+        "visualWidth": 544,
+        "imgLeft": 728,
+        "imgRight": 1571,
+        "fleetRight": 1272,
+        "visualToRightOfInfo": true,
+        "imgBleedsOffCanvas": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 465
+      }
     },
     {
-      "tag": "BUTTON",
-      "text": "Vito 4MATIC",
-      "width": 107,
-      "height": 54,
-      "passes": true
+      "title": "Pillar 2: Left column contains 6 amenities pills, slide chevrons, counter, and booking CTA",
+      "status": "PASSED",
+      "details": {
+        "tabCount": 3,
+        "hasCategoryBadge": true,
+        "headlineText": "Mercedes-Benz E-Class",
+        "subtitleText": "Obsidian Black Metallic • W214 Series",
+        "rateText": "€2.50",
+        "floorText": "Mandatory Base Floor: €45.00",
+        "amenityCount": 6,
+        "chevronCount": 2,
+        "indicatorText": "01 / 03 • Mercedes-Benz E-Class Sedan",
+        "hasBookBtn": true,
+        "hasRoutesLink": true,
+        "infoLeft": 32,
+        "infoWidth": 664,
+        "visualLeft": 728,
+        "visualWidth": 544,
+        "imgLeft": 728,
+        "imgRight": 1571,
+        "fleetRight": 1272,
+        "visualToRightOfInfo": true,
+        "imgBleedsOffCanvas": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 465
+      }
     },
     {
-      "tag": "BUTTON",
-      "text": "",
-      "width": 44,
-      "height": 44,
-      "passes": true
+      "title": "Pillar 2: Desktop layout is an asymmetric split (visual on the right of info)",
+      "status": "PASSED",
+      "details": {
+        "tabCount": 3,
+        "hasCategoryBadge": true,
+        "headlineText": "Mercedes-Benz E-Class",
+        "subtitleText": "Obsidian Black Metallic • W214 Series",
+        "rateText": "€2.50",
+        "floorText": "Mandatory Base Floor: €45.00",
+        "amenityCount": 6,
+        "chevronCount": 2,
+        "indicatorText": "01 / 03 • Mercedes-Benz E-Class Sedan",
+        "hasBookBtn": true,
+        "hasRoutesLink": true,
+        "infoLeft": 32,
+        "infoWidth": 664,
+        "visualLeft": 728,
+        "visualWidth": 544,
+        "imgLeft": 728,
+        "imgRight": 1571,
+        "fleetRight": 1272,
+        "visualToRightOfInfo": true,
+        "imgBleedsOffCanvas": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 465
+      }
     },
     {
-      "tag": "BUTTON",
-      "text": "",
-      "width": 44,
-      "height": 44,
-      "passes": true
+      "title": "Pillar 2: Right column vehicle enters from right edge facing inward, rear extends off-canvas",
+      "status": "PASSED",
+      "details": {
+        "tabCount": 3,
+        "hasCategoryBadge": true,
+        "headlineText": "Mercedes-Benz E-Class",
+        "subtitleText": "Obsidian Black Metallic • W214 Series",
+        "rateText": "€2.50",
+        "floorText": "Mandatory Base Floor: €45.00",
+        "amenityCount": 6,
+        "chevronCount": 2,
+        "indicatorText": "01 / 03 • Mercedes-Benz E-Class Sedan",
+        "hasBookBtn": true,
+        "hasRoutesLink": true,
+        "infoLeft": 32,
+        "infoWidth": 664,
+        "visualLeft": 728,
+        "visualWidth": 544,
+        "imgLeft": 728,
+        "imgRight": 1571,
+        "fleetRight": 1272,
+        "visualToRightOfInfo": true,
+        "imgBleedsOffCanvas": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 465
+      }
     },
     {
-      "tag": "BUTTON",
-      "text": "Book This Vehicle",
-      "width": 177,
-      "height": 64,
-      "passes": true
+      "title": "Pillar 3 [iPhone SE (375px)]: Exactly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 58,
+        "docScroll": 375,
+        "winInner": 375,
+        "infoLeft": 16,
+        "infoWidth": 178,
+        "visualLeft": 202,
+        "visualWidth": 165,
+        "amenitiesTop": 2862,
+        "infoBottom": 2838,
+        "isSplitSideBySide": true
+      }
     },
     {
-      "tag": "A",
-      "text": "Route Rates",
-      "width": 162,
-      "height": 44,
-      "passes": true
+      "title": "Pillar 3 [iPhone SE (375px)]: Mobile split parity verified (identity left, 40% peek car right, amenities beneath)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 58,
+        "docScroll": 375,
+        "winInner": 375,
+        "infoLeft": 16,
+        "infoWidth": 178,
+        "visualLeft": 202,
+        "visualWidth": 165,
+        "amenitiesTop": 2862,
+        "infoBottom": 2838,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [iPhone 14/15 (390px)]: Exactly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 61,
+        "docScroll": 390,
+        "winInner": 390,
+        "infoLeft": 16,
+        "infoWidth": 186,
+        "visualLeft": 210,
+        "visualWidth": 172,
+        "amenitiesTop": 2824,
+        "infoBottom": 2800,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [iPhone 14/15 (390px)]: Mobile split parity verified (identity left, 40% peek car right, amenities beneath)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 61,
+        "docScroll": 390,
+        "winInner": 390,
+        "infoLeft": 16,
+        "infoWidth": 186,
+        "visualLeft": 210,
+        "visualWidth": 172,
+        "amenitiesTop": 2824,
+        "infoBottom": 2800,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [Galaxy S22 (412px)]: Exactly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 65,
+        "docScroll": 412,
+        "winInner": 412,
+        "infoLeft": 16,
+        "infoWidth": 198,
+        "visualLeft": 222,
+        "visualWidth": 182,
+        "amenitiesTop": 2756,
+        "infoBottom": 2732,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [Galaxy S22 (412px)]: Mobile split parity verified (identity left, 40% peek car right, amenities beneath)",
+      "status": "PASSED",
+      "details": {
+        "overflow": 0,
+        "fleetOverflow": 65,
+        "docScroll": 412,
+        "winInner": 412,
+        "infoLeft": 16,
+        "infoWidth": 198,
+        "visualLeft": 222,
+        "visualWidth": 182,
+        "amenitiesTop": 2756,
+        "infoBottom": 2732,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [iPad Portrait (768px)]: Exactly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "overflow": -8,
+        "fleetOverflow": 121,
+        "docScroll": 760,
+        "winInner": 768,
+        "infoLeft": 24,
+        "infoWidth": 370,
+        "visualLeft": 402,
+        "visualWidth": 342,
+        "amenitiesTop": 2194,
+        "infoBottom": 2170,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 3 [Desktop HD (1280px)]: Exactly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "overflow": -8,
+        "fleetOverflow": 299,
+        "docScroll": 1272,
+        "winInner": 1280,
+        "infoLeft": 32,
+        "infoWidth": 664,
+        "visualLeft": 728,
+        "visualWidth": 544,
+        "amenitiesTop": 2112,
+        "infoBottom": 2088,
+        "isSplitSideBySide": true
+      }
+    },
+    {
+      "title": "Pillar 4 [Switch to V-Class]: Tab 1 activates, rate updates to €2.60, max 8 pax, V-Class peek image loads",
+      "status": "PASSED",
+      "details": {
+        "activeVehicle": "v-class",
+        "category": "Exclusive VIP Chauffeur",
+        "name": "Mercedes-Benz V-Class",
+        "subtitle": "Obsidian Black Metallic • W447 Exclusive",
+        "rate": "€2.60",
+        "floor": "Mandatory Base Floor: €45.00",
+        "pax": "Max 8 Passengers",
+        "luggage": "8 Large Suitcases",
+        "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
+        "imgSrc": "/images/mercedes-v-class-peek.webp"
+      }
+    },
+    {
+      "title": "Pillar 4 [Switch to Vito]: Tab 2 activates, rate updates to €2.80, max 8 pax, Vito peek image loads",
+      "status": "PASSED",
+      "details": {
+        "activeVehicle": "vito",
+        "category": "Alpine 4MATIC Specialist",
+        "name": "Mercedes-Benz Vito Tourer",
+        "subtitle": "Brilliant Silver • 4MATIC All-Wheel",
+        "rate": "€2.80",
+        "pax": "Max 8 Passengers",
+        "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
+        "imgSrc": "/images/mercedes-vito-peek.webp"
+      }
+    },
+    {
+      "title": "Pillar 4 [Next Chevron Wrap]: Next button wraps from Vito (03) cleanly to E-Class (01)",
+      "status": "PASSED",
+      "details": {
+        "activeVehicle": "e-class",
+        "name": "Mercedes-Benz E-Class",
+        "indicator": "01 / 03 • Mercedes-Benz E-Class Sedan",
+        "imgSrc": "/images/mercedes-e-class-peek.webp"
+      }
+    },
+    {
+      "title": "Pillar 4 [Prev Chevron Wrap]: Prev button wraps from E-Class (01) cleanly to Vito (03)",
+      "status": "PASSED",
+      "details": {
+        "activeVehicle": "vito",
+        "name": "Mercedes-Benz Vito Tourer",
+        "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC"
+      }
+    },
+    {
+      "title": "Pillar 4: [ Book This Vehicle ] CTA constructs valid deep-link (/booking.html?vehicle=v-class)",
+      "status": "PASSED",
+      "details": {
+        "slug": "v-class",
+        "expectedUrl": "/booking.html?vehicle=v-class"
+      }
+    },
+    {
+      "title": "Pillar 4: /booking.html?vehicle=v-class accurately hydrates V-Class with affirmative preselection banner",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "isVClassCardActive": true
+      }
+    },
+    {
+      "title": "Pillar 5: 100% of interactive controls in #fleet satisfy >= 44x44px touch ergonomics",
+      "status": "PASSED",
+      "details": {
+        "totalControls": 7,
+        "allMeet44px": true,
+        "substandard": []
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 0% Unicode emojis in #fleet section",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "iconCount": 13,
+        "nonLucideCount": 0
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 100% Lucide 2px stroke icons in #fleet section",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "iconCount": 13,
+        "nonLucideCount": 0
+      }
     }
   ]
 }
