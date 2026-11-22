@@ -1,0 +1,758 @@
+{
+  "testSuite": "TSK-PET-052: 3-Pathway Homepage & Multi-Page Booking Flow Browser QA",
+  "timestamp": "2026-11-22T21:50:25.199Z",
+  "assertionsPassed": 33,
+  "assertionsFailed": 0,
+  "tests": [
+    {
+      "title": "Pillar 1: Legacy #hero-quick-book interactive calculator is completely removed",
+      "status": "PASSED",
+      "details": {
+        "heroExists": true,
+        "legacyCalcRemoved": true,
+        "inputCountInHero": 0,
+        "imgLoaded": true,
+        "hasScrim": true,
+        "headline": "Travel Salzburg & The Alps in Mercedes Luxury",
+        "licenseBadge": "Official Licensed Austrian Passenger Transport",
+        "pills": [
+          {
+            "text": "1. Book by Place",
+            "href": "#destinations",
+            "targetId": "destinations",
+            "targetExists": true,
+            "w": 167,
+            "h": 46
+          },
+          {
+            "text": "2. Book by Car",
+            "href": "#fleet",
+            "targetId": "fleet",
+            "targetExists": true,
+            "w": 158,
+            "h": 46
+          },
+          {
+            "text": "3. Book by Tour",
+            "href": "#tours",
+            "targetId": "tours",
+            "targetExists": true,
+            "w": 163,
+            "h": 46
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 1: Full-bleed Salzburg panorama photograph loaded with calibrated dark scrim",
+      "status": "PASSED",
+      "details": {
+        "heroExists": true,
+        "legacyCalcRemoved": true,
+        "inputCountInHero": 0,
+        "imgLoaded": true,
+        "hasScrim": true,
+        "headline": "Travel Salzburg & The Alps in Mercedes Luxury",
+        "licenseBadge": "Official Licensed Austrian Passenger Transport",
+        "pills": [
+          {
+            "text": "1. Book by Place",
+            "href": "#destinations",
+            "targetId": "destinations",
+            "targetExists": true,
+            "w": 167,
+            "h": 46
+          },
+          {
+            "text": "2. Book by Car",
+            "href": "#fleet",
+            "targetId": "fleet",
+            "targetExists": true,
+            "w": 158,
+            "h": 46
+          },
+          {
+            "text": "3. Book by Tour",
+            "href": "#tours",
+            "targetId": "tours",
+            "targetExists": true,
+            "w": 163,
+            "h": 46
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 1: Authoritative headline and Austrian license badge rendered with premium typography",
+      "status": "PASSED",
+      "details": {
+        "heroExists": true,
+        "legacyCalcRemoved": true,
+        "inputCountInHero": 0,
+        "imgLoaded": true,
+        "hasScrim": true,
+        "headline": "Travel Salzburg & The Alps in Mercedes Luxury",
+        "licenseBadge": "Official Licensed Austrian Passenger Transport",
+        "pills": [
+          {
+            "text": "1. Book by Place",
+            "href": "#destinations",
+            "targetId": "destinations",
+            "targetExists": true,
+            "w": 167,
+            "h": 46
+          },
+          {
+            "text": "2. Book by Car",
+            "href": "#fleet",
+            "targetId": "fleet",
+            "targetExists": true,
+            "w": 158,
+            "h": 46
+          },
+          {
+            "text": "3. Book by Tour",
+            "href": "#tours",
+            "targetId": "tours",
+            "targetExists": true,
+            "w": 163,
+            "h": 46
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 1: Hero contains exactly 3 anchor navigation pills with valid targets",
+      "status": "PASSED",
+      "details": {
+        "heroExists": true,
+        "legacyCalcRemoved": true,
+        "inputCountInHero": 0,
+        "imgLoaded": true,
+        "hasScrim": true,
+        "headline": "Travel Salzburg & The Alps in Mercedes Luxury",
+        "licenseBadge": "Official Licensed Austrian Passenger Transport",
+        "pills": [
+          {
+            "text": "1. Book by Place",
+            "href": "#destinations",
+            "targetId": "destinations",
+            "targetExists": true,
+            "w": 167,
+            "h": 46
+          },
+          {
+            "text": "2. Book by Car",
+            "href": "#fleet",
+            "targetId": "fleet",
+            "targetExists": true,
+            "w": 158,
+            "h": 46
+          },
+          {
+            "text": "3. Book by Tour",
+            "href": "#tours",
+            "targetId": "tours",
+            "targetExists": true,
+            "w": 163,
+            "h": 46
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 1: All 3 hero anchor pills satisfy >= 44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "heroExists": true,
+        "legacyCalcRemoved": true,
+        "inputCountInHero": 0,
+        "imgLoaded": true,
+        "hasScrim": true,
+        "headline": "Travel Salzburg & The Alps in Mercedes Luxury",
+        "licenseBadge": "Official Licensed Austrian Passenger Transport",
+        "pills": [
+          {
+            "text": "1. Book by Place",
+            "href": "#destinations",
+            "targetId": "destinations",
+            "targetExists": true,
+            "w": 167,
+            "h": 46
+          },
+          {
+            "text": "2. Book by Car",
+            "href": "#fleet",
+            "targetId": "fleet",
+            "targetExists": true,
+            "w": 158,
+            "h": 46
+          },
+          {
+            "text": "3. Book by Tour",
+            "href": "#tours",
+            "targetId": "tours",
+            "targetExists": true,
+            "w": 163,
+            "h": 46
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 1: Destinations]: Section exists with 6 canonical transfer destination cards",
+      "status": "PASSED",
+      "details": {
+        "destExists": true,
+        "cardCount": 6,
+        "cards": [
+          {
+            "title": "Salzburg Airport (SZG)",
+            "rate": "From €45.00",
+            "href": "/booking.html?pickup=Salzburg+City+Center&dest=Salzburg+Airport+SZG",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Hallstatt Heritage",
+            "rate": "From €182.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Hallstatt+Lahn+Terminal",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Zell am See / Kaprun",
+            "rate": "From €212.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Zell+am+See",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Munich Airport (MUC)",
+            "rate": "From €417.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Munich+Airport+MUC",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Vienna City / VIE",
+            "rate": "From €680.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Vienna+City",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Kitzbühel Ski Arena",
+            "rate": "From €200.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Kitzbuehel",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 1: Destinations]: All destination cards feature imagery, rates, and booking deep-links",
+      "status": "PASSED",
+      "details": {
+        "destExists": true,
+        "cardCount": 6,
+        "cards": [
+          {
+            "title": "Salzburg Airport (SZG)",
+            "rate": "From €45.00",
+            "href": "/booking.html?pickup=Salzburg+City+Center&dest=Salzburg+Airport+SZG",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Hallstatt Heritage",
+            "rate": "From €182.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Hallstatt+Lahn+Terminal",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Zell am See / Kaprun",
+            "rate": "From €212.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Zell+am+See",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Munich Airport (MUC)",
+            "rate": "From €417.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Munich+Airport+MUC",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Vienna City / VIE",
+            "rate": "From €680.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Vienna+City",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Kitzbühel Ski Arena",
+            "rate": "From €200.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Kitzbuehel",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 1: Destinations]: All destination card booking CTAs satisfy >= 44x44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "destExists": true,
+        "cardCount": 6,
+        "cards": [
+          {
+            "title": "Salzburg Airport (SZG)",
+            "rate": "From €45.00",
+            "href": "/booking.html?pickup=Salzburg+City+Center&dest=Salzburg+Airport+SZG",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Hallstatt Heritage",
+            "rate": "From €182.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Hallstatt+Lahn+Terminal",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Zell am See / Kaprun",
+            "rate": "From €212.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Zell+am+See",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Munich Airport (MUC)",
+            "rate": "From €417.50",
+            "href": "/booking.html?pickup=Salzburg&dest=Munich+Airport+MUC",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Vienna City / VIE",
+            "rate": "From €680.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Vienna+City",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          },
+          {
+            "title": "Kitzbühel Ski Arena",
+            "rate": "From €200.00",
+            "href": "/booking.html?pickup=Salzburg&dest=Kitzbuehel",
+            "hasImage": true,
+            "btnW": 130,
+            "btnH": 44
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 2: Fleet]: Section exists with seamless split 40% side peek presentation",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "tabCount": 3,
+        "tabs": [
+          {
+            "name": "E-Class Sedan\n            E-Class",
+            "slug": "e-class",
+            "h": 44
+          },
+          {
+            "name": "V-Class Van\n            V-Class",
+            "slug": "v-class",
+            "h": 44
+          },
+          {
+            "name": "Vito 4MATIC\n            Vito",
+            "slug": "vito",
+            "h": 44
+          }
+        ],
+        "hasPeekImg": true,
+        "imgSrc": "/images/mercedes-e-class-peek.webp",
+        "btnW": 189,
+        "btnH": 48
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 2: Fleet]: 3 model selector tabs present with >= 44px touch targets",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "tabCount": 3,
+        "tabs": [
+          {
+            "name": "E-Class Sedan\n            E-Class",
+            "slug": "e-class",
+            "h": 44
+          },
+          {
+            "name": "V-Class Van\n            V-Class",
+            "slug": "v-class",
+            "h": 44
+          },
+          {
+            "name": "Vito 4MATIC\n            Vito",
+            "slug": "vito",
+            "h": 44
+          }
+        ],
+        "hasPeekImg": true,
+        "imgSrc": "/images/mercedes-e-class-peek.webp",
+        "btnW": 189,
+        "btnH": 48
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 2: Fleet]: Primary booking CTA satisfies >= 48px ergonomic touch target",
+      "status": "PASSED",
+      "details": {
+        "fleetExists": true,
+        "tabCount": 3,
+        "tabs": [
+          {
+            "name": "E-Class Sedan\n            E-Class",
+            "slug": "e-class",
+            "h": 44
+          },
+          {
+            "name": "V-Class Van\n            V-Class",
+            "slug": "v-class",
+            "h": 44
+          },
+          {
+            "name": "Vito 4MATIC\n            Vito",
+            "slug": "vito",
+            "h": 44
+          }
+        ],
+        "hasPeekImg": true,
+        "imgSrc": "/images/mercedes-e-class-peek.webp",
+        "btnW": 189,
+        "btnH": 48
+      }
+    },
+    {
+      "title": "Pillar 2 [Pathway 3: Tours]: Section exists with 4 signature 8-hour private day tour cards",
+      "status": "PASSED",
+      "details": {
+        "toursExists": true,
+        "cardCount": 4,
+        "cards": [
+          {
+            "title": "Hallstatt & Salzkammergut",
+            "rate": "€450.00",
+            "bookHref": "/booking.html?service=TOUR&tour=hallstatt",
+            "itinHref": "/tours/hallstatt.html",
+            "bH": 44,
+            "iH": 44
+          },
+          {
+            "title": "Sound of Music & Lakes",
+            "rate": "€450.00",
+            "bookHref": "/booking.html?service=TOUR&tour=sound-of-music",
+            "itinHref": "/tours.html",
+            "bH": 44,
+            "iH": 44
+          },
+          {
+            "title": "Eagle's Nest & Berchtesgaden",
+            "rate": "€450.00",
+            "bookHref": "/booking.html?service=TOUR&tour=eagles-nest",
+            "itinHref": "/tours/eagles-nest.html",
+            "bH": 44,
+            "iH": 44
+          },
+          {
+            "title": "Grossglockner Glacier Road",
+            "rate": "€550.00",
+            "bookHref": "/booking.html?service=TOUR&tour=grossglockner",
+            "itinHref": "/tours.html",
+            "bH": 44,
+            "iH": 44
+          }
+        ]
+      }
+    },
+    {
+      "title": "Pillar 2 [Tour Hallstatt]: Flat rate €450.00 & tour=hallstatt deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "title": "Hallstatt & Salzkammergut",
+        "rate": "€450.00",
+        "bookHref": "/booking.html?service=TOUR&tour=hallstatt",
+        "itinHref": "/tours/hallstatt.html",
+        "bH": 44,
+        "iH": 44
+      }
+    },
+    {
+      "title": "Pillar 2 [Tour Sound of Music]: Flat rate €450.00 & tour=sound-of-music deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "title": "Sound of Music & Lakes",
+        "rate": "€450.00",
+        "bookHref": "/booking.html?service=TOUR&tour=sound-of-music",
+        "itinHref": "/tours.html",
+        "bH": 44,
+        "iH": 44
+      }
+    },
+    {
+      "title": "Pillar 2 [Tour Eagle]: Flat rate €450.00 & tour=eagles-nest deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "title": "Eagle's Nest & Berchtesgaden",
+        "rate": "€450.00",
+        "bookHref": "/booking.html?service=TOUR&tour=eagles-nest",
+        "itinHref": "/tours/eagles-nest.html",
+        "bH": 44,
+        "iH": 44
+      }
+    },
+    {
+      "title": "Pillar 2 [Tour Grossglockner]: Flat rate €550.00 & tour=grossglockner deep-link verified",
+      "status": "PASSED",
+      "details": {
+        "title": "Grossglockner Glacier Road",
+        "rate": "€550.00",
+        "bookHref": "/booking.html?service=TOUR&tour=grossglockner",
+        "itinHref": "/tours.html",
+        "bH": 44,
+        "iH": 44
+      }
+    },
+    {
+      "title": "Pillar 3: 4-Pillar Trust Strip (#trust) present with 4 distinct guarantee cards",
+      "status": "PASSED",
+      "details": {
+        "hasTrust": true,
+        "hasRoutes": true,
+        "hasGuide": true,
+        "hasTestimonials": true,
+        "hasFaq": true,
+        "hasFooter": true,
+        "hasStickyHeader": true
+      }
+    },
+    {
+      "title": "Pillar 3: Top Transfer Routes matrix (#routes) & Airport Guide (#airport-guide) present",
+      "status": "PASSED",
+      "details": {
+        "hasTrust": true,
+        "hasRoutes": true,
+        "hasGuide": true,
+        "hasTestimonials": true,
+        "hasFaq": true,
+        "hasFooter": true,
+        "hasStickyHeader": true
+      }
+    },
+    {
+      "title": "Pillar 3: Verified Client Testimonials (#testimonials) present with 3 glass review cards",
+      "status": "PASSED",
+      "details": {
+        "hasTrust": true,
+        "hasRoutes": true,
+        "hasGuide": true,
+        "hasTestimonials": true,
+        "hasFaq": true,
+        "hasFooter": true,
+        "hasStickyHeader": true
+      }
+    },
+    {
+      "title": "Pillar 3: FAQ accordion (#faq), sticky header, and Austrian legal footer present",
+      "status": "PASSED",
+      "details": {
+        "hasTrust": true,
+        "hasRoutes": true,
+        "hasGuide": true,
+        "hasTestimonials": true,
+        "hasFaq": true,
+        "hasFooter": true,
+        "hasStickyHeader": true
+      }
+    },
+    {
+      "title": "Pillar 4 [Flow 1]: Step 1 pre-hydrates Pickup & Destination addresses",
+      "status": "PASSED",
+      "details": {
+        "step1Pickup": "Salzburg City Center",
+        "step1Dropoff": "Hallstatt Lahn Terminal",
+        "atStep2": true,
+        "pane2Visible": true,
+        "atStep3": true,
+        "pane3Visible": true,
+        "atStep4": true,
+        "pane4Visible": true,
+        "atStep5": true,
+        "pane5Visible": true,
+        "quoteTotal": "€189.80",
+        "faggNotice": "One-Way Transfer\n                \n                   Edit Route\n                \n              \n              \n                Salzburg City Center → Hallstatt Lahn Terminal\n                \n                  2026-11-22 at 14:30 CET\n                  • Flight: OS 915\n                \n              \n\n              \n              \n                \n                  \n                    Pickup Location\n                    \n                  \n                  \n                    Dropoff Destination\n                    \n                  \n                \n                \n                  \n                    Pickup Date\n                    \n                  \n                  \n                    Pickup Time\n                    \n                  \n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Selected Vehicle\n                \n                   Switch Vehicle\n                \n              \n              \n                \n                  Mercedes-Benz V-Class\n                  VIP Chauffeur Minivan\n                \n                4 Passengers • 4 Large Bags\n              \n\n              \n              \n                \n                  E-Class (€2.50/km)\n                  V-Class (€2.60/km)\n                  Vito (€2.80/km)\n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Rate: €2.60/km (Base Floor: €45.00)\n                €189.80\n              \n              \n                Austrian Road Tolls & Highway Vignette\n                Included (€0.00)\n              \n              \n                Austrian Passenger VAT (20%)\n                €31.63\n              \n              \n                \n                  Guaranteed Fixed Total\n                  All-inclusive Austrian statutory price\n                \n                €189.80\n              \n            \n\n            \n            \n              \n                \n                Zero Card Capture — Pay Chauffeur After Service\n              \n              \n                In strict compliance with Austrian FAGG § 8, no credit card or advance deposit is charged at this step. Your reservation is submitted for instant operator verification. You pay your chauffeur directly upon arrival via Credit Card, Debit Card, or Cash.",
+        "reviewBtn": "Request Booking Confirmation — Pay After Approval"
+      }
+    },
+    {
+      "title": "Pillar 4 [Flow 1]: Sequential step progression (Step 1 -> 2 -> 3 -> 4 -> 5) executes cleanly",
+      "status": "PASSED",
+      "details": {
+        "step1Pickup": "Salzburg City Center",
+        "step1Dropoff": "Hallstatt Lahn Terminal",
+        "atStep2": true,
+        "pane2Visible": true,
+        "atStep3": true,
+        "pane3Visible": true,
+        "atStep4": true,
+        "pane4Visible": true,
+        "atStep5": true,
+        "pane5Visible": true,
+        "quoteTotal": "€189.80",
+        "faggNotice": "One-Way Transfer\n                \n                   Edit Route\n                \n              \n              \n                Salzburg City Center → Hallstatt Lahn Terminal\n                \n                  2026-11-22 at 14:30 CET\n                  • Flight: OS 915\n                \n              \n\n              \n              \n                \n                  \n                    Pickup Location\n                    \n                  \n                  \n                    Dropoff Destination\n                    \n                  \n                \n                \n                  \n                    Pickup Date\n                    \n                  \n                  \n                    Pickup Time\n                    \n                  \n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Selected Vehicle\n                \n                   Switch Vehicle\n                \n              \n              \n                \n                  Mercedes-Benz V-Class\n                  VIP Chauffeur Minivan\n                \n                4 Passengers • 4 Large Bags\n              \n\n              \n              \n                \n                  E-Class (€2.50/km)\n                  V-Class (€2.60/km)\n                  Vito (€2.80/km)\n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Rate: €2.60/km (Base Floor: €45.00)\n                €189.80\n              \n              \n                Austrian Road Tolls & Highway Vignette\n                Included (€0.00)\n              \n              \n                Austrian Passenger VAT (20%)\n                €31.63\n              \n              \n                \n                  Guaranteed Fixed Total\n                  All-inclusive Austrian statutory price\n                \n                €189.80\n              \n            \n\n            \n            \n              \n                \n                Zero Card Capture — Pay Chauffeur After Service\n              \n              \n                In strict compliance with Austrian FAGG § 8, no credit card or advance deposit is charged at this step. Your reservation is submitted for instant operator verification. You pay your chauffeur directly upon arrival via Credit Card, Debit Card, or Cash.",
+        "reviewBtn": "Request Booking Confirmation — Pay After Approval"
+      }
+    },
+    {
+      "title": "Pillar 4 [Flow 1]: Step 5 calculates transparent quote and displays Austrian FAGG § 8 checkout notice",
+      "status": "PASSED",
+      "details": {
+        "step1Pickup": "Salzburg City Center",
+        "step1Dropoff": "Hallstatt Lahn Terminal",
+        "atStep2": true,
+        "pane2Visible": true,
+        "atStep3": true,
+        "pane3Visible": true,
+        "atStep4": true,
+        "pane4Visible": true,
+        "atStep5": true,
+        "pane5Visible": true,
+        "quoteTotal": "€189.80",
+        "faggNotice": "One-Way Transfer\n                \n                   Edit Route\n                \n              \n              \n                Salzburg City Center → Hallstatt Lahn Terminal\n                \n                  2026-11-22 at 14:30 CET\n                  • Flight: OS 915\n                \n              \n\n              \n              \n                \n                  \n                    Pickup Location\n                    \n                  \n                  \n                    Dropoff Destination\n                    \n                  \n                \n                \n                  \n                    Pickup Date\n                    \n                  \n                  \n                    Pickup Time\n                    \n                  \n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Selected Vehicle\n                \n                   Switch Vehicle\n                \n              \n              \n                \n                  Mercedes-Benz V-Class\n                  VIP Chauffeur Minivan\n                \n                4 Passengers • 4 Large Bags\n              \n\n              \n              \n                \n                  E-Class (€2.50/km)\n                  V-Class (€2.60/km)\n                  Vito (€2.80/km)\n                \n                \n                  Done\n                \n              \n            \n\n            \n            \n              \n                Rate: €2.60/km (Base Floor: €45.00)\n                €189.80\n              \n              \n                Austrian Road Tolls & Highway Vignette\n                Included (€0.00)\n              \n              \n                Austrian Passenger VAT (20%)\n                €31.63\n              \n              \n                \n                  Guaranteed Fixed Total\n                  All-inclusive Austrian statutory price\n                \n                €189.80\n              \n            \n\n            \n            \n              \n                \n                Zero Card Capture — Pay Chauffeur After Service\n              \n              \n                In strict compliance with Austrian FAGG § 8, no credit card or advance deposit is charged at this step. Your reservation is submitted for instant operator verification. You pay your chauffeur directly upon arrival via Credit Card, Debit Card, or Cash.",
+        "reviewBtn": "Request Booking Confirmation — Pay After Approval"
+      }
+    },
+    {
+      "title": "Pillar 4 [Flow 2]: Vehicle deep-link (?vehicle=v-class) pre-selects V-Class with affirmative banner",
+      "status": "PASSED",
+      "details": {
+        "category": "V_CLASS",
+        "bannerVisible": true,
+        "bannerText": "Vehicle Pre-selected: Mercedes-Benz V-Class (€2.60/km). You can change this at any time.",
+        "cardActive": true
+      }
+    },
+    {
+      "title": "Pillar 4 [Flow 3]: Tour deep-link (?service=TOUR&tour=sound-of-music) pre-selects Sound of Music tour and configures UI",
+      "status": "PASSED",
+      "details": {
+        "serviceType": "TOUR",
+        "tourKey": "sound-of-music",
+        "bannerVisible": true,
+        "bannerText": "Tour Pre-selected: Sound of Music & Salzburg Lakes (8 Hours) (€450.00). You can customize your schedule or change services at any time.",
+        "tourSelectVal": "sound-of-music",
+        "transferHidden": true,
+        "tourVisible": true
+      }
+    },
+    {
+      "title": "Pillar 5 [iPhone SE (375px)]: Strictly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "docScroll": 375,
+        "winInner": 375,
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 5 [iPhone 14/15 (390px)]: Strictly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "docScroll": 390,
+        "winInner": 390,
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 5 [Galaxy S22 (412px)]: Strictly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "docScroll": 412,
+        "winInner": 412,
+        "overflow": 0
+      }
+    },
+    {
+      "title": "Pillar 5 [iPad Portrait (768px)]: Strictly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "docScroll": 760,
+        "winInner": 768,
+        "overflow": -8
+      }
+    },
+    {
+      "title": "Pillar 5 [Desktop HD (1280px)]: Strictly 0px horizontal page overflow",
+      "status": "PASSED",
+      "details": {
+        "docScroll": 1272,
+        "winInner": 1280,
+        "overflow": -8
+      }
+    },
+    {
+      "title": "Pillar 5: 100% of interactive controls in primary pathways meet >= 44x44px touch ergonomics",
+      "status": "PASSED",
+      "details": {
+        "totalChecked": 34,
+        "allMeet44px": true,
+        "substandard": []
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 0% Unicode emojis across homepage",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "iconCount": 115,
+        "nonLucideCount": 0
+      }
+    },
+    {
+      "title": "Pillar 5: Exactly 100% Lucide 2px stroke icons across homepage",
+      "status": "PASSED",
+      "details": {
+        "emojiCount": 0,
+        "iconCount": 115,
+        "nonLucideCount": 0
+      }
+    }
+  ]
+}
