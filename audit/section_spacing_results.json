@@ -1,0 +1,29 @@
+[
+  {
+    "viewport": "Desktop (1280px)",
+    "trustMarginBottom": "80px",
+    "bookingPaddingTop": "80px",
+    "bookingPaddingBottom": "80px",
+    "gapTrustToBooking": 80,
+    "gapBookingToFleet": 0,
+    "collisionResolved": true
+  },
+  {
+    "viewport": "Tablet (768px)",
+    "trustMarginBottom": "80px",
+    "bookingPaddingTop": "80px",
+    "bookingPaddingBottom": "80px",
+    "gapTrustToBooking": 80,
+    "gapBookingToFleet": 0,
+    "collisionResolved": true
+  },
+  {
+    "viewport": "Mobile (375px)",
+    "trustMarginBottom": "64px",
+    "bookingPaddingTop": "64px",
+    "bookingPaddingBottom": "64px",
+    "gapTrustToBooking": 64,
+    "gapBookingToFleet": 0,
+    "collisionResolved": true
+  }
+]
