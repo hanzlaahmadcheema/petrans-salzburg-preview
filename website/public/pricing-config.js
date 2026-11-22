@@ -35,6 +35,16 @@ const PETRANS_PRICING = {
   // Tour Overtime Rate (per hour beyond standard 8 hours)
   TOUR_OVERTIME_RATE_PER_HOUR: 50.0,
 
+  // Hourly Chauffeur Hire Rates (As-Directed Service)
+  HOURLY_RATES: {
+    E_CLASS: 80.0,
+    V_CLASS: 85.0,
+    VITO: 85.0,
+    minHours: 4,
+    includedKmPerHour: 25,
+    extraKmRate: 2.50
+  },
+
   // Statutory Austrian Passenger Transport VAT Rate
   AUSTRIAN_PASSENGER_VAT_RATE: 0.20,
 
@@ -200,7 +210,13 @@ function calculatePetransQuote(input) {
   let discountAmount = 0;
   let grossTotal = 0;
 
-  if (serviceType === 'TOUR') {
+  if (serviceType === 'HOURLY') {
+    const hours = Math.max(4, parseInt(input.hourlyHours || input.hours || input.durationHours) || 4);
+    const hourlyRate = PETRANS_PRICING.HOURLY_RATES[vehicleCategory] || PETRANS_PRICING.HOURLY_RATES.V_CLASS;
+    baseFare = hours * hourlyRate;
+    appliedRules.push(`Hourly Chauffeur (${vehicleCategory}): ${hours} Hours @ €${hourlyRate.toFixed(2)}/hour (${hours * 25} km included)`);
+    grossTotal = baseFare;
+  } else if (serviceType === 'TOUR') {
     const tourMeta = PETRANS_PRICING.TOUR_RATES[tourKey] || PETRANS_PRICING.TOUR_RATES['hallstatt'];
     baseFare = tourMeta.basePrice;
     appliedRules.push(`${tourMeta.title}: €${baseFare.toFixed(2)} (8 Hours Included)`);

@@ -1,0 +1,129 @@
+{
+  "cardChecks": {
+    "hasStageContainer": false,
+    "hasSpecCard": false,
+    "fleetHasBorder": false,
+    "floorGlowExists": true,
+    "peekWrapperExists": true,
+    "peekImgExists": true
+  },
+  "overflowResults": [
+    {
+      "viewport": "desktop-1280",
+      "clientWidth": 1272,
+      "scrollWidth": 1272,
+      "hasOverflow": false,
+      "fleetScrollWidth": 1571,
+      "fleetClientWidth": 1272
+    },
+    {
+      "viewport": "desktop-1024",
+      "clientWidth": 1016,
+      "scrollWidth": 1016,
+      "hasOverflow": false,
+      "fleetScrollWidth": 1209,
+      "fleetClientWidth": 1016
+    },
+    {
+      "viewport": "tablet-768",
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "hasOverflow": false,
+      "fleetScrollWidth": 890,
+      "fleetClientWidth": 768
+    },
+    {
+      "viewport": "mobile-412",
+      "clientWidth": 412,
+      "scrollWidth": 412,
+      "hasOverflow": false,
+      "fleetScrollWidth": 477,
+      "fleetClientWidth": 412
+    },
+    {
+      "viewport": "mobile-390",
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "hasOverflow": false,
+      "fleetScrollWidth": 451,
+      "fleetClientWidth": 390
+    },
+    {
+      "viewport": "mobile-375",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "hasOverflow": false,
+      "fleetScrollWidth": 433,
+      "fleetClientWidth": 375
+    }
+  ],
+  "vClassState": {
+    "category": "Exclusive VIP Chauffeur",
+    "name": "Mercedes-Benz V-Class",
+    "rate": "€2.60",
+    "floor": "Mandatory Base Floor: €45.00",
+    "imgSrc": "/images/mercedes-v-class-peek.webp",
+    "indicator": "02 / 03 • Mercedes-Benz V-Class VIP",
+    "pax": "Max 8 Passengers"
+  },
+  "vitoState": {
+    "category": "Alpine 4MATIC Specialist",
+    "name": "Mercedes-Benz Vito Tourer",
+    "rate": "€2.80",
+    "floor": "Mandatory Base Floor: €45.00",
+    "imgSrc": "/images/mercedes-vito-peek.webp",
+    "indicator": "03 / 03 • Mercedes-Benz Vito Tourer 4MATIC",
+    "pax": "Max 8 Passengers"
+  },
+  "touchTargets": [
+    {
+      "tag": "BUTTON",
+      "text": "E-Class Sedan",
+      "width": 105,
+      "height": 52,
+      "passes": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "V-Class Van",
+      "width": 105,
+      "height": 52,
+      "passes": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Vito 4MATIC",
+      "width": 107,
+      "height": 54,
+      "passes": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "width": 44,
+      "height": 44,
+      "passes": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "width": 44,
+      "height": 44,
+      "passes": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Book This Vehicle",
+      "width": 177,
+      "height": 64,
+      "passes": true
+    },
+    {
+      "tag": "A",
+      "text": "Route Rates",
+      "width": 162,
+      "height": 44,
+      "passes": true
+    }
+  ]
+}

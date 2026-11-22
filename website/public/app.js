@@ -251,9 +251,8 @@ const FLEET_VEHICLES = [
     amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
     amenity5: { icon: 'lucide:wifi', text: 'High-Speed Wi-Fi' },
     amenity6: { icon: 'lucide:coffee', text: 'Bottled Water' },
-    poster: '/images/mercedes-e-class.webp',
-    pngFallback: '/images/mercedes-e-class.png',
-    modelSrc: '/models/mercedes-e-class.glb',
+    poster: '/images/mercedes-e-class-peek.webp',
+    pngFallback: '/images/mercedes-e-class-peek.png',
     indicator: '01 / 03 • Mercedes-Benz E-Class Sedan'
   },
   {
@@ -270,9 +269,8 @@ const FLEET_VEHICLES = [
     amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
     amenity5: { icon: 'lucide:wifi', text: 'High-Speed Wi-Fi' },
     amenity6: { icon: 'lucide:coffee', text: 'Bottled Water' },
-    poster: '/images/mercedes-v-class.webp',
-    pngFallback: '/images/mercedes-v-class.png',
-    modelSrc: '/models/mercedes-v-class.glb',
+    poster: '/images/mercedes-v-class-peek.webp',
+    pngFallback: '/images/mercedes-v-class-peek.png',
     indicator: '02 / 03 • Mercedes-Benz V-Class VIP'
   },
   {
@@ -289,9 +287,8 @@ const FLEET_VEHICLES = [
     amenity4: { icon: 'lucide:snowflake', text: 'Free Ski Equipment', sky: true },
     amenity5: { icon: 'lucide:zap', text: 'USB Fast Power' },
     amenity6: { icon: 'lucide:users', text: 'Group Expedition' },
-    poster: '/images/mercedes-vito.webp',
-    pngFallback: '/images/mercedes-vito.png',
-    modelSrc: '/models/mercedes-vito.glb',
+    poster: '/images/mercedes-vito-peek.webp',
+    pngFallback: '/images/mercedes-vito-peek.png',
     indicator: '03 / 03 • Mercedes-Benz Vito Tourer 4MATIC'
   }
 ];
@@ -313,22 +310,8 @@ function initFleetCarousel() {
   window.fleetActiveIndex = fleetActiveIndex;
 
   const stage = document.getElementById('fleet-stage');
-  const viewer = document.getElementById('vehicle-viewer');
-  const fallback = document.getElementById('stage-fallback');
-  const cue = document.getElementById('stage-cue');
 
-  // Dismiss interaction cue on first pointer / touch interaction
   if (stage) {
-    const markInteraction = () => {
-      if (!hasInteractedWithStage && cue) {
-        hasInteractedWithStage = true;
-        cue.style.opacity = '0';
-        setTimeout(() => { if (cue) cue.classList.add('hidden'); }, 500);
-      }
-    };
-    stage.addEventListener('pointerdown', markInteraction, { passive: true });
-    stage.addEventListener('touchstart', markInteraction, { passive: true });
-
     // Touch gesture navigation (horizontal swipe)
     let touchStartX = 0;
     let touchStartY = 0;
@@ -370,47 +353,6 @@ function initFleetCarousel() {
         nextFleetVehicle();
       }
     });
-
-    // Interactive 3D Perspective Tilt for 2D High-Res Fallback Cutout
-    const fallbackImg = document.getElementById('fallback-img');
-    if (fallbackImg) {
-      const handlePointerMove = (e) => {
-        const rect = stage.getBoundingClientRect();
-        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
-        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
-        if (clientX === null || clientY === null) return;
-
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Subtle tilt: max ±7 deg Y, ±4 deg X
-        const rotateY = ((x - centerX) / centerX) * 7;
-        const rotateX = -((y - centerY) / centerY) * 4;
-
-        fallbackImg.style.transform = `perspective(1000px) rotateY(${rotateY.toFixed(2)}deg) rotateX(${rotateX.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-        fallbackImg.style.transition = 'transform 0.08s ease-out';
-      };
-
-      const handlePointerReset = () => {
-        fallbackImg.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-        fallbackImg.style.transition = 'transform 0.4s ease-out';
-      };
-
-      stage.addEventListener('pointermove', handlePointerMove, { passive: true });
-      stage.addEventListener('pointerleave', handlePointerReset, { passive: true });
-      stage.addEventListener('touchmove', handlePointerMove, { passive: true });
-      stage.addEventListener('touchend', handlePointerReset, { passive: true });
-    }
-  }
-
-  // Model viewer error or absence resilience
-  if (viewer) {
-    viewer.addEventListener('error', () => {
-      if (fallback) fallback.classList.remove('hidden');
-      viewer.classList.add('hidden');
-    });
   }
 
   renderFleetCarousel();
@@ -430,6 +372,10 @@ function prevFleetVehicle() {
   switchFleetVehicle(fleetActiveIndex - 1);
 }
 
+window.switchFleetVehicle = switchFleetVehicle;
+window.nextFleetVehicle = nextFleetVehicle;
+window.prevFleetVehicle = prevFleetVehicle;
+
 function renderFleetCarousel() {
   const v = FLEET_VEHICLES[fleetActiveIndex];
   if (!v) return;
@@ -447,50 +393,27 @@ function renderFleetCarousel() {
     }
   });
 
-  // 2. Update Stage Visuals (Fallback WebP & Model Viewer)
-  const fallbackImg = document.getElementById('fallback-img');
-  if (fallbackImg) {
-    fallbackImg.src = v.poster;
-    fallbackImg.alt = v.name;
+  // 2. Animate Vehicle Visual Transition (Cross-fade & subtle slide)
+  const peekImg = document.getElementById('fallback-img');
+  if (peekImg) {
+    peekImg.style.opacity = '0';
+    peekImg.style.transform = 'translateX(25px) scale(0.98)';
+
+    setTimeout(() => {
+      peekImg.src = v.poster;
+      peekImg.alt = v.name;
+      peekImg.style.opacity = '1';
+      peekImg.style.transform = 'translateX(0) scale(1)';
+    }, 180);
   }
 
-  const viewer = document.getElementById('vehicle-viewer');
-  if (viewer) {
-    viewer.poster = v.poster;
-    viewer.alt = v.name;
-    if (v.modelSrc) {
-      viewer.src = v.modelSrc;
-    }
-  }
-
-  // 3. Update Indicator Text & Dashes
+  // 3. Update Indicator Text
   const indText = document.getElementById('carousel-indicator-text');
   if (indText) {
     indText.textContent = v.indicator;
   }
 
-  document.querySelectorAll('.carousel-dash').forEach((dash, idx) => {
-    const bar = dash.querySelector('.dash-bar');
-    if (idx === fleetActiveIndex) {
-      dash.classList.add('active');
-      if (bar) {
-        bar.className = 'dash-bar h-1.5 w-12 rounded-full bg-gold';
-      }
-    } else {
-      dash.classList.remove('active');
-      if (bar) {
-        bar.className = 'dash-bar h-1.5 w-8 rounded-full bg-slate-800 hover:bg-slate-700';
-      }
-    }
-  });
-
-  // 4. Update Specification Deck
-  const specCard = document.getElementById('fleet-spec-card');
-  if (specCard) {
-    specCard.classList.add('opacity-90');
-    setTimeout(() => specCard.classList.remove('opacity-90'), 150);
-  }
-
+  // 4. Update Vehicle Metadata & Typography
   const catEl = document.getElementById('carousel-category');
   if (catEl) catEl.textContent = v.badge;
 
@@ -506,6 +429,7 @@ function renderFleetCarousel() {
   const floorEl = document.getElementById('carousel-floor');
   if (floorEl) floorEl.textContent = `Mandatory Base Floor: €${v.baseFloor.toFixed(2)}`;
 
+  // 5. Update Amenities
   const paxEl = document.getElementById('carousel-pax');
   if (paxEl) paxEl.textContent = v.pax;
 
@@ -532,6 +456,7 @@ function renderFleetCarousel() {
   if (a6Icon && v.amenity6) a6Icon.setAttribute('icon', v.amenity6.icon);
   if (a6Text && v.amenity6) a6Text.textContent = v.amenity6.text;
 
+  // 6. Update CTA Button Deep Link
   const bookCta = document.getElementById('carousel-book-cta');
   if (bookCta && bookCta.tagName.toLowerCase() === 'a') {
     bookCta.href = `/booking.html?vehicle=${v.slug}`;
@@ -621,12 +546,36 @@ function setupEventListeners() {
     });
   });
 
-  // Mode 1: Place Calculator
+  // Mode 1: Place / Transfer Calculator
   const heroPlaceDest = document.getElementById('hero-place-dest');
   const heroPlaceVehicle = document.getElementById('hero-place-vehicle');
   const heroPlacePrice = document.getElementById('hero-place-price');
   const heroPlaceMetrics = document.getElementById('hero-place-metrics');
   const btnHeroPlaceBook = document.getElementById('btn-hero-place-book');
+  const btnAddHeroStop = document.getElementById('btn-add-hero-stop');
+  const heroStopRow = document.getElementById('hero-stop-row');
+  const heroStopInput = document.getElementById('hero-stop-input');
+  const btnRemoveHeroStop = document.getElementById('btn-remove-hero-stop');
+  let heroStopsCount = 0;
+
+  if (btnAddHeroStop && heroStopRow) {
+    btnAddHeroStop.addEventListener('click', () => {
+      heroStopsCount = 1;
+      heroStopRow.classList.remove('hidden');
+      btnAddHeroStop.classList.add('hidden');
+      updateHeroPlaceCalc();
+    });
+  }
+
+  if (btnRemoveHeroStop && heroStopRow && btnAddHeroStop) {
+    btnRemoveHeroStop.addEventListener('click', () => {
+      heroStopsCount = 0;
+      heroStopRow.classList.add('hidden');
+      if (heroStopInput) heroStopInput.value = '';
+      btnAddHeroStop.classList.remove('hidden');
+      updateHeroPlaceCalc();
+    });
+  }
 
   function updateHeroPlaceCalc() {
     if (!heroPlaceDest || !heroPlaceVehicle || !heroPlacePrice) return;
@@ -637,21 +586,22 @@ function setupEventListeners() {
     const destName = opt?.getAttribute('data-name') || '';
 
     // Route Specials and Centralized Pricing
-    if (destName.includes('Prague')) {
+    if (destName.includes('Prague') && heroStopsCount === 0) {
       heroPlacePrice.textContent = '€650.00';
-    } else if (destName.includes('Munich Airport')) {
+    } else if (destName.includes('Munich Airport') && heroStopsCount === 0) {
       heroPlacePrice.textContent = '€490.00';
     } else if (typeof window.calculatePetransQuote === 'function') {
       const quote = window.calculatePetransQuote({
         serviceType: 'ONE_WAY',
         distanceKm: km,
+        intermediateStopsCount: heroStopsCount,
         vehicleCategory: vehKey
       });
       heroPlacePrice.textContent = `€${quote.grossTotal.toFixed(2)}`;
     } else {
       const vehOpt = heroPlaceVehicle.selectedOptions[0];
       const rate = parseFloat(vehOpt?.getAttribute('data-rate') || '2.60');
-      const fare = Math.max(45, km * rate);
+      const fare = Math.max(45, (km * rate) + (heroStopsCount * 20));
       heroPlacePrice.textContent = `€${fare.toFixed(2)}`;
     }
 
@@ -659,7 +609,8 @@ function setupEventListeners() {
       const approxHours = Math.floor(km / 65);
       const approxMins = Math.round((km % 65) * 60 / 65);
       const timeStr = approxHours > 0 ? `~${approxHours}h ${approxMins}m` : `~${approxMins}m`;
-      heroPlaceMetrics.textContent = `${km} km • ${timeStr}`;
+      const stopsText = heroStopsCount > 0 ? ` • +${heroStopsCount} Stop` : '';
+      heroPlaceMetrics.textContent = `${km} km • ${timeStr}${stopsText}`;
     }
   }
 
@@ -673,11 +624,49 @@ function setupEventListeners() {
       const destOpt = heroPlaceDest?.selectedOptions[0];
       const dest = destOpt?.getAttribute('data-name') || destOpt?.value || 'Hallstatt';
       const veh = heroPlaceVehicle?.value || 'v-class';
-      window.location.href = `/booking.html?service=one-way&pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dest)}&vehicle=${veh}`;
+      const stopsQuery = heroStopsCount > 0 ? `&stops=${heroStopsCount}` : '';
+      window.location.href = `/booking.html?service=one-way&pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dest)}&vehicle=${veh}${stopsQuery}`;
     });
   }
 
-  // Mode 2: Tour Selector
+  // Mode 2: Hourly Chauffeur (As-Directed)
+  const heroHourlyDuration = document.getElementById('hero-hourly-duration');
+  const heroHourlyVehicle = document.getElementById('hero-hourly-vehicle');
+  const heroHourlyPrice = document.getElementById('hero-hourly-price');
+  const heroHourlyMetrics = document.getElementById('hero-hourly-metrics');
+  const btnHeroHourlyBook = document.getElementById('btn-hero-hourly-book');
+
+  function updateHeroHourlyCalc() {
+    if (!heroHourlyDuration || !heroHourlyPrice) return;
+    const hours = parseInt(heroHourlyDuration.value) || 4;
+    const veh = heroHourlyVehicle ? heroHourlyVehicle.value : 'v-class';
+    const vehKey = veh.toUpperCase().replace('-', '_');
+    const quote = typeof window.calculatePetransQuote === 'function' ? window.calculatePetransQuote({
+      serviceType: 'HOURLY',
+      hourlyHours: hours,
+      vehicleCategory: vehKey
+    }) : { grossTotal: hours * 85.0 };
+
+    heroHourlyPrice.textContent = `€${quote.grossTotal.toFixed(2)}`;
+    if (heroHourlyMetrics) {
+      heroHourlyMetrics.textContent = `${hours} Hours • ${hours * 25} km fuel & highway tolls included`;
+    }
+  }
+
+  if (heroHourlyDuration) heroHourlyDuration.addEventListener('change', updateHeroHourlyCalc);
+  if (heroHourlyVehicle) heroHourlyVehicle.addEventListener('change', updateHeroHourlyCalc);
+  updateHeroHourlyCalc();
+
+  if (btnHeroHourlyBook) {
+    btnHeroHourlyBook.addEventListener('click', () => {
+      const pickup = document.getElementById('hero-hourly-pickup')?.value || 'Salzburg City Center';
+      const hours = heroHourlyDuration?.value || '4';
+      const veh = heroHourlyVehicle?.value || 'v-class';
+      window.location.href = `/booking.html?service=hourly&hours=${hours}&pickup=${encodeURIComponent(pickup)}&vehicle=${veh}`;
+    });
+  }
+
+  // Mode 3: Tour Selector
   const heroTourSelect = document.getElementById('hero-tour-select');
   const heroTourPrice = document.getElementById('hero-tour-price');
   const heroTourDetailsLink = document.getElementById('hero-tour-details-link');
@@ -702,7 +691,7 @@ function setupEventListeners() {
     });
   }
 
-  // Mode 3: Car Selector
+  // Mode 4: Car Selector Cards
   const carCards = document.querySelectorAll('.car-quick-card');
   carCards.forEach(c => {
     c.addEventListener('click', () => {
@@ -718,6 +707,20 @@ function setupEventListeners() {
       window.location.href = `/booking.html?vehicle=${quickSelectedCar}`;
     });
   }
+
+  // Interactive FAQ Accordion Trigger
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(other => other.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
 
   // Hero Book CTA
   const heroBookBtn = document.getElementById('btn-hero-book');

@@ -523,187 +523,153 @@
 
 
   <!-- 5. Dedicated Mercedes-Benz Fleet Section (Single-Vehicle Spotlight Carousel & 3D Stage) -->
-  <section id="fleet" class="py-20 bg-midnight relative fleet-spotlight-section" role="region" aria-roledescription="carousel" aria-label="Mercedes-Benz Alpine Fleet">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-surface text-gold text-xs font-bold uppercase tracking-wider mb-3">
+    <section id="fleet" class="py-16 sm:py-24 bg-midnight relative overflow-hidden" role="region" aria-roledescription="carousel" aria-label="Mercedes-Benz Alpine Fleet">
+
+    <!-- Theatrical Floor Ambient Glow (Grounding Right-Side Vehicle Entrance) -->
+    <div class="fleet-floor-glow" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Section Header & Model Selector Tabs -->
+      <div class="max-w-3xl mb-8 sm:mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
           <iconify-icon icon="lucide:car" width="14" height="14"></iconify-icon>
           <span>Exclusively Mercedes-Benz Fleet</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-bold font-outfit text-snow mb-4">Our Handcrafted Alpine Fleet</h2>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          We operate exclusively top-tier Mercedes-Benz vehicles — from our executive E-Class sedan to our flagship V-Class and 4MATIC Vito minivans, rigorously serviced, climate-controlled, and equipped for supreme comfort across Salzburg and the high Austrian Alps.
+        <h2 class="text-3xl sm:text-5xl font-bold font-outfit text-snow mb-3 leading-tight">
+          Our Handcrafted Alpine Fleet
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+          Every journey across Salzburg and the Austrian Alps is conducted in an immaculate, climate-controlled Mercedes-Benz. Transparent distance pricing, zero upfront payment, and licensed Austrian chauffeurs.
         </p>
-      </div>
 
-      <!-- Direct Model Selector Tabs -->
-      <div class="flex items-center justify-center gap-2 p-1.5 bg-surface/90 backdrop-blur-md rounded-2xl border border-slate-800 max-w-xl mx-auto mb-8 shadow-xl" role="tablist" aria-label="Select Mercedes-Benz Vehicle">
-        <button type="button" class="fleet-tab active flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold font-outfit transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="true" data-index="0" data-vehicle="e-class" onclick="switchFleetVehicle(0)">
-          <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
-          <span>E-Class Sedan</span>
-        </button>
-
-        <button type="button" class="fleet-tab flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold font-outfit text-slate-300 hover:text-gold transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="false" data-index="1" data-vehicle="v-class" onclick="switchFleetVehicle(1)">
-          <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
-          <span>V-Class Van</span>
-        </button>
-
-        <button type="button" class="fleet-tab flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold font-outfit text-slate-300 hover:text-gold transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="false" data-index="2" data-vehicle="vito" onclick="switchFleetVehicle(2)">
-          <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
-          <span>Vito 4MATIC</span>
-        </button>
-      </div>
-
-      <!-- Spotlight Stage Canvas Container -->
-      <div class="fleet-stage-container relative select-none" id="fleet-stage" tabindex="0" aria-label="Interactive Mercedes-Benz 3D vehicle stage. Use left and right arrow keys to change vehicle.">
-        <!-- Radial Gold Scrim -->
-        <div class="stage-scrim"></div>
-
-        <!-- Floating Left Navigation Chevron -->
-        <button type="button" class="carousel-chevron absolute left-3 sm:left-6 z-20" aria-label="Previous vehicle" onclick="prevFleetVehicle()">
-          <iconify-icon icon="lucide:chevron-left" width="22" height="22"></iconify-icon>
-        </button>
-
-        <!-- Floating Right Navigation Chevron -->
-        <button type="button" class="carousel-chevron absolute right-3 sm:right-6 z-20" aria-label="Next vehicle" onclick="nextFleetVehicle()">
-          <iconify-icon icon="lucide:chevron-right" width="22" height="22"></iconify-icon>
-        </button>
-
-        <!-- 3D Model Viewer with Poster Hydration -->
-        <model-viewer
-          id="vehicle-viewer"
-          src=""
-          poster="/images/mercedes-e-class.webp"
-          alt="Mercedes-Benz E-Class Executive Sedan"
-          loading="lazy"
-          reveal="auto"
-          camera-controls
-          touch-action="pan-y"
-          disable-zoom
-          auto-rotate
-          auto-rotate-delay="3000"
-          rotation-per-second="4.5deg"
-          interaction-prompt="none"
-          camera-orbit="45deg 78deg 105%"
-          min-camera-orbit="auto 72deg auto"
-          max-camera-orbit="auto 88deg auto"
-          shadow-intensity="1.2"
-          shadow-softness="0.8"
-          exposure="1.0"
-          class="w-full h-full relative z-10 hidden"
-          style="background-color: transparent;">
-        </model-viewer>
-
-        <!-- 2D Fallback / High-Res Cutout Image (Active by default or when 3D is unavailable) -->
-        <div id="stage-fallback" class="relative z-10 w-full h-full flex items-center justify-center p-4 sm:p-8">
-          <img 
-            id="fallback-img" 
-            src="/images/mercedes-e-class.webp" 
-            alt="Mercedes-Benz E-Class Executive Sedan" 
-            class="max-w-[85%] max-h-[82%] object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] transition-all duration-500 transform hover:scale-105"
-            loading="eager"
-          />
-        </div>
-
-        <!-- 360 Interaction Cue / Badge -->
-        <div id="stage-cue" class="stage-cue flex items-center gap-1.5 bg-surface/90 backdrop-blur-md border border-gold/30 text-gold text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg" aria-hidden="true">
-          <iconify-icon icon="lucide:rotate-3d" width="16" height="16"></iconify-icon>
-          <span id="stage-cue-text">Interactive Showcase</span>
-        </div>
-      </div>
-
-      <!-- Active Index & Pagination Indicator -->
-      <div class="flex flex-col items-center justify-center gap-2 mb-8">
-        <span class="text-xs sm:text-sm font-mono tracking-wider text-slate-300 font-semibold" id="carousel-indicator-text">
-          01 / 03 • Mercedes-Benz E-Class Sedan
-        </span>
-        <div class="flex items-center gap-1 sm:gap-2" role="group" aria-label="Vehicle Slides">
-          <button type="button" class="carousel-dash active p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Slide 1: E-Class" onclick="switchFleetVehicle(0)">
-            <span class="dash-bar h-1.5 w-12 rounded-full bg-gold"></span>
+        <!-- Model Selector Tabs (Symmetrical 3-Tab Bar, No Outer Box Borders) -->
+        <div class="flex items-center gap-2 mt-6 p-1 bg-surface/80 backdrop-blur-md rounded-2xl border border-slate-800/80 max-w-lg shadow-xl" role="tablist" aria-label="Select Mercedes-Benz Vehicle">
+          <button type="button" class="fleet-tab active flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold font-outfit transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="true" data-index="0" data-vehicle="e-class" onclick="switchFleetVehicle(0)">
+            <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
+            <span>E-Class Sedan</span>
           </button>
-          <button type="button" class="carousel-dash p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Slide 2: V-Class" onclick="switchFleetVehicle(1)">
-            <span class="dash-bar h-1.5 w-8 rounded-full bg-slate-800 hover:bg-slate-700"></span>
+
+          <button type="button" class="fleet-tab flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold font-outfit text-slate-300 hover:text-gold transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="false" data-index="1" data-vehicle="v-class" onclick="switchFleetVehicle(1)">
+            <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
+            <span>V-Class Van</span>
           </button>
-          <button type="button" class="carousel-dash p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Slide 3: Vito" onclick="switchFleetVehicle(2)">
-            <span class="dash-bar h-1.5 w-8 rounded-full bg-slate-800 hover:bg-slate-700"></span>
+
+          <button type="button" class="fleet-tab flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold font-outfit text-slate-300 hover:text-gold transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px]" role="tab" aria-selected="false" data-index="2" data-vehicle="vito" onclick="switchFleetVehicle(2)">
+            <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
+            <span>Vito 4MATIC</span>
           </button>
         </div>
       </div>
 
-      <!-- Integrated Specification & Pricing Deck -->
-      <div class="glass-card p-6 sm:p-8 rounded-2xl border border-gold/30 max-w-4xl mx-auto shadow-2xl relative z-10 transition-all duration-300" id="fleet-spec-card">
-        
-        <!-- Header: Category, Titles & Price Lockup -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
-          <div>
+      <!-- Main Asymmetric Showcase Layout (Split: Details Left, 40% Front Profile Right) -->
+      <div class="fleet-showcase-grid" id="fleet-stage" tabindex="0" aria-label="Interactive Mercedes-Benz Fleet Showcase">
+
+        <!-- AREA 1: Vehicle Identity & Transparent Rate Lockup -->
+        <div class="fleet-area-info flex flex-col justify-center z-10">
+          <!-- Category, Name & Subtitle -->
+          <div class="mb-4">
             <span class="inline-block px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30 text-[11px] font-bold uppercase tracking-wider mb-2" id="carousel-category">
               Executive Chauffeur Sedan
             </span>
-            <h3 class="text-2xl sm:text-3xl font-extrabold font-outfit text-snow leading-tight" id="carousel-name">
+            <h3 class="text-2xl sm:text-4xl xl:text-5xl font-extrabold font-outfit text-snow leading-tight tracking-tight" id="carousel-name">
               Mercedes-Benz E-Class
             </h3>
-            <p class="text-xs text-slate-400 mt-1 font-sans" id="carousel-subtitle">
+            <p class="text-xs sm:text-sm text-slate-400 mt-1 font-sans" id="carousel-subtitle">
               Obsidian Black Metallic • W214 Series
             </p>
           </div>
 
-          <!-- Rate Lockup -->
-          <div class="text-left sm:text-right flex-shrink-0 bg-midnight/60 sm:bg-transparent p-4 sm:p-0 rounded-xl border border-slate-800 sm:border-0">
-            <div class="flex items-baseline sm:justify-end gap-1">
-              <span class="text-3xl sm:text-4xl font-extrabold font-mono text-gold" id="carousel-rate">€2.50</span>
+          <!-- Transparent Rate Lockup (No Inner Card Border, Seamless Flow) -->
+          <div class="py-3 sm:py-4 border-y border-slate-800/80 flex flex-wrap items-baseline gap-x-6 gap-y-2">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-3xl sm:text-4xl xl:text-5xl font-extrabold font-mono text-gold" id="carousel-rate">€2.50</span>
               <span class="text-sm font-bold text-slate-400 font-sans">/ km</span>
             </div>
-            <span class="text-xs font-semibold text-slate-400 block mt-0.5" id="carousel-floor">
-              Mandatory Base Floor: €45.00
-            </span>
-            <span class="text-[11px] text-emerald-400 block font-medium">
-              Tolls, Vignette & 20% Austrian VAT Included
-            </span>
+            <div class="space-y-0.5">
+              <span class="text-xs font-semibold text-slate-300 block" id="carousel-floor">
+                Mandatory Base Floor: €45.00
+              </span>
+              <span class="text-[11px] text-emerald-400 font-medium block">
+                Tolls, Vignette & 20% Austrian VAT Included
+              </span>
+            </div>
           </div>
         </div>
 
-        <!-- Key Technical Amenities (6-Pill Responsive Grid) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 py-6 border-b border-slate-800 text-xs font-medium text-slate-300">
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon icon="lucide:users" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
-            <span id="carousel-pax">Max 3 Passengers</span>
-          </div>
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon icon="lucide:briefcase" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
-            <span id="carousel-luggage">2 Large + 2 Cabin Bags</span>
-          </div>
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon id="carousel-amenity-3-icon" icon="lucide:shield-check" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
-            <span id="carousel-amenity-3-text">Free Child Seats</span>
-          </div>
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon id="carousel-amenity-4-icon" icon="lucide:snowflake" width="16" height="16" class="text-sky-400 flex-shrink-0"></iconify-icon>
-            <span id="carousel-amenity-4-text">Free Ski Equipment</span>
-          </div>
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon id="carousel-amenity-5-icon" icon="lucide:wifi" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
-            <span id="carousel-amenity-5-text">High-Speed Wi-Fi</span>
-          </div>
-          <div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface/50 border border-slate-800/80">
-            <iconify-icon id="carousel-amenity-6-icon" icon="lucide:coffee" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
-            <span id="carousel-amenity-6-text">Bottled Water</span>
+        <!-- AREA 2: 40% Front Profile Vehicle Showcase (Entering from Right Screen Edge) -->
+        <div class="fleet-area-visual relative flex items-center justify-end select-none pointer-events-none">
+          <div class="fleet-vehicle-peek-wrapper">
+            <img 
+              id="fallback-img" 
+              src="/images/mercedes-e-class-peek.webp" 
+              alt="Mercedes-Benz E-Class Executive Sedan" 
+              class="fleet-peek-image"
+              loading="eager"
+            />
           </div>
         </div>
 
-        <!-- Action CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
-          <div class="text-xs text-slate-400 text-center sm:text-left">
-            <span>Zero booking fees • Pay chauffeur on board</span>
+        <!-- AREA 3: Technical Amenities (6-Pill Symmetrical Grid) -->
+        <div class="fleet-area-amenities z-10">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs font-medium text-slate-300">
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon icon="lucide:users" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
+              <span id="carousel-pax">Max 3 Passengers</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon icon="lucide:briefcase" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
+              <span id="carousel-luggage">2 Large + 2 Cabin Bags</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon id="carousel-amenity-3-icon" icon="lucide:shield-check" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
+              <span id="carousel-amenity-3-text">Free Child Seats</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon id="carousel-amenity-4-icon" icon="lucide:snowflake" width="16" height="16" class="text-sky-400 flex-shrink-0"></iconify-icon>
+              <span id="carousel-amenity-4-text">Free Ski Equipment</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon id="carousel-amenity-5-icon" icon="lucide:wifi" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
+              <span id="carousel-amenity-5-text">High-Speed Wi-Fi</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface/60 border border-slate-800/80">
+              <iconify-icon id="carousel-amenity-6-icon" icon="lucide:coffee" width="16" height="16" class="text-gold flex-shrink-0"></iconify-icon>
+              <span id="carousel-amenity-6-text">Bottled Water</span>
+            </div>
           </div>
-          <div class="flex items-center gap-3 w-full sm:w-auto">
-            <a href="#routes" class="btn-outline-gold text-xs py-3 px-4 flex-1 sm:flex-none text-center min-h-[44px]">
-              Route Rates
-            </a>
-            <button type="button" onclick="bookCurrentFleetVehicle()" class="btn-gold text-sm py-3 px-6 flex-1 sm:flex-none text-center min-h-[44px] shadow-lg shadow-gold/25" id="carousel-book-cta">
-              <span>Book This Vehicle</span>
-              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="ml-1.5"></iconify-icon>
-            </button>
+        </div>
+
+        <!-- AREA 4: Slide Controls (Chevrons + Numeric Indicator) & CTAs -->
+        <div class="fleet-area-actions z-10">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-2">
+            
+            <!-- Slide Counter & Chevron Navigation -->
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1.5">
+                <button type="button" class="fleet-chevron-btn min-w-[44px] min-h-[44px]" aria-label="Previous vehicle" onclick="prevFleetVehicle()">
+                  <iconify-icon icon="lucide:chevron-left" width="20" height="20"></iconify-icon>
+                </button>
+                <button type="button" class="fleet-chevron-btn min-w-[44px] min-h-[44px]" aria-label="Next vehicle" onclick="nextFleetVehicle()">
+                  <iconify-icon icon="lucide:chevron-right" width="20" height="20"></iconify-icon>
+                </button>
+              </div>
+              <span class="text-xs sm:text-sm font-mono tracking-wider text-slate-300 font-semibold" id="carousel-indicator-text">
+                01 / 03 • Mercedes-Benz E-Class Sedan
+              </span>
+            </div>
+
+            <!-- Action CTA Buttons -->
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+              <a href="#routes" class="btn-outline-gold text-xs py-3 px-4 flex-1 sm:flex-none text-center min-h-[44px]">
+                Route Rates
+              </a>
+              <button type="button" onclick="bookCurrentFleetVehicle()" class="btn-gold text-sm py-3 px-6 flex-1 sm:flex-none text-center min-h-[44px] shadow-lg shadow-gold/25" id="carousel-book-cta">
+                <span>Book This Vehicle</span>
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="ml-1.5"></iconify-icon>
+              </button>
+            </div>
+
           </div>
         </div>
 

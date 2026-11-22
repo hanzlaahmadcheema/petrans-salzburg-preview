@@ -152,11 +152,23 @@ function hydrateBookingFromUrl() {
   const serviceParam = params.get('service');
   if (serviceParam) {
     const sKey = serviceParam.toUpperCase().replace('-', '_');
-    if (['ONE_WAY', 'RETURN', 'TOUR'].includes(sKey)) {
+    if (['ONE_WAY', 'RETURN', 'TOUR', 'HOURLY'].includes(sKey)) {
       appState.serviceType = sKey;
+      if (sKey === 'HOURLY') {
+        appState.tourHours = parseInt(params.get('hours')) || 4;
+        preselectedNote = `Hourly As-Directed Chauffeur: ${appState.tourHours} Hours Pre-selected.`;
+      }
       const optBtn = document.querySelector(`.service-opt-btn[data-val="${sKey}"]`);
       if (optBtn) optBtn.click();
     }
+  }
+
+  // 1b. Stops param
+  const stopsParam = parseInt(params.get('stops'));
+  if (!isNaN(stopsParam) && stopsParam >= 0 && stopsParam <= 5) {
+    appState.intermediateStops = stopsParam;
+    const sEl = document.getElementById('step1-stops-count');
+    if (sEl) sEl.textContent = stopsParam;
   }
 
   // 2. Vehicle param
