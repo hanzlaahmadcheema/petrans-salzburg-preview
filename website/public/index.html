@@ -284,7 +284,7 @@
         <div id="mode-place" class="quick-panel">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
             <div>
-              <label class="form-label">Pickup Location</label>
+              <label class="form-label" for="hero-place-pickup">Pickup Location</label>
               <select id="hero-place-pickup" class="form-input">
                 <option value="Salzburg Airport (SZG)">Salzburg Airport W. A. Mozart (SZG)</option>
                 <option value="Salzburg Central Station (Hbf)">Salzburg Central Station (Hbf)</option>
@@ -294,7 +294,7 @@
               </select>
             </div>
             <div>
-              <label class="form-label">Destination</label>
+              <label class="form-label" for="hero-place-dest">Destination</label>
               <select id="hero-place-dest" class="form-input">
                 <option value="Hallstatt Lahn (73 km)" data-km="73" data-name="Hallstatt" selected>Hallstatt Lahn Terminal (73 km)</option>
                 <option value="Zell am See (85 km)" data-km="85" data-name="Zell am See">Zell am See / Kaprun (85 km)</option>
@@ -308,7 +308,7 @@
               </select>
             </div>
             <div>
-              <label class="form-label">Mercedes Vehicle</label>
+              <label class="form-label" for="hero-place-vehicle">Mercedes Vehicle</label>
               <select id="hero-place-vehicle" class="form-input">
                 <option value="e-class" data-rate="2.50">E-Class Sedan (1-3 Pax) • €2.50/km</option>
                 <option value="v-class" data-rate="2.60" selected>V-Class VIP (1-8 Pax) • €2.60/km</option>
@@ -341,7 +341,7 @@
         <div id="mode-tour" class="quick-panel hidden">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
             <div>
-              <label class="form-label">Select 8-Hour Private Day Tour</label>
+              <label class="form-label" for="hero-tour-select">Select 8-Hour Private Day Tour</label>
               <select id="hero-tour-select" class="form-input">
                 <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes — €450.00</option>
                 <option value="eagles-nest">Eagle's Nest & Berchtesgaden — €450.00</option>
@@ -353,7 +353,7 @@
               </select>
             </div>
             <div>
-              <label class="form-label">Pickup City / Area</label>
+              <label class="form-label" for="hero-tour-pickup">Pickup City / Area</label>
               <select id="hero-tour-pickup" class="form-input">
                 <option value="Salzburg Hotel / City Center" selected>Salzburg Hotel / City Center (Included)</option>
                 <option value="Salzburg Airport (SZG)">Salzburg Airport W. A. Mozart</option>
@@ -1267,7 +1267,7 @@
   <div id="ai-chat-root" class="fixed bottom-6 right-6 z-40">
     
     <!-- Collapsed Floating Circle -->
-    <button id="ai-chat-toggle" class="w-14 h-14 rounded-full bg-surface border border-gold text-gold shadow-2xl flex items-center justify-center hover:bg-gold hover:text-midnight transition transform hover:scale-105 group">
+    <button id="ai-chat-toggle" class="w-14 h-14 rounded-full bg-surface border border-gold text-gold shadow-2xl flex items-center justify-center hover:bg-gold hover:text-midnight transition transform hover:scale-105 group" aria-label="Open AI Concierge chat">
       <div class="relative">
         <iconify-icon icon="lucide:sparkles" width="24" height="24"></iconify-icon>
         <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-midnight"></span>
@@ -1275,7 +1275,7 @@
     </button>
 
     <!-- Expanded Chat Container -->
-    <div id="ai-chat-window" class="hidden fixed sm:absolute bottom-0 right-0 sm:bottom-16 sm:right-0 w-full sm:w-96 max-w-[95vw] h-[500px] glass-card rounded-2xl shadow-2xl border border-gold/40 flex flex-col overflow-hidden bg-midnight/95">
+    <div id="ai-chat-window" class="hidden fixed sm:absolute bottom-0 right-0 sm:bottom-16 sm:right-0 w-full sm:w-96 max-w-[95vw] h-[500px] glass-card rounded-2xl shadow-2xl border border-gold/40 flex flex-col overflow-hidden bg-midnight/95" role="dialog" aria-label="PETRANS AI Concierge Chat">
       
       <!-- Chat Header -->
       <div class="p-4 bg-surface border-b border-gold/20 flex items-center justify-between">
@@ -1291,20 +1291,20 @@
           </div>
         </div>
 
-        <button id="ai-chat-close" class="text-slate-400 hover:text-snow">
+        <button id="ai-chat-close" class="text-slate-400 hover:text-snow" aria-label="Close AI Concierge chat">
           <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
         </button>
       </div>
 
       <!-- Messages Stream -->
-      <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs">
+      <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs" role="log" aria-live="polite">
         <div class="bg-surface p-3 rounded-xl border border-slate-800 text-slate-200">
           Hello! I am your 24/7 PETRANS Concierge. How can I assist you with your Salzburg airport transfer or 8-hour private day tour?
         </div>
       </div>
 
       <!-- Quick Inquiry Chips -->
-      <div class="p-2 bg-midnight/90 border-t border-slate-800 flex gap-1.5 overflow-x-auto text-[11px]">
+      <div class="p-2 bg-midnight/90 border-t border-slate-800 flex gap-1.5 overflow-x-auto text-[11px]" role="group" aria-label="Quick questions">
         <button class="quick-chip text-[11px] py-1 px-2.5" onclick="sendAiQuick('Where do we meet the driver at Salzburg airport?')"><iconify-icon icon="lucide:map-pin" width="13" height="13" class="text-gold mr-1"></iconify-icon>Meeting Point?</button>
         <button class="quick-chip text-[11px] py-1 px-2.5" onclick="sendAiQuick('How much is the 8-hour Hallstatt tour?')"><iconify-icon icon="lucide:compass" width="13" height="13" class="text-gold mr-1"></iconify-icon>Hallstatt Tour?</button>
         <button class="quick-chip text-[11px] py-1 px-2.5" onclick="sendAiQuick('Are ski bags and baby seats free?')"><iconify-icon icon="lucide:snowflake" width="13" height="13" class="text-sky-400 mr-1"></iconify-icon>Free Ski Gear?</button>
@@ -1312,8 +1312,8 @@
 
       <!-- Input Bar -->
       <div class="p-3 bg-surface border-t border-gold/20 flex items-center gap-2">
-        <input type="text" id="ai-chat-input" class="form-input text-xs py-2" placeholder="Ask about routes, fleet, meeting points...">
-        <button id="ai-chat-send" class="btn-gold p-2 rounded-lg">
+        <input type="text" id="ai-chat-input" class="form-input text-xs py-2" placeholder="Ask about routes, fleet, meeting points..." aria-label="Type your message to AI Concierge">
+        <button id="ai-chat-send" class="btn-gold p-2 rounded-lg" aria-label="Send message to AI Concierge">
           <iconify-icon icon="lucide:send" width="16" height="16"></iconify-icon>
         </button>
       </div>

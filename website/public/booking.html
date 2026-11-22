@@ -204,7 +204,7 @@
             <!-- Transfer Route Fields -->
             <div id="step1-transfer-fields" class="space-y-4">
               <div>
-                <label class="form-label">Pickup Location</label>
+                <label class="form-label" for="step1-pickup">Pickup Location</label>
                 <input type="text" id="step1-pickup" class="form-input text-base" value="Salzburg Airport W. A. Mozart (SZG)" placeholder="Enter address, airport or hotel">
                 <div class="flex flex-wrap gap-2 mt-2">
                   <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg Airport W. A. Mozart (SZG)'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Airport (SZG)</button>
@@ -214,7 +214,7 @@
               </div>
 
               <div>
-                <label class="form-label">Destination Address</label>
+                <label class="form-label" for="step1-dropoff">Destination Address</label>
                 <input type="text" id="step1-dropoff" class="form-input text-base" value="Hallstatt Lahn Terminal" placeholder="Enter ski resort, airport, hotel or city">
                 <div class="flex flex-wrap gap-2 mt-2">
                   <button type="button" onclick="document.getElementById('step1-dropoff').value='Hallstatt Lahn Terminal'; appState.distanceKm=73;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Hallstatt (73 km)</button>
@@ -244,7 +244,7 @@
             <!-- Tour Selector Fields -->
             <div id="step1-tour-fields" class="space-y-4 hidden">
               <div>
-                <label class="form-label">Select 8-Hour Private Day Tour</label>
+                <label class="form-label" for="step1-tour-select">Select 8-Hour Private Day Tour</label>
                 <select id="step1-tour-select" class="form-input text-base">
                   <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes (8 Hours) — Flat €450.00</option>
                   <option value="eagles-nest">Eagles Nest & Berchtesgaden (6-8 Hours) — Flat €450.00</option>
@@ -260,18 +260,18 @@
             <!-- Date & Time Row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="form-label">Pickup Date</label>
+                <label class="form-label" for="step1-date">Pickup Date</label>
                 <input type="date" id="step1-date" class="form-input text-base">
               </div>
               <div>
-                <label class="form-label">Pickup Time (CET)</label>
+                <label class="form-label" for="step1-time">Pickup Time (CET)</label>
                 <input type="time" id="step1-time" class="form-input text-base" value="14:30">
               </div>
             </div>
 
             <!-- Flight Tracking Field -->
             <div>
-              <label class="form-label">Flight Number (Optional for Airport Touchdown Sync)</label>
+              <label class="form-label" for="step1-flight">Flight Number (Optional for Airport Touchdown Sync)</label>
               <div class="relative">
                 <input type="text" id="step1-flight" class="form-input text-base uppercase" placeholder="e.g. OS 915 or LH 1104">
                 <span class="absolute right-3 top-3 text-[10px] text-emerald-400 font-semibold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/60">60m Free Waiting</span>
@@ -283,11 +283,11 @@
               <span class="text-xs font-bold text-gold uppercase tracking-wider block">Return Journey Details (-5% Discount Applied)</span>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="form-label">Return Pickup Date</label>
+                  <label class="form-label" for="step1-return-date">Return Pickup Date</label>
                   <input type="date" id="step1-return-date" class="form-input text-base">
                 </div>
                 <div>
-                  <label class="form-label">Return Pickup Time</label>
+                  <label class="form-label" for="step1-return-time">Return Pickup Time</label>
                   <input type="time" id="step1-return-time" class="form-input text-base" value="10:00">
                 </div>
               </div>
@@ -490,8 +490,8 @@
                   <span class="text-sm font-bold text-snow block">Foldable Wheelchair</span>
                   <span class="text-xs text-slate-400">Accommodated in boot at no extra cost</span>
                 </div>
-                <label class="relative inline-flex items-center cursor-pointer min-h-[44px] min-w-[44px]">
-                  <input type="checkbox" id="addon-wheelchair" class="sr-only peer">
+                <label for="addon-wheelchair" class="relative inline-flex items-center cursor-pointer min-h-[44px] min-w-[44px]">
+                  <input type="checkbox" id="addon-wheelchair" class="sr-only peer" aria-label="Foldable wheelchair transport">
                   <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold"></div>
                 </label>
               </div>
@@ -525,34 +525,34 @@
 
           <div class="space-y-4">
             <div>
-              <label class="form-label">Lead Passenger Full Name</label>
+              <label class="form-label" for="cust-name">Lead Passenger Full Name</label>
               <input type="text" id="cust-name" class="form-input text-base" placeholder="e.g. Dr. Alexander Weber">
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="form-label">Email Address (for instant confirmation)</label>
+                <label class="form-label" for="cust-email">Email Address (for instant confirmation)</label>
                 <input type="email" id="cust-email" class="form-input text-base" placeholder="client@example.com">
               </div>
               <div>
-                <label class="form-label">Mobile Number (with country code)</label>
+                <label class="form-label" for="cust-phone">Mobile Number (with country code)</label>
                 <input type="tel" id="cust-phone" class="form-input text-base" placeholder="+43 664 1234567">
               </div>
             </div>
 
             <div>
-              <label class="form-label">Preferred Communication Channel</label>
-              <div class="grid grid-cols-3 gap-2">
+              <label class="form-label" id="comm-channel-label">Preferred Communication Channel</label>
+              <div class="grid grid-cols-3 gap-2" role="radiogroup" aria-labelledby="comm-channel-label">
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="WHATSAPP_EMAIL" checked class="text-gold">
+                  <input type="radio" name="comm-channel" value="WHATSAPP_EMAIL" checked class="text-gold" aria-label="WhatsApp and Email">
                   <span class="text-xs text-slate-200">WhatsApp & Email</span>
                 </label>
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="EMAIL_ONLY" class="text-gold">
+                  <input type="radio" name="comm-channel" value="EMAIL_ONLY" class="text-gold" aria-label="Email Only">
                   <span class="text-xs text-slate-200">Email Only</span>
                 </label>
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="PHONE_SMS" class="text-gold">
+                  <input type="radio" name="comm-channel" value="PHONE_SMS" class="text-gold" aria-label="Phone Call and SMS">
                   <span class="text-xs text-slate-200">Phone Call / SMS</span>
                 </label>
               </div>
@@ -568,16 +568,16 @@
                 <iconify-icon id="invoice-chevron" icon="lucide:chevron-down" width="16" height="16" class="text-slate-400"></iconify-icon>
               </div>
               <div id="invoice-fields" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3">
-                <input type="text" id="cust-company" class="form-input text-base" placeholder="Company Legal Name">
+                <input type="text" id="cust-company" class="form-input text-base" placeholder="Company Legal Name" aria-label="Company Legal Name">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <input type="text" id="cust-tax" class="form-input text-base" placeholder="VAT / UID Number (e.g. ATU12345678)">
-                  <input type="text" id="cust-street" class="form-input text-base" placeholder="Billing Address / City">
+                  <input type="text" id="cust-tax" class="form-input text-base" placeholder="VAT / UID Number (e.g. ATU12345678)" aria-label="VAT / UID Number">
+                  <input type="text" id="cust-street" class="form-input text-base" placeholder="Billing Address / City" aria-label="Billing Address and City">
                 </div>
               </div>
             </div>
 
             <div>
-              <label class="form-label">Special Chauffeur Requests (Flight delays, luggage notes, greeting signs)</label>
+              <label class="form-label" for="cust-notes">Special Chauffeur Requests (Flight delays, luggage notes, greeting signs)</label>
               <textarea id="cust-notes" class="form-input text-base" rows="2" placeholder="e.g. Please meet us at Exit B holding sign 'Dr. Weber'. 2 sets of ski poles."></textarea>
             </div>
           </div>
@@ -615,21 +615,21 @@
               <div id="inline-edit-route" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
-                    <label class="text-[10px] text-slate-400 uppercase">Pickup Location</label>
+                    <label class="text-[10px] text-slate-400 uppercase" for="inline-pickup">Pickup Location</label>
                     <input type="text" id="inline-pickup" class="form-input text-base" oninput="applyInlineRoute()">
                   </div>
                   <div>
-                    <label class="text-[10px] text-slate-400 uppercase">Dropoff Destination</label>
+                    <label class="text-[10px] text-slate-400 uppercase" for="inline-dropoff">Dropoff Destination</label>
                     <input type="text" id="inline-dropoff" class="form-input text-base" oninput="applyInlineRoute()">
                   </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
-                    <label class="text-[10px] text-slate-400 uppercase">Pickup Date</label>
+                    <label class="text-[10px] text-slate-400 uppercase" for="inline-date">Pickup Date</label>
                     <input type="date" id="inline-date" class="form-input text-base" onchange="applyInlineRoute()">
                   </div>
                   <div>
-                    <label class="text-[10px] text-slate-400 uppercase">Pickup Time</label>
+                    <label class="text-[10px] text-slate-400 uppercase" for="inline-time">Pickup Time</label>
                     <input type="time" id="inline-time" class="form-input text-base" onchange="applyInlineRoute()">
                   </div>
                 </div>

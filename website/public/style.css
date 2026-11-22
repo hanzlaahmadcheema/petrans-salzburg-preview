@@ -147,7 +147,7 @@ iconify-icon {
 
 .badge-free {
   background: rgba(16, 185, 129, 0.15);
-  color: #34D399;
+  color: var(--color-emerald-400, #10B981);
   border: 1px solid rgba(16, 185, 129, 0.3);
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
@@ -397,7 +397,7 @@ iconify-icon {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: var(--color-surface-elevated, #161F30);
   border-radius: 4px;
   border: 1px solid rgba(202, 163, 40, 0.2);
 }
@@ -590,7 +590,7 @@ iconify-icon {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(148, 163, 184, 0.25);
-  color: #F8FAFC;
+  color: var(--color-snow, #F5F7FA);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -601,8 +601,8 @@ iconify-icon {
 }
 
 .fleet-chevron-btn:hover {
-  border-color: #CAA328;
-  color: #CAA328;
+  border-color: var(--color-gold, #CAA328);
+  color: var(--color-gold, #CAA328);
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(202, 163, 40, 0.25);
 }
@@ -632,10 +632,10 @@ iconify-icon {
 }
 
 .quick-tab.active {
-  background: #C5A059 !important;
+  background: var(--color-gold, #CAA328) !important;
   color: #0B0F19 !important;
   font-weight: 700;
-  box-shadow: 0 2px 10px rgba(197, 160, 89, 0.35);
+  box-shadow: 0 2px 10px rgba(202, 163, 40, 0.35);
 }
 
 .car-quick-card {
@@ -644,14 +644,42 @@ iconify-icon {
 }
 
 .car-quick-card:hover {
-  border-color: rgba(197, 160, 89, 0.5);
+  border-color: rgba(202, 163, 40, 0.5);
   background: rgba(30, 41, 59, 0.9);
 }
 
 .car-quick-card.active {
-  border-color: #C5A059 !important;
-  background: rgba(197, 160, 89, 0.15) !important;
-  box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+  border-color: var(--color-gold, #CAA328) !important;
+  background: rgba(202, 163, 40, 0.15) !important;
+  box-shadow: 0 0 15px rgba(202, 163, 40, 0.2);
+}
+
+/* Interactive Component States & Keyboard Focus Visible (WCAG AA & eval-ui-ux) */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn-gold:focus-visible,
+.btn-outline-gold:focus-visible,
+.fleet-tab:focus-visible,
+.fleet-chevron-btn:focus-visible,
+.quick-chip:focus-visible,
+.service-opt-btn:focus-visible,
+.quick-tab:focus-visible,
+.car-quick-card:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.btn-gold:disabled,
+.btn-outline-gold:disabled,
+.service-opt-btn:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Global 16px Anti-Zoom Rule for Mobile Safari */
