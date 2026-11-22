@@ -410,14 +410,17 @@ iconify-icon {
    ============================================================ */
 
 /* ============================================================
-   PETRANS SEAMLESS SPLIT FLEET SHOWCASE (TSK-PET-042)
+   PETRANS SEAMLESS SPLIT FLEET SHOWCASE
+   Mobile-First Architecture (TSK-PET-046)
    Zero Outer Cards | 40% Front Profile Peek | Pure Alpine Dark Canvas
    ============================================================ */
 
-/* 1. Fleet Showcase Section: Absolute Boundary Containment */
+/* 1. Fleet Showcase Section: Absolute Boundary Containment & Distinction */
 #fleet {
   position: relative;
   background-color: #0B0F19;
+  border-top: 1px solid rgba(202, 163, 40, 0.15);
+  border-bottom: 1px solid rgba(202, 163, 40, 0.15);
   overflow: hidden; /* Hard clip off-canvas car rear without horizontal scrollbar */
   width: 100%;
   max-width: 100vw;
@@ -426,76 +429,69 @@ iconify-icon {
 /* 2. Theatrical Ambient Floor Glow */
 .fleet-floor-glow {
   position: absolute;
-  right: -10%;
-  bottom: 5%;
-  width: 65%;
-  height: 50%;
+  right: -15%;
+  bottom: 0;
+  width: 75%;
+  height: 45%;
   background: radial-gradient(
     ellipse 65% 45% at 65% 65%,
-    rgba(197, 160, 89, 0.14) 0%,
-    rgba(22, 31, 48, 0.35) 45%,
+    rgba(202, 163, 40, 0.12) 0%,
+    rgba(22, 31, 48, 0.30) 45%,
     rgba(11, 15, 25, 0.0) 75%
   );
   pointer-events: none;
   z-index: 1;
 }
 
-/* 3. Showcase Grid Architecture */
-@media (min-width: 1024px) {
-  .fleet-showcase-grid {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    grid-template-areas:
-      "info visual"
-      "amenities visual"
-      "actions visual";
-    align-items: center;
-    column-gap: 2rem;
-    row-gap: 1.5rem;
-  }
-  .fleet-area-info { grid-area: info; }
-  .fleet-area-amenities { grid-area: amenities; }
-  .fleet-area-actions { grid-area: actions; }
-  .fleet-area-visual {
-    grid-area: visual;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    min-height: 380px;
-  }
+/* 3. Showcase Grid Architecture (Mobile Base: <640px) */
+.fleet-showcase-grid {
+  display: grid;
+  grid-template-columns: 52% 48%;
+  grid-template-areas:
+    "info visual"
+    "amenities amenities"
+    "actions actions";
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 1.25rem;
+  width: 100%;
+  position: relative;
 }
 
-@media (max-width: 1023px) {
-  .fleet-showcase-grid {
-    display: grid;
-    grid-template-columns: 52% 48%;
-    grid-template-areas:
-      "info visual"
-      "amenities amenities"
-      "actions actions";
-    align-items: center;
-    column-gap: 0.5rem;
-    row-gap: 1.5rem;
-  }
-  .fleet-area-info { grid-area: info; }
-  .fleet-area-visual {
-    grid-area: visual;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    overflow: visible;
-  }
-  .fleet-area-amenities { grid-area: amenities; }
-  .fleet-area-actions { grid-area: actions; }
+.fleet-area-info {
+  grid-area: info;
+  min-width: 0; /* Guard against flex/grid text blowout */
+  z-index: 10;
 }
 
-/* 4. Vehicle Peek Stage & Wrapper (Right Column) */
+.fleet-area-visual {
+  grid-area: visual;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  height: 100%;
+  min-height: 140px;
+}
+
+.fleet-area-amenities {
+  grid-area: amenities;
+  width: 100%;
+  z-index: 10;
+}
+
+.fleet-area-actions {
+  grid-area: actions;
+  width: 100%;
+  z-index: 10;
+}
+
+/* 4. Vehicle Peek Stage & Wrapper (Mobile Base) */
 .fleet-vehicle-peek-wrapper {
   position: relative;
-  width: 100%;
+  width: 140%;
+  margin-right: -40%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -503,45 +499,78 @@ iconify-icon {
   pointer-events: none;
 }
 
-@media (min-width: 1024px) {
-  .fleet-vehicle-peek-wrapper {
-    width: 140%;
-    margin-right: -45%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .fleet-vehicle-peek-wrapper {
-    width: 155%;
-    margin-right: -55%;
-  }
-}
-
-@media (max-width: 1023px) {
-  .fleet-vehicle-peek-wrapper {
-    width: 140%;
-    margin-right: -40%;
-  }
-}
-
-/* 5. Vehicle Peek Image: Front 40% Profile Visible Facing Left, Rear 60% Bleeds Off-Canvas */
+/* 5. Vehicle Peek Image: Front ~40% Profile Visible Facing Left, Rear 60% Bleeds Off-Canvas */
 .fleet-peek-image {
   max-width: none;
-  width: 100%;
+  width: 135%;
   height: auto;
   object-fit: contain;
   object-position: left center;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85))
-          drop-shadow(0 10px 15px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.9));
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
-@media (max-width: 1023px) {
+/* Progressive Enhancement: Tablet (min-width: 640px) */
+@media (min-width: 640px) {
+  .fleet-showcase-grid {
+    grid-template-columns: 50% 50%;
+    column-gap: 1.5rem;
+    row-gap: 1.75rem;
+  }
+  .fleet-area-visual {
+    min-height: 220px;
+  }
+  .fleet-vehicle-peek-wrapper {
+    width: 140%;
+    margin-right: -40%;
+  }
   .fleet-peek-image {
-    width: 135%;
-    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.9));
+    width: 120%;
+  }
+}
+
+/* Progressive Enhancement: Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .fleet-floor-glow {
+    right: -10%;
+    bottom: 5%;
+    width: 65%;
+    height: 55%;
+  }
+  .fleet-showcase-grid {
+    grid-template-columns: 55% 45%;
+    grid-template-areas:
+      "info visual"
+      "amenities visual"
+      "actions visual";
+    align-items: center;
+    column-gap: 2.5rem;
+    row-gap: 1.75rem;
+  }
+  .fleet-area-visual {
+    min-height: 400px;
+  }
+  .fleet-vehicle-peek-wrapper {
+    width: 140%;
+    margin-right: -45%;
+  }
+  .fleet-peek-image {
+    width: 100%;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85))
+            drop-shadow(0 10px 15px rgba(0, 0, 0, 0.65));
+  }
+}
+
+/* Progressive Enhancement: Desktop Large (min-width: 1280px) */
+@media (min-width: 1280px) {
+  .fleet-showcase-grid {
+    column-gap: 3rem;
+  }
+  .fleet-vehicle-peek-wrapper {
+    width: 155%;
+    margin-right: -55%;
   }
 }
 

@@ -183,7 +183,10 @@ async function main() {
           fleetExists: !!fleetSection,
           stageCardRemoved: !legacyStageCard,
           specCardRemoved: !legacySpecCard,
-          borderWidth: fleetStyles ? fleetStyles.borderWidth : null,
+          borderTopWidth: fleetStyles ? fleetStyles.borderTopWidth : null,
+          borderBottomWidth: fleetStyles ? fleetStyles.borderBottomWidth : null,
+          borderLeftWidth: fleetStyles ? fleetStyles.borderLeftWidth : null,
+          borderRightWidth: fleetStyles ? fleetStyles.borderRightWidth : null,
           backgroundColor: fleetStyles ? fleetStyles.backgroundColor : null,
           overflow: fleetStyles ? fleetStyles.overflow : null,
           floorGlowExists: !!floorGlow,
@@ -198,8 +201,8 @@ async function main() {
       cardRemovalAudit.stageCardRemoved, cardRemovalAudit);
     assert('Pillar 1: Legacy #fleet-spec-card specification card box completely excised', 
       cardRemovalAudit.specCardRemoved, cardRemovalAudit);
-    assert('Pillar 1: #fleet section has 0px container border (borderless continuous canvas)', 
-      cardRemovalAudit.borderWidth === '0px', cardRemovalAudit);
+    assert('Pillar 1: #fleet section has distinct boundary dividers (border-t/border-b border-gold/15)', 
+      cardRemovalAudit.borderTopWidth === '1px' && cardRemovalAudit.borderBottomWidth === '1px', cardRemovalAudit);
     assert('Pillar 1: #fleet section renders directly on Deep Alpine Slate (#0B0F19)', 
       cardRemovalAudit.backgroundColor === 'rgb(11, 15, 25)', cardRemovalAudit);
     assert('Pillar 1: #fleet section enforces overflow: hidden to clip vehicle rear cleanly', 
@@ -284,6 +287,7 @@ async function main() {
     console.log('\n--- Pillar 3: Mobile Parity & Viewport Overflow Audit ---');
 
     const viewports = [
+      { name: 'Compact Mobile', w: 320, h: 568, mobile: true },
       { name: 'iPhone SE', w: 375, h: 667, mobile: true },
       { name: 'iPhone 14/15', w: 390, h: 844, mobile: true },
       { name: 'Galaxy S22', w: 412, h: 915, mobile: true },
@@ -340,6 +344,11 @@ async function main() {
     }
 
     // Capture mobile screenshots
+    await client.setViewport(320, 568, true);
+    await wait(300);
+    const shot320 = await client.captureScreenshot('fleet_mobile_320.png');
+    console.log(`Captured: ${shot320}`);
+
     await client.setViewport(375, 667, true);
     await wait(300);
     const shot375 = await client.captureScreenshot('fleet_mobile_375.png');
