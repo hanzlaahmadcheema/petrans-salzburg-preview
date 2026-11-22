@@ -133,12 +133,10 @@
 
       <!-- Desktop Links -->
       <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#hero-quick-book" class="hover:text-gold transition">Instant Quote</a>
-        <a href="/tours.html" class="hover:text-gold transition">Day Tours (8h)</a>
+        <a href="#destinations" class="hover:text-gold transition">Destinations</a>
         <a href="#fleet" class="hover:text-gold transition">Mercedes Fleet</a>
-        <a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport</a>
-        <a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna</a>
-        <a href="/destinations/prague.html" class="hover:text-gold transition">Prague</a>
+        <a href="#tours" class="hover:text-gold transition">Day Tours</a>
+        <a href="#routes" class="hover:text-gold transition">Route Rates</a>
         <a href="#faq" class="hover:text-gold transition">FAQ</a>
       </nav>
 
@@ -183,9 +181,9 @@
       </div>
 
       <nav class="space-y-2">
-        <a href="#hero-quick-book" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
-          <iconify-icon icon="lucide:calculator" width="20" height="20" class="text-gold"></iconify-icon>
-          <span>Instant Quote Selector</span>
+        <a href="#destinations" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
+          <iconify-icon icon="lucide:map-pin" width="20" height="20" class="text-gold"></iconify-icon>
+          <span>Book by Place (Destinations)</span>
         </a>
         <a href="/booking.html" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gold hover:text-amber-300 hover:bg-surface text-base font-bold transition min-h-[48px]">
           <iconify-icon icon="lucide:calendar-check" width="20" height="20" class="text-gold"></iconify-icon>
@@ -230,10 +228,10 @@
     </div>
   </aside>
 
-  <!-- 3. Hero Section with Integrated Quick Fare Calculator & Salzburg Photograph -->
-  <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-midnight">
+  <!-- 3. Calculator-Free Luxury Alpine Hero Section -->
+  <section id="hero" class="relative pt-20 pb-28 sm:pt-28 sm:pb-36 lg:pt-36 lg:pb-44 overflow-hidden bg-midnight min-h-[75vh] flex items-center">
     
-    <!-- Background Image & Calibrated WCAG AAA Scrim -->
+    <!-- Full-Bleed Salzburg Background Image & Calibrated WCAG AAA Scrim -->
     <div class="hero-background-wrapper">
       <picture>
         <source srcset="/images/salzburg-hero.webp" type="image/webp" media="(min-width: 768px)">
@@ -250,196 +248,40 @@
       <div class="hero-gradient-scrim"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/40 bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-bold uppercase tracking-wider mb-4 shadow-lg">
-          <iconify-icon icon="lucide:award" width="14" height="14" class="text-gold"></iconify-icon>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+      <div class="max-w-3xl mx-auto mb-8 sm:mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/40 bg-midnight/80 backdrop-blur-md text-gold text-xs font-bold uppercase tracking-wider mb-5 shadow-lg">
+          <iconify-icon icon="lucide:award" width="16" height="16" class="text-gold"></iconify-icon>
           <span>Official Licensed Austrian Passenger Transport</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-outfit text-snow leading-tight mb-4 tracking-tight drop-shadow-lg">
-          Travel Salzburg & The Alps in <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold">Mercedes Luxury</span>
+          Travel Salzburg &amp; The Alps in <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold">Mercedes Luxury</span>
         </h1>
-        <p class="text-base sm:text-lg text-slate-300 font-sans leading-relaxed">
-          Fixed-price airport transfers, ski shuttles, and 8-hour private day tours. 100% Mercedes-Benz V-Class & Vito Fleet accommodating up to 8 passengers & 8 large suitcases.
+        <p class="text-sm sm:text-lg text-slate-300 font-sans leading-relaxed max-w-2xl mx-auto mt-4">
+          Exclusively Mercedes-Benz Fleet • Licensed Austrian Chauffeurs • Fixed Transparent Fares. Seamless airport transfers, alpine ski shuttles, and private day tours.
         </p>
       </div>
 
-      <!-- Hero 3-Option Quick Booking Module -->
-      <div id="hero-quick-book" class="max-w-4xl mx-auto glass-card p-6 sm:p-8 rounded-2xl border-gold/30 shadow-2xl">
-        
-        <!-- Mode Switcher Tabs -->
-        <div class="flex items-center justify-center p-1 bg-midnight/80 rounded-xl border border-slate-700/60 mb-6 max-w-lg mx-auto">
-          <button type="button" class="quick-tab flex-1 py-2.5 px-3 text-xs sm:text-sm font-bold rounded-lg transition active bg-gold text-midnight" data-mode="place">
-            <span class="flex items-center justify-center gap-1.5"><iconify-icon icon="lucide:map-pin" width="16" height="16"></iconify-icon> Book by Place</span>
-          </button>
-          <button type="button" class="quick-tab flex-1 py-2.5 px-3 text-xs sm:text-sm font-semibold rounded-lg transition text-slate-300 hover:text-gold" data-mode="tour">
-            <span class="flex items-center justify-center gap-1.5"><iconify-icon icon="lucide:compass" width="16" height="16"></iconify-icon> Book by Tour</span>
-          </button>
-          <button type="button" class="quick-tab flex-1 py-2.5 px-3 text-xs sm:text-sm font-semibold rounded-lg transition text-slate-300 hover:text-gold" data-mode="car">
-            <span class="flex items-center justify-center gap-1.5"><iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon> Book by Car</span>
-          </button>
-        </div>
-
-        <!-- Panel 1: Book by Place / Transfer -->
-        <div id="mode-place" class="quick-panel">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-            <div>
-              <label class="form-label" for="hero-place-pickup">Pickup Location</label>
-              <select id="hero-place-pickup" class="form-input">
-                <option value="Salzburg Airport (SZG)">Salzburg Airport W. A. Mozart (SZG)</option>
-                <option value="Salzburg Central Station (Hbf)">Salzburg Central Station (Hbf)</option>
-                <option value="Salzburg Old Town / Hotel" selected>Salzburg City Center / Hotel</option>
-                <option value="Munich Airport (MUC)">Munich Airport MUC</option>
-                <option value="Vienna (VIE)">Vienna International (VIE)</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" for="hero-place-dest">Destination</label>
-              <select id="hero-place-dest" class="form-input">
-                <option value="Hallstatt Lahn (73 km)" data-km="73" data-name="Hallstatt" selected>Hallstatt Lahn Terminal (73 km)</option>
-                <option value="Zell am See (85 km)" data-km="85" data-name="Zell am See">Zell am See / Kaprun (85 km)</option>
-                <option value="Munich Airport (175 km)" data-km="175" data-name="Munich Airport (MUC)">Munich Airport MUC (175 km)</option>
-                <option value="Innsbruck (185 km)" data-km="185" data-name="Innsbruck">Innsbruck Highlights (185 km)</option>
-                <option value="Bad Gastein (100 km)" data-km="100" data-name="Bad Gastein">Bad Gastein Valley (100 km)</option>
-                <option value="Werfen (50 km)" data-km="50" data-name="Werfen Ice Caves">Werfen Ice Caves &amp; Fortress (50 km)</option>
-                <option value="Eagle's Nest (30 km)" data-km="30" data-name="Eagle's Nest">Eagle's Nest Berchtesgaden (30 km)</option>
-                <option value="Vienna (300 km)" data-km="300" data-name="Vienna">Vienna City / VIE (300 km)</option>
-                <option value="Prague (375 km)" data-km="375" data-name="Prague (Czech Republic)">Prague Cross-Border (375 km)</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" for="hero-place-vehicle">Mercedes Vehicle</label>
-              <select id="hero-place-vehicle" class="form-input">
-                <option value="e-class" data-rate="2.50">E-Class Sedan (1-3 Pax) • €2.50/km</option>
-                <option value="v-class" data-rate="2.60" selected>V-Class VIP (1-8 Pax) • €2.60/km</option>
-                <option value="vito" data-rate="2.80">Vito Tourer (1-8 Pax) • €2.80/km</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="bg-midnight/90 border border-gold/30 rounded-xl p-4 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="badge-gold">Fixed Price Guarantee</span>
-                <span id="hero-place-metrics" class="text-xs text-slate-400">73 km • ~1h 15m</span>
-              </div>
-              <div class="text-[11px] text-slate-400">Tolls, Vignette, Flight Radar & 60m Free Waiting Included</div>
-            </div>
-            <div class="text-center sm:text-right">
-              <span class="text-[10px] text-slate-400 uppercase">Estimated All-Inclusive Fare</span>
-              <div id="hero-place-price" class="text-2xl sm:text-3xl font-bold font-mono text-gold leading-none mt-0.5">€189.80</div>
-            </div>
-          </div>
-
-          <button type="button" id="btn-hero-place-book" class="btn-gold w-full py-3.5 text-sm font-bold min-h-[48px]">
-            <span>Continue to Secure Reservation</span>
-            <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-          </button>
-        </div>
-
-        <!-- Panel 2: Book by Tour -->
-        <div id="mode-tour" class="quick-panel hidden">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
-            <div>
-              <label class="form-label" for="hero-tour-select">Select 8-Hour Private Day Tour</label>
-              <select id="hero-tour-select" class="form-input">
-                <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes — €450.00</option>
-                <option value="eagles-nest">Eagle's Nest & Berchtesgaden — €450.00</option>
-                <option value="werfen-ice-caves">Werfen Ice Caves & Fortress — €450.00</option>
-                <option value="zell-am-see">Zell am See & Alpine Glacier — €450.00</option>
-                <option value="bad-gastein">Bad Gastein & Thermal Waterfall — €450.00</option>
-                <option value="swarovski-crystal-worlds">Swarovski Crystal Worlds & Hall in Tirol — €550.00</option>
-                <option value="innsbruck">Innsbruck & Tyrolean Alps — €650.00</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" for="hero-tour-pickup">Pickup City / Area</label>
-              <select id="hero-tour-pickup" class="form-input">
-                <option value="Salzburg Hotel / City Center" selected>Salzburg Hotel / City Center (Included)</option>
-                <option value="Salzburg Airport (SZG)">Salzburg Airport W. A. Mozart</option>
-                <option value="Salzburg Train Station (Hbf)">Salzburg Central Station</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="bg-midnight/90 border border-gold/30 rounded-xl p-4 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="badge-gold">8-Hour Private Tour</span>
-                <span class="text-xs text-slate-300">All-Inclusive Up to 8 Guests</span>
-              </div>
-              <div class="text-[11px] text-slate-400">Mercedes Van, English Chauffeur, Road Tolls, Water & Child Seats</div>
-            </div>
-            <div class="text-center sm:text-right">
-              <span class="text-[10px] text-slate-400 uppercase">Fixed Group Rate</span>
-              <div id="hero-tour-price" class="text-2xl sm:text-3xl font-bold font-mono text-gold leading-none mt-0.5">€450.00</div>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center gap-3">
-            <button type="button" id="btn-hero-tour-book" class="btn-gold flex-1 w-full py-3.5 text-sm font-bold min-h-[48px]">
-              <span>Book Tour Online</span>
-              <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-            </button>
-            <a id="hero-tour-details-link" href="/tours/hallstatt.html" class="btn-outline-gold flex-1 w-full py-3.5 text-sm min-h-[48px] text-center">
-              <span>Explore Detailed Itinerary</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Panel 3: Book by Car -->
-        <div id="mode-car" class="quick-panel hidden">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-            <div class="p-3.5 rounded-xl border border-gold/40 bg-surface/80 cursor-pointer car-quick-card active" data-vehicle="v-class">
-              <div class="flex items-center justify-between mb-1">
-                <span class="font-bold text-gold text-sm font-cinzel">V-Class VIP</span>
-                <span class="text-[10px] bg-gold text-midnight font-bold px-1.5 py-0.5 rounded">Popular</span>
-              </div>
-              <div class="text-[11px] text-slate-300">Up to 8 Pax • 8 Bags</div>
-              <div class="text-xs font-mono font-bold text-snow mt-1">€2.60 / km</div>
-            </div>
-            <div class="p-3.5 rounded-xl border border-slate-700 bg-surface/50 cursor-pointer car-quick-card" data-vehicle="e-class">
-              <div class="flex items-center justify-between mb-1">
-                <span class="font-bold text-snow text-sm font-cinzel">E-Class Sedan</span>
-                <span class="text-[10px] text-slate-400">Business</span>
-              </div>
-              <div class="text-[11px] text-slate-300">1–3 Pax • 2 Bags</div>
-              <div class="text-xs font-mono font-bold text-snow mt-1">€2.50 / km</div>
-            </div>
-            <div class="p-3.5 rounded-xl border border-slate-700 bg-surface/50 cursor-pointer car-quick-card" data-vehicle="vito">
-              <div class="flex items-center justify-between mb-1">
-                <span class="font-bold text-snow text-sm font-cinzel">Vito Tourer</span>
-                <span class="text-[10px] text-slate-400">4MATIC</span>
-              </div>
-              <div class="text-[11px] text-slate-300">Up to 8 Pax • 8 Large</div>
-              <div class="text-xs font-mono font-bold text-snow mt-1">€2.80 / km</div>
-            </div>
-          </div>
-
-          <div class="bg-midnight/90 border border-gold/30 rounded-xl p-4 mb-5 flex items-center justify-between">
-            <div class="text-xs text-slate-300">
-              <span class="text-gold font-bold">Complimentary with every car:</span> Chilled mineral water, phone chargers, infant safety seats, and flight tracking.
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center gap-3">
-            <button type="button" id="btn-hero-car-book" class="btn-gold flex-1 w-full py-3.5 text-sm font-bold min-h-[48px]">
-              <span>Reserve Selected Mercedes Chauffeur</span>
-              <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-            </button>
-            <a href="#fleet" class="btn-outline-gold flex-1 w-full py-3.5 text-sm min-h-[48px] text-center">
-              <span>View 3D Interactive Spotlight</span>
-            </a>
-          </div>
-        </div>
-
+      <!-- Triple Anchor Navigation Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8">
+        <a href="#destinations" class="hero-pathway-pill flex items-center gap-2 px-5 py-3 rounded-full bg-surface/80 hover:bg-gold hover:text-midnight border border-gold/40 text-gold text-xs sm:text-sm font-bold backdrop-blur-md transition-all duration-300 min-h-[44px]">
+          <iconify-icon icon="lucide:map-pin" width="16" height="16"></iconify-icon>
+          <span>1. Book by Place</span>
+        </a>
+        <a href="#fleet" class="hero-pathway-pill flex items-center gap-2 px-5 py-3 rounded-full bg-surface/80 hover:bg-gold hover:text-midnight border border-gold/40 text-gold text-xs sm:text-sm font-bold backdrop-blur-md transition-all duration-300 min-h-[44px]">
+          <iconify-icon icon="lucide:car" width="16" height="16"></iconify-icon>
+          <span>2. Book by Car</span>
+        </a>
+        <a href="#tours" class="hero-pathway-pill flex items-center gap-2 px-5 py-3 rounded-full bg-surface/80 hover:bg-gold hover:text-midnight border border-gold/40 text-gold text-xs sm:text-sm font-bold backdrop-blur-md transition-all duration-300 min-h-[44px]">
+          <iconify-icon icon="lucide:compass" width="16" height="16"></iconify-icon>
+          <span>3. Book by Tour</span>
+        </a>
       </div>
-
     </div>
   </section>
 
   <!-- ExuroTrip 4-Pillar Trust Strip -->
-  <section class="relative z-20 -mt-8 mb-16 sm:mb-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative z-20 -mt-8 mb-16 sm:mb-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="trust">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       
       <!-- Pillar 1: Flight Delay Monitoring -->
@@ -497,27 +339,261 @@
     </div>
   </section>
 
-  <!-- 4. Dedicated Booking Engine Banner & Call to Action -->
-  <section class="py-16 sm:py-20 bg-surface/40 border-y border-gold/15">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-midnight text-gold text-xs font-bold uppercase tracking-wider mb-3">
-        <iconify-icon icon="lucide:calendar-clock" width="14" height="14"></iconify-icon>
-        <span>Distraction-Free Dedicated Booking Engine</span>
+  <!-- 4. Pathway 1: Book by Place (Destination Transfers) -->
+  <section id="destinations" class="py-16 sm:py-24 bg-surface/30 border-t border-b border-gold/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+          <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+          <span>Popular Transfer Destinations</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mb-4">Book by Place: Austrian &amp; Bavarian Transfers</h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          Select your destination for transparent fixed-rate transfers from Salzburg City Center or Salzburg Airport. All highway tolls, vignette, and passenger taxes included.
+        </p>
       </div>
-      <h2 class="text-2xl sm:text-4xl font-bold font-cinzel text-snow mb-3">Ready to Reserve Your Chauffeur?</h2>
-      <p class="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed">
-        Access our full 6-stage progressive booking engine with live route calculations, complimentary child seats, and zero upfront payment.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="/booking.html" class="btn-gold px-8 py-3 text-sm font-bold">
-          <iconify-icon icon="lucide:calendar-check" width="18" height="18"></iconify-icon>
-          <span>Open Dedicated Booking Page</span>
-        </a>
-        <a href="/tours.html" class="btn-outline-gold px-6 py-3 text-sm font-semibold">
-          <iconify-icon icon="lucide:compass" width="18" height="18"></iconify-icon>
-          <span>Browse All Day Tours</span>
-        </a>
+
+      <!-- 6 Destination Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Salzburg Airport SZG -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/salzburg-hero.webp" alt="Salzburg Airport W. A. Mozart" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">5.5 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">15 min</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Airport Terminal</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Flight Radar Sync</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Salzburg Airport (SZG)</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Direct terminal transfer with real-time flight tracking, personalized meet &amp; greet in Arrival Hall, and 60 minutes free waiting.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €45.00</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg+City+Center&dest=Salzburg+Airport+SZG" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Hallstatt Heritage -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/hallstatt-hero.webp" alt="Hallstatt Heritage Village and Alpine Lake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">73 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">1h 15m</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">UNESCO Alpine Lake</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Mountain Scenic</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Hallstatt Heritage</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                World Heritage lake village transfer passing Lake Fuschl, Wolfgangsee views, and Bad Ischl. Direct drop-off at Hallstatt Lahn Terminal.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €182.50</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg&dest=Hallstatt+Lahn+Terminal" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Zell am See / Kaprun -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/zell-am-see-hero.webp" alt="Zell am See Lake and Glacier Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">85 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">1h 25m</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Ski Resort</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Glacier Transfers</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Zell am See / Kaprun</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Premier year-round alpine ski destination and Kitzsteinhorn Glacier. All-weather 4MATIC Mercedes minivans with complimentary ski rack storage.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €212.50</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg&dest=Zell+am+See" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Munich Airport MUC -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/munich-airport-hero.webp" alt="Munich Airport MUC Franz Josef Strauss" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">175 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">2h 00m</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">International Hub</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Cross-Border VIP</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Munich Airport (MUC)</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Cross-border German Autobahn VIP transfer directly to Terminal 1 or Terminal 2. Avoid train transfers and heavy luggage hauling.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €417.50</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg&dest=Munich+Airport+MUC" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Vienna City / VIE -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/vienna-hero.webp" alt="Vienna Imperial City and Hofburg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">300 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">3h 15m</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Capital Transfer</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Degressive Rate</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Vienna City / VIE</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Direct intercity transfer between Salzburg and Vienna via the A1 Westautobahn. Long-distance degressive rates applied for optimal value.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €680.00</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg&dest=Vienna+City" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Kitzbuhel Ski Arena -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/bad-gastein-hero.webp" alt="Kitzbuhel Alpine Ski Arena" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">80 km</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">1h 20m</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Tyrolean Luxury</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Ski Chauffeur</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-outfit font-bold text-xl text-snow group-hover:text-gold transition mb-2">Kitzbühel Ski Arena</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                World-renowned Tyrolean ski resort and Hahnenkamm race grounds. Luxury door-to-hotel chauffeur service with mountain snow certified drivers.
+              </p>
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-4 pb-3 border-b border-slate-800/80">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Up to 8 Pax</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Bags</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:snowflake" width="14" height="14" class="text-sky-400"></iconify-icon> Free Ski</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Starting Fixed Rate</span>
+                <span class="text-xl font-mono font-bold text-gold">From €200.00</span>
+              </div>
+              <a href="/booking.html?pickup=Salzburg&dest=Kitzbuehel" class="btn-gold text-xs font-bold py-2.5 px-4 rounded-lg min-h-[44px] flex items-center gap-1.5">
+                <span>Book Transfer</span>
+                <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
@@ -681,226 +757,212 @@
     </div>
   </section>
 
-  <!-- 6. Exclusive 8-Hour Private Day Tours Section -->
-  <section id="tours" class="py-20 bg-surface/30">
+  <!-- 6. Pathway 3: Book by Tour (8-Hour Private Day Tours) -->
+  <section id="tours" class="py-16 sm:py-24 bg-surface/30 border-t border-b border-gold/15">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="badge-gold">Private Sightseeing</span>
-        <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mt-2 mb-4">Popular 8-Hour Day Tours</h2>
-        <p class="text-slate-300 text-sm sm:text-base mb-6">
-          Experience Austria's most spectacular alpine sights at your own pace. All tours include private Mercedes minivan, licensed chauffeur, fuel, highway tolls, and flexible photo stops.
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+          <iconify-icon icon="lucide:compass" width="14" height="14"></iconify-icon>
+          <span>Private Sightseeing Directory</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mb-4">Book by Tour: 8-Hour Private Alpine Day Tours</h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mb-6">
+          Immerse in the Austrian Alps with an exclusive English-speaking chauffeur. Bespoke pacing, door-to-door hotel service, child seats, and chilled refreshments included at a guaranteed flat rate.
         </p>
         <div class="flex items-center justify-center gap-3">
-          <a href="/tours.html" class="btn-gold text-xs sm:text-sm py-2 px-5 min-h-[44px]">
-            <iconify-icon icon="lucide:compass" width="16" height="16" class="mr-1"></iconify-icon>
-            <span>Explore All 4 Alpine Tours Directory</span>
+          <a href="/tours.html" class="btn-outline-gold text-xs sm:text-sm py-2 px-5 min-h-[44px] flex items-center gap-2">
+            <iconify-icon icon="lucide:compass" width="16" height="16"></iconify-icon>
+            <span>Explore Full Day Tours Directory</span>
           </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 4 Signature Tour Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Tour 1: Hallstatt -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-gold/30 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8 Hours • Tier 2</span>
-              <span class="text-xs text-slate-400">Max 8 Guests</span>
+        <!-- Tour 1: Hallstatt & Salzkammergut Lakes -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gold/30 hover:border-gold/60 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/hallstatt-hero.webp" alt="Hallstatt & Salzkammergut Lakes Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">8 Hours</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~160 km</span>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Hallstatt & Salzkammergut Lakes</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Scenic alpine drive passing Lake Fuschl, Red Bull World HQ photo stop, St. Gilgen panorama, and Bad Ischl imperial town. Includes 4 hours free exploration in historic Hallstatt.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Lake Fuschl & Red Bull HQ</div>
-              <div>• St. Gilgen Lake Wolfgang Viewpoint</div>
-              <div>• Hallstatt Skywalk & Old Town</div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">All-Inclusive</span>
             </div>
           </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
+          <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
+              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Hallstatt &amp; Salzkammergut</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                World Heritage lake village, Skywalk 360° viewpoint, Lake Wolfgangsee, and St. Gilgen Mozart Village. Includes 4 hours leisure time in Hallstatt.
+              </p>
+              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
+                <div>• Hallstatt Skywalk &amp; Old Town</div>
+                <div>• St. Gilgen &amp; Lake Wolfgangsee</div>
+                <div>• Lake Fuschl &amp; Bad Ischl Imperial Town</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2"><a href="/tours/hallstatt.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a><a href="/booking.html?service=tour&tour=hallstatt" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a></div>
-          </div>
-        </div>
-
-        <!-- Tour 2: Eagles Nest -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">6-8 Hours • Tier 1</span>
-              <span class="text-xs text-slate-400">Max 8 Guests</span>
-            </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Eagles Nest & Berchtesgaden</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Cross the Bavarian border to Kehlsteinhaus (Eagle's Nest) with breathtaking 360° Alpine views, Documentation Obersalzberg, and emerald Lake Königssee.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Kehlsteinhaus Golden Brass Elevator</div>
-              <div>• Berchtesgaden Historic Market Town</div>
-              <div>• Königssee Lake Boat Dock</div>
-            </div>
-          </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
-            <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/eagles-nest.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=eagles-nest" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            <div class="border-t border-slate-800/80 pt-4">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
+                <span class="text-xl font-mono font-bold text-gold">€450.00</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="/tours/hallstatt.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
+                <a href="/booking.html?service=TOUR&tour=hallstatt" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Tour 3: Werfen Ice Caves -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8 Hours • Tier 1</span>
-              <span class="text-xs text-slate-400">Max 8 Guests</span>
+        <!-- Tour 2: Sound of Music & Salzburg Lakes -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/salzburg-hero.webp" alt="Sound of Music & Salzburg Lakes Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">8 Hours</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~140 km</span>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Werfen Ice Caves & Fortress</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Visit Eisriesenwelt, the world's largest ice cave complex, perched high above the Salzach Valley, followed by the medieval Hohenwerfen Fortress with falconry demonstrations.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• World's Largest Ice Caves (Eisriesenwelt)</div>
-              <div>• Hohenwerfen 11th-Century Fortress</div>
-              <div>• Alpine Cable Car Transit Points</div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">All-Inclusive</span>
             </div>
           </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
+          <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
+              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Sound of Music &amp; Lakes</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Walk in the footsteps of the Von Trapp family. Visit iconic filming sites including Leopoldskron, Hellbrunn Gazebo, and Mondsee Wedding Church.
+              </p>
+              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
+                <div>• Leopoldskron Palace &amp; Lake</div>
+                <div>• Hellbrunn Palace Gazebo</div>
+                <div>• Mondsee Basilica Wedding Church</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/werfen-ice-caves.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=werfen-ice-caves" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            <div class="border-t border-slate-800/80 pt-4">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
+                <span class="text-xl font-mono font-bold text-gold">€450.00</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="/tours.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
+                <a href="/booking.html?service=TOUR&tour=sound-of-music" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Tour 4: Zell am See -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8 Hours • Tier 2</span>
-              <span class="text-xs text-slate-400">Max 8 Guests</span>
+        <!-- Tour 3: Eagle's Nest & Berchtesgaden -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/eagles-nest-hero.webp" alt="Eagle's Nest & Berchtesgaden Bavarian Alps" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">6-8 Hours</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~90 km</span>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Zell am See & Kaprun Alpine</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Explore the crystal waters of Lake Zell, stroll the historic lakeside promenade, and admire the majestic Kitzsteinhorn 3,000-meter glacier viewpoints in Kaprun.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Lake Zell Promenade & Grand Hotel</div>
-              <div>• Kaprun Castle & Glacier Vistas</div>
-              <div>• High Alpine Reservoir Stop</div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Bavaria VIP</span>
             </div>
           </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
+          <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
+              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Eagle's Nest &amp; Berchtesgaden</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Cross the Bavarian border to Kehlsteinhaus summit via the golden brass elevator. Admire 360° Alpine peaks and emerald Lake Königssee.
+              </p>
+              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
+                <div>• Kehlsteinhaus Golden Brass Elevator</div>
+                <div>• Berchtesgaden Historic Alpine Town</div>
+                <div>• Lake Königssee Boat Dock Viewpoint</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/zell-am-see.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=zell-am-see" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            <div class="border-t border-slate-800/80 pt-4">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
+                <span class="text-xl font-mono font-bold text-gold">€450.00</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="/tours/eagles-nest.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
+                <a href="/booking.html?service=TOUR&tour=eagles-nest" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Tour 5: Innsbruck & Tyrol -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-gold/30 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8-9 Hours • Tier 3</span>
-              <span class="text-xs text-slate-400">Long-Distance Special</span>
+        <!-- Tour 4: Grossglockner High Alpine Road -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden aspect-video bg-midnight">
+            <img src="/images/destinations/zell-am-see-hero.webp" alt="Grossglockner High Alpine Glacier Road" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
+            <div class="absolute top-3 left-3 flex items-center gap-2">
+              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">8-9 Hours</span>
+              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~260 km</span>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Innsbruck & Tyrolean Alps</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Full-day imperial excursion through the Inntal Alps to the Tyrolean capital. Marvel at the Golden Roof, Imperial Hofburg Palace, Bergisel Olympic Ski Jump, and Swarovski Crystal Worlds.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Golden Roof (Goldenes Dachl) & Old Town</div>
-              <div>• Bergisel Ski Jump Panoramas</div>
-              <div>• Swarovski Crystal Worlds (Wattens)</div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
+              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">Tolls Included</span>
             </div>
           </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
+          <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] text-slate-400 block">Tier 3 Special</span>
-              <span class="text-2xl font-mono font-bold text-gold">€650.00</span>
+              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Grossglockner Glacier Road</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Austria's highest paved mountain pass ascending to Franz-Josefs-Höhe (2,369m) facing the Pasterze Glacier. High Alpine toll pass included.
+              </p>
+              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
+                <div>• Franz-Josefs-Höhe Glacier Viewpoint</div>
+                <div>• 36 Alpine Hairpin Bends Panorama</div>
+                <div>• High Alpine National Park Toll Pass</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/innsbruck.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=innsbruck" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
+            <div class="border-t border-slate-800/80 pt-4">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
+                <span class="text-xl font-mono font-bold text-gold">€550.00</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="/tours.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
+                <a href="/booking.html?service=TOUR&tour=grossglockner" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Tour 6: Bad Gastein -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8 Hours • Tier 2</span>
-              <span class="text-xs text-slate-400">Thermal & Alpine</span>
-            </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Bad Gastein Thermal & Waterfall</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Tour the dramatic Belle Époque alpine health resort where rushing waterfalls cascade through the town center, surrounded by the towering peaks of the Hohe Tauern National Park.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Famous Bad Gastein Town Waterfall</div>
-              <div>• Belle Époque Historic Architecture</div>
-              <div>• Felsentherme Thermal Baths Viewpoint</div>
-            </div>
-          </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
-            <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€450.00</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/bad-gastein.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=bad-gastein" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <!-- Tour 7: Swarovski Crystal Worlds -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="badge-gold">8 Hours • Cultural Wonder</span>
-              <span class="text-xs text-slate-400">Max 8 Guests</span>
-            </div>
-            <h3 class="font-outfit font-bold text-xl text-snow mb-2">Swarovski Crystal Worlds & Hall in Tirol</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Explore the iconic water-spouting Giant and Chambers of Wonder in Wattens, combined with the medieval minting town and cobblestone lanes of Hall in Tirol.
-            </p>
-            <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
-              <div>• Iconic Water-Spouting Giant & Gardens</div>
-              <div>• 18 Chambers of Wonder Art Installations</div>
-              <div>• Medieval Hall in Tirol Historic Center</div>
-            </div>
-          </div>
-          <div class="p-6 bg-midnight/80 border-t border-slate-800 flex items-center justify-between">
-            <div>
-              <span class="text-[11px] text-slate-400 block">Flat Rate / Group</span>
-              <span class="text-2xl font-mono font-bold text-gold">€550.00</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="/tours/swarovski-crystal-worlds.html" class="btn-outline-gold text-[11px] py-1.5 px-3 min-h-[36px]">Itinerary</a>
-              <a href="/booking.html?service=tour&tour=swarovski-crystal-worlds" class="btn-gold text-[11px] py-1.5 px-3 min-h-[36px]">Book Tour</a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </section>
 
+  <!-- Dedicated Booking Engine Banner & Call to Action -->
+  <section class="py-16 sm:py-20 bg-surface/40 border-y border-gold/15">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-midnight text-gold text-xs font-bold uppercase tracking-wider mb-3">
+        <iconify-icon icon="lucide:calendar-clock" width="14" height="14"></iconify-icon>
+        <span>Distraction-Free Dedicated Booking Engine</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-bold font-cinzel text-snow mb-3">Ready to Reserve Your Chauffeur?</h2>
+      <p class="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Access our full 6-stage progressive booking engine with live route calculations, complimentary child seats, and zero upfront payment.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="/booking.html" class="btn-gold px-8 py-3 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2">
+          <iconify-icon icon="lucide:calendar-check" width="18" height="18"></iconify-icon>
+          <span>Open Dedicated Booking Page</span>
+        </a>
+        <a href="/tours.html" class="btn-outline-gold px-6 py-3 text-sm font-semibold min-h-[48px] inline-flex items-center justify-center gap-2">
+          <iconify-icon icon="lucide:compass" width="18" height="18"></iconify-icon>
+          <span>Browse All Day Tours</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1107,7 +1169,116 @@
     </div>
   </section>
 
-  <!-- 9. FAQ Section -->
+  <!-- 9. Alpine Traveler Testimonials Section -->
+  <section id="testimonials" class="py-16 sm:py-24 bg-surface/30 border-t border-b border-gold/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+          <iconify-icon icon="lucide:star" width="14" height="14"></iconify-icon>
+          <span>Verified Client Testimonials</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mb-4">Trusted by Discerning Travelers</h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          Read authentic reviews from international guests, private families, and corporate executives who experienced our Salzburg chauffeur services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-gold/40 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center text-gold gap-1">
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/20">
+                <iconify-icon icon="lucide:check-circle" width="12" height="12"></iconify-icon>
+                <span>Verified Client</span>
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 italic">
+              "Outstanding service from Munich Airport to Salzburg. Our flight was delayed by over an hour, but Omer was waiting in the arrivals hall with a name board and a warm welcome. The Mercedes V-Class was spotless, equipped with child seats for our twins, and bottled water. Highly recommended!"
+            </p>
+          </div>
+          <div class="border-t border-slate-800/80 pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="font-outfit font-bold text-snow text-sm">Lord &amp; Lady Hamilton</h4>
+              <span class="text-xs text-slate-400">London, United Kingdom</span>
+            </div>
+            <span class="text-[11px] font-mono text-gold bg-gold/10 px-2 py-1 rounded border border-gold/20">MUC to Salzburg</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-gold/40 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center text-gold gap-1">
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/20">
+                <iconify-icon icon="lucide:check-circle" width="12" height="12"></iconify-icon>
+                <span>Verified Client</span>
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 italic">
+              "We booked the 8-hour private day tour to Hallstatt and Lake Wolfgangsee. The pacing was completely customized to our family, and the Mercedes ride through the Salzkammergut mountain passes was pure luxury. Paying on-board via card was smooth and effortless."
+            </p>
+          </div>
+          <div class="border-t border-slate-800/80 pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="font-outfit font-bold text-snow text-sm">Markus &amp; Elena Lindqvist</h4>
+              <span class="text-xs text-slate-400">Stockholm, Sweden</span>
+            </div>
+            <span class="text-[11px] font-mono text-gold bg-gold/10 px-2 py-1 rounded border border-gold/20">Hallstatt Private Tour</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-gold/40 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center text-gold gap-1">
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/20">
+                <iconify-icon icon="lucide:check-circle" width="12" height="12"></iconify-icon>
+                <span>Verified Client</span>
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 italic">
+              "Top tier ski transfer to Zell am See and Kitzbuhel. Zero extra charge for our bulky ski and snowboard bags in the Mercedes Vito 4MATIC. Smooth mountain driving even during heavy alpine snow, and fixed transparent pricing with zero surprise charges."
+            </p>
+          </div>
+          <div class="border-t border-slate-800/80 pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="font-outfit font-bold text-snow text-sm">Dr. Alexander von Bern</h4>
+              <span class="text-xs text-slate-400">Zurich, Switzerland</span>
+            </div>
+            <span class="text-[11px] font-mono text-gold bg-gold/10 px-2 py-1 rounded border border-gold/20">Salzburg to Zell am See</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. FAQ Section -->
   <section id="faq" class="py-20 bg-midnight">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       

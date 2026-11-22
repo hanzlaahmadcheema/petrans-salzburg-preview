@@ -17,7 +17,9 @@ const ROUTES_DB = {
 
 const TOURS_DB = {
   'hallstatt': { title: 'Hallstatt & Salzkammergut Lakes (8 Hours)', price: 450.0, tier: 2 },
+  'sound-of-music': { title: 'Sound of Music & Salzburg Lakes (8 Hours)', price: 450.0, tier: 2 },
   'eagles-nest': { title: 'Eagles Nest & Berchtesgaden (6-8 Hours)', price: 450.0, tier: 1 },
+  'grossglockner': { title: 'Grossglockner High Alpine Glacier Road (8-9 Hours)', price: 550.0, tier: 2 },
   'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress (8 Hours)', price: 450.0, tier: 1 },
   'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 450.0, tier: 2 },
   'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall (8 Hours)', price: 450.0, tier: 2 },

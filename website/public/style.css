@@ -290,6 +290,47 @@ iconify-icon {
   pointer-events-none;
 }
 
+/* Hero Pathway Navigation Anchor Pills (48px Touch Target) */
+.hero-pathway-pill {
+  min-height: 48px;
+  min-width: 150px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background: rgba(22, 31, 48, 0.85);
+  border: 1px solid rgba(202, 163, 40, 0.45);
+  color: #CAA328;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  touch-action: manipulation;
+}
+
+.hero-pathway-pill:hover {
+  background: linear-gradient(135deg, #CAA328 0%, #D4AF37 50%, #B89045 100%);
+  color: #0B0F19;
+  border-color: #CAA328;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(202, 163, 40, 0.4);
+}
+
+.hero-pathway-pill:active {
+  transform: translateY(0);
+}
+
+.hero-pathway-pill:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
 /* ============================================================
    STANDARDIZED 16:9 3D VEHICLE PRESENTATION PODIUM
    ============================================================ */
