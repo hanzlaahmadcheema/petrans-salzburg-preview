@@ -393,17 +393,15 @@ function renderFleetCarousel() {
     }
   });
 
-  // 2. Animate Vehicle Visual Transition (Cross-fade & subtle slide)
+  // 2. Animate Vehicle Visual Transition (Cross-fade)
   const peekImg = document.getElementById('fallback-img');
   if (peekImg) {
     peekImg.style.opacity = '0';
-    peekImg.style.transform = 'translateX(25px) scale(0.98)';
 
     setTimeout(() => {
       peekImg.src = v.poster;
       peekImg.alt = v.name;
       peekImg.style.opacity = '1';
-      peekImg.style.transform = 'translateX(0) scale(1)';
     }, 180);
   }
 

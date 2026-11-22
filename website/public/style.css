@@ -446,13 +446,13 @@ iconify-icon {
 /* 3. Showcase Grid Architecture (Mobile Base: <640px) */
 .fleet-showcase-grid {
   display: grid;
-  grid-template-columns: 52% 48%;
+  grid-template-columns: 55% 45%;
   grid-template-areas:
     "info visual"
     "amenities amenities"
     "actions actions";
   align-items: center;
-  column-gap: 0.5rem;
+  column-gap: 0.75rem;
   row-gap: 1.25rem;
   width: 100%;
   position: relative;
@@ -462,12 +462,13 @@ iconify-icon {
   grid-area: info;
   min-width: 0; /* Guard against flex/grid text blowout */
   z-index: 10;
+  padding-right: 0.25rem;
 }
 
 .fleet-area-visual {
   grid-area: visual;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   overflow: visible;
@@ -490,10 +491,10 @@ iconify-icon {
 /* 4. Vehicle Peek Stage & Wrapper (Mobile Base) */
 .fleet-vehicle-peek-wrapper {
   position: relative;
-  width: 140%;
-  margin-right: -40%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   z-index: 5;
   pointer-events: none;
@@ -502,14 +503,14 @@ iconify-icon {
 /* 5. Vehicle Peek Image: Front ~40% Profile Visible Facing Left, Rear 60% Bleeds Off-Canvas */
 .fleet-peek-image {
   max-width: none;
-  width: 135%;
+  width: 140%;
   height: auto;
   object-fit: contain;
   object-position: left center;
+  transform: translateX(0);
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.9));
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
 }
 
 /* Progressive Enhancement: Tablet (min-width: 640px) */
@@ -521,13 +522,16 @@ iconify-icon {
   }
   .fleet-area-visual {
     min-height: 220px;
+    justify-content: flex-start;
   }
   .fleet-vehicle-peek-wrapper {
-    width: 140%;
-    margin-right: -40%;
+    width: 100%;
+    margin-right: 0;
+    justify-content: flex-start;
   }
   .fleet-peek-image {
-    width: 120%;
+    width: 135%;
+    transform: translateX(0);
   }
 }
 
@@ -558,6 +562,7 @@ iconify-icon {
   }
   .fleet-peek-image {
     width: 100%;
+    transform: translateX(0);
     filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85))
             drop-shadow(0 10px 15px rgba(0, 0, 0, 0.65));
   }
