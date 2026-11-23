@@ -16,5 +16,9 @@ Thumbs.db
 # Archival raw camera files (>15MB)
 website/public/images/salzburg-hero-original.jpg
 
+# Vercel
+.vercel/
+website/.vercel/
+
 # Runtime Data Stores
 website/data/*.json

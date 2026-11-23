@@ -282,8 +282,12 @@ app.get('/booking/details', (req, res) => res.sendFile(path.join(__dirname, 'pub
 app.get('/booking/review', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'review.html')));
 app.get('/booking/confirmation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'confirmation.html')));
 
-// Start Server
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`[PETRANS Production Server] Running at http://localhost:${PORT}`);
-  console.log(`[PETRANS Production Server] Serving static web app from ${path.join(__dirname, 'public')}`);
-});
+// Start Server if executed directly
+if (require.main === module) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`[PETRANS Production Server] Running at http://localhost:${PORT}`);
+    console.log(`[PETRANS Production Server] Serving static web app from ${path.join(__dirname, 'public')}`);
+  });
+}
+
+module.exports = app;
