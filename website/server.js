@@ -275,6 +275,13 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// 7. Dedicated Multi-Page Booking HTML Routes
+app.get('/booking/vehicle', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'vehicle.html')));
+app.get('/booking/place', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'place.html')));
+app.get('/booking/details', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'details.html')));
+app.get('/booking/review', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'review.html')));
+app.get('/booking/confirmation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'confirmation.html')));
+
 // Start Server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`[PETRANS Production Server] Running at http://localhost:${PORT}`);

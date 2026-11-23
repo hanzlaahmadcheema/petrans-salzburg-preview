@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Details & Requirements | PETRANS Salzburg</title>
+  <meta name="description" content="Configure trip date, passengers, luggage, and complimentary amenities for your private Mercedes transfer.">
+  <link rel="canonical" href="https://petrans-salzburg.at/booking/details.html">
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="PETRANS Taxi & Tour Salzburg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petrans-salzburg.at/booking/details.html">
+  <meta property="og:title" content="Trip Details & Requirements | PETRANS Salzburg">
+  <meta property="og:description" content="Configure trip date, passengers, luggage, and complimentary amenities for your private Mercedes transfer.">
+  <meta property="og:image" content="https://petrans-salzburg.at/images/salzburg-hero.jpg">
+  <meta property="og:locale" content="en_AT">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://petrans-salzburg.at/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Trip Details",
+        "item": "https://petrans-salzburg.at/booking/details.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0B0F19',
+            surface: '#161F30',
+            elevated: '#1E293B',
+            gold: '#C5A059',
+            goldHover: '#D4AF37',
+            goldSubtle: 'rgba(197, 160, 89, 0.15)',
+            snow: '#F8FAFC'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    /* Dual Background: Destination Backdrop + Vehicle Showcase */
+    .dest-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.18) contrast(1.15) blur(1px);
+      transition: background-image 0.5s ease;
+    }
+    .vehicle-ambient-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .vehicle-ambient-img {
+      position: absolute;
+      right: -8%;
+      bottom: 4%;
+      width: 60vw;
+      max-width: 750px;
+      opacity: 0.20;
+      filter: drop-shadow(0 0 35px rgba(197, 160, 89, 0.2));
+      transition: all 0.5s ease-in-out;
+    }
+    @media (max-width: 768px) {
+      .vehicle-ambient-img {
+        right: -25%;
+        bottom: 2%;
+        width: 105vw;
+        opacity: 0.14;
+      }
+    }
+    .stepper-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 0.75rem;
+      background: #1E293B;
+      color: #C5A059;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.125rem;
+      transition: all 0.15s ease;
+    }
+    .stepper-btn:hover {
+      background: #334155;
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Layer 1: Selected Destination Background -->
+  <div id="dest-backdrop-layer" class="dest-backdrop" style="background-image: url('/images/salzburg-hero.jpg');"></div>
+
+  <!-- Layer 2: Selected Vehicle Ambient Stage -->
+  <div class="vehicle-ambient-layer">
+    <img id="vehicle-ambient-img" src="/images/mercedes-e-class.png" alt="Selected Mercedes" class="vehicle-ambient-img">
+  </div>
+
+  <!-- Header -->
+  <header class="bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 px-4 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group min-h-[44px]">
+        <div class="w-10 h-10 rounded-lg border border-gold/40 bg-surface flex items-center justify-center text-gold shadow-lg group-hover:border-gold transition">
+          <span class="font-cinzel text-lg font-bold tracking-tighter">P</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-snow block leading-none">PETRANS</span>
+          <span class="text-[9px] font-sans font-semibold tracking-widest text-gold uppercase block mt-1">Salzburg Chauffeur</span>
+        </div>
+      </a>
+
+      <!-- Selected Trip & Vehicle Summary Pill -->
+      <div class="hidden sm:flex items-center gap-3 bg-midnight/90 border border-gold/40 px-3.5 py-1.5 rounded-full text-xs">
+        <div class="flex items-center gap-1.5 text-snow">
+          <iconify-icon icon="lucide:map-pin" width="13" height="13" class="text-gold"></iconify-icon>
+          <span id="header-dest-text" class="font-semibold truncate max-w-[150px]">Hallstatt Lahn</span>
+        </div>
+        <span class="text-slate-600">•</span>
+        <div class="flex items-center gap-1.5 text-snow">
+          <iconify-icon icon="lucide:car" width="13" height="13" class="text-gold"></iconify-icon>
+          <span id="header-veh-text" class="font-bold text-gold">Mercedes E-Class</span>
+        </div>
+      </div>
+
+      <!-- Chauffeur Hotline -->
+      <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
+        <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
+        <span class="hidden md:inline">+43 660 6416464</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Stepper Progress Bar -->
+  <div class="bg-surface/60 border-b border-slate-800 py-3 px-4 relative z-20">
+    <div class="max-w-3xl mx-auto flex items-center justify-between text-xs">
+      <a href="/booking/vehicle.html" class="flex items-center gap-2 text-slate-400 hover:text-gold transition">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">1</span>
+        <span class="hidden sm:inline">Vehicle</span>
+      </a>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <a href="/booking/place.html" class="flex items-center gap-2 text-slate-400 hover:text-gold transition">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">2</span>
+        <span class="hidden sm:inline">Route & Place</span>
+      </a>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-gold font-bold">
+        <span class="w-6 h-6 rounded-full bg-gold text-midnight font-bold flex items-center justify-center text-xs">3</span>
+        <span>Trip Details</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-500">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-500 font-bold flex items-center justify-center text-xs">4</span>
+        <span class="hidden sm:inline">Review & Book</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Card -->
+  <main class="flex-1 py-8 sm:py-12 px-4 sm:px-6 relative z-10">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Dual Preview Summary Banner (Car + Place) -->
+      <div class="mb-6 p-4 rounded-2xl bg-surface/85 border border-gold/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img id="banner-vehicle-img" src="/images/mercedes-e-class.png" alt="Mercedes E-Class" class="w-16 h-auto object-contain">
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-gold" id="banner-service-type">One-Way Private Transfer</div>
+            <h2 class="text-base font-bold text-snow font-outfit" id="banner-route-title">Salzburg → Hallstatt Lahn</h2>
+            <div class="text-xs text-slate-400 mt-0.5" id="banner-route-meta">73 km • ~1h 15m • Mercedes E-Class</div>
+          </div>
+        </div>
+        <div class="text-right flex items-center sm:flex-col justify-between w-full sm:w-auto gap-1">
+          <span class="text-xs text-slate-400">Guaranteed Fare</span>
+          <span class="text-xl font-mono font-bold text-gold" id="banner-price">€182.50</span>
+        </div>
+      </div>
+
+      <!-- Capacity Warning for E-Class -->
+      <div id="eclass-capacity-alert" class="hidden mb-6 p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-xs text-amber-200 flex items-start justify-between gap-3">
+        <div class="flex items-start gap-2.5">
+          <iconify-icon icon="lucide:alert-triangle" width="18" height="18" class="text-amber-400 flex-shrink-0 mt-0.5"></iconify-icon>
+          <div>
+            <strong class="font-bold text-snow">Mercedes E-Class Capacity Reached</strong>
+            <p class="mt-0.5">The E-Class accommodates max 3 passengers and 2 large suitcases. Upgrade to V-Class for up to 8 guests and 8 large suitcases.</p>
+          </div>
+        </div>
+        <button type="button" onclick="upgradeToVClass()" class="btn-gold text-xs py-2 px-3 whitespace-nowrap min-h-[44px]">Upgrade to V-Class</button>
+      </div>
+
+      <!-- Form Container -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 bg-surface/90 backdrop-blur-md shadow-2xl space-y-6">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold font-outfit text-snow">Trip Details & Requirements</h1>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Specify your schedule and party requirements. All complimentary ski equipment and child seats are free of charge.</p>
+        </div>
+
+        <!-- Date & Time Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Pickup Date</label>
+            <input type="date" id="pickup-date-input" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Pickup Time</label>
+            <input type="time" id="pickup-time-input" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]" value="14:30">
+          </div>
+        </div>
+
+        <!-- Return Date Row (if Return service) -->
+        <div id="return-datetime-row" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-midnight/70 border border-gold/20">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gold mb-1.5">Return Pickup Date (5% Off)</label>
+            <input type="date" id="return-date-input" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gold mb-1.5">Return Pickup Time</label>
+            <input type="time" id="return-time-input" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]" value="10:00">
+          </div>
+        </div>
+
+        <!-- Flight Number (Optional) -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Flight Number (Optional)</label>
+            <span class="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+              <iconify-icon icon="lucide:plane-landing" width="13" height="13"></iconify-icon>
+              <span>60 min free delay buffer</span>
+            </span>
+          </div>
+          <input type="text" id="flight-input" placeholder="e.g. OS265, LH1104, BA682" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+        </div>
+
+        <!-- Stepper Controls (Pax & Luggage) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-midnight/80 border border-slate-800">
+          
+          <!-- Adults -->
+          <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+            <span class="text-xs text-slate-300 font-medium">Adult Passengers</span>
+            <div class="flex items-center gap-3">
+              <button type="button" onclick="adjustPax(-1)" class="stepper-btn" aria-label="Decrease passengers">-</button>
+              <span id="pax-count" class="font-mono font-bold text-base text-snow w-4 text-center">2</span>
+              <button type="button" onclick="adjustPax(1)" class="stepper-btn" aria-label="Increase passengers">+</button>
+            </div>
+            <span class="text-[10px] text-slate-500" id="pax-max-label">Max 3</span>
+          </div>
+
+          <!-- Large Suitcases -->
+          <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+            <span class="text-xs text-slate-300 font-medium">Large Suitcases</span>
+            <div class="flex items-center gap-3">
+              <button type="button" onclick="adjustLuggage(-1)" class="stepper-btn" aria-label="Decrease luggage">-</button>
+              <span id="luggage-count" class="font-mono font-bold text-base text-snow w-4 text-center">2</span>
+              <button type="button" onclick="adjustLuggage(1)" class="stepper-btn" aria-label="Increase luggage">+</button>
+            </div>
+            <span class="text-[10px] text-slate-500" id="luggage-max-label">Max 2</span>
+          </div>
+
+          <!-- Cabin Bags -->
+          <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center gap-2">
+            <span class="text-xs text-slate-300 font-medium">Cabin Bags</span>
+            <div class="flex items-center gap-3">
+              <button type="button" onclick="adjustCabin(-1)" class="stepper-btn" aria-label="Decrease cabin bags">-</button>
+              <span id="cabin-count" class="font-mono font-bold text-base text-snow w-4 text-center">2</span>
+              <button type="button" onclick="adjustCabin(1)" class="stepper-btn" aria-label="Increase cabin bags">+</button>
+            </div>
+            <span class="text-[10px] text-slate-500">Soft carry-on</span>
+          </div>
+
+        </div>
+
+        <!-- Complimentary Inclusions -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">Complimentary Alpine Inclusions</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-midnight/70 border border-slate-700/80 cursor-pointer hover:border-gold/40 transition">
+              <input type="checkbox" id="check-childseat" onchange="toggleExtra('childSeats')" class="w-4 h-4 rounded border-slate-700 text-gold focus:ring-gold bg-midnight">
+              <div class="text-xs">
+                <div class="font-semibold text-snow flex items-center gap-1.5">
+                  <iconify-icon icon="lucide:shield-check" class="text-gold" width="14" height="14"></iconify-icon>
+                  <span>Child / Booster Seat</span>
+                  <span class="text-[10px] text-emerald-400 font-bold uppercase">Free</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mt-0.5">ECE R44/04 certified safety seats</div>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-midnight/70 border border-slate-700/80 cursor-pointer hover:border-gold/40 transition">
+              <input type="checkbox" id="check-skigear" onchange="toggleExtra('skiEquipment')" class="w-4 h-4 rounded border-slate-700 text-gold focus:ring-gold bg-midnight">
+              <div class="text-xs">
+                <div class="font-semibold text-snow flex items-center gap-1.5">
+                  <iconify-icon icon="lucide:snowflake" class="text-sky-400" width="14" height="14"></iconify-icon>
+                  <span>Ski & Snowboard Equipment</span>
+                  <span class="text-[10px] text-emerald-400 font-bold uppercase">Free</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Alpine transport bags with zero surcharge</div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Action Navigation Buttons -->
+        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
+          <a href="/booking/place.html" class="btn-outline-gold text-xs py-3 px-4 min-h-[48px] inline-flex items-center gap-1.5">
+            <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>
+            <span class="hidden sm:inline">Back to Place</span>
+          </a>
+          <button type="button" onclick="proceedToReview()" class="btn-gold flex-1 py-3 px-6 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2 shadow-lg shadow-gold/25">
+            <span>Continue to Final Review</span>
+            <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface/90 border-t border-slate-800 py-6 px-4 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div>PETRANS Taxi & Tour Salzburg e.U. • WKO Licensed Chauffeur</div>
+        <div class="text-slate-400">FAGG § 8 Compliant • Zero Upfront Payment Today</div>
+      </div>
+      <div class="pt-2 border-t border-slate-800/60 text-[10px] text-slate-500 leading-normal max-w-2xl mx-auto">
+        Mercedes-Benz, V-Class, and Vito are registered trademarks of Mercedes-Benz Group AG. PETRANS Taxi & Tour Salzburg is an independent Austrian licensed passenger transport operator (Gewerbeberechtigung für das Mietwagen-Gewerbe) and is not affiliated with, sponsored by, or endorsed by Mercedes-Benz Group AG.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/booking/booking-state.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      syncDualBackdrop();
+      syncFormFields();
+      updateBannerQuote();
+      checkCapacityLimit();
+    });
+
+    function syncDualBackdrop() {
+      // 1. Destination backdrop
+      const destHero = bookingManager.getDestinationHero();
+      document.getElementById('dest-backdrop-layer').style.backgroundImage = `url('${destHero}')`;
+
+      // 2. Vehicle ambient image
+      const v = bookingManager.getVehicleAsset();
+      document.getElementById('vehicle-ambient-img').src = v.image;
+      document.getElementById('banner-vehicle-img').src = v.image;
+
+      // Header summary
+      document.getElementById('header-dest-text').textContent = bookingManager.state.dropoffAddress || 'Salzburg';
+      document.getElementById('header-veh-text').textContent = v.name;
+
+      // Max labels
+      document.getElementById('pax-max-label').textContent = `Max ${v.maxPax}`;
+      document.getElementById('luggage-max-label').textContent = `Max ${v.maxLuggage}`;
+    }
+
+    function syncFormFields() {
+      const s = bookingManager.state;
+      document.getElementById('pickup-date-input').value = s.pickupDate || new Date().toISOString().split('T')[0];
+      document.getElementById('pickup-time-input').value = s.pickupTime || '14:30';
+
+      if (s.serviceType === 'RETURN') {
+        document.getElementById('return-datetime-row').classList.remove('hidden');
+        document.getElementById('return-date-input').value = s.returnDate || new Date().toISOString().split('T')[0];
+        document.getElementById('return-time-input').value = s.returnTime || '10:00';
+      }
+
+      document.getElementById('flight-input').value = s.flightNumber || '';
+      document.getElementById('pax-count').textContent = s.passengerCount || 2;
+      document.getElementById('luggage-count').textContent = s.largeLuggageCount || 2;
+      document.getElementById('cabin-count').textContent = s.cabinBagsCount || 2;
+
+      document.getElementById('check-childseat').checked = (s.childSeats > 0);
+      document.getElementById('check-skigear').checked = (s.skiEquipment > 0);
+
+      document.getElementById('banner-service-type').textContent = s.serviceType === 'TOUR' ? '8-Hour Private Day Tour' : (s.serviceType === 'RETURN' ? 'Return Chauffeur Transfer (5% Off)' : 'One-Way Private Transfer');
+      document.getElementById('banner-route-title').textContent = `${s.pickupAddress} → ${s.dropoffAddress}`;
+      document.getElementById('banner-route-meta').textContent = `${s.distanceKm} km • ~${s.durationText} • ${bookingManager.getVehicleAsset().name}`;
+    }
+
+    function updateBannerQuote() {
+      const q = bookingManager.calculateQuote();
+      document.getElementById('banner-price').textContent = q.formattedTotal;
+    }
+
+    function adjustPax(delta) {
+      const v = bookingManager.getVehicleAsset();
+      let current = parseInt(document.getElementById('pax-count').textContent) || 2;
+      current += delta;
+      if (current < 1) current = 1;
+      if (current > v.maxPax) {
+        checkCapacityLimit(true);
+        return;
+      }
+      document.getElementById('pax-count').textContent = current;
+      bookingManager.state.passengerCount = current;
+      bookingManager.save();
+      checkCapacityLimit();
+    }
+
+    function adjustLuggage(delta) {
+      const v = bookingManager.getVehicleAsset();
+      let current = parseInt(document.getElementById('luggage-count').textContent) || 2;
+      current += delta;
+      if (current < 0) current = 0;
+      if (current > v.maxLuggage) {
+        checkCapacityLimit(true);
+        return;
+      }
+      document.getElementById('luggage-count').textContent = current;
+      bookingManager.state.largeLuggageCount = current;
+      bookingManager.save();
+      checkCapacityLimit();
+    }
+
+    function adjustCabin(delta) {
+      const v = bookingManager.getVehicleAsset();
+      let current = parseInt(document.getElementById('cabin-count').textContent) || 2;
+      current += delta;
+      if (current < 0) current = 0;
+      if (current > v.maxCabin) current = v.maxCabin;
+      document.getElementById('cabin-count').textContent = current;
+      bookingManager.state.cabinBagsCount = current;
+      bookingManager.save();
+    }
+
+    function toggleExtra(type) {
+      if (type === 'childSeats') {
+        bookingManager.state.childSeats = document.getElementById('check-childseat').checked ? 1 : 0;
+      } else if (type === 'skiEquipment') {
+        bookingManager.state.skiEquipment = document.getElementById('check-skigear').checked ? 1 : 0;
+      }
+      bookingManager.save();
+    }
+
+    function checkCapacityLimit(triggerWarning = false) {
+      const v = bookingManager.getVehicleAsset();
+      const pax = parseInt(document.getElementById('pax-count').textContent) || 2;
+      const lug = parseInt(document.getElementById('luggage-count').textContent) || 2;
+      const alertEl = document.getElementById('eclass-capacity-alert');
+
+      if (v.slug === 'e-class' && (pax >= 3 || lug >= 2 || triggerWarning)) {
+        alertEl.classList.remove('hidden');
+      } else {
+        alertEl.classList.add('hidden');
+      }
+    }
+
+    function upgradeToVClass() {
+      bookingManager.setVehicle('V_CLASS');
+      syncDualBackdrop();
+      updateBannerQuote();
+      checkCapacityLimit();
+    }
+
+    function proceedToReview() {
+      bookingManager.state.pickupDate = document.getElementById('pickup-date-input').value;
+      bookingManager.state.pickupTime = document.getElementById('pickup-time-input').value;
+      if (bookingManager.state.serviceType === 'RETURN') {
+        bookingManager.state.returnDate = document.getElementById('return-date-input').value;
+        bookingManager.state.returnTime = document.getElementById('return-time-input').value;
+      }
+      bookingManager.state.flightNumber = document.getElementById('flight-input').value.trim();
+      bookingManager.save();
+
+      window.location.href = `/booking/review.html?${bookingManager.getUrlParams()}`;
+    }
+  </script>
+</body>
+</html>

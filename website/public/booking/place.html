@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Route & Destination | PETRANS Salzburg</title>
+  <meta name="description" content="Select your transfer destination or private Alpine day tour. Fixed transparent rates, zero upfront deposit.">
+  <link rel="canonical" href="https://petrans-salzburg.at/booking/place.html">
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="PETRANS Taxi & Tour Salzburg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petrans-salzburg.at/booking/place.html">
+  <meta property="og:title" content="Select Route & Destination | PETRANS Salzburg">
+  <meta property="og:description" content="Select your transfer destination or private Alpine day tour. Fixed transparent rates.">
+  <meta property="og:image" content="https://petrans-salzburg.at/images/salzburg-hero.jpg">
+  <meta property="og:locale" content="en_AT">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://petrans-salzburg.at/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Select Route & Place",
+        "item": "https://petrans-salzburg.at/booking/place.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0B0F19',
+            surface: '#161F30',
+            elevated: '#1E293B',
+            gold: '#C5A059',
+            goldHover: '#D4AF37',
+            goldSubtle: 'rgba(197, 160, 89, 0.15)',
+            snow: '#F8FAFC'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    .vehicle-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .vehicle-backdrop-img {
+      position: absolute;
+      right: -10%;
+      bottom: 5%;
+      width: 75vw;
+      max-width: 850px;
+      opacity: 0.18;
+      filter: drop-shadow(0 0 40px rgba(197, 160, 89, 0.15));
+      transition: all 0.5s ease-in-out;
+    }
+    @media (max-width: 768px) {
+      .vehicle-backdrop-img {
+        right: -25%;
+        bottom: 2%;
+        width: 110vw;
+        opacity: 0.14;
+      }
+    }
+    .glow-radial {
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, rgba(11,15,25,0) 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Ambient Vehicle Backdrop -->
+  <div class="vehicle-backdrop">
+    <div class="glow-radial"></div>
+    <img id="bg-vehicle-img" src="/images/mercedes-e-class.png" alt="Selected Mercedes Fleet" class="vehicle-backdrop-img">
+  </div>
+
+  <!-- Header -->
+  <header class="bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 px-4 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group min-h-[44px]">
+        <div class="w-10 h-10 rounded-lg border border-gold/40 bg-surface flex items-center justify-center text-gold shadow-lg group-hover:border-gold transition">
+          <span class="font-cinzel text-lg font-bold tracking-tighter">P</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-snow block leading-none">PETRANS</span>
+          <span class="text-[9px] font-sans font-semibold tracking-widest text-gold uppercase block mt-1">Salzburg Chauffeur</span>
+        </div>
+      </a>
+
+      <!-- Selected Vehicle Chip -->
+      <div id="header-vehicle-chip" class="flex items-center gap-2 bg-midnight/90 border border-gold/40 px-3 py-1.5 rounded-full text-xs">
+        <iconify-icon icon="lucide:car" width="15" height="15" class="text-gold"></iconify-icon>
+        <span id="chip-vehicle-name" class="font-bold text-snow">Mercedes E-Class</span>
+        <span class="text-gold font-mono" id="chip-vehicle-rate">€2.50/km</span>
+        <a href="/booking/vehicle.html" class="text-[11px] text-slate-400 hover:text-gold underline ml-1">Change</a>
+      </div>
+
+      <!-- Chauffeur Hotline -->
+      <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
+        <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
+        <span class="hidden md:inline">+43 660 6416464</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Stepper Progress Bar -->
+  <div class="bg-surface/60 border-b border-slate-800 py-3 px-4 relative z-20">
+    <div class="max-w-3xl mx-auto flex items-center justify-between text-xs">
+      <div class="flex items-center gap-2 text-slate-400">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">1</span>
+        <span class="hidden sm:inline">Vehicle</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-gold font-bold">
+        <span class="w-6 h-6 rounded-full bg-gold text-midnight font-bold flex items-center justify-center text-xs">2</span>
+        <span>Route & Place</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-500">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-500 font-bold flex items-center justify-center text-xs">3</span>
+        <span class="hidden sm:inline">Trip Details</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-500">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-500 font-bold flex items-center justify-center text-xs">4</span>
+        <span class="hidden sm:inline">Review & Book</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Card -->
+  <main class="flex-1 py-8 sm:py-12 px-4 sm:px-6 relative z-10">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Selected Vehicle Hero Callout -->
+      <div class="mb-6 p-4 rounded-2xl bg-surface/80 border border-gold/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img id="card-vehicle-img" src="/images/mercedes-e-class.png" alt="Mercedes E-Class" class="w-20 h-auto object-contain">
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-gold" id="card-vehicle-badge">Executive Sedan</div>
+            <h2 class="text-lg font-bold text-snow font-outfit" id="card-vehicle-title">Mercedes-Benz E-Class</h2>
+            <p class="text-xs text-slate-400" id="card-vehicle-sub">Obsidian Black Metallic • W214 Series</p>
+          </div>
+        </div>
+        <div class="text-right flex items-center sm:flex-col justify-between w-full sm:w-auto gap-2">
+          <div class="text-base font-mono font-bold text-gold" id="card-vehicle-rate">€2.50 / km</div>
+          <a href="/booking/vehicle.html" class="text-xs text-gold hover:underline font-semibold flex items-center gap-1 min-h-[44px]">
+            <span>Change Car</span>
+            <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form Container -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 bg-surface/90 backdrop-blur-md shadow-2xl">
+        <div class="mb-6">
+          <h1 class="text-2xl sm:text-3xl font-extrabold font-outfit text-snow">Select Your Destination</h1>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Choose an airport transfer, intercity journey, or bespoke 8-hour Alpine day tour.</p>
+        </div>
+
+        <!-- Service Tabs -->
+        <div class="grid grid-cols-3 gap-2 p-1.5 rounded-xl bg-midnight/90 border border-slate-800 mb-6">
+          <button type="button" onclick="setServiceType('ONE_WAY')" id="tab-oneway" class="py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 min-h-[44px] bg-gold text-midnight shadow">
+            <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon>
+            <span>One-Way</span>
+          </button>
+          <button type="button" onclick="setServiceType('RETURN')" id="tab-return" class="py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 min-h-[44px] text-slate-400 hover:text-snow">
+            <iconify-icon icon="lucide:arrow-left-right" width="14" height="14"></iconify-icon>
+            <span>Return (5% Off)</span>
+          </button>
+          <button type="button" onclick="setServiceType('TOUR')" id="tab-tour" class="py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 min-h-[44px] text-slate-400 hover:text-snow">
+            <iconify-icon icon="lucide:compass" width="14" height="14"></iconify-icon>
+            <span>8h Day Tour</span>
+          </button>
+        </div>
+
+        <!-- Transfer Mode Fields (One-Way & Return) -->
+        <div id="transfer-panel" class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Pickup Address in Salzburg</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gold">
+                <iconify-icon icon="lucide:map-pin" width="18" height="18"></iconify-icon>
+              </span>
+              <input type="text" id="pickup-input" class="w-full pl-10 pr-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]" value="Salzburg Airport W. A. Mozart (SZG)">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Destination / Dropoff Address</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gold">
+                <iconify-icon icon="lucide:flag" width="18" height="18"></iconify-icon>
+              </span>
+              <input type="text" id="dropoff-input" class="w-full pl-10 pr-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]" value="Hallstatt Lahn Terminal">
+            </div>
+          </div>
+
+          <!-- Quick Select Destination Chips -->
+          <div>
+            <span class="block text-xs text-slate-400 mb-2 font-medium">Popular Transfer Destinations:</span>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="chooseQuickRoute('hallstatt')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:map-pin" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Hallstatt (73 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('zell-am-see')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:map-pin" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Zell am See (85 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('munich-airport')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:plane" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Munich Airport (175 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('innsbruck')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:map-pin" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Innsbruck (185 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('bad-gastein')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:mountain" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Bad Gastein (100 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('vienna')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:map-pin" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Vienna (300 km)</span>
+              </button>
+              <button type="button" onclick="chooseQuickRoute('prague')" class="route-chip px-3 py-2 rounded-lg bg-midnight border border-slate-700 hover:border-gold/60 text-xs text-slate-300 transition flex items-center gap-1.5 min-h-[44px]">
+                <iconify-icon icon="lucide:map-pin" class="text-gold" width="13" height="13"></iconify-icon>
+                <span>Prague (375 km)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Mode Selector (Hidden by default) -->
+        <div id="tour-panel" class="hidden space-y-4">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Select 8-Hour Private Day Tour</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="tour-options-grid">
+            <!-- Dynamically populated from TOURS_DB -->
+          </div>
+        </div>
+
+        <!-- Live Quote Rate Preview -->
+        <div class="mt-8 p-4 rounded-xl bg-midnight/90 border border-gold/30 flex items-center justify-between">
+          <div>
+            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Estimated Guaranteed Fare</div>
+            <div class="text-xl sm:text-2xl font-mono font-bold text-gold" id="quote-preview-total">€182.50</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">All tolls, vignette & 20% Austrian VAT included</div>
+          </div>
+          <div class="text-right text-xs text-slate-400">
+            <div id="quote-preview-distance">73.0 km</div>
+            <div id="quote-preview-time" class="text-emerald-400 font-semibold">~1h 15m</div>
+          </div>
+        </div>
+
+        <!-- Next Action Button -->
+        <div class="mt-8 flex items-center justify-between gap-4">
+          <a href="/booking/vehicle.html" class="btn-outline-gold text-xs py-3 px-4 min-h-[48px] inline-flex items-center gap-1.5">
+            <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>
+            <span class="hidden sm:inline">Change Vehicle</span>
+          </a>
+          <button type="button" onclick="proceedToDetails()" class="btn-gold flex-1 py-3 px-6 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2 shadow-lg shadow-gold/25">
+            <span>Continue to Trip Details</span>
+            <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface/90 border-t border-slate-800 py-6 px-4 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div>PETRANS Taxi & Tour Salzburg e.U. • WKO Licensed Chauffeur</div>
+        <div class="text-slate-400">FAGG § 8 Compliant • Zero Upfront Payment Today</div>
+      </div>
+      <div class="pt-2 border-t border-slate-800/60 text-[10px] text-slate-500 leading-normal max-w-2xl mx-auto">
+        Mercedes-Benz, V-Class, and Vito are registered trademarks of Mercedes-Benz Group AG. PETRANS Taxi & Tour Salzburg is an independent Austrian licensed passenger transport operator (Gewerbeberechtigung für das Mietwagen-Gewerbe) and is not affiliated with, sponsored by, or endorsed by Mercedes-Benz Group AG.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/booking/booking-state.js"></script>
+  <script>
+    let currentService = 'ONE_WAY';
+    let selectedTourKey = 'hallstatt';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      syncVehicleVisuals();
+      syncFormValues();
+      renderTourCards();
+      updateQuotePreview();
+
+      document.getElementById('pickup-input').addEventListener('input', (e) => {
+        bookingManager.state.pickupAddress = e.target.value;
+        bookingManager.save();
+      });
+
+      document.getElementById('dropoff-input').addEventListener('input', (e) => {
+        const val = e.target.value;
+        bookingManager.state.dropoffAddress = val;
+        // Check known distances
+        for (const [k, r] of Object.entries(ROUTES_DB)) {
+          if (val.toLowerCase().includes(k.replace('-', ' '))) {
+            bookingManager.state.distanceKm = r.distance;
+            bookingManager.state.durationText = r.duration;
+            bookingManager.state.routeKey = k;
+            break;
+          }
+        }
+        bookingManager.save();
+        updateQuotePreview();
+      });
+    });
+
+    function syncVehicleVisuals() {
+      const v = bookingManager.getVehicleAsset();
+      document.getElementById('bg-vehicle-img').src = v.image;
+      document.getElementById('chip-vehicle-name').textContent = v.name;
+      document.getElementById('chip-vehicle-rate').textContent = `€${v.ratePerKm.toFixed(2)}/km`;
+
+      document.getElementById('card-vehicle-img').src = v.image;
+      document.getElementById('card-vehicle-badge').textContent = v.badge;
+      document.getElementById('card-vehicle-title').textContent = v.name;
+      document.getElementById('card-vehicle-sub').textContent = v.subtitle;
+      document.getElementById('card-vehicle-rate').textContent = `€${v.ratePerKm.toFixed(2)} / km`;
+    }
+
+    function syncFormValues() {
+      const s = bookingManager.state;
+      currentService = s.serviceType || 'ONE_WAY';
+      setServiceType(currentService);
+      document.getElementById('pickup-input').value = s.pickupAddress || 'Salzburg Airport W. A. Mozart (SZG)';
+      document.getElementById('dropoff-input').value = s.dropoffAddress || 'Hallstatt Lahn Terminal';
+    }
+
+    function setServiceType(type) {
+      currentService = type;
+      bookingManager.state.serviceType = type;
+      bookingManager.save();
+
+      const tabs = ['tab-oneway', 'tab-return', 'tab-tour'];
+      tabs.forEach(t => {
+        const el = document.getElementById(t);
+        el.className = 'py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 min-h-[44px] text-slate-400 hover:text-snow';
+      });
+
+      const activeMap = {
+        'ONE_WAY': 'tab-oneway',
+        'RETURN': 'tab-return',
+        'TOUR': 'tab-tour'
+      };
+
+      const activeEl = document.getElementById(activeMap[type]);
+      if (activeEl) {
+        activeEl.className = 'py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 min-h-[44px] bg-gold text-midnight shadow';
+      }
+
+      if (type === 'TOUR') {
+        document.getElementById('transfer-panel').classList.add('hidden');
+        document.getElementById('tour-panel').classList.remove('hidden');
+      } else {
+        document.getElementById('transfer-panel').classList.remove('hidden');
+        document.getElementById('tour-panel').classList.add('hidden');
+      }
+
+      updateQuotePreview();
+    }
+
+    function chooseQuickRoute(key) {
+      const r = ROUTES_DB[key];
+      if (!r) return;
+      document.getElementById('dropoff-input').value = r.name;
+      bookingManager.setPlace(
+        document.getElementById('pickup-input').value,
+        r.name,
+        r.distance,
+        r.duration,
+        currentService,
+        key
+      );
+      updateQuotePreview();
+    }
+
+    function renderTourCards() {
+      const grid = document.getElementById('tour-options-grid');
+      grid.innerHTML = '';
+      for (const [key, t] of Object.entries(TOURS_DB)) {
+        const isSelected = (bookingManager.state.tourKey === key);
+        const card = document.createElement('div');
+        card.className = `p-3.5 rounded-xl border cursor-pointer transition flex items-center justify-between ${isSelected ? 'border-gold bg-gold/10' : 'border-slate-700 bg-midnight hover:border-gold/40'}`;
+        card.onclick = () => selectTourItem(key);
+        card.innerHTML = `
+          <div>
+            <div class="text-xs font-bold text-snow">${t.title}</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">8 Hours Private Chauffeur</div>
+          </div>
+          <div class="text-sm font-mono font-bold text-gold">€${t.price.toFixed(2)}</div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    function selectTourItem(key) {
+      selectedTourKey = key;
+      bookingManager.setTour(key);
+      renderTourCards();
+      updateQuotePreview();
+    }
+
+    function updateQuotePreview() {
+      const q = bookingManager.calculateQuote();
+      document.getElementById('quote-preview-total').textContent = q.formattedTotal;
+      if (q.serviceType === 'TOUR') {
+        document.getElementById('quote-preview-distance').textContent = 'Full Day 8h Tour';
+        document.getElementById('quote-preview-time').textContent = 'Fixed Flat Rate';
+      } else {
+        document.getElementById('quote-preview-distance').textContent = `${q.distanceKm} km`;
+        document.getElementById('quote-preview-time').textContent = `~${q.durationText}`;
+      }
+    }
+
+    function proceedToDetails() {
+      if (currentService !== 'TOUR') {
+        const p = document.getElementById('pickup-input').value.trim();
+        const d = document.getElementById('dropoff-input').value.trim();
+        if (!p || !d) {
+          alert('Please enter both pickup and destination locations.');
+          return;
+        }
+        bookingManager.state.pickupAddress = p;
+        bookingManager.state.dropoffAddress = d;
+        bookingManager.save();
+      }
+      window.location.href = `/booking/details.html?${bookingManager.getUrlParams()}`;
+    }
+  </script>
+</body>
+</html>

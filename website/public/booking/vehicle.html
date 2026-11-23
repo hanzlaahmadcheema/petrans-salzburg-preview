@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Mercedes-Benz Vehicle | PETRANS Salzburg</title>
+  <meta name="description" content="Choose your luxury Mercedes-Benz vehicle for private Salzburg transfers and Alpine tours. 100% Obsidian Black fleet.">
+  <link rel="canonical" href="https://petrans-salzburg.at/booking/vehicle.html">
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="PETRANS Taxi & Tour Salzburg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petrans-salzburg.at/booking/vehicle.html">
+  <meta property="og:title" content="Select Mercedes-Benz Vehicle | PETRANS Salzburg">
+  <meta property="og:description" content="Choose your luxury Mercedes-Benz vehicle for private Salzburg transfers and Alpine tours.">
+  <meta property="og:image" content="https://petrans-salzburg.at/images/salzburg-hero.jpg">
+  <meta property="og:locale" content="en_AT">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://petrans-salzburg.at/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Select Vehicle",
+        "item": "https://petrans-salzburg.at/booking/vehicle.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0B0F19',
+            surface: '#161F30',
+            elevated: '#1E293B',
+            gold: '#C5A059',
+            goldHover: '#D4AF37',
+            goldSubtle: 'rgba(197, 160, 89, 0.15)',
+            snow: '#F8FAFC'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    .dest-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.22) contrast(1.1);
+      transition: background-image 0.5s ease;
+    }
+  </style>
+</head>
+<body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Scenic Ambient Backdrop (If Destination Preselected) -->
+  <div id="dest-backdrop-layer" class="dest-backdrop" style="background-image: url('/images/salzburg-hero.jpg');"></div>
+
+  <!-- Header -->
+  <header class="bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 px-4 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group min-h-[44px]">
+        <div class="w-10 h-10 rounded-lg border border-gold/40 bg-surface flex items-center justify-center text-gold shadow-lg group-hover:border-gold transition">
+          <span class="font-cinzel text-lg font-bold tracking-tighter">P</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-snow block leading-none">PETRANS</span>
+          <span class="text-[9px] font-sans font-semibold tracking-widest text-gold uppercase block mt-1">Salzburg Chauffeur</span>
+        </div>
+      </a>
+
+      <!-- Security Trust Badge -->
+      <div class="hidden sm:flex items-center gap-2 text-xs text-slate-300 bg-midnight/80 border border-slate-700/80 px-3 py-1.5 rounded-full">
+        <iconify-icon icon="lucide:shield-check" width="16" height="16" class="text-emerald-400"></iconify-icon>
+        <span>100% Obsidian Black Fleet</span>
+      </div>
+
+      <!-- Chauffeur Hotline -->
+      <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
+        <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
+        <span class="hidden md:inline">+43 660 6416464</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Stepper Progress Bar -->
+  <div class="bg-surface/60 border-b border-slate-800 py-3 px-4 relative z-20">
+    <div class="max-w-3xl mx-auto flex items-center justify-between text-xs">
+      <div class="flex items-center gap-2 text-gold font-bold">
+        <span class="w-6 h-6 rounded-full bg-gold text-midnight font-bold flex items-center justify-center text-xs">1</span>
+        <span>Vehicle</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-400">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-bold flex items-center justify-center text-xs">2</span>
+        <span class="hidden sm:inline">Route & Place</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-500">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-500 font-bold flex items-center justify-center text-xs">3</span>
+        <span class="hidden sm:inline">Trip Details</span>
+      </div>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-slate-500">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-500 font-bold flex items-center justify-center text-xs">4</span>
+        <span class="hidden sm:inline">Review & Book</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 py-8 sm:py-12 px-4 sm:px-6 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+          <iconify-icon icon="lucide:car" width="14" height="14"></iconify-icon>
+          <span>Exclusively Obsidian Black Mercedes Fleet</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-outfit text-snow">Select Your Chauffeur Vehicle</h1>
+        <p class="text-xs sm:text-sm text-slate-300 mt-2">All vehicles are pristine, climate-controlled Obsidian Black Metallic Mercedes-Benz models driven by licensed Austrian chauffeurs.</p>
+      </div>
+
+      <!-- Vehicle Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="vehicle-grid">
+        
+        <!-- E-Class -->
+        <div class="veh-select-card p-6 rounded-2xl border transition flex flex-col justify-between cursor-pointer bg-surface/90 backdrop-blur-md hover:border-gold/60" id="card-eclass" onclick="chooseVehicle('E_CLASS')">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Executive Sedan</span>
+              <iconify-icon icon="lucide:check-circle" width="18" height="18" class="text-slate-600 veh-check-icon" id="check-eclass"></iconify-icon>
+            </div>
+            
+            <div class="h-32 flex items-center justify-center my-2">
+              <img src="/images/mercedes-e-class.png" alt="Mercedes E-Class" class="max-h-28 w-auto object-contain">
+            </div>
+
+            <h3 class="font-outfit font-bold text-xl text-snow">Mercedes-Benz E-Class</h3>
+            <p class="text-xs text-slate-400 mt-1">Obsidian Black Metallic • W214 Series</p>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Executive sedan in Obsidian Black Metallic for solo travelers, couples & corporate executives.</p>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 3 Passengers</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 2 Large + 2 Cabin Bags</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:shield-check" width="14" height="14" class="text-emerald-400"></iconify-icon> Vignette & VAT Included</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-baseline justify-between">
+            <span class="text-xs text-slate-400">Distance Rate</span>
+            <span class="text-2xl font-mono font-bold text-gold">€2.50 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+          </div>
+        </div>
+
+        <!-- V-Class -->
+        <div class="veh-select-card p-6 rounded-2xl border transition flex flex-col justify-between cursor-pointer bg-surface/90 backdrop-blur-md hover:border-gold/60" id="card-vclass" onclick="chooseVehicle('V_CLASS')">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gold">VIP Flagship Minivan</span>
+              <iconify-icon icon="lucide:check-circle" width="18" height="18" class="text-slate-600 veh-check-icon" id="check-vclass"></iconify-icon>
+            </div>
+            
+            <div class="h-32 flex items-center justify-center my-2">
+              <img src="/images/mercedes-v-class.png" alt="Mercedes V-Class" class="max-h-28 w-auto object-contain">
+            </div>
+
+            <h3 class="font-outfit font-bold text-xl text-snow">Mercedes-Benz V-Class</h3>
+            <p class="text-xs text-slate-400 mt-1">Obsidian Black Metallic • W447 Exclusive</p>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">VIP flagship luxury minivan in Obsidian Black Metallic with nappa leather seating.</p>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 8 Passengers</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Large Suitcases</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:shield-check" width="14" height="14" class="text-emerald-400"></iconify-icon> Vignette & VAT Included</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-baseline justify-between">
+            <span class="text-xs text-slate-400">Distance Rate</span>
+            <span class="text-2xl font-mono font-bold text-gold">€2.60 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+          </div>
+        </div>
+
+        <!-- Vito Tourer -->
+        <div class="veh-select-card p-6 rounded-2xl border transition flex flex-col justify-between cursor-pointer bg-surface/90 backdrop-blur-md hover:border-gold/60" id="card-vito" onclick="chooseVehicle('VITO')">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Alpine 4MATIC Specialist</span>
+              <iconify-icon icon="lucide:check-circle" width="18" height="18" class="text-slate-600 veh-check-icon" id="check-vito"></iconify-icon>
+            </div>
+            
+            <div class="h-32 flex items-center justify-center my-2">
+              <img src="/images/mercedes-vito.png" alt="Mercedes Vito Tourer" class="max-h-28 w-auto object-contain">
+            </div>
+
+            <h3 class="font-outfit font-bold text-xl text-snow">Mercedes-Benz Vito</h3>
+            <p class="text-xs text-slate-400 mt-1">Obsidian Black Metallic • 4MATIC All-Wheel</p>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Obsidian Black 4MATIC all-wheel drive minivan for alpine ski transport and large groups.</p>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:users" width="14" height="14" class="text-gold"></iconify-icon> Max 8 Passengers</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:mountain" width="14" height="14" class="text-gold"></iconify-icon> 4MATIC All-Wheel Drive</div>
+              <div class="flex items-center gap-2"><iconify-icon icon="lucide:shield-check" width="14" height="14" class="text-emerald-400"></iconify-icon> Vignette & VAT Included</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-baseline justify-between">
+            <span class="text-xs text-slate-400">Distance Rate</span>
+            <span class="text-2xl font-mono font-bold text-gold">€2.80 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Confirmation Bar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-surface/90 border border-gold/30 backdrop-blur-md">
+        <div>
+          <span class="text-xs text-slate-400">Selected Vehicle:</span>
+          <div class="text-base font-bold text-snow" id="selected-summary-name">Mercedes-Benz E-Class Sedan</div>
+        </div>
+        <button type="button" onclick="confirmVehicleAndProceed()" class="btn-gold w-full sm:w-auto py-3.5 px-8 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2 shadow-lg shadow-gold/25">
+          <span>Book This Vehicle & Select Place</span>
+          <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface/90 border-t border-slate-800 py-6 px-4 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div>PETRANS Taxi & Tour Salzburg e.U. • WKO Licensed Chauffeur</div>
+        <div class="text-slate-400">FAGG § 8 Compliant • Zero Upfront Payment Today</div>
+      </div>
+      <div class="pt-2 border-t border-slate-800/60 text-[10px] text-slate-500 leading-normal max-w-2xl mx-auto">
+        Mercedes-Benz, V-Class, and Vito are registered trademarks of Mercedes-Benz Group AG. PETRANS Taxi & Tour Salzburg is an independent Austrian licensed passenger transport operator (Gewerbeberechtigung für das Mietwagen-Gewerbe) and is not affiliated with, sponsored by, or endorsed by Mercedes-Benz Group AG.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/booking/booking-state.js"></script>
+  <script>
+    let selectedCat = 'E_CLASS';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      selectedCat = bookingManager.state.vehicleCategory || 'E_CLASS';
+      highlightSelectedVehicle(selectedCat);
+      syncBackdrop();
+    });
+
+    function syncBackdrop() {
+      const hero = bookingManager.getDestinationHero();
+      document.getElementById('dest-backdrop-layer').style.backgroundImage = `url('${hero}')`;
+    }
+
+    function chooseVehicle(cat) {
+      selectedCat = cat;
+      bookingManager.setVehicle(cat);
+      highlightSelectedVehicle(cat);
+    }
+
+    function highlightSelectedVehicle(cat) {
+      const map = {
+        'E_CLASS': { card: 'card-eclass', check: 'check-eclass' },
+        'V_CLASS': { card: 'card-vclass', check: 'check-vclass' },
+        'VITO': { card: 'card-vito', check: 'check-vito' }
+      };
+
+      for (const [k, v] of Object.entries(map)) {
+        const cEl = document.getElementById(v.card);
+        const chkEl = document.getElementById(v.check);
+        if (k === cat) {
+          cEl.className = 'veh-select-card p-6 rounded-2xl border transition flex flex-col justify-between cursor-pointer bg-gold/10 border-gold shadow-xl';
+          chkEl.className = 'text-gold veh-check-icon';
+          chkEl.setAttribute('icon', 'lucide:check-circle');
+        } else {
+          cEl.className = 'veh-select-card p-6 rounded-2xl border transition flex flex-col justify-between cursor-pointer bg-surface/90 border-slate-700 hover:border-gold/40';
+          chkEl.className = 'text-slate-600 veh-check-icon';
+          chkEl.setAttribute('icon', 'lucide:circle');
+        }
+      }
+
+      const vAsset = VEHICLES_DB[cat];
+      if (vAsset) {
+        document.getElementById('selected-summary-name').textContent = `${vAsset.name} (${vAsset.badge})`;
+      }
+    }
+
+    function confirmVehicleAndProceed() {
+      bookingManager.setVehicle(selectedCat);
+      window.location.href = `/booking/place.html?${bookingManager.getUrlParams()}`;
+    }
+  </script>
+</body>
+</html>

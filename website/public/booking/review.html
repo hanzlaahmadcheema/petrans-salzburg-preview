@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review & Submit Booking | PETRANS Salzburg</title>
+  <meta name="description" content="Review your private Mercedes transfer summary and submit your chauffeur request. Zero upfront payment today.">
+  <link rel="canonical" href="https://petrans-salzburg.at/booking/review.html">
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="PETRANS Taxi & Tour Salzburg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petrans-salzburg.at/booking/review.html">
+  <meta property="og:title" content="Review & Submit Booking | PETRANS Salzburg">
+  <meta property="og:description" content="Review your private Mercedes transfer summary and submit your chauffeur request.">
+  <meta property="og:image" content="https://petrans-salzburg.at/images/salzburg-hero.jpg">
+  <meta property="og:locale" content="en_AT">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://petrans-salzburg.at/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Review Booking",
+        "item": "https://petrans-salzburg.at/booking/review.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0B0F19',
+            surface: '#161F30',
+            elevated: '#1E293B',
+            gold: '#C5A059',
+            goldHover: '#D4AF37',
+            goldSubtle: 'rgba(197, 160, 89, 0.15)',
+            snow: '#F8FAFC'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    .dest-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.18) contrast(1.15) blur(1px);
+    }
+  </style>
+</head>
+<body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Ambient Backdrop -->
+  <div id="dest-backdrop-layer" class="dest-backdrop" style="background-image: url('/images/salzburg-hero.jpg');"></div>
+
+  <!-- Header -->
+  <header class="bg-surface/90 backdrop-blur-md border-b border-gold/20 py-4 px-4 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group min-h-[44px]">
+        <div class="w-10 h-10 rounded-lg border border-gold/40 bg-surface flex items-center justify-center text-gold shadow-lg group-hover:border-gold transition">
+          <span class="font-cinzel text-lg font-bold tracking-tighter">P</span>
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-snow block leading-none">PETRANS</span>
+          <span class="text-[9px] font-sans font-semibold tracking-widest text-gold uppercase block mt-1">Salzburg Chauffeur</span>
+        </div>
+      </a>
+
+      <!-- Security Badge -->
+      <div class="hidden sm:flex items-center gap-2 text-xs text-slate-300 bg-midnight/80 border border-slate-700/80 px-3 py-1.5 rounded-full">
+        <iconify-icon icon="lucide:shield-check" width="16" height="16" class="text-emerald-400"></iconify-icon>
+        <span>SSL 256-Bit Encrypted Intake</span>
+      </div>
+
+      <!-- Hotline -->
+      <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
+        <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
+        <span class="hidden md:inline">+43 660 6416464</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Stepper Progress Bar -->
+  <div class="bg-surface/60 border-b border-slate-800 py-3 px-4 relative z-20">
+    <div class="max-w-3xl mx-auto flex items-center justify-between text-xs">
+      <a href="/booking/vehicle.html" class="flex items-center gap-2 text-slate-400 hover:text-gold transition">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">1</span>
+        <span class="hidden sm:inline">Vehicle</span>
+      </a>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <a href="/booking/place.html" class="flex items-center gap-2 text-slate-400 hover:text-gold transition">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">2</span>
+        <span class="hidden sm:inline">Route & Place</span>
+      </a>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <a href="/booking/details.html" class="flex items-center gap-2 text-slate-400 hover:text-gold transition">
+        <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center text-xs">3</span>
+        <span class="hidden sm:inline">Trip Details</span>
+      </a>
+      <iconify-icon icon="lucide:chevron-right" class="text-slate-600" width="16" height="16"></iconify-icon>
+      <div class="flex items-center gap-2 text-gold font-bold">
+        <span class="w-6 h-6 rounded-full bg-gold text-midnight font-bold flex items-center justify-center text-xs">4</span>
+        <span>Review & Book</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Card -->
+  <main class="flex-1 py-8 sm:py-12 px-4 sm:px-6 relative z-10">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Form Container -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 bg-surface/90 backdrop-blur-md shadow-2xl space-y-8">
+        
+        <div>
+          <span class="badge-gold">Step 4 of 4 • Final Review</span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold font-outfit text-snow mt-1">Review & Confirm Request</h1>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Please inspect your journey itinerary. No payment is charged today; owner Omer Farooq will review and confirm your dispatch directly.</p>
+        </div>
+
+        <!-- Comprehensive Trip Summary Box -->
+        <div class="p-5 rounded-2xl bg-midnight/90 border border-gold/30 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center gap-1.5">
+              <iconify-icon icon="lucide:check-circle" width="16" height="16"></iconify-icon>
+              <span>Booking Itinerary Overview</span>
+            </h2>
+            <a href="/booking/place.html" class="text-xs text-gold hover:underline">Edit Itinerary</a>
+          </div>
+
+          <!-- Route Row -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm">
+            <div>
+              <span class="text-xs text-slate-400 block">Pickup & Destination</span>
+              <div class="font-bold text-snow" id="summary-route">Salzburg Airport (SZG) → Hallstatt Lahn</div>
+            </div>
+            <div class="text-left sm:text-right text-xs text-slate-400">
+              <span id="summary-dist">73 km</span> • <span id="summary-duration">~1h 15m</span>
+            </div>
+          </div>
+
+          <!-- Vehicle Row -->
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-800/80 text-sm">
+            <div class="flex items-center gap-3">
+              <img id="summary-vehicle-img" src="/images/mercedes-e-class.png" alt="Selected Car" class="w-14 h-auto object-contain">
+              <div>
+                <span class="text-xs text-slate-400 block">Assigned Chauffeur Vehicle</span>
+                <div class="font-bold text-snow" id="summary-vehicle-name">Mercedes-Benz E-Class Sedan</div>
+                <div class="text-[11px] text-slate-400">Obsidian Black Metallic • 100% Private</div>
+              </div>
+            </div>
+            <a href="/booking/vehicle.html" class="text-xs text-gold hover:underline">Change</a>
+          </div>
+
+          <!-- Schedule Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-800/80 text-xs text-slate-300">
+            <div>
+              <span class="text-slate-400 block">Scheduled Pickup:</span>
+              <span class="font-bold text-snow text-sm" id="summary-datetime">2026-11-25 at 14:30</span>
+              <span class="block text-[11px] text-slate-400" id="summary-flight">No flight provided</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Party & Luggage:</span>
+              <span class="font-semibold text-snow" id="summary-pax-luggage">2 Adults • 2 Large Bags • 2 Cabin Bags</span>
+              <span class="block text-[11px] text-emerald-400 font-medium" id="summary-extras">Free Ski Gear • Free Child Seat</span>
+            </div>
+          </div>
+
+          <!-- Price Calculation Box -->
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between bg-surface/50 p-4 rounded-xl">
+            <div>
+              <div class="text-xs text-slate-400">Total Fixed Guaranteed Fare</div>
+              <div class="text-[11px] text-emerald-400 font-semibold">Tolls, ASFINAG Vignettes & 20% Austrian VAT Included</div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-mono font-bold text-gold" id="summary-total-price">€182.50</div>
+              <div class="text-[10px] text-slate-400 uppercase">Deposit: €0.00 (Pay on day)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Contact Form -->
+        <div class="space-y-4">
+          <h2 class="text-base font-bold font-outfit text-snow">Primary Passenger Details</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Full Name *</label>
+              <input type="text" id="cust-name" required placeholder="e.g. Alexander Weber" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Email Address *</label>
+              <input type="email" id="cust-email" required placeholder="e.g. alexander@example.com" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Mobile Phone / WhatsApp (with Country Code) *</label>
+            <input type="tel" id="cust-phone" required placeholder="e.g. +43 660 1234567 or +1 555 0192" class="w-full px-4 py-3 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none min-h-[48px]">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Special Requests or Driver Notes (Optional)</label>
+            <textarea id="cust-notes" rows="2" placeholder="e.g. 1 baby stroller, ski bag, hotel room reservation name..." class="w-full px-4 py-2.5 rounded-xl bg-midnight border border-slate-700 text-snow text-sm focus:border-gold focus:outline-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Payment Method Selector -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Preferred Payment Method</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            
+            <label class="flex items-start gap-3 p-4 rounded-xl border border-gold bg-gold/10 cursor-pointer" id="pay-driver-label">
+              <input type="radio" name="paymentMethod" value="PAY_TO_DRIVER_CARD" checked class="mt-1 text-gold focus:ring-gold bg-midnight">
+              <div class="text-xs">
+                <div class="font-bold text-snow">Pay Chauffeur Upon Arrival</div>
+                <div class="text-slate-300 mt-0.5">Credit/Debit Card (Visa, MC, Amex) or Cash directly to your driver. Zero deposit today.</div>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-midnight/70 cursor-pointer hover:border-gold/40" id="pay-advance-label">
+              <input type="radio" name="paymentMethod" value="ADVANCE_PAYMENT" class="mt-1 text-gold focus:ring-gold bg-midnight">
+              <div class="text-xs">
+                <div class="font-bold text-snow">Pre-Payment Invoice</div>
+                <div class="text-slate-400 mt-0.5">Request electronic payment link / corporate company invoice prior to travel.</div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Austrian FAGG § 8 Legal Notice -->
+        <div class="p-4 rounded-xl bg-midnight/70 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+          <strong class="text-slate-300 font-semibold block mb-1">Austrian Consumer Rights (FAGG § 8) Notice:</strong>
+          This submission is a formal booking request. All reservations are personally reviewed and dispatched by owner Omer Farooq. You will receive an immediate confirmation receipt via email and WhatsApp. You may cancel free of charge up to 24 hours prior to pickup.
+        </div>
+
+        <!-- Submission Buttons -->
+        <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
+          <a href="/booking/details.html" class="btn-outline-gold text-xs py-3 px-4 min-h-[48px] inline-flex items-center gap-1.5">
+            <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>
+            <span class="hidden sm:inline">Back to Details</span>
+          </a>
+          <button type="button" id="submit-btn" onclick="submitBooking()" class="btn-gold flex-1 py-3.5 px-6 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2 shadow-xl shadow-gold/30">
+            <iconify-icon icon="lucide:lock" width="16" height="16"></iconify-icon>
+            <span>Submit Booking Request</span>
+            <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface/90 border-t border-slate-800 py-6 px-4 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div>PETRANS Taxi & Tour Salzburg e.U. • WKO Licensed Chauffeur</div>
+        <div class="text-slate-400">FAGG § 8 Compliant • Zero Upfront Payment Today</div>
+      </div>
+      <div class="pt-2 border-t border-slate-800/60 text-[10px] text-slate-500 leading-normal max-w-2xl mx-auto">
+        Mercedes-Benz, V-Class, and Vito are registered trademarks of Mercedes-Benz Group AG. PETRANS Taxi & Tour Salzburg is an independent Austrian licensed passenger transport operator (Gewerbeberechtigung für das Mietwagen-Gewerbe) and is not affiliated with, sponsored by, or endorsed by Mercedes-Benz Group AG.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/booking/booking-state.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      syncBackdrop();
+      renderSummary();
+    });
+
+    function syncBackdrop() {
+      const hero = bookingManager.getDestinationHero();
+      document.getElementById('dest-backdrop-layer').style.backgroundImage = `url('${hero}')`;
+    }
+
+    function renderSummary() {
+      const s = bookingManager.state;
+      const v = bookingManager.getVehicleAsset();
+      const q = bookingManager.calculateQuote();
+
+      document.getElementById('summary-route').textContent = `${s.pickupAddress} → ${s.dropoffAddress}`;
+      document.getElementById('summary-dist').textContent = (s.serviceType === 'TOUR') ? 'Full Day 8h Tour' : `${s.distanceKm} km`;
+      document.getElementById('summary-duration').textContent = `~${s.durationText}`;
+
+      document.getElementById('summary-vehicle-img').src = v.image;
+      document.getElementById('summary-vehicle-name').textContent = `${v.name} (${v.badge})`;
+
+      document.getElementById('summary-datetime').textContent = `${s.pickupDate || 'Selected date'} at ${s.pickupTime || '14:30'}`;
+      if (s.flightNumber) {
+        document.getElementById('summary-flight').textContent = `Flight: ${s.flightNumber} (Live Tracking)`;
+      } else {
+        document.getElementById('summary-flight').textContent = 'Direct address pickup';
+      }
+
+      document.getElementById('summary-pax-luggage').textContent = `${s.passengerCount} Adults • ${s.largeLuggageCount} Large Suitcases • ${s.cabinBagsCount} Cabin Bags`;
+
+      const extras = [];
+      if (s.childSeats > 0) extras.push('Free Child/Booster Seat');
+      if (s.skiEquipment > 0) extras.push('Free Ski Gear Transport');
+      extras.push('Complimentary Mineral Water');
+      extras.push('High-Speed Wi-Fi');
+      document.getElementById('summary-extras').textContent = extras.join(' • ');
+
+      document.getElementById('summary-total-price').textContent = q.formattedTotal;
+    }
+
+    async function submitBooking() {
+      const name = document.getElementById('cust-name').value.trim();
+      const email = document.getElementById('cust-email').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const notes = document.getElementById('cust-notes').value.trim();
+
+      if (!name || !email || !phone) {
+        alert('Please provide your full name, email address, and phone number.');
+        return;
+      }
+
+      const payMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const s = bookingManager.state;
+
+      const payload = {
+        serviceType: s.serviceType,
+        pickupAddress: s.pickupAddress,
+        dropoffAddress: s.dropoffAddress,
+        pickupDateTime: `${s.pickupDate}T${s.pickupTime}:00`,
+        returnDateTime: (s.serviceType === 'RETURN' && s.returnDate) ? `${s.returnDate}T${s.returnTime}:00` : null,
+        flightNumber: s.flightNumber || null,
+        distanceKm: s.distanceKm,
+        vehicleCategory: s.vehicleCategory,
+        passengerCount: s.passengerCount,
+        largeLuggageCount: s.largeLuggageCount,
+        cabinBagsCount: s.cabinBagsCount,
+        childSeatsCount: s.childSeats,
+        skiEquipmentCount: s.skiEquipment,
+        specialRequests: notes,
+        paymentMethod: payMethod,
+        customer: {
+          fullName: name,
+          email: email,
+          phoneNumber: phone,
+          preferredLanguage: 'en'
+        }
+      };
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = `<iconify-icon icon="lucide:loader" class="animate-spin" width="16" height="16"></iconify-icon><span>Submitting Request...</span>`;
+
+      try {
+        const res = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (data.success && data.booking) {
+          // Clear session and redirect to confirmation
+          sessionStorage.setItem('petrans_last_confirmed_booking', JSON.stringify(data.booking));
+          window.location.href = `/booking/confirmation.html?ref=${encodeURIComponent(data.booking.reference)}`;
+        } else {
+          alert('Booking error: ' + (data.error || 'Could not process request.'));
+          btn.disabled = false;
+          btn.innerHTML = `<span>Submit Booking Request</span><iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>`;
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Network error while submitting. Please contact dispatch via WhatsApp.');
+        btn.disabled = false;
+        btn.innerHTML = `<span>Submit Booking Request</span><iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>`;
+      }
+    }
+  </script>
+</body>
+</html>
