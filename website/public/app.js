@@ -278,7 +278,7 @@ const FLEET_VEHICLES = [
     slug: 'vito',
     badge: 'Alpine 4MATIC Specialist',
     name: 'Mercedes-Benz Vito Tourer',
-    subtitle: 'Brilliant Silver • 4MATIC All-Wheel',
+    subtitle: 'Obsidian Black Metallic • 4MATIC All-Wheel',
     ratePerKm: 2.80,
     baseFloor: 45.00,
     pax: 'Max 8 Passengers',

@@ -263,8 +263,8 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
       <div class="max-w-3xl mx-auto mb-8 sm:mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/40 bg-midnight/80 backdrop-blur-md text-gold text-xs font-bold uppercase tracking-wider mb-5 shadow-lg">
-          <iconify-icon icon="lucide:award" width="16" height="16" class="text-gold"></iconify-icon>
+        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-gold/40 bg-midnight/80 backdrop-blur-md text-gold text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider mb-5 shadow-lg whitespace-nowrap max-w-full">
+          <iconify-icon icon="lucide:award" width="14" height="14" class="text-gold shrink-0 sm:w-4 sm:h-4"></iconify-icon>
           <span>Official Licensed Austrian Passenger Transport</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-outfit text-snow leading-tight mb-4 tracking-tight drop-shadow-lg">
@@ -623,13 +623,13 @@
       <div class="max-w-3xl mb-8 sm:mb-12">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
           <iconify-icon icon="lucide:car" width="14" height="14"></iconify-icon>
-          <span>Exclusively Mercedes-Benz Fleet</span>
+          <span>Exclusively Obsidian Black Mercedes-Benz Fleet</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-bold font-outfit text-snow mb-3 leading-tight">
-          Our Handcrafted Alpine Fleet
+          Our Handcrafted Black Alpine Fleet
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-          Every journey across Salzburg and the Austrian Alps is conducted in an immaculate, climate-controlled Mercedes-Benz. Transparent distance pricing, zero upfront payment, and licensed Austrian chauffeurs.
+          Every journey across Salzburg and the Austrian Alps is conducted in an immaculate, Obsidian Black Metallic Mercedes-Benz. Transparent distance pricing, zero upfront payment, and licensed Austrian chauffeurs.
         </p>
 
         <!-- Model Selector Tabs (Symmetrical 3-Tab Bar, No Outer Box Borders) -->
@@ -993,108 +993,197 @@
       </div>
 
       <div class="glass-card rounded-2xl overflow-hidden border border-slate-800">
-        <div class="overflow-x-auto w-full max-w-full">
-          <table class="w-full text-left text-sm text-slate-300">
-            <thead class="bg-surface border-b border-slate-800 text-xs uppercase text-gold font-bold tracking-wider">
+        <div class="w-full max-w-full overflow-hidden">
+          <table class="w-full text-left text-xs sm:text-sm text-slate-300">
+            <thead class="bg-surface border-b border-slate-800 text-[11px] sm:text-xs uppercase text-gold font-bold tracking-wider">
               <tr>
-                <th class="py-4 px-6">Destination</th>
-                <th class="py-4 px-6">Distance</th>
-                <th class="py-4 px-6">Typical Drive</th>
-                <th class="py-4 px-6">All-Inclusive Fixed Rate</th>
-                <th class="py-4 px-6">Inclusions</th>
-                <th class="py-4 px-6 text-right">Action</th>
+                <th class="py-3 px-3 sm:py-4 sm:px-6">Destination</th>
+                <th class="hidden sm:table-cell py-4 px-6">Distance</th>
+                <th class="hidden md:table-cell py-4 px-6">Typical Drive</th>
+                <th class="py-3 px-2 sm:py-4 sm:px-6 text-right sm:text-left">Fixed Rate</th>
+                <th class="hidden lg:table-cell py-4 px-6">Inclusions</th>
+                <th class="py-3 px-3 sm:py-4 sm:px-6 text-right">Action</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-800/80">
               
               <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Hallstatt Lahn
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Hallstatt Lahn</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    73 km • 1h 15m • Free Ski Gear
+                  </div>
+                  <a href="/tours/hallstatt.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Tour guide &rarr;</a>
                 </td>
-                <td class="py-4 px-6 font-mono">73 km</td>
-                <td class="py-4 px-6">1h 15m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€204.40</td>
-                <td class="py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/tours/hallstatt.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Hallstatt+Lahn" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">73 km</td>
+                <td class="hidden md:table-cell py-4 px-6">1h 15m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€204.40</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
                 </td>
-              </tr>
-
-              <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Zell am See / Kaprun
-                </td>
-                <td class="py-4 px-6 font-mono">85 km</td>
-                <td class="py-4 px-6">1h 30m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€238.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/tours/zell-am-see.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Zell+am+See+%2F+Kaprun" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
-                </td>
-              </tr>
-
-              <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Munich Airport (MUC)
-                </td>
-                <td class="py-4 px-6 font-mono">175 km</td>
-                <td class="py-4 px-6">1h 50m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€490.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">Cross-Border + Terminal Drop-off</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/destinations/munich-airport.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/tours/hallstatt.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Hallstatt+Lahn" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
                 </td>
               </tr>
 
               <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Innsbruck Highlights
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Zell am See / Kaprun</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    85 km • 1h 30m • Free Ski Gear
+                  </div>
+                  <a href="/tours/zell-am-see.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Tour guide &rarr;</a>
                 </td>
-                <td class="py-4 px-6 font-mono">185 km</td>
-                <td class="py-4 px-6">2h 00m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€518.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">VAT + Autobahn Toll Included</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/tours/innsbruck.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Innsbruck" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">85 km</td>
+                <td class="hidden md:table-cell py-4 px-6">1h 30m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€238.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
                 </td>
-              </tr>
-
-              <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Bad Gastein Valley
-                </td>
-                <td class="py-4 px-6 font-mono">100 km</td>
-                <td class="py-4 px-6">1h 30m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€280.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">Thermal Alps + Ski Transport</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/tours/bad-gastein.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Bad+Gastein" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
-                </td>
-              </tr>
-
-              <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Prague Cross-Border
-                </td>
-                <td class="py-4 px-6 font-mono">375 km</td>
-                <td class="py-4 px-6">4h 15m</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€650.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">Fixed Special (Czech Vignette incl.)</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/destinations/prague.html" class="inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a><a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Prague+(Czech+Republic)" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">VAT + Vignette + Free Ski Gear</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/tours/zell-am-see.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Zell+am+See+%2F+Kaprun" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
                 </td>
               </tr>
 
               <tr class="hover:bg-surface/50 transition">
-                <td class="py-4 px-6 font-semibold text-snow flex items-center gap-2">
-                  <iconify-icon icon="lucide:map-pin" width="16" height="16" class="text-gold"></iconify-icon> Salzburg Airport to Old Town
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Munich Airport (MUC)</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    175 km • 1h 50m • Terminal Drop
+                  </div>
+                  <a href="/destinations/munich-airport.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Guide &rarr;</a>
                 </td>
-                <td class="py-4 px-6 font-mono">5.5 km</td>
-                <td class="py-4 px-6">18 min</td>
-                <td class="py-4 px-6 font-mono font-bold text-gold text-base">€45.00</td>
-                <td class="py-4 px-6 text-xs text-slate-400">Minimum Fare Floor Applied</td>
-                <td class="py-4 px-6 text-right">
-                  <div class="flex items-center justify-end gap-2"><a href="/booking.html?service=one-way&pickup=Salzburg+Airport+(SZG)&dropoff=Salzburg+Old+Town" class="btn-outline-gold text-xs py-2 px-3.5 min-h-[44px] inline-flex items-center justify-center">Book</a></div>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">175 km</td>
+                <td class="hidden md:table-cell py-4 px-6">1h 50m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€490.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
+                </td>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">Cross-Border + Terminal Drop-off</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/destinations/munich-airport.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Munich+Airport+(MUC)" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-surface/50 transition">
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Innsbruck Highlights</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    185 km • 2h 00m • Autobahn Toll
+                  </div>
+                  <a href="/tours/innsbruck.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Tour guide &rarr;</a>
+                </td>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">185 km</td>
+                <td class="hidden md:table-cell py-4 px-6">2h 00m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€518.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
+                </td>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">VAT + Autobahn Toll Included</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/tours/innsbruck.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Innsbruck" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-surface/50 transition">
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Bad Gastein Valley</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    100 km • 1h 30m • Thermal Alps
+                  </div>
+                  <a href="/tours/bad-gastein.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Tour guide &rarr;</a>
+                </td>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">100 km</td>
+                <td class="hidden md:table-cell py-4 px-6">1h 30m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€280.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
+                </td>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">Thermal Alps + Ski Transport</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/tours/bad-gastein.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Bad+Gastein" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-surface/50 transition">
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Prague Cross-Border</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    375 km • 4h 15m • Vignette incl.
+                  </div>
+                  <a href="/destinations/prague.html" class="text-[11px] text-gold hover:text-snow sm:hidden mt-0.5 inline-flex items-center gap-0.5 font-medium">Guide &rarr;</a>
+                </td>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">375 km</td>
+                <td class="hidden md:table-cell py-4 px-6">4h 15m</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€650.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">all-inclusive</div>
+                </td>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">Fixed Special (Czech Vignette incl.)</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/destinations/prague.html" class="hidden sm:inline-flex items-center justify-center text-xs font-semibold text-gold hover:text-snow py-2.5 px-3 rounded-lg min-h-[44px]">Details</a>
+                    <a href="/booking.html?service=one-way&pickup=Salzburg&dropoff=Prague+(Czech+Republic)" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-surface/50 transition">
+                <td class="py-3 px-3 sm:py-4 sm:px-6">
+                  <div class="font-semibold text-snow flex items-center gap-1.5 text-xs sm:text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="14" height="14" class="text-gold shrink-0"></iconify-icon>
+                    <span>Salzburg Airport to Old Town</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                    5.5 km • 18 min • Minimum Floor
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell py-4 px-6 font-mono">5.5 km</td>
+                <td class="hidden md:table-cell py-4 px-6">18 min</td>
+                <td class="py-3 px-2 sm:py-4 sm:px-6 font-mono font-bold text-gold text-sm sm:text-base text-right sm:text-left whitespace-nowrap">
+                  <div>€45.00</div>
+                  <div class="text-[10px] font-sans font-normal text-slate-400 sm:hidden">floor fare</div>
+                </td>
+                <td class="hidden lg:table-cell py-4 px-6 text-xs text-slate-400">Minimum Fare Floor Applied</td>
+                <td class="py-3 px-3 sm:py-4 sm:px-6 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end gap-2">
+                    <a href="/booking.html?service=one-way&pickup=Salzburg+Airport+(SZG)&dropoff=Salzburg+Old+Town" class="btn-outline-gold text-xs py-2 px-3 sm:px-3.5 min-h-[40px] sm:min-h-[44px] inline-flex items-center justify-center font-bold">Book</a>
+                  </div>
                 </td>
               </tr>
 
