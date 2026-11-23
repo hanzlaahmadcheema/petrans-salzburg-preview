@@ -47,7 +47,7 @@ const VEHICLE_META = {
   'VITO': {
     name: 'Mercedes-Benz Vito Tourer',
     subtitle: '4MATIC Winter Specialist',
-    ratePerKm: 2.80,
+    ratePerKm: 2.60,
     maxPax: 8,
     maxLuggage: 8,
     maxCabin: 8
@@ -180,7 +180,7 @@ function hydrateBookingFromUrl() {
     if (VEHICLE_META[key]) {
       appState.vehicleCategory = key;
       const meta = VEHICLE_META[key];
-      preselectedNote = `Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`;
+      preselectedNote = `Vehicle Pre-selected: ${meta.name}. You can change this at any time.`;
       if (key === 'E_CLASS' && appState.passengerCount > 3) {
         appState.passengerCount = 3;
         if (appState.largeLuggageCount > 2) appState.largeLuggageCount = 2;
@@ -289,7 +289,7 @@ function calculateClientPrice(serviceType, distanceKm, stopsCount, vehicleCatego
   const VEHICLE_RATES = {
     'E_CLASS': 2.50,
     'V_CLASS': 2.60,
-    'VITO':    2.80
+    'VITO':    2.60
   };
 
   const ratePerKm = VEHICLE_RATES[vehicleCategory] || 2.60;
@@ -885,7 +885,7 @@ function updateStep5Summary() {
   if (sumRateNote) {
     sumRateNote.textContent = appState.serviceType === 'TOUR'
       ? 'Fixed 8h Private Tour'
-      : `Rate: €${quote.ratePerKm.toFixed(2)}/km (Base Floor: €45.00)`;
+      : 'Fixed Guaranteed Fare (Base Floor: €45.00)';
   }
 
   // Contact Details

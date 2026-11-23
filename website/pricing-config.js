@@ -8,12 +8,12 @@
 
 const PETRANS_PRICING = {
   // Vehicle Distance Rates (€/km)
-  // Baseline rates: E-Class: €2.50/km, V-Class: €2.60/km, Vito Tourer: €2.80/km
+  // Baseline rates: E-Class: €2.50/km, V-Class: €2.60/km, Vito Tourer: €2.60/km
   // Note: Owner clarification pending on alternative €3.55/km (E-Class) and €3.65/km (Fleet) rates.
   VEHICLE_RATES: {
     'E_CLASS': 2.50,
     'V_CLASS': 2.60,
-    'VITO':    2.80
+    'VITO':    2.60
   },
 
   // Mandatory Minimum Fare Floor for short journeys (< 16-18 km)
@@ -76,7 +76,7 @@ const PETRANS_PRICING = {
       name: 'Mercedes-Benz Vito Tourer',
       subtitle: '4MATIC Alpine Specialist',
       badge: 'Alpine 4MATIC Specialist',
-      ratePerKm: 2.80,
+      ratePerKm: 2.60,
       baseFloor: 45.0,
       maxPassengers: 8,
       maxLargeLuggage: 8,

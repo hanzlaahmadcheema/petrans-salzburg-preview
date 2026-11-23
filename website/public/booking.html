@@ -345,7 +345,7 @@
               <strong class="font-bold">Luggage / Passenger Limit for Mercedes E-Class</strong>
               <p class="mt-0.5 text-amber-200/90">E-Class accommodates max 3 passengers and 2 large suitcases. Upgrade to V-Class for full party comfort.</p>
             </div>
-            <button type="button" onclick="upgradeToVClass()" class="btn-gold text-xs py-2 px-3 whitespace-nowrap min-h-[44px]">Upgrade to V-Class (+€0.10/km)</button>
+            <button type="button" onclick="upgradeToVClass()" class="btn-gold text-xs py-2 px-3 whitespace-nowrap min-h-[44px]">Upgrade to V-Class</button>
           </div>
 
           <!-- Fleet Capacity Max Warning -->
@@ -371,9 +371,9 @@
                   <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 2 Large + 2 Cabin Bags</div>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
-                <span class="text-xs text-slate-400">Distance Rate</span>
-                <span class="text-lg font-mono font-bold text-gold">€2.50 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-slate-400">Fare Type</span>
+                <span class="text-xs font-bold text-gold flex items-center gap-1.5"><iconify-icon icon="lucide:check-circle" class="text-emerald-400" width="14" height="14"></iconify-icon> Guaranteed Fixed Fare</span>
               </div>
             </div>
 
@@ -391,9 +391,9 @@
                   <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:briefcase" width="14" height="14" class="text-gold"></iconify-icon> 8 Large Suitcases</div>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
-                <span class="text-xs text-slate-400">Distance Rate</span>
-                <span class="text-lg font-mono font-bold text-gold">€2.60 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-slate-400">Fare Type</span>
+                <span class="text-xs font-bold text-gold flex items-center gap-1.5"><iconify-icon icon="lucide:check-circle" class="text-emerald-400" width="14" height="14"></iconify-icon> Guaranteed Fixed Fare</span>
               </div>
             </div>
 
@@ -411,9 +411,9 @@
                   <div class="flex items-center gap-1.5"><iconify-icon icon="lucide:mountain" width="14" height="14" class="text-gold"></iconify-icon> 4MATIC All-Wheel</div>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-800 flex items-baseline justify-between">
-                <span class="text-xs text-slate-400">Distance Rate</span>
-                <span class="text-lg font-mono font-bold text-gold">€2.80 <span class="text-xs font-sans text-slate-400">/ km</span></span>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-xs text-slate-400">Fare Type</span>
+                <span class="text-xs font-bold text-gold flex items-center gap-1.5"><iconify-icon icon="lucide:check-circle" class="text-emerald-400" width="14" height="14"></iconify-icon> Guaranteed Fixed Fare</span>
               </div>
             </div>
 
@@ -690,9 +690,9 @@
               <!-- Inline Vehicle Switcher -->
               <div id="inline-edit-vehicle" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
                 <div class="grid grid-cols-3 gap-2">
-                  <button type="button" id="inline-btn-eclass" onclick="setInlineVehicle('E_CLASS')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">E-Class (€2.50/km)</button>
-                  <button type="button" id="inline-btn-vclass" onclick="setInlineVehicle('V_CLASS')" class="p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center min-h-[44px]">V-Class (€2.60/km)</button>
-                  <button type="button" id="inline-btn-vito" onclick="setInlineVehicle('VITO')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">Vito (€2.80/km)</button>
+                  <button type="button" id="inline-btn-eclass" onclick="setInlineVehicle('E_CLASS')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">E-Class Sedan</button>
+                  <button type="button" id="inline-btn-vclass" onclick="setInlineVehicle('V_CLASS')" class="p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center min-h-[44px]">V-Class Van</button>
+                  <button type="button" id="inline-btn-vito" onclick="setInlineVehicle('VITO')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">Vito 4MATIC</button>
                 </div>
                 <div class="flex justify-end">
                   <button type="button" onclick="toggleInlineEdit('vehicle')" class="btn-gold text-xs py-1 px-3 min-h-[44px]">Done</button>

@@ -223,8 +223,8 @@ async function runAll() {
       distanceKm: 73,
       vehicleCategory: 'VITO'
     });
-    // 73 * 2.80 = 204.40
-    assert.strictEqual(quote.grossTotal, 204.40);
+    // 73 * 2.60 = 189.80
+    assert.strictEqual(quote.grossTotal, 189.80);
   });
 
   runTest('Minimum Base Floor: 5.5 km trip enforces €45.00 floor', () => {
@@ -255,9 +255,9 @@ async function runAll() {
       distanceKm: 73,
       vehicleCategory: 'VITO'
     });
-    // One way: 204.40; Return leg: 204.40 * 0.95 = 194.18; Gross: 398.58; Discount: 10.22
-    assert.strictEqual(quote.grossTotal, 398.58);
-    assert.strictEqual(quote.discountAmount, 10.22);
+    // One way: 189.80; Return leg: 189.80 * 0.95 = 180.31; Gross: 370.11; Discount: 9.49
+    assert.strictEqual(quote.grossTotal, 370.11);
+    assert.strictEqual(quote.discountAmount, 9.49);
   });
 
   runTest('Tour Pricing: Hallstatt flat €450.00', () => {

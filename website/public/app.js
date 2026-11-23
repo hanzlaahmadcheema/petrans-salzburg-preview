@@ -46,7 +46,7 @@ const VEHICLE_META = {
   'VITO': {
     name: 'Mercedes-Benz Vito Tourer',
     subtitle: '4MATIC Winter Specialist',
-    ratePerKm: 2.80,
+    ratePerKm: 2.60,
     maxPax: 8,
     maxLuggage: 8,
     maxCabin: 8
@@ -161,7 +161,7 @@ function parseUrlQueryParameters() {
       appState.vehicleCategory = key;
       appState.entrySource = params.get('entry') || 'fleet';
       const meta = VEHICLE_META[key];
-      preselectedNote = `Vehicle Pre-selected: ${meta.name} (€${meta.ratePerKm.toFixed(2)}/km). You can change this at any time.`;
+      preselectedNote = `Vehicle Pre-selected: ${meta.name}. You can change this at any time.`;
     }
   }
 
@@ -279,7 +279,7 @@ const FLEET_VEHICLES = [
     badge: 'Alpine 4MATIC Specialist',
     name: 'Mercedes-Benz Vito Tourer',
     subtitle: 'Obsidian Black Metallic • 4MATIC All-Wheel',
-    ratePerKm: 2.80,
+    ratePerKm: 2.60,
     baseFloor: 45.00,
     pax: 'Max 8 Passengers',
     luggage: '8 Large Suitcases',
@@ -422,7 +422,7 @@ function renderFleetCarousel() {
   if (subEl) subEl.textContent = v.subtitle;
 
   const rateEl = document.getElementById('carousel-rate');
-  if (rateEl) rateEl.textContent = `€${v.ratePerKm.toFixed(2)}`;
+  if (rateEl) rateEl.textContent = 'Fixed Fare';
 
   const floorEl = document.getElementById('carousel-floor');
   if (floorEl) floorEl.textContent = `Mandatory Base Floor: €${v.baseFloor.toFixed(2)}`;
@@ -888,7 +888,7 @@ function calculateClientPrice(serviceType, distanceKm, stopsCount, vehicleCatego
   const VEHICLE_RATES = {
     'E_CLASS': 2.50, // Mercedes E-Class Sedan
     'V_CLASS': 2.60, // Mercedes V-Class VIP Van
-    'VITO':    2.80  // Mercedes Vito Tourer 4MATIC
+    'VITO':    2.60  // Mercedes Vito Tourer 4MATIC
   };
 
   const ratePerKm = VEHICLE_RATES[vehicleCategory] || 2.60;
@@ -1376,7 +1376,7 @@ function updateStep5Summary() {
   if (sumVehicle) sumVehicle.textContent = meta.name;
 
   const sumRateKm = document.getElementById('sum-rate-km');
-  if (sumRateKm) sumRateKm.textContent = `€${meta.ratePerKm.toFixed(2)} / km`;
+  if (sumRateKm) sumRateKm.textContent = 'Guaranteed Fixed Fare';
 
   const sumPax = document.getElementById('sum-pax');
   if (sumPax) sumPax.textContent = `${appState.passengerCount} Passengers`;
@@ -1412,7 +1412,7 @@ function updateStep5Summary() {
   if (sumDist) sumDist.textContent = appState.distanceKm;
 
   const sumUnitRate = document.getElementById('sum-unit-rate');
-  if (sumUnitRate) sumUnitRate.textContent = `€${meta.ratePerKm.toFixed(2)}`;
+  if (sumUnitRate) sumUnitRate.textContent = 'Fixed Fare';
 
   const sumBasePrice = document.getElementById('sum-base-price');
   if (sumBasePrice) sumBasePrice.textContent = `€${quote.baseFare.toFixed(2)}`;

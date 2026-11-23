@@ -64,7 +64,7 @@ const VEHICLES_DB = {
     name: 'Mercedes-Benz Vito Tourer',
     badge: 'Alpine 4MATIC Specialist',
     subtitle: 'Obsidian Black Metallic • 4MATIC All-Wheel',
-    ratePerKm: 2.80,
+    ratePerKm: 2.60,
     baseFloor: 45.00,
     maxPax: 8,
     maxLuggage: 8,

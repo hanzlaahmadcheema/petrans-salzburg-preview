@@ -227,7 +227,7 @@ app.post('/api/chat', (req, res) => {
     if (text.includes('abhol') || text.includes('flughafen') || text.includes('treffpunkt')) {
       reply = 'Am Flughafen Salzburg (SZG) erwartet Sie Ihr Chauffeur direkt in der Ankunftshalle mit einem digitalen Namensschild. 60 Minuten Wartezeit ab Landung sind inklusive!';
     } else if (text.includes('preis') || text.includes('kosten') || text.includes('rabatt')) {
-      reply = 'Unsere Fahrten außerhalb von Salzburg werden mit fairen €2,80/km berechnet (Mindestpreis €45,00 inkl. 20% MwSt. und Maut). Tagestouren (z.B. Hallstatt) kosten pauschal €450 für 8 Stunden (bis zu 8 Personen). Rabatte sind systemseitig fest hinterlegt.';
+      reply = 'Unsere Fahrten außerhalb von Salzburg werden mit fairen Festpreisen berechnet (Mindestpreis €45,00 inkl. 20% MwSt. und Maut). Tagestouren (z.B. Hallstatt) kosten pauschal €450 für 8 Stunden (bis zu 8 Personen). Rabatte sind systemseitig fest hinterlegt.';
     } else if (text.includes('kindersitz') || text.includes('ski')) {
       reply = 'Kindersitze, Sitzerhöhungen und Ski-/Snowboardgepäck transportieren wir bei PETRANS kostenfrei für Sie!';
     } else {
@@ -237,7 +237,7 @@ app.post('/api/chat', (req, res) => {
     if (text.includes('airport') || text.includes('flight') || text.includes('milega') || text.includes('milna')) {
       reply = 'Salzburg Airport par hamara chauffeur arrival hall mein aapke naam ke digital board ke saath aapka intezaar karega. Flight land hone ke baad 60 minutes tak complimentary waiting shamil hai.';
     } else if (text.includes('kiraya') || text.includes('price') || text.includes('rate')) {
-      reply = 'PETRANS ka rate city ke bahar €2.80/km hai (minimum fare €45.00). Hallstatt jaisi 8-hour day tour flat €450 mein 8 passengers ke liye available hai. Ski gear aur child seats bilkul free hain.';
+      reply = 'PETRANS ke rates transparent fixed pricing par mabni hain (minimum fare €45.00). Hallstatt jaisi 8-hour day tour flat €450 mein 8 passengers ke liye available hai. Ski gear aur child seats bilkul free hain.';
     } else {
       reply = 'Aadab! Main PETRANS ka AI Concierge hoon. Salzburg transfers ya 8-hour day tours ke bare mein aap mujh se poochein. Omer Farooq (+43 660 6416464) se bhi direct WhatsApp par baat kar sakte hain.';
     }
@@ -246,7 +246,7 @@ app.post('/api/chat', (req, res) => {
     if (text.includes('meeting') || text.includes('driver') || text.includes('airport') || text.includes('where')) {
       reply = 'At Salzburg Airport (SZG), your personal chauffeur will greet you inside the Arrival Hall holding a digital Name Board. We track your flight live with 60 minutes free waiting after touchdown!';
     } else if (text.includes('price') || text.includes('rate') || text.includes('cost') || text.includes('discount')) {
-      reply = 'Our out-of-city transfers are calculated at a transparent €2.80/km (minimum fare floor €45.00, VAT & tolls included). Day tours like Hallstatt or Eagles Nest are flat €450 for 8 hours for up to 8 guests. Our prices are fixed with zero hidden fees!';
+      reply = 'Our out-of-city transfers are calculated at transparent fixed rates (minimum fare floor €45.00, VAT & tolls included). Day tours like Hallstatt or Eagles Nest are flat €450 for 8 hours for up to 8 guests. Our prices are fixed with zero hidden fees!';
     } else if (text.includes('ski') || text.includes('child') || text.includes('baby') || text.includes('seat')) {
       reply = 'Infant seats, child booster seats, and all ski/snowboard equipment are transported 100% FREE of charge in our spacious Mercedes V-Class and Vito fleet.';
     } else if (text.includes('cancel') || text.includes('refund')) {
