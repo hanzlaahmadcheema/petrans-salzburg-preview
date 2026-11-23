@@ -68,7 +68,7 @@ iconify-icon {
   border-radius: 1rem;
 }
 
-/* Luxury Gold Buttons (Enforced Min 44x44px Touch Targets) */
+/* Luxury Gold Buttons (Enforced Min 48x48px Touch Targets) */
 .btn-gold {
   background: linear-gradient(135deg, #CAA328 0%, #D4AF37 50%, #B89045 100%);
   color: #0B0F19;
@@ -78,7 +78,7 @@ iconify-icon {
   border-radius: 0.5rem;
   padding: 0.75rem 1.75rem;
   min-height: 48px;
-  min-width: 44px;
+  min-width: 48px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -109,7 +109,7 @@ iconify-icon {
   border-radius: 0.5rem;
   padding: 0.65rem 1.5rem;
   min-height: 48px;
-  min-width: 44px;
+  min-width: 48px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -405,7 +405,8 @@ iconify-icon {
   border-left: 1px solid rgba(202, 163, 40, 0.3);
   z-index: 51;
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -416,6 +417,7 @@ iconify-icon {
 
 #mobile-drawer.open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 /* Pulse animation for WhatsApp */

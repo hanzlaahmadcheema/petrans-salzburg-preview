@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-23",
+  "screensEvaluated": 13,
+  "mobileBreakpointsTested": [
+    320,
+    360,
+    375,
+    390,
+    412,
+    480
+  ],
+  "horizontalOverflowAudit": [],
+  "touchTargetAudit": [],
+  "inputAntiZoomAudit": {
+    "totalInputs": 23,
+    "sub16px": []
+  },
+  "mobileDrawerAudit": {
+    "pass": true,
+    "beforeOpen": {
+      "open": false,
+      "left": 375,
+      "visibility": "hidden"
+    },
+    "whileOpen": {
+      "open": true,
+      "left": 56.25,
+      "width": 318.75,
+      "visibility": "visible"
+    },
+    "afterClosed": {
+      "open": false,
+      "left": 375,
+      "visibility": "hidden"
+    }
+  },
+  "mobileStepperAudit": {
+    "visible": true,
+    "position": "sticky",
+    "stepNum": "1",
+    "stepIndicator": "Step 1 of 6"
+  },
+  "carouselSwipeAudit": null,
+  "overallVerdict": "PASS"
+}

@@ -525,6 +525,18 @@ function setupEventListeners() {
     link.addEventListener('click', closeDrawer);
   });
 
+  // Sync Desktop & Mobile Language Selectors
+  const langSelect = document.getElementById('lang-select');
+  const mobileLangSelect = document.getElementById('mobile-lang-select');
+  if (langSelect && mobileLangSelect) {
+    langSelect.addEventListener('change', () => {
+      mobileLangSelect.value = langSelect.value;
+    });
+    mobileLangSelect.addEventListener('change', () => {
+      langSelect.value = mobileLangSelect.value;
+    });
+  }
+
   // 3-Option Quick Booking Module (Homepage Hero)
   let quickSelectedCar = 'v-class';
   const quickTabs = document.querySelectorAll('.quick-tab');
