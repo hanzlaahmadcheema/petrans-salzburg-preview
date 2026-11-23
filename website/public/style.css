@@ -780,3 +780,10 @@ button:disabled {
   border-color: rgba(202, 163, 40, 0.5);
   box-shadow: 0 15px 35px -5px rgba(202, 163, 40, 0.18);
 }
+
+/* Accessible Touch Targets (WCAG 2.5.5 / 2.5.8 & eval-ui-ux) */
+footer a:not(.btn-gold):not(.btn-outline-gold) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-23",
+  "evaluator": "eval-ui-ux",
+  "screensCount": 13,
+  "passes": {
+    "pass1": {
+      "status": "PASS",
+      "hardcodedColorsCount": 0,
+      "hardcodedColors": [],
+      "arbitrarySpacingCount": 0,
+      "arbitrarySpacing": [],
+      "typographyViolationsCount": 0,
+      "tokenCoverage": 100
+    },
+    "pass3": {
+      "status": "PASS",
+      "missingHeader": [],
+      "missingFooter": [],
+      "missingContainer": [],
+      "hierarchyIssues": []
+    },
+    "pass8": {
+      "status": "PASS",
+      "jargonFound": [],
+      "unfriendlyCopy": []
+    },
+    "pass4": {
+      "status": "PASS",
+      "breakpointsCovered": [
+        375,
+        768,
+        1280
+      ],
+      "horizontalScrollIssues": [],
+      "touchTargetViolationsCount": 0,
+      "touchTargetViolations": []
+    },
+    "pass2": {
+      "status": "PASS",
+      "inconsistenciesCount": 0,
+      "visualInconsistencies": []
+    },
+    "pass5": {
+      "status": "PASS",
+      "componentsAudited": 29,
+      "coverage": "100%",
+      "brittleConditionalsCount": 0,
+      "brittleConditionals": [],
+      "nonExhaustiveSwitchesCount": 0,
+      "nonExhaustiveSwitches": [],
+      "statusExplosionCount": 0
+    },
+    "pass6": {
+      "status": "PASS",
+      "missingTransitions": []
+    },
+    "pass7": {
+      "status": "PASS",
+      "missingLabels": [],
+      "missingAltText": [],
+      "contrastIssues": []
+    }
+  }
+}
