@@ -457,14 +457,14 @@ function renderFleetCarousel() {
   // 6. Update CTA Button Deep Link
   const bookCta = document.getElementById('carousel-book-cta');
   if (bookCta && bookCta.tagName.toLowerCase() === 'a') {
-    bookCta.href = `/booking/place.html?vehicle=${v.slug}`;
+    bookCta.href = `/booking.html?vehicle=${v.slug}`;
   }
 }
 
 function bookCurrentFleetVehicle() {
   const v = FLEET_VEHICLES[fleetActiveIndex];
   if (v) {
-    window.location.href = `/booking/place.html?vehicle=${v.slug}`;
+    window.location.href = `/booking.html?vehicle=${v.slug}`;
   }
 }
 
@@ -472,17 +472,17 @@ function bookCurrentFleetVehicle() {
 function selectFleetVehicle(category) {
   if (!VEHICLE_META[category]) return;
   const slug = category.toLowerCase().replace('_', '-');
-  window.location.href = `/booking/place.html?vehicle=${slug}`;
+  window.location.href = `/booking.html?vehicle=${slug}`;
 }
 
 // Multi-Entry Point Trigger 2: Book by Tour (Homepage Tour Cards)
 function selectTour(tourKey) {
-  window.location.href = `/booking/vehicle.html?service=tour&tour=${tourKey}`;
+  window.location.href = `/booking.html?service=tour&tour=${tourKey}`;
 }
 
 // Multi-Entry Point Trigger 3: Book by Place (Hero Calculator Submit)
 function selectHeroBooking() {
-  window.location.href = '/booking/vehicle.html';
+  window.location.href = '/booking.html';
 }
 
 // Event Listeners setup
@@ -635,7 +635,7 @@ function setupEventListeners() {
       const dest = destOpt?.getAttribute('data-name') || destOpt?.value || 'Hallstatt';
       const veh = heroPlaceVehicle?.value || 'v-class';
       const stopsQuery = heroStopsCount > 0 ? `&stops=${heroStopsCount}` : '';
-      window.location.href = `/booking/details.html?service=one-way&pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dest)}&vehicle=${veh}${stopsQuery}`;
+      window.location.href = `/booking.html?service=one-way&pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dest)}&vehicle=${veh}${stopsQuery}`;
     });
   }
 
@@ -672,7 +672,7 @@ function setupEventListeners() {
       const pickup = document.getElementById('hero-hourly-pickup')?.value || 'Salzburg City Center';
       const hours = heroHourlyDuration?.value || '4';
       const veh = heroHourlyVehicle?.value || 'v-class';
-      window.location.href = `/booking/details.html?service=hourly&hours=${hours}&pickup=${encodeURIComponent(pickup)}&vehicle=${veh}`;
+      window.location.href = `/booking.html?service=hourly&hours=${hours}&pickup=${encodeURIComponent(pickup)}&vehicle=${veh}`;
     });
   }
 
@@ -697,7 +697,7 @@ function setupEventListeners() {
   if (btnHeroTourBook) {
     btnHeroTourBook.addEventListener('click', () => {
       const tourVal = heroTourSelect?.value || 'hallstatt';
-      window.location.href = `/booking/vehicle.html?service=tour&tour=${tourVal}`;
+      window.location.href = `/booking.html?service=tour&tour=${tourVal}`;
     });
   }
 
@@ -714,7 +714,7 @@ function setupEventListeners() {
   const btnHeroCarBook = document.getElementById('btn-hero-car-book');
   if (btnHeroCarBook) {
     btnHeroCarBook.addEventListener('click', () => {
-      window.location.href = `/booking/place.html?vehicle=${quickSelectedCar}`;
+      window.location.href = `/booking.html?vehicle=${quickSelectedCar}`;
     });
   }
 

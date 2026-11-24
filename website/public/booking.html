@@ -66,29 +66,6 @@
   
   <link rel="stylesheet" href="/style.css">
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-  <script>
-    (function() {
-      var params = new URLSearchParams(window.location.search);
-      if (params.get('noredirect') === '1') return;
-
-      var veh = params.get('vehicle') || params.get('car');
-      var tour = params.get('tour');
-      var pickup = params.get('pickup');
-      var dropoff = params.get('dropoff') || params.get('dest');
-
-      if (veh && !dropoff && !tour) {
-        window.location.replace('/booking/place.html' + window.location.search);
-      } else if (tour && !veh) {
-        window.location.replace('/booking/vehicle.html' + window.location.search);
-      } else if (pickup && dropoff && veh) {
-        window.location.replace('/booking/details.html' + window.location.search);
-      } else if (pickup && dropoff && !veh) {
-        window.location.replace('/booking/vehicle.html' + window.location.search);
-      } else {
-        window.location.replace('/booking/vehicle.html' + window.location.search);
-      }
-    })();
-  </script>
 </head>
 <body class="bg-midnight text-snow antialiased min-h-screen flex flex-col justify-between">
 
