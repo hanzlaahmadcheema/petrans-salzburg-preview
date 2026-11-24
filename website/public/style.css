@@ -190,6 +190,9 @@ iconify-icon {
 /* Form Controls (Enforced 16px Font Size to Prevent iOS Safari Auto-Zoom) */
 .form-input {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   background: rgba(11, 15, 25, 0.75);
   border: 1px solid rgba(148, 163, 184, 0.25);
   color: var(--text-primary);
@@ -423,7 +426,7 @@ iconify-icon {
 /* Pulse animation for WhatsApp */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
@@ -659,12 +662,18 @@ iconify-icon {
   touch-action: manipulation;
 }
 
-.fleet-tab.active {
-  background: linear-gradient(135deg, #CAA328 0%, #D4AF37 50%, #B89045 100%);
-  color: #0B0F19;
-  font-weight: 700;
-  border: none;
-  box-shadow: 0 4px 15px rgba(202, 163, 40, 0.35);
+.fleet-tab.active,
+.fleet-tab.active:hover,
+.fleet-tab.active:focus {
+  background: linear-gradient(135deg, #CAA328 0%, #D4AF37 50%, #B89045 100%) !important;
+  color: #0B0F19 !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(202, 163, 40, 0.35) !important;
+}
+
+.fleet-tab.active * {
+  color: #0B0F19 !important;
 }
 
 /* Quick 3-Option Booking Module (Homepage Hero) */

@@ -998,15 +998,15 @@ function syncVehicleCardSelection() {
   const btnVito = document.getElementById('inline-btn-vito');
   [btnE, btnV, btnVito].forEach(b => {
     if (b) {
-      b.className = 'p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300';
+      b.className = 'p-2 rounded border border-slate-700 bg-surface/80 text-xs font-semibold text-center text-slate-300 min-h-[44px] hover:border-gold/40 transition';
     }
   });
   if (appState.vehicleCategory === 'E_CLASS' && btnE) {
-    btnE.className = 'p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center';
+    btnE.className = 'p-2 rounded border border-gold bg-gold text-midnight font-bold text-xs text-center min-h-[44px] shadow-sm';
   } else if (appState.vehicleCategory === 'V_CLASS' && btnV) {
-    btnV.className = 'p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center';
+    btnV.className = 'p-2 rounded border border-gold bg-gold text-midnight font-bold text-xs text-center min-h-[44px] shadow-sm';
   } else if (appState.vehicleCategory === 'VITO' && btnVito) {
-    btnVito.className = 'p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center';
+    btnVito.className = 'p-2 rounded border border-gold bg-gold text-midnight font-bold text-xs text-center min-h-[44px] shadow-sm';
   }
 }
 

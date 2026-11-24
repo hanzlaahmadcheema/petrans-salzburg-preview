@@ -551,17 +551,17 @@
 
             <div>
               <label class="form-label" id="comm-channel-label">Preferred Communication Channel</label>
-              <div class="grid grid-cols-3 gap-2" role="radiogroup" aria-labelledby="comm-channel-label">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" role="radiogroup" aria-labelledby="comm-channel-label">
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="WHATSAPP_EMAIL" checked class="text-gold" aria-label="WhatsApp and Email">
+                  <input type="radio" name="comm-channel" value="WHATSAPP_EMAIL" checked class="text-gold shrink-0" aria-label="WhatsApp and Email">
                   <span class="text-xs text-slate-200">WhatsApp & Email</span>
                 </label>
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="EMAIL_ONLY" class="text-gold" aria-label="Email Only">
+                  <input type="radio" name="comm-channel" value="EMAIL_ONLY" class="text-gold shrink-0" aria-label="Email Only">
                   <span class="text-xs text-slate-200">Email Only</span>
                 </label>
                 <label class="p-3 rounded-lg border border-slate-700 bg-midnight flex items-center gap-2 cursor-pointer hover:border-gold min-h-[44px]">
-                  <input type="radio" name="comm-channel" value="PHONE_SMS" class="text-gold" aria-label="Phone Call and SMS">
+                  <input type="radio" name="comm-channel" value="PHONE_SMS" class="text-gold shrink-0" aria-label="Phone Call and SMS">
                   <span class="text-xs text-slate-200">Phone Call / SMS</span>
                 </label>
               </div>
@@ -667,9 +667,9 @@
               <!-- Inline Vehicle Switcher -->
               <div id="inline-edit-vehicle" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-3 bg-surface/50 p-3 rounded-lg">
                 <div class="grid grid-cols-3 gap-2">
-                  <button type="button" id="inline-btn-eclass" onclick="setInlineVehicle('E_CLASS')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">E-Class Sedan</button>
-                  <button type="button" id="inline-btn-vclass" onclick="setInlineVehicle('V_CLASS')" class="p-2 rounded border border-gold bg-gold/15 text-gold text-xs font-bold text-center min-h-[44px]">V-Class Van</button>
-                  <button type="button" id="inline-btn-vito" onclick="setInlineVehicle('VITO')" class="p-2 rounded border border-slate-700 text-xs font-bold text-center text-slate-300 min-h-[44px]">Vito 4MATIC</button>
+                  <button type="button" id="inline-btn-eclass" onclick="setInlineVehicle('E_CLASS')" class="p-2 rounded border border-slate-700 bg-surface/80 text-xs font-semibold text-center text-slate-300 min-h-[44px] hover:border-gold/40 transition">E-Class Sedan</button>
+                  <button type="button" id="inline-btn-vclass" onclick="setInlineVehicle('V_CLASS')" class="p-2 rounded border border-gold bg-gold text-midnight font-bold text-xs text-center min-h-[44px] shadow-sm">V-Class Van</button>
+                  <button type="button" id="inline-btn-vito" onclick="setInlineVehicle('VITO')" class="p-2 rounded border border-slate-700 bg-surface/80 text-xs font-semibold text-center text-slate-300 min-h-[44px] hover:border-gold/40 transition">Vito 4MATIC</button>
                 </div>
                 <div class="flex justify-end">
                   <button type="button" onclick="toggleInlineEdit('vehicle')" class="btn-gold text-xs py-1 px-3 min-h-[44px]">Done</button>
