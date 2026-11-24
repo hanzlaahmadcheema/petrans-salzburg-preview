@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFleetCarousel();
   updateHeroCalculation();
   checkCapacityWarning();
+  initScrollAnimations();
 });
 
 // Default dates
@@ -393,15 +394,17 @@ function renderFleetCarousel() {
     }
   });
 
-  // 2. Animate Vehicle Visual Transition (Cross-fade)
+  // 2. Animate Vehicle Visual Transition (Automotive glide)
   const peekImg = document.getElementById('fallback-img');
   if (peekImg) {
-    peekImg.style.opacity = '0';
+    peekImg.classList.remove('fleet-glide-in');
+    peekImg.classList.add('fleet-glide-out');
 
     setTimeout(() => {
       peekImg.src = v.poster;
       peekImg.alt = v.name;
-      peekImg.style.opacity = '1';
+      peekImg.classList.remove('fleet-glide-out');
+      peekImg.classList.add('fleet-glide-in');
     }, 180);
   }
 
@@ -1682,4 +1685,37 @@ async function sendAiMessage(customText) {
 
 function sendAiQuick(text) {
   sendAiMessage(text);
+}
+
+// Bespoke Scroll Animation Controller
+function initScrollAnimations() {
+  const elements = document.querySelectorAll('.reveal-init');
+  if (!elements.length) return;
+
+  // Fallback if IntersectionObserver is not supported or user prefers reduced motion
+  if (typeof IntersectionObserver === 'undefined' || 
+      (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    elements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = el.getAttribute('data-delay');
+        if (delay) {
+          setTimeout(() => el.classList.add('is-revealed'), Number(delay));
+        } else {
+          el.classList.add('is-revealed');
+        }
+        obs.unobserve(el);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
 }

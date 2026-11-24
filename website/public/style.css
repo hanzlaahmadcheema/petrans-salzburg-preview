@@ -32,6 +32,7 @@ html, body {
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
   width: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -409,6 +410,7 @@ iconify-icon {
   z-index: 51;
   transform: translateX(100%);
   visibility: hidden;
+  pointer-events: none;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
   display: flex;
   flex-direction: column;
@@ -421,12 +423,13 @@ iconify-icon {
 #mobile-drawer.open {
   transform: translateX(0);
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* Pulse animation for WhatsApp */
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-  70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 3px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
@@ -501,6 +504,8 @@ iconify-icon {
   column-gap: 0.75rem;
   row-gap: 1.25rem;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
@@ -797,4 +802,481 @@ footer a:not(.btn-gold):not(.btn-outline-gold) {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+}
+
+/* ============================================================
+   BESPOKE SECTION ANIMATIONS (Luxury Automotive & Alpine Theme)
+   ============================================================ */
+
+/* 1. Global Scroll Reveal Base */
+.reveal-init {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-init.is-revealed {
+  opacity: 1;
+}
+
+/* 2. SECTION 1: HERO — Luxury Alpine Crest Entrance & Liquid Gold Luster */
+.hero-reveal-up {
+  transform: perspective(1000px) translateY(28px) scale(0.97);
+}
+.hero-reveal-up.is-revealed {
+  transform: perspective(1000px) translateY(0) scale(1);
+}
+
+@keyframes goldLusterSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-luster-text {
+  background: linear-gradient(
+    110deg,
+    #C5A059 0%,
+    #E5C378 25%,
+    #FFFFFF 50%,
+    #E5C378 75%,
+    #C5A059 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldLusterSweep 6s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes crestFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.crest-floating {
+  animation: crestFloat 4s ease-in-out infinite;
+}
+
+.hero-action-pill {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-action-pill:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(202, 163, 40, 0.6);
+  box-shadow: 0 8px 24px rgba(202, 163, 40, 0.25);
+}
+
+/* 3. SECTION 2: TRUST PILLARS — Airport Radar Wave & Shield Pulse */
+@keyframes radarWaveRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.radar-ping-container {
+  position: relative;
+}
+
+.radar-ping-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 0.5rem;
+  border: 1.5px solid rgba(16, 185, 129, 0.6);
+  pointer-events: none;
+  animation: radarWaveRing 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.radar-ping-ring-delayed {
+  animation-delay: 1.2s;
+}
+
+@keyframes shieldMicroPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(202, 163, 40, 0));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(202, 163, 40, 0.5));
+  }
+}
+
+.shield-pulse {
+  animation: shieldMicroPulse 3.5s ease-in-out infinite;
+}
+
+.pillar-reveal {
+  transform: translateY(32px);
+}
+.pillar-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+.pillar-card-glow {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.pillar-card-glow:hover {
+  transform: translateY(-5px);
+  border-color: rgba(202, 163, 40, 0.55);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(202, 163, 40, 0.15);
+}
+
+/* 4. SECTION 3: DESTINATIONS — Panoramic Ken Burns & Price Tag Gleam */
+.destination-reveal {
+  transform: translateY(35px) scale(0.98);
+}
+.destination-reveal.is-revealed {
+  transform: translateY(0) scale(1);
+}
+
+.dest-img-container {
+  overflow: hidden;
+}
+
+.dest-img-zoom {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+}
+
+.dest-card:hover .dest-img-zoom {
+  transform: scale(1.06) translateY(-2px);
+}
+
+@keyframes priceGleam {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.price-tag-badge {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.dest-card:hover .price-tag-badge {
+  transform: scale(1.04);
+}
+
+.price-tag-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dest-card:hover .price-tag-badge::after {
+  opacity: 1;
+  animation: priceGleam 1.2s ease-in-out infinite;
+}
+
+/* 5. SECTION 4: FLEET SHOWCASE — Showroom Radial Glow & Automotive Stage Glide */
+@keyframes floorGlowBreathing {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.06);
+  }
+}
+
+.fleet-floor-glow {
+  animation: floorGlowBreathing 5s ease-in-out infinite;
+}
+
+.fleet-reveal {
+  transform: translateY(30px);
+}
+.fleet-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+/* Automotive Glide Switch */
+.fleet-peek-image.fleet-glide-out {
+  opacity: 0;
+  transform: translateX(-25px) scale(0.98);
+  transition: opacity 0.18s cubic-bezier(0.4, 0, 1, 1), transform 0.18s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.fleet-peek-image.fleet-glide-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spec-pill-item {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease;
+}
+.spec-pill-item:hover {
+  transform: translateY(-2px) scale(1.03);
+  background-color: rgba(202, 163, 40, 0.12);
+}
+
+/* 6. SECTION 5: PRIVATE DAY TOURS — Compass Needle Drift & Checkmark Pop */
+@keyframes compassDrift {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-14deg);
+  }
+  75% {
+    transform: rotate(14deg);
+  }
+}
+
+.compass-drifting {
+  animation: compassDrift 6s ease-in-out infinite;
+  transform-origin: center center;
+  display: inline-block;
+}
+
+.tour-reveal {
+  transform: translateY(32px);
+}
+.tour-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+.tour-card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tour-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(202, 163, 40, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(202, 163, 40, 0.12);
+}
+
+.itinerary-check-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.tour-card-hover:hover .itinerary-check-icon {
+  transform: scale(1.2);
+  color: #D4AF37;
+}
+
+/* 7. SECTION 6: AIRPORT GUIDE & MEETING POINT — Terminal Radar Beacon & Altitude Drift */
+@keyframes beaconWave {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(202, 163, 40, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(202, 163, 40, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(202, 163, 40, 0);
+  }
+}
+
+.airport-beacon-ping {
+  animation: beaconWave 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes planeAltitudeDrift {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+.plane-drifting {
+  animation: planeAltitudeDrift 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes liveStatusRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.live-status-dot {
+  animation: liveStatusRipple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 8. SECTION 7: DEDICATED BOOKING ENGINE — Step Glow & Vehicle Card Spring */
+.booking-reveal {
+  transform: translateY(28px);
+}
+.booking-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+.step-indicator-active {
+  position: relative;
+}
+
+.step-indicator-active::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(202, 163, 40, 0.5);
+  animation: radarWaveRing 2.2s infinite;
+}
+
+.booking-veh-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.booking-veh-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(202, 163, 40, 0.5);
+}
+
+.booking-veh-card.selected {
+  transform: translateY(-3px) scale(1.01);
+  border-color: #CAA328;
+  box-shadow: 0 0 20px rgba(202, 163, 40, 0.22);
+}
+
+/* 9. SECTION 8: TESTIMONIALS — Golden Star Twinkle & Serif Watermark Float */
+.testimonial-reveal {
+  transform: translateY(30px);
+}
+.testimonial-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+@keyframes starTwinkleGleam {
+  0%, 100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.4) drop-shadow(0 0 4px #CAA328);
+    transform: scale(1.15);
+  }
+}
+
+.star-twinkle-1 { animation: starTwinkleGleam 3s ease-in-out infinite 0.1s; }
+.star-twinkle-2 { animation: starTwinkleGleam 3s ease-in-out infinite 0.3s; }
+.star-twinkle-3 { animation: starTwinkleGleam 3s ease-in-out infinite 0.5s; }
+.star-twinkle-4 { animation: starTwinkleGleam 3s ease-in-out infinite 0.7s; }
+.star-twinkle-5 { animation: starTwinkleGleam 3s ease-in-out infinite 0.9s; }
+
+@keyframes quoteWatermarkFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+}
+
+.quote-watermark {
+  animation: quoteWatermarkFloat 7s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* 10. SECTION 9: FAQ — Accordion Flip & Spring Border */
+.faq-reveal {
+  transform: translateY(24px);
+}
+.faq-reveal.is-revealed {
+  transform: translateY(0);
+}
+
+.faq-item.active {
+  border-color: rgba(202, 163, 40, 0.55);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6), 0 0 16px rgba(202, 163, 40, 0.12);
+}
+
+/* 11. FLOATING BAR & CHAT WINDOW */
+#ai-chat-root {
+  transition: transform 0.3s ease;
+}
+
+@keyframes aiSparkleRotate {
+  0%, 85%, 100% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(18deg) scale(1.15);
+  }
+  95% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+}
+
+.ai-sparkle-spin {
+  animation: aiSparkleRotate 5s ease-in-out infinite;
+  transform-origin: center center;
+  display: inline-block;
+}
+
+/* Strict prefers-reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .gold-luster-text {
+    animation: none !important;
+    color: #C5A059 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+  }
+  .radar-ping-ring, .shield-pulse, .crest-floating, .fleet-floor-glow,
+  .compass-drifting, .airport-beacon-ping, .plane-drifting,
+  .live-status-dot, .star-twinkle-1, .star-twinkle-2, .star-twinkle-3,
+  .star-twinkle-4, .star-twinkle-5, .quote-watermark, .ai-sparkle-spin,
+  .pulse-wa {
+    animation: none !important;
+  }
 }

@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.TEST_URL || process.env.BASE_URL || (process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:3050');
 const PRICING = require('../pricing-config');
 
 const CANONICAL_ROUTES = [
