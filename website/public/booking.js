@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   restoreSessionState();
   hydrateBookingFromUrl();
   checkCapacityWarning();
+  initSpotlightCards();
 });
 
 // Default dates
@@ -584,12 +585,25 @@ function goToStep(step, pushHistory = true) {
     updateStep5Summary();
   }
 
-  // Update step visibility
+  const previousStep = appState.currentStep;
+
+  // Update step visibility with fluid spring slide
   for (let i = 1; i <= 6; i++) {
     const pane = document.getElementById(`step-pane-${i}`);
     if (pane) {
-      if (i === step) pane.classList.remove('hidden');
-      else pane.classList.add('hidden');
+      if (i === step) {
+        pane.classList.remove('hidden');
+        pane.classList.remove('step-slide-forward', 'step-slide-backward');
+        void pane.offsetWidth;
+        if (step > previousStep) {
+          pane.classList.add('step-slide-forward');
+        } else if (step < previousStep) {
+          pane.classList.add('step-slide-backward');
+        }
+      } else {
+        pane.classList.add('hidden');
+        pane.classList.remove('step-slide-forward', 'step-slide-backward');
+      }
     }
   }
 
@@ -1066,4 +1080,20 @@ function resetBookingEngine() {
   } catch (e) {}
   goToStep(1);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Modern 2026 Spotlight Cards Cursor Tracker
+function initSpotlightCards() {
+  const cards = document.querySelectorAll('.spotlight-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
+  });
 }

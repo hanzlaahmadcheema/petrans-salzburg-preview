@@ -104,12 +104,12 @@
 
   <!-- Sticky Mobile Step Header (< 640px) -->
   <div id="mobile-sticky-header" class="sm:hidden sticky top-[73px] z-30 bg-surface/95 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 shadow-md">
-    <div class="flex items-center justify-between mb-1.5">
-      <div class="flex items-center gap-2">
-        <span id="mobile-step-num" class="w-6 h-6 rounded-full bg-gold text-midnight font-bold text-xs flex items-center justify-center">1</span>
-        <span id="mobile-step-name" class="text-xs font-bold text-snow uppercase tracking-wider">Service & Route</span>
+    <div class="flex items-center justify-between mb-1.5 gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <span id="mobile-step-num" class="w-6 h-6 rounded-full bg-gold text-midnight font-bold text-xs flex items-center justify-center shrink-0">1</span>
+        <span id="mobile-step-name" class="text-xs font-bold text-snow uppercase tracking-wider truncate">Service & Route</span>
       </div>
-      <span id="mobile-step-indicator" class="text-[11px] font-semibold text-gold">Step 1 of 6</span>
+      <span id="mobile-step-indicator" class="text-[11px] font-semibold text-gold whitespace-nowrap shrink-0 font-mono">Step 1 of 6</span>
     </div>
     <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
       <div id="mobile-sticky-progress-bar" class="bg-gold h-full w-[0%] transition-all duration-300"></div>
@@ -184,12 +184,12 @@
         
         <!-- STAGE 1: JOURNEY DETAILS & ROUTE -->
         <div id="step-pane-1" class="step-pane">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
-            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
-              <iconify-icon icon="lucide:map-pin" width="20" height="20" class="text-gold"></iconify-icon>
-              <span>Stage 1: Journey Details & Schedule</span>
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-4 border-b border-slate-800 gap-2">
+            <h2 class="text-xs sm:text-base lg:text-lg font-bold text-snow font-outfit flex items-center gap-1.5 sm:gap-2 whitespace-nowrap min-w-0">
+              <iconify-icon icon="lucide:map-pin" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+              <span class="whitespace-nowrap">Stage 1: Journey Details &amp; Schedule</span>
             </h2>
-            <span class="text-xs text-slate-400">Step 1 of 6</span>
+            <span class="text-[10px] sm:text-xs text-gold font-mono font-semibold shrink-0 whitespace-nowrap bg-gold/10 border border-gold/30 px-2.5 py-0.5 rounded-full">Step 1 of 6</span>
           </div>
 
           <div class="space-y-4">
@@ -307,12 +307,12 @@
 
         <!-- STAGE 2: VEHICLE SELECTION & CAPACITY -->
         <div id="step-pane-2" class="step-pane hidden">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
-            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
-              <iconify-icon icon="lucide:car" width="20" height="20" class="text-gold"></iconify-icon>
-              <span>Stage 2: Select Mercedes-Benz Vehicle</span>
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-4 border-b border-slate-800 gap-2">
+            <h2 class="text-xs sm:text-base lg:text-lg font-bold text-snow font-outfit flex items-center gap-1.5 sm:gap-2 whitespace-nowrap min-w-0">
+              <iconify-icon icon="lucide:car" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+              <span class="whitespace-nowrap">Stage 2: Select Mercedes Vehicle</span>
             </h2>
-            <span class="text-xs text-slate-400">Step 2 of 6</span>
+            <span class="text-[10px] sm:text-xs text-gold font-mono font-semibold shrink-0 whitespace-nowrap bg-gold/10 border border-gold/30 px-2.5 py-0.5 rounded-full">Step 2 of 6</span>
           </div>
 
           <!-- Capacity Warning Banner for E-Class -->
@@ -335,7 +335,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             
             <!-- E-Class -->
-            <div class="vehicle-card p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="E_CLASS">
+            <div class="vehicle-card spotlight-card card-tilt-3d p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="E_CLASS">
               <div>
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Executive Sedan</span>
@@ -355,7 +355,7 @@
             </div>
 
             <!-- V-Class -->
-            <div class="vehicle-card p-4 rounded-xl border border-gold bg-gold/10 hover:border-gold cursor-pointer transition flex flex-col justify-between active" data-veh="V_CLASS">
+            <div class="vehicle-card spotlight-card card-tilt-3d p-4 rounded-xl border border-gold bg-gold/10 hover:border-gold cursor-pointer transition flex flex-col justify-between active" data-veh="V_CLASS">
               <div>
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-bold uppercase tracking-wider text-gold">VIP Chauffeur Flagship</span>
@@ -375,7 +375,7 @@
             </div>
 
             <!-- Vito Tourer -->
-            <div class="vehicle-card p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="VITO">
+            <div class="vehicle-card spotlight-card card-tilt-3d p-4 rounded-xl border border-slate-700 bg-midnight hover:border-gold/50 cursor-pointer transition flex flex-col justify-between" data-veh="VITO">
               <div>
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Alpine 4MATIC Specialist</span>
@@ -430,12 +430,12 @@
 
         <!-- STAGE 3: COMPLIMENTARY EXTRAS -->
         <div id="step-pane-3" class="step-pane hidden">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
-            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
-              <iconify-icon icon="lucide:gift" width="20" height="20" class="text-gold"></iconify-icon>
-              <span>Stage 3: Complimentary Extras & Hospitality</span>
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-4 border-b border-slate-800 gap-2">
+            <h2 class="text-xs sm:text-base lg:text-lg font-bold text-snow font-outfit flex items-center gap-1.5 sm:gap-2 whitespace-nowrap min-w-0">
+              <iconify-icon icon="lucide:gift" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+              <span class="whitespace-nowrap">Stage 3: Complimentary Extras</span>
             </h2>
-            <span class="text-xs text-slate-400">Step 3 of 6</span>
+            <span class="text-[10px] sm:text-xs text-gold font-mono font-semibold shrink-0 whitespace-nowrap bg-gold/10 border border-gold/30 px-2.5 py-0.5 rounded-full">Step 3 of 6</span>
           </div>
 
           <div class="space-y-4">
@@ -499,9 +499,9 @@
                   <span class="text-sm font-bold text-snow block">Foldable Wheelchair</span>
                   <span class="text-xs text-slate-400">Accommodated in boot at no extra cost</span>
                 </div>
-                <label for="addon-wheelchair" class="relative inline-flex items-center cursor-pointer min-h-[44px] min-w-[44px]">
+                <label for="addon-wheelchair" class="inline-flex items-center justify-center cursor-pointer min-h-[44px] min-w-[48px] select-none shrink-0">
                   <input type="checkbox" id="addon-wheelchair" class="sr-only peer" aria-label="Foldable wheelchair transport">
-                  <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold"></div>
+                  <div class="relative w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all duration-300 peer-checked:bg-gold"></div>
                 </label>
               </div>
             </div>
@@ -524,12 +524,12 @@
 
         <!-- STAGE 4: PASSENGER INFO & INVOICING -->
         <div id="step-pane-4" class="step-pane hidden">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
-            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
-              <iconify-icon icon="lucide:user" width="20" height="20" class="text-gold"></iconify-icon>
-              <span>Stage 4: Passenger Contact & Invoicing</span>
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-4 border-b border-slate-800 gap-2">
+            <h2 class="text-xs sm:text-base lg:text-lg font-bold text-snow font-outfit flex items-center gap-1.5 sm:gap-2 whitespace-nowrap min-w-0">
+              <iconify-icon icon="lucide:user" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+              <span class="whitespace-nowrap">Stage 4: Passenger Info &amp; Invoicing</span>
             </h2>
-            <span class="text-xs text-slate-400">Step 4 of 6</span>
+            <span class="text-[10px] sm:text-xs text-gold font-mono font-semibold shrink-0 whitespace-nowrap bg-gold/10 border border-gold/30 px-2.5 py-0.5 rounded-full">Step 4 of 6</span>
           </div>
 
           <div class="space-y-4">
@@ -594,12 +594,12 @@
 
         <!-- STAGE 5: FINAL REVIEW & IN-LINE EDITING -->
         <div id="step-pane-5" class="step-pane hidden">
-          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
-            <h2 class="text-lg sm:text-xl font-bold text-snow font-outfit flex items-center gap-2">
-              <iconify-icon icon="lucide:check-circle" width="20" height="20" class="text-gold"></iconify-icon>
-              <span>Stage 5: Final Review & Confirmation Request</span>
+          <div class="flex items-center justify-between pb-3 sm:pb-4 mb-4 border-b border-slate-800 gap-2">
+            <h2 class="text-xs sm:text-base lg:text-lg font-bold text-snow font-outfit flex items-center gap-1.5 sm:gap-2 whitespace-nowrap min-w-0">
+              <iconify-icon icon="lucide:check-circle" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+              <span class="whitespace-nowrap">Stage 5: Review &amp; Confirmation</span>
             </h2>
-            <span class="text-xs text-slate-400">Step 5 of 6</span>
+            <span class="text-[10px] sm:text-xs text-gold font-mono font-semibold shrink-0 whitespace-nowrap bg-gold/10 border border-gold/30 px-2.5 py-0.5 rounded-full">Step 5 of 6</span>
           </div>
 
           <div class="space-y-4">
