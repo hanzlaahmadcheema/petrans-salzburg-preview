@@ -90,8 +90,12 @@
         <span>SSL 256-Bit Encrypted Reservation</span>
       </div>
 
-      <!-- Chauffeur Hotline -->
+      <!-- Accessibility & Chauffeur Hotline -->
       <div class="flex items-center gap-2">
+        <button type="button" onclick="toggleAccessibilityMode()" class="accessibility-btn min-h-[44px]" title="Toggle Senior / High-Legibility Mode" aria-label="Toggle Senior / High-Legibility Mode">
+          <iconify-icon icon="lucide:eye" width="16" height="16"></iconify-icon>
+          <span class="accessibility-text">Aa+ Large Text</span>
+        </button>
         <a href="tel:+436606416464" class="text-xs text-gold font-bold flex items-center gap-1.5 bg-gold/10 border border-gold/30 hover:border-gold px-3 py-2 rounded-lg min-h-[44px]">
           <iconify-icon icon="lucide:phone-call" width="14" height="14"></iconify-icon>
           <span class="hidden md:inline">+43 660 6416464</span>
@@ -538,6 +542,18 @@
           </div>
 
           <div class="space-y-4">
+            <!-- Returning Client Autofill Banner -->
+            <div id="returning-customer-banner" class="hidden p-3.5 rounded-xl bg-gold/10 border border-gold/40 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <iconify-icon icon="lucide:user-check" width="18" height="18" class="text-gold shrink-0"></iconify-icon>
+                <div class="text-xs text-slate-200">
+                  <span class="font-bold text-gold" id="returning-customer-name">Welcome back!</span>
+                  <span class="text-slate-300 ml-1">Your details have been prefilled from your secure client profile.</span>
+                </div>
+              </div>
+              <button type="button" onclick="clearSavedCustomerProfile()" class="text-[11px] text-slate-400 hover:text-rose-400 underline shrink-0 min-h-[44px] flex items-center">Clear Form</button>
+            </div>
+
             <div>
               <label class="form-label" for="cust-name">Lead Passenger Full Name</label>
               <input type="text" id="cust-name" class="form-input text-base" placeholder="e.g. Dr. Alexander Weber">

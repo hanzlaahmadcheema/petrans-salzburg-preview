@@ -83,9 +83,10 @@
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-gold transition">Home</a>
         <a href="/tours.html" class="text-gold font-bold transition">Day Tours (8h)</a>
+        <a href="/europe-tours.html" class="hover:text-gold transition">Europe Tours (10 Countries)</a>
         <a href="/#fleet" class="hover:text-gold transition">Mercedes Fleet</a>
         <a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport</a>
         <a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna</a>
@@ -94,6 +95,10 @@
       </nav>
 
       <div class="flex items-center gap-3">
+        <button type="button" onclick="toggleAccessibilityMode()" class="accessibility-btn min-h-[44px]" title="Toggle Senior / High-Legibility Mode" aria-label="Toggle Senior / High-Legibility Mode">
+          <iconify-icon icon="lucide:eye" width="16" height="16"></iconify-icon>
+          <span class="accessibility-text">Aa+ Large Text</span>
+        </button>
         <a href="/booking.html?service=tour" class="btn-gold text-xs sm:text-sm py-2 px-4 sm:px-5 min-h-[44px]">
           <iconify-icon icon="lucide:calendar" width="16" height="16" class="mr-1.5"></iconify-icon>
           <span>Book Tour Online</span>
@@ -475,6 +480,7 @@
       <div class="flex flex-wrap gap-6 text-slate-300">
         <a href="/" class="hover:text-gold transition">Home</a>
         <a href="/tours.html" class="text-gold font-bold transition">All Tours</a>
+        <a href="/europe-tours.html" class="hover:text-gold transition">Europe Tours</a>
         <a href="/#fleet" class="hover:text-gold transition">Mercedes Fleet</a>
         <a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport</a>
         <a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna</a>
@@ -487,5 +493,7 @@
     </div>
   </footer>
 
+  <script src="/pricing-config.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>

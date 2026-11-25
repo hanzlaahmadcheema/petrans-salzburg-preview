@@ -1380,3 +1380,116 @@ footer a:not(.btn-gold):not(.btn-outline-gold) {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   SENIOR & LOW-VISION ACCESSIBILITY MODE (.elderly-mode)
+   Tailored for elderly travelers and guests with weak eyesight
+   ========================================================================== */
+html.elderly-mode {
+  font-size: 19px !important;
+}
+
+html.elderly-mode body {
+  line-height: 1.8 !important;
+  color: #FFFFFF !important;
+  background-color: #080B12 !important;
+}
+
+html.elderly-mode p,
+html.elderly-mode li,
+html.elderly-mode td,
+html.elderly-mode label,
+html.elderly-mode span {
+  color: #F8FAFC !important;
+  font-weight: 500 !important;
+}
+
+html.elderly-mode .text-slate-400,
+html.elderly-mode .text-slate-500,
+html.elderly-mode .text-slate-300,
+html.elderly-mode .text-slate-200 {
+  color: #F1F5F9 !important;
+}
+
+html.elderly-mode .text-gold,
+html.elderly-mode [class*="text-gold"] {
+  color: #F3CD65 !important;
+  font-weight: 700 !important;
+}
+
+html.elderly-mode h1,
+html.elderly-mode h2,
+html.elderly-mode h3,
+html.elderly-mode h4 {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Touch and Click Targets */
+html.elderly-mode button,
+html.elderly-mode a.btn,
+html.elderly-mode input[type="text"],
+html.elderly-mode input[type="email"],
+html.elderly-mode input[type="tel"],
+html.elderly-mode input[type="date"],
+html.elderly-mode input[type="time"],
+html.elderly-mode select,
+html.elderly-mode textarea {
+  min-height: 54px !important;
+  font-size: 18px !important;
+  border-width: 2px !important;
+  border-color: #CAA328 !important;
+}
+
+html.elderly-mode button,
+html.elderly-mode .btn-primary {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+html.elderly-mode [class*="border-slate-800"],
+html.elderly-mode [class*="border-slate-700"],
+html.elderly-mode .glass-panel,
+html.elderly-mode .spotlight-card {
+  border-width: 2px !important;
+  border-color: rgba(202, 163, 40, 0.75) !important;
+  background-color: #0F172A !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8) !important;
+}
+
+html.elderly-mode :focus-visible {
+  outline: 3px solid #F3CD65 !important;
+  outline-offset: 3px !important;
+}
+
+/* Header Accessibility Toggle Button Styling */
+.accessibility-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(202, 163, 40, 0.45);
+  background-color: rgba(202, 163, 40, 0.12);
+  color: #E6C25B;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  min-height: 42px;
+  cursor: pointer;
+}
+
+.accessibility-btn:hover {
+  background-color: rgba(202, 163, 40, 0.25);
+  border-color: #E6C25B;
+  color: #FFFFFF;
+}
+
+html.elderly-mode .accessibility-btn {
+  background-color: #CAA328 !important;
+  color: #0B0F19 !important;
+  font-weight: 800 !important;
+  border-color: #FFFFFF !important;
+}

@@ -120,12 +120,19 @@
         <a href="#destinations" class="hover:text-gold transition flex items-center min-h-[44px] px-2">Destinations</a>
         <a href="#fleet" class="hover:text-gold transition flex items-center min-h-[44px] px-2">Mercedes Fleet</a>
         <a href="#tours" class="hover:text-gold transition flex items-center min-h-[44px] px-2">Day Tours</a>
+        <a href="/europe-tours.html" class="hover:text-gold transition flex items-center min-h-[44px] px-2 text-gold font-semibold">Europe Tours</a>
         <a href="#routes" class="hover:text-gold transition flex items-center min-h-[44px] px-2">Route Rates</a>
         <a href="#faq" class="hover:text-gold transition flex items-center justify-center min-h-[44px] min-w-[44px] px-2">FAQ</a>
       </nav>
 
       <!-- Action & Language Selector -->
-      <div class="flex items-center gap-2 sm:gap-4">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Senior / High Contrast Accessibility Toggle -->
+        <button type="button" onclick="toggleAccessibilityMode()" class="accessibility-btn hidden sm:inline-flex" title="Toggle Senior / High-Legibility Mode" aria-label="Toggle Senior / High-Legibility Mode">
+          <iconify-icon icon="lucide:eye" width="16" height="16"></iconify-icon>
+          <span class="accessibility-text">Aa+ Large Text</span>
+        </button>
+
         <!-- Language Selector (Desktop / Tablet) -->
         <select id="lang-select" class="hidden sm:inline-block bg-surface border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2 min-h-[48px] outline-none focus:border-gold cursor-pointer" aria-label="Select Language">
           <option value="en" selected>EN — English</option>
@@ -177,7 +184,17 @@
         </select>
       </div>
 
+      <!-- Mobile Accessibility Mode Toggle -->
+      <button type="button" onclick="toggleAccessibilityMode()" class="accessibility-btn w-full justify-center mb-4 min-h-[48px]" title="Toggle Senior / High-Legibility Mode">
+        <iconify-icon icon="lucide:eye" width="18" height="18"></iconify-icon>
+        <span class="accessibility-text">Aa+ Large Text Mode</span>
+      </button>
+
       <nav class="space-y-2">
+        <a href="/europe-tours.html" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gold hover:text-amber-300 hover:bg-surface text-base font-bold transition min-h-[48px]">
+          <iconify-icon icon="lucide:globe" width="20" height="20" class="text-gold"></iconify-icon>
+          <span>Europe Tours (10 Countries)</span>
+        </a>
         <a href="#destinations" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 hover:text-gold hover:bg-surface text-base font-medium transition min-h-[48px]">
           <iconify-icon icon="lucide:map-pin" width="20" height="20" class="text-gold"></iconify-icon>
           <span>Book by Place (Destinations)</span>
@@ -1084,6 +1101,377 @@
     </div>
   </section>
 
+
+  <!-- European Grand Tours & Cross-Border Chauffeur Showcase (10 Countries) -->
+  <section id="europe-tours" class="py-16 sm:py-24 bg-surface/20 border-t border-b border-gold/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="badge-gold">10 European Nations • Private Chauffeur Network</span>
+        <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mt-2 mb-4">European Grand Tours & Cross-Border Journeys</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Embark on bespoke multi-country luxury travel across Central Europe and the Alps. Every itinerary features private door-to-door Mercedes transportation, English-speaking Austrian licensed chauffeurs, cross-border clearance, and all highway vignette tolls included.
+        </p>
+      </div>
+
+      <!-- 10 Countries Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- 1. Austria -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/austria-map.svg" alt="Austria Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Headquarters Base</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Austria</h3>
+              <span class="text-xs text-slate-400 font-sans">Republik Österreich</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Alpine heartland, Mozart's baroque Salzburg, Salzkammergut glacial lakes, imperial Vienna, and the dramatic Grossglockner Glacier High Alpine Road.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Salzburg</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Vienna</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Hallstatt</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Innsbruck</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Grossglockner</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Zell am See</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> From 1h to Full Day</span>
+            <a href="/booking.html?dropoff=Hallstatt%20Lahn%20Terminal&service=tour" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Tour <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 2. Germany -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/germany-map.svg" alt="Germany Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Bavaria Corridor</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Germany</h3>
+              <span class="text-xs text-slate-400 font-sans">Bundesrepublik Deutschland</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Bavarian Alpine retreats, King Ludwig's fairytale Neuschwanstein Castle, historic Berchtesgaden & Eagle's Nest, and seamless Munich Airport hub connections.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Munich (MUC)</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Eagle's Nest</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Neuschwanstein</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Königssee</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Nuremberg</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 35m to 2h</span>
+            <a href="/destinations/munich-airport.html" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Explore Bavaria <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 3. Switzerland -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/switzerland-map.svg" alt="Switzerland Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Swiss Alps</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Switzerland</h3>
+              <span class="text-xs text-slate-400 font-sans">Schweiz / Suisse</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Majestic 4,000-meter Alpine peaks, crystal Lake Lucerne, luxury banking capitals, and premier winter resorts from Zurich to St. Moritz and Zermatt.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Zurich</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Lucerne</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Interlaken</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Geneva</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Zermatt</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">St. Moritz</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> Alpine Cross-Border</span>
+            <a href="/booking.html?dropoff=Zurich%20City%20Center&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Swiss Route <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 4. Liechtenstein -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/liechtenstein-map.svg" alt="Liechtenstein Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Principality</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Liechtenstein</h3>
+              <span class="text-xs text-slate-400 font-sans">Fürstentum Liechtenstein</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Sovereign Alpine principality perched along the Rhine River, featuring the princely Vaduz Castle, Gutenberg fortress, and high Alpine trails in Malbun.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Vaduz Castle</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Malbun Ski Resort</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Balzers Fortress</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Schaan</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 3h 45m from Salzburg</span>
+            <a href="/booking.html?dropoff=Vaduz%20Liechtenstein&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Vaduz <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 5. Italy -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/italy-map.svg" alt="Italy Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Dolomites & Venice</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Italy</h3>
+              <span class="text-xs text-slate-400 font-sans">Repubblica Italiana</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Jagged limestone massifs of the UNESCO Dolomites, Cortina d'Ampezzo, romantic gondola waterways of Venice, Lake Garda, and Northern Italian fashion hubs.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Venice Lagoon</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Cortina (Dolomites)</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Lake Garda</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Milan</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Florence</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 3h 15m to 4h 30m</span>
+            <a href="/booking.html?dropoff=Venice%20Piazzale%20Roma&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Venice Route <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 6. Slovenia -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/slovenia-map.svg" alt="Slovenia Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Julian Alps</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Slovenia</h3>
+              <span class="text-xs text-slate-400 font-sans">Republika Slovenija</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Fairytale island church on emerald Lake Bled, charming dragon bridges of Ljubljana, subterranean wonders of Postojna Cave, and the cliffs of Predjama Castle.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Lake Bled</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Ljubljana</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Postojna Cave</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Predjama Castle</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Piran Coast</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 2h 40m from Salzburg</span>
+            <a href="/booking.html?dropoff=Lake%20Bled%20Slovenia&service=tour" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Lake Bled <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 7. Slovakia -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/slovakia-map.svg" alt="Slovakia Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Danube & Tatras</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Slovakia</h3>
+              <span class="text-xs text-slate-400 font-sans">Slovenská republika</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Bratislava's Danube coronation castle and cobblestone Old Town, Devín fortress ruins overlooking Austria, and alpine hiking in the High Tatras.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Bratislava Castle</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Devín Fortress</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">High Tatras</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Bojnice Castle</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 50m from Vienna</span>
+            <a href="/booking.html?dropoff=Bratislava%20Old%20Town&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Bratislava <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 8. Hungary -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/hungary-map.svg" alt="Hungary Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Pearl of Danube</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Hungary</h3>
+              <span class="text-xs text-slate-400 font-sans">Magyarország</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Grand Hungarian Parliament on the Danube, historic Széchenyi thermal palaces, Buda Castle, panoramic Danube Bend at Visegrád, and Lake Balaton.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Budapest</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Buda Castle</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Danube Bend</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Lake Balaton</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Eger</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 2h 25m from Vienna</span>
+            <a href="/booking.html?dropoff=Budapest%20City%20Center&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Budapest <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 9. Czech Republic -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/czech-republic-map.svg" alt="Czech Republic Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Bohemia & Spas</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Czech Republic</h3>
+              <span class="text-xs text-slate-400 font-sans">Česká republika</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Prague's romantic Charles Bridge and hundred spires, UNESCO medieval fairy-tale Český Krumlov, aristocratic Karlovy Vary mineral springs, and Moravian wine cellars.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Prague</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Český Krumlov</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Karlovy Vary</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Pilsen</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Brno</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 2h 30m to 4h 15m</span>
+            <a href="/destinations/prague.html" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Explore Czech <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+        <!-- 10. Poland -->
+        <div class="spotlight-card rounded-2xl bg-midnight/90 border border-slate-800 p-6 flex flex-col justify-between hover:border-gold/60 transition group shadow-xl">
+          <div>
+            <div class="relative rounded-xl overflow-hidden mb-5 border border-gold/30 bg-midnight aspect-[4/3]">
+              <img src="/images/maps/poland-map.svg" alt="Poland Private Chauffeur Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <span class="absolute top-3 left-3 bg-midnight/90 border border-gold/40 text-gold text-xs font-bold px-2.5 py-1 rounded-md">Royal Heritage</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cinzel text-xl font-bold text-snow">Poland</h3>
+              <span class="text-xs text-slate-400 font-sans">Rzeczpospolita Polska</span>
+            </div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Kraków's majestic Wawel Castle and Europe's largest medieval market square, the subterranean salt chandeliers of Wieliczka, and Zakopane's wooden Tatra architecture.
+            </p>
+            <div class="space-y-2 mb-5">
+              <div class="text-xs font-semibold text-gold flex items-center gap-1.5">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>
+                <span>Iconic Destinations:</span>
+              </div>
+              <div class="text-xs text-slate-300 flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Kraków Old Town</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Wawel Castle</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Wieliczka Salt Mine</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Zakopane</span>
+                <span class="px-2 py-0.5 rounded bg-surface border border-slate-800">Warsaw</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+            <span class="text-xs text-slate-400 flex items-center gap-1"><iconify-icon icon="lucide:clock" width="13" height="13" class="text-gold"></iconify-icon> 5h from Vienna</span>
+            <a href="/booking.html?dropoff=Krakow%20Old%20Town&service=oneway" class="text-xs font-bold text-gold hover:text-white flex items-center gap-1 min-h-[44px]">Book Kraków Route <iconify-icon icon="lucide:arrow-right" width="14" height="14"></iconify-icon></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View All Europe Tours CTA Button -->
+      <div class="mt-12 text-center">
+        <a href="/europe-tours.html" class="btn-gold hero-action-pill px-8 py-3.5 text-sm font-bold min-h-[50px] inline-flex items-center justify-center gap-2 shadow-2xl">
+          <iconify-icon icon="lucide:globe" width="18" height="18"></iconify-icon>
+          <span>Open Full European Grand Tours Guide (10 Countries)</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
   <!-- 7. Programmatic Route Rates & Destination Guides -->
   <section id="routes" class="py-20 bg-midnight overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1570,6 +1958,7 @@
           <li><a href="/booking.html" class="hover:text-gold transition">Ski & Snowboard Shuttles</a></li>
           <li><a href="/destinations/vienna.html" class="hover:text-gold transition">Intercity Chauffeur Service</a></li>
           <li><a href="/tours.html" class="hover:text-gold transition">8-Hour Private Day Tours</a></li>
+          <li><a href="/europe-tours.html" class="hover:text-gold transition text-gold font-semibold">Europe Tours (10 Countries)</a></li>
           <li><a href="#fleet" class="hover:text-gold transition">Corporate VIP Travel</a></li>
         </ul>
       </div>

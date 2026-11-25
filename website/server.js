@@ -34,6 +34,55 @@ function persistBookings() {
   }
 }
 
+// Persistent customers store (Autofill & Returning Client CRM)
+const CUSTOMERS_FILE = path.join(__dirname, 'data', 'customers.json');
+let customersStore = {};
+
+try {
+  if (fs.existsSync(CUSTOMERS_FILE)) {
+    customersStore = JSON.parse(fs.readFileSync(CUSTOMERS_FILE, 'utf8'));
+  }
+} catch (e) {
+  console.warn('[Server] Could not load customers file, starting with empty store:', e.message);
+}
+
+function persistCustomers() {
+  try {
+    const dir = path.dirname(CUSTOMERS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(CUSTOMERS_FILE, JSON.stringify(customersStore, null, 2), 'utf8');
+  } catch (e) {
+    console.error('[Server] Failed to persist customers:', e.message);
+  }
+}
+
+function upsertCustomerProfile(customerData) {
+  if (!customerData) return null;
+  const email = (customerData.email || '').trim().toLowerCase();
+  const phone = (customerData.phoneNumber || customerData.phone || '').trim().replace(/[\s\-\(\)]/g, '');
+  const key = email || phone;
+  if (!key) return null;
+
+  const existing = customersStore[key] || customersStore[phone] || customersStore[email] || {};
+  const updated = {
+    fullName: customerData.fullName || customerData.name || existing.fullName || '',
+    email: email || existing.email || '',
+    phoneNumber: customerData.phoneNumber || customerData.phone || existing.phoneNumber || '',
+    preferredLanguage: customerData.preferredLanguage || customerData.language || existing.preferredLanguage || 'en',
+    commChannel: customerData.commChannel || existing.commChannel || 'WHATSAPP_EMAIL',
+    companyName: customerData.companyName || customerData.company || existing.companyName || '',
+    taxNumber: customerData.taxNumber || customerData.tax || existing.taxNumber || '',
+    billingStreet: customerData.billingStreet || customerData.street || existing.billingStreet || '',
+    lastBookingDate: new Date().toISOString(),
+    totalBookings: (existing.totalBookings || 0) + 1
+  };
+
+  if (email) customersStore[email] = updated;
+  if (phone) customersStore[phone] = updated;
+  persistCustomers();
+  return updated;
+}
+
 // Pricing calculation wrapper mapping to centralized engine
 function calculateQuote(input) {
   return calculatePetransQuote(input);
@@ -144,6 +193,16 @@ app.post('/api/bookings', async (req, res) => {
     bookingsStore.unshift(newBooking);
     persistBookings();
 
+    // Persist and index returning customer profile in database
+    if (data.customer) {
+      upsertCustomerProfile({
+        ...data.customer,
+        companyName: data.companyName || data.customer.companyName,
+        taxNumber: data.taxNumber || data.customer.taxNumber,
+        billingStreet: data.billingStreet || data.customer.billingStreet
+      });
+    }
+
     // Automated dual-channel notification dispatch
     let notificationRecord = null;
     try {
@@ -185,6 +244,33 @@ app.post('/api/bookings', async (req, res) => {
 // 3. List Recent Bookings (for Verification / Dashboard)
 app.get('/api/bookings', (req, res) => {
   res.json({ success: true, count: bookingsStore.length, bookings: bookingsStore });
+});
+
+// 3a. Customer Profile Database Endpoints (Autofill for Returning Clients)
+app.get('/api/customers/lookup', (req, res) => {
+  const query = (req.query.query || req.query.email || req.query.phone || '').trim().toLowerCase();
+  const cleanPhone = query.replace(/[\s\-\(\)\+]/g, '');
+  const profile = customersStore[query] || customersStore[cleanPhone] || customersStore['+' + cleanPhone];
+  if (profile) {
+    res.json({ success: true, found: true, customer: profile });
+  } else {
+    res.json({ success: true, found: false });
+  }
+});
+
+app.post('/api/customers', (req, res) => {
+  try {
+    const profile = upsertCustomerProfile(req.body);
+    if (!profile) return res.status(400).json({ success: false, error: 'Email or phone required' });
+    res.json({ success: true, customer: profile });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.get('/api/customers', (req, res) => {
+  const uniqueList = Array.from(new Set(Object.values(customersStore)));
+  res.json({ success: true, count: uniqueList.length, customers: uniqueList });
 });
 
 // 3b. List Outbound Notification Logs

@@ -16,6 +16,7 @@ const CANONICAL_ROUTES = [
   '/booking/review.html',
   '/booking/confirmation.html',
   '/tours.html',
+  '/europe-tours.html',
   '/tours/hallstatt.html',
   '/tours/eagles-nest.html',
   '/tours/werfen-ice-caves.html',
@@ -156,6 +157,7 @@ async function runAll() {
     'booking/confirmation.html',
     'booking/booking-state.js',
     'tours.html',
+    'europe-tours.html',
     'app.js',
     'booking.js',
     'pricing-config.js',
@@ -448,6 +450,77 @@ async function runAll() {
     assert.ok(matchingNotif.channels?.customerEmail?.subject?.includes(testBookingRef), 'Customer email missing reference in subject');
     assert.ok(matchingNotif.channels?.ownerAlert?.whatsAppManifest?.includes(testBookingRef), 'Owner WhatsApp alert missing reference in manifest');
     assert.ok(matchingNotif.channels?.ownerAlert?.whatsAppManifest?.includes('550.00'), 'Owner WhatsApp alert missing price');
+  });
+
+  // -------------------------------------------------------------
+  // 6. Europe Tours (10 Countries), Maps, Customer DB & Accessibility
+  // -------------------------------------------------------------
+  console.log('\n--- 6. Europe Tours, Golden-Black Maps, Customer DB & Accessibility ---');
+
+  const requiredCountries = [
+    'austria-map',
+    'germany-map',
+    'switzerland-map',
+    'liechtenstein-map',
+    'italy-map',
+    'slovenia-map',
+    'slovakia-map',
+    'hungary-map',
+    'czech-republic-map',
+    'poland-map'
+  ];
+
+  for (const cid of requiredCountries) {
+    runTest(`Gold-Black Vector Map SVG exists and is valid: ${cid}.svg`, () => {
+      const svgPath = path.join(publicDir, 'images', 'maps', `${cid}.svg`);
+      assert.ok(fs.existsSync(svgPath), `Missing map file: ${svgPath}`);
+      const content = fs.readFileSync(svgPath, 'utf8');
+      assert.ok(content.includes('<svg'), `Invalid SVG: missing <svg> in ${cid}`);
+      assert.ok(content.includes('CAA328') || content.includes('E6C25B'), `Map ${cid} missing gold styling`);
+      assert.ok(content.includes('0B0F19') || content.includes('182338'), `Map ${cid} missing obsidian background`);
+    });
+  }
+
+  runTest('Senior / Low-Vision Accessibility: .elderly-mode CSS rules present', () => {
+    const cssPath = path.join(publicDir, 'style.css');
+    const css = fs.readFileSync(cssPath, 'utf8');
+    assert.ok(css.includes('html.elderly-mode'), 'style.css missing html.elderly-mode rules');
+    assert.ok(css.includes('font-size: 19px'), 'style.css missing base font scaling for seniors');
+    assert.ok(css.includes('.accessibility-btn'), 'style.css missing accessibility-btn class');
+  });
+
+  await runAsyncTest('Customer Database: POST /api/customers persists client profile', async () => {
+    const custEmail = `vip-client-${timestamp}@salzburg-luxury.at`;
+    const res = await fetchUrl('/api/customers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        fullName: 'Graf von Trapp',
+        email: custEmail,
+        phoneNumber: '+43660998877',
+        preferredLanguage: 'de',
+        companyName: 'Sound of Music Alpine Holdings',
+        taxNumber: 'ATU12345678',
+        billingStreet: 'Mirabellplatz 4, 5020 Salzburg'
+      }
+    });
+    assert.strictEqual(res.status, 200);
+    const json = JSON.parse(res.body);
+    assert.strictEqual(json.success, true);
+    assert.strictEqual(json.customer.fullName, 'Graf von Trapp');
+    assert.strictEqual(json.customer.companyName, 'Sound of Music Alpine Holdings');
+  });
+
+  await runAsyncTest('Customer Database: GET /api/customers/lookup retrieves saved client profile for autofill', async () => {
+    const custEmail = `vip-client-${timestamp}@salzburg-luxury.at`;
+    const res = await fetchUrl(`/api/customers/lookup?query=${encodeURIComponent(custEmail)}`);
+    assert.strictEqual(res.status, 200);
+    const json = JSON.parse(res.body);
+    assert.strictEqual(json.success, true);
+    assert.strictEqual(json.found, true);
+    assert.strictEqual(json.customer.fullName, 'Graf von Trapp');
+    assert.strictEqual(json.customer.preferredLanguage, 'de');
+    assert.strictEqual(json.customer.taxNumber, 'ATU12345678');
   });
 
   // -------------------------------------------------------------

@@ -177,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
   hydrateBookingFromUrl();
   checkCapacityWarning();
   initSpotlightCards();
+  checkAndApplySavedCustomer();
+  setupCustomerLookup();
+  initAccessibilityMode();
 });
 
 // Default dates
@@ -693,7 +696,30 @@ function goToStep(step, pushHistory = true) {
     appState.customer.taxNumber = document.getElementById('cust-tax')?.value || '';
     appState.customer.billingStreet = document.getElementById('cust-street')?.value || '';
 
+    // Save profile to database and local storage for returning client autofill
+    try {
+      const customerProfile = {
+        fullName: name,
+        email: email,
+        phoneNumber: phone,
+        preferredLanguage: appState.customer.language,
+        companyName: appState.customer.companyName,
+        taxNumber: appState.customer.taxNumber,
+        billingStreet: appState.customer.billingStreet
+      };
+      localStorage.setItem('petrans_saved_customer', JSON.stringify(customerProfile));
+      fetch('/api/customers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(customerProfile)
+      }).catch(() => {});
+    } catch (e) {}
+
     updateStep5Summary();
+  }
+
+  if (step === 4) {
+    checkAndApplySavedCustomer();
   }
 
   const previousStep = appState.currentStep;
@@ -1218,4 +1244,129 @@ function initSpotlightCards() {
       card.style.setProperty('--mouse-y', `${y}px`);
     }, { passive: true });
   });
+}
+
+// Returning Customer Auto-Persistence and Autofill
+function checkAndApplySavedCustomer() {
+  try {
+    const raw = localStorage.getItem('petrans_saved_customer');
+    if (!raw) return;
+    const profile = JSON.parse(raw);
+    if (!profile || typeof profile !== 'object') return;
+
+    const nameInput = document.getElementById('cust-name');
+    const emailInput = document.getElementById('cust-email');
+    const phoneInput = document.getElementById('cust-phone');
+    const langSelect = document.getElementById('cust-lang');
+    const companyInput = document.getElementById('cust-company');
+    const taxInput = document.getElementById('cust-tax');
+    const streetInput = document.getElementById('cust-street');
+
+    if (nameInput && !nameInput.value && profile.fullName) nameInput.value = profile.fullName;
+    if (emailInput && !emailInput.value && profile.email) emailInput.value = profile.email;
+    if (phoneInput && !phoneInput.value && profile.phoneNumber) phoneInput.value = profile.phoneNumber;
+    if (langSelect && profile.preferredLanguage) langSelect.value = profile.preferredLanguage;
+    if (companyInput && !companyInput.value && profile.companyName) companyInput.value = profile.companyName;
+    if (taxInput && !taxInput.value && profile.taxNumber) taxInput.value = profile.taxNumber;
+    if (streetInput && !streetInput.value && profile.billingStreet) streetInput.value = profile.billingStreet;
+
+    const banner = document.getElementById('returning-customer-banner');
+    const nameSpan = document.getElementById('returning-customer-name');
+    if (banner) {
+      banner.classList.remove('hidden');
+      if (nameSpan && profile.fullName) {
+        nameSpan.textContent = `Welcome back, ${profile.fullName}!`;
+      }
+    }
+  } catch (e) {
+    console.warn('Customer profile autofill skipped:', e);
+  }
+}
+
+function clearSavedCustomerProfile() {
+  try {
+    localStorage.removeItem('petrans_saved_customer');
+    const ids = ['cust-name', 'cust-email', 'cust-phone', 'cust-company', 'cust-tax', 'cust-street'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    const banner = document.getElementById('returning-customer-banner');
+    if (banner) banner.classList.add('hidden');
+  } catch (e) {}
+}
+
+function setupCustomerLookup() {
+  const emailInput = document.getElementById('cust-email');
+  const phoneInput = document.getElementById('cust-phone');
+
+  const handleLookup = async (query) => {
+    if (!query || query.length < 5) return;
+    try {
+      const res = await fetch(`/api/customers/lookup?query=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      if (data && data.found && data.customer) {
+        const c = data.customer;
+        const nameInput = document.getElementById('cust-name');
+        const langSelect = document.getElementById('cust-lang');
+        const companyInput = document.getElementById('cust-company');
+        const taxInput = document.getElementById('cust-tax');
+        const streetInput = document.getElementById('cust-street');
+
+        if (nameInput && !nameInput.value && c.fullName) nameInput.value = c.fullName;
+        if (langSelect && c.preferredLanguage) langSelect.value = c.preferredLanguage;
+        if (companyInput && !companyInput.value && c.companyName) companyInput.value = c.companyName;
+        if (taxInput && !taxInput.value && c.taxNumber) taxInput.value = c.taxNumber;
+        if (streetInput && !streetInput.value && c.billingStreet) streetInput.value = c.billingStreet;
+
+        const banner = document.getElementById('returning-customer-banner');
+        const nameSpan = document.getElementById('returning-customer-name');
+        if (banner) {
+          banner.classList.remove('hidden');
+          if (nameSpan) nameSpan.textContent = `Welcome back, ${c.fullName || 'Valued Client'}!`;
+        }
+        localStorage.setItem('petrans_saved_customer', JSON.stringify(c));
+      }
+    } catch (e) {}
+  };
+
+  if (emailInput) {
+    emailInput.addEventListener('blur', () => handleLookup(emailInput.value));
+  }
+  if (phoneInput) {
+    phoneInput.addEventListener('blur', () => handleLookup(phoneInput.value));
+  }
+}
+
+// Senior / Low Vision Accessibility Mode Toggle
+function toggleAccessibilityMode() {
+  const isElderly = document.documentElement.classList.toggle('elderly-mode');
+  try {
+    localStorage.setItem('petrans_accessibility', isElderly ? '1' : '0');
+  } catch (e) {}
+  updateAccessibilityToggleBtn(isElderly);
+}
+
+function updateAccessibilityToggleBtn(isActive) {
+  const btns = document.querySelectorAll('.accessibility-btn');
+  btns.forEach(btn => {
+    const textEl = btn.querySelector('.accessibility-text') || btn.querySelector('span');
+    if (textEl) {
+      textEl.textContent = isActive ? 'Aa- Standard Text' : 'Aa+ Large Text';
+    }
+  });
+}
+
+function initAccessibilityMode() {
+  try {
+    const saved = localStorage.getItem('petrans_accessibility');
+    if (saved === '1') {
+      document.documentElement.classList.add('elderly-mode');
+      updateAccessibilityToggleBtn(true);
+    }
+  } catch (e) {}
+}
+
+if (typeof document !== 'undefined') {
+  initAccessibilityMode();
 }

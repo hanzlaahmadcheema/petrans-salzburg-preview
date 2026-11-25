@@ -1788,3 +1788,40 @@ function initSpotlightCards() {
     }, { passive: true });
   });
 }
+
+// Senior / Low Vision Accessibility Mode Toggle
+function toggleAccessibilityMode() {
+  const isElderly = document.documentElement.classList.toggle('elderly-mode');
+  try {
+    localStorage.setItem('petrans_accessibility', isElderly ? '1' : '0');
+  } catch (e) {}
+  updateAccessibilityToggleBtn(isElderly);
+}
+
+function updateAccessibilityToggleBtn(isActive) {
+  const btns = document.querySelectorAll('.accessibility-btn');
+  btns.forEach(btn => {
+    const textEl = btn.querySelector('.accessibility-text') || btn.querySelector('span');
+    if (textEl) {
+      textEl.textContent = isActive ? 'Aa- Standard Text' : 'Aa+ Large Text';
+    }
+  });
+}
+
+function initAccessibilityMode() {
+  try {
+    const saved = localStorage.getItem('petrans_accessibility');
+    if (saved === '1') {
+      document.documentElement.classList.add('elderly-mode');
+      updateAccessibilityToggleBtn(true);
+    }
+  } catch (e) {}
+}
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAccessibilityMode);
+  } else {
+    initAccessibilityMode();
+  }
+}
