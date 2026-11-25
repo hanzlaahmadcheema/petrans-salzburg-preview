@@ -214,9 +214,9 @@
                 <label class="form-label" for="step1-pickup">Pickup Location</label>
                 <input type="text" id="step1-pickup" class="form-input text-base" value="Salzburg Airport W. A. Mozart (SZG)" placeholder="Enter address, airport or hotel">
                 <div class="flex flex-wrap gap-2 mt-2">
-                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg Airport W. A. Mozart (SZG)'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Airport (SZG)</button>
-                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg Central Train Station (Hbf)'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Hbf Station</button>
-                  <button type="button" onclick="document.getElementById('step1-pickup').value='Salzburg City Center / Hotel'" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Old Town</button>
+                  <button type="button" onclick="selectQuickPickup('Salzburg Airport W. A. Mozart (SZG)')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Airport (SZG)</button>
+                  <button type="button" onclick="selectQuickPickup('Salzburg Central Train Station (Hbf)')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg Hbf Station</button>
+                  <button type="button" onclick="selectQuickPickup('Salzburg City Center / Old Town')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Salzburg City Center / Old Town</button>
                 </div>
               </div>
 
@@ -224,13 +224,15 @@
                 <label class="form-label" for="step1-dropoff">Destination Address</label>
                 <input type="text" id="step1-dropoff" class="form-input text-base" value="Hallstatt Lahn Terminal" placeholder="Enter ski resort, airport, hotel or city">
                 <div class="flex flex-wrap gap-2 mt-2">
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Hallstatt Lahn Terminal'; appState.distanceKm=73;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Hallstatt (73 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Zell am See / Kaprun'; appState.distanceKm=85;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Zell am See (85 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Munich Airport MUC'; appState.distanceKm=175;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Munich Airport (175 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Vienna City Center / VIE'; appState.distanceKm=300;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Vienna (300 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Prague (Czech Republic)'; appState.distanceKm=375;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Prague (375 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Innsbruck Highlights'; appState.distanceKm=185;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Innsbruck (185 km)</button>
-                  <button type="button" onclick="document.getElementById('step1-dropoff').value='Bad Gastein Valley'; appState.distanceKm=100;" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Bad Gastein (100 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Salzburg Airport W. A. Mozart (SZG)', 5.5, '18m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300 font-semibold text-gold">Salzburg Airport (5.5 km • €45)</button>
+                  <button type="button" onclick="selectQuickDropoff('Salzburg City Center / Old Town', 5.5, '18m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300 font-semibold text-gold">Salzburg City / Old Town (5.5 km • €45)</button>
+                  <button type="button" onclick="selectQuickDropoff('Hallstatt Lahn Terminal', 73, '1h 15m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Hallstatt (73 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Zell am See / Kaprun', 85, '1h 30m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Zell am See (85 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Munich Airport MUC', 175, '1h 50m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Munich Airport (175 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Vienna City Center / VIE', 300, '3h 15m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Vienna (300 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Prague (Czech Republic)', 375, '4h 15m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Prague (375 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Innsbruck Highlights', 185, '2h 00m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Innsbruck (185 km)</button>
+                  <button type="button" onclick="selectQuickDropoff('Bad Gastein Valley', 100, '1h 30m')" class="text-[11px] bg-surface hover:bg-slate-700 px-2.5 py-1.5 rounded border border-slate-700 min-h-[44px] flex items-center text-slate-300">Bad Gastein (100 km)</button>
                 </div>
               </div>
 
@@ -251,14 +253,17 @@
             <!-- Tour Selector Fields -->
             <div id="step1-tour-fields" class="space-y-4 hidden">
               <div>
-                <label class="form-label" for="step1-tour-select">Select 8-Hour Private Day Tour</label>
+                <label class="form-label" for="step1-tour-select">Select Private Day Tour</label>
                 <select id="step1-tour-select" class="form-input text-base">
                   <option value="hallstatt" selected>Hallstatt & Salzkammergut Lakes (8 Hours) — Flat €450.00</option>
                   <option value="sound-of-music">Sound of Music & Salzburg Lakes (8 Hours) — Flat €450.00</option>
+                  <option value="salzburg-city">Salzburg City Tour (From €70/hr • Min 3h: €210.00)</option>
+                  <option value="innsbruck-swarovski">Innsbruck and Swarovski Day Tour (8-9 Hours) — Flat €600.00</option>
+                  <option value="kaprun-zell-am-see">Kaprun and Zell am See Day Tour (8 Hours) — Flat €500.00</option>
                   <option value="eagles-nest">Eagles Nest & Berchtesgaden (6-8 Hours) — Flat €450.00</option>
                   <option value="grossglockner">Grossglockner High Alpine Glacier Road (8-9 Hours) — Flat €550.00</option>
                   <option value="werfen-ice-caves">Werfen Ice Caves & Fortress (8 Hours) — Flat €450.00</option>
-                  <option value="zell-am-see">Zell am See & Kaprun Alpine Glacier (8 Hours) — Flat €450.00</option>
+                  <option value="zell-am-see">Zell am See & Kaprun Alpine Glacier (8 Hours) — Flat €500.00</option>
                   <option value="bad-gastein">Bad Gastein Thermal & Waterfall (8 Hours) — Flat €450.00</option>
                   <option value="swarovski-crystal-worlds">Swarovski Crystal Worlds & Hall in Tirol (8 Hours) — Flat €550.00</option>
                   <option value="innsbruck">Innsbruck & Tyrolean Alps Highlights (8-9 Hours) — Flat €650.00</option>
@@ -506,9 +511,9 @@
               </div>
             </div>
 
-            <!-- Water Preference -->
-            <div class="p-4 rounded-xl bg-surface/50 border border-slate-800">
-              <span class="text-xs font-semibold text-slate-300 block mb-2">Complimentary Austrian Mineral Water</span>
+            <!-- Water Preference (Exclusive to Day Tours) -->
+            <div id="water-preference-block" class="p-4 rounded-xl bg-surface/50 border border-slate-800 hidden">
+              <span class="text-xs font-semibold text-slate-300 block mb-2">Complimentary Austrian Mineral Water (Day Tour Exclusive)</span>
               <div class="grid grid-cols-2 gap-3">
                 <button type="button" class="water-opt-btn active p-2.5 rounded-lg border border-gold bg-gold/15 text-gold text-xs font-bold min-h-[44px]" data-water="STILL">
                   Still Natural Alpine Water

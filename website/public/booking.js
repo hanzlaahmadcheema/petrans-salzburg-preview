@@ -12,19 +12,92 @@ const ROUTES_DB = {
   'saalbach': { name: 'Saalbach-Hinterglemm', distance: 92, duration: '1h 35m' },
   'vienna': { name: 'Vienna City Center / VIE', distance: 300, duration: '3h 15m' },
   'prague': { name: 'Prague Cross-Border', distance: 375, duration: '4h 15m' },
-  'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distance: 5.5, duration: '18m' }
+  'salzburg-airport': { name: 'Salzburg Airport W. A. Mozart (SZG)', distance: 5.5, duration: '18m' },
+  'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distance: 5.5, duration: '18m' },
+  'salzburg-hbf': { name: 'Salzburg Central Station (Hbf)', distance: 6.0, duration: '20m' }
 };
 
 const TOURS_DB = {
   'hallstatt': { title: 'Hallstatt & Salzkammergut Lakes (8 Hours)', price: 450.0, tier: 2 },
   'sound-of-music': { title: 'Sound of Music & Salzburg Lakes (8 Hours)', price: 450.0, tier: 2 },
+  'salzburg-city': { title: 'Salzburg City Tour (From €70/hr • Min 3h)', price: 210.0, tier: 1 },
+  'innsbruck-swarovski': { title: 'Innsbruck and Swarovski Day Tour (8-9 Hours)', price: 600.0, tier: 3 },
+  'kaprun-zell-am-see': { title: 'Kaprun and Zell am See Day Tour (8 Hours)', price: 500.0, tier: 2 },
   'eagles-nest': { title: 'Eagles Nest & Berchtesgaden (6-8 Hours)', price: 450.0, tier: 1 },
   'grossglockner': { title: 'Grossglockner High Alpine Glacier Road (8-9 Hours)', price: 550.0, tier: 2 },
   'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress (8 Hours)', price: 450.0, tier: 1 },
-  'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 450.0, tier: 2 },
+  'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 500.0, tier: 2 },
   'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall (8 Hours)', price: 450.0, tier: 2 },
   'swarovski-crystal-worlds': { title: 'Swarovski Crystal Worlds & Hall in Tirol (8 Hours)', price: 550.0, tier: 2 },
   'innsbruck': { title: 'Innsbruck & Tyrolean Alps Highlights (8-9 Hours)', price: 650.0, tier: 3 }
+};
+
+// Route Resolution Helper (Guarantees €45 floor on Airport ↔ City Center)
+function resolveRouteInfo(pickup, dropoff) {
+  const p = (pickup || '').trim().toLowerCase();
+  const d = (dropoff || '').trim().toLowerCase();
+
+  const isAirport = (str) => /airport|szg|flughafen|mozart|terminal/i.test(str);
+  const isCity = (str) => /old town|altstadt|city center|city centre|zentrum|salzburg hotel|salzburg city|salzburg zentrum|salzburg mitte|salzburg/i.test(str);
+  const isHbf = (str) => /hbf|hauptbahnhof|central train|main station/i.test(str);
+
+  if ((isAirport(p) && isCity(d) && !d.includes('munich') && !d.includes('vienna')) ||
+      (isAirport(d) && isCity(p) && !p.includes('munich') && !p.includes('vienna'))) {
+    if (isHbf(p) || isHbf(d)) {
+      return { name: 'Salzburg Airport (SZG) ↔ Salzburg Hbf Station', distance: 6.0, duration: '20m' };
+    }
+    return { name: 'Salzburg Airport (SZG) ↔ Salzburg City Center / Old Town', distance: 5.5, duration: '18m' };
+  }
+
+  const check = (str) => {
+    if (!str) return null;
+    if (str.includes('hallstatt')) return { name: 'Hallstatt Lahn Terminal', distance: 73, duration: '1h 15m' };
+    if (str.includes('zell am see') || str.includes('kaprun')) return { name: 'Zell am See / Kaprun', distance: 85, duration: '1h 30m' };
+    if (str.includes('munich airport') || str.includes('muc')) return { name: 'Munich Airport MUC', distance: 175, duration: '1h 50m' };
+    if (str.includes('munich')) return { name: 'Munich City Center', distance: 145, duration: '1h 45m' };
+    if (str.includes('innsbruck')) return { name: 'Innsbruck Highlights', distance: 185, duration: '2h 00m' };
+    if (str.includes('bad gastein')) return { name: 'Bad Gastein Valley', distance: 100, duration: '1h 30m' };
+    if (str.includes('eagles nest') || str.includes('berchtesgaden')) return { name: 'Eagles Nest / Berchtesgaden', distance: 30, duration: '35m' };
+    if (str.includes('saalbach')) return { name: 'Saalbach-Hinterglemm', distance: 92, duration: '1h 35m' };
+    if (str.includes('vienna')) return { name: 'Vienna City Center / VIE', distance: 300, duration: '3h 15m' };
+    if (str.includes('prague')) return { name: 'Prague Cross-Border', distance: 375, duration: '4h 15m' };
+    if (str.includes('werfen')) return { name: 'Werfen Ice Caves & Fortress', distance: 50, duration: '45m' };
+    if (str.includes('swarovski') || str.includes('wattens')) return { name: 'Swarovski Crystal Worlds', distance: 165, duration: '1h 55m' };
+    if (str.includes('old town') || str.includes('altstadt') || str.includes('city center')) return { name: 'Salzburg City Center / Old Town', distance: 5.5, duration: '18m' };
+    if (isAirport(str)) return { name: 'Salzburg Airport (SZG)', distance: 5.5, duration: '18m' };
+    return null;
+  };
+
+  return check(d) || check(p);
+}
+
+window.selectQuickPickup = function(address) {
+  const pInput = document.getElementById('step1-pickup');
+  if (pInput) pInput.value = address;
+  appState.pickupAddress = address;
+  const dInput = document.getElementById('step1-dropoff');
+  const route = resolveRouteInfo(address, dInput ? dInput.value : '');
+  if (route) {
+    appState.distanceKm = route.distance;
+    appState.durationText = route.duration;
+  }
+};
+
+window.selectQuickDropoff = function(address, distance, duration) {
+  const dInput = document.getElementById('step1-dropoff');
+  if (dInput) dInput.value = address;
+  appState.dropoffAddress = address;
+  if (distance) {
+    appState.distanceKm = distance;
+    if (duration) appState.durationText = duration;
+  } else {
+    const pInput = document.getElementById('step1-pickup');
+    const route = resolveRouteInfo(pInput ? pInput.value : '', address);
+    if (route) {
+      appState.distanceKm = route.distance;
+      appState.durationText = route.duration;
+    }
+  }
 };
 
 const VEHICLE_META = {
@@ -220,11 +293,11 @@ function hydrateBookingFromUrl() {
     appState.dropoffAddress = dropoffParam;
     const dInput = document.getElementById('step1-dropoff');
     if (dInput) dInput.value = dropoffParam;
-    const known = ROUTES_DB[dropoffParam.toLowerCase()];
-    if (known) {
-      appState.distanceKm = known.distance;
-      appState.durationText = known.duration;
-    }
+  }
+  const resolvedRoute = resolveRouteInfo(appState.pickupAddress, appState.dropoffAddress);
+  if (resolvedRoute) {
+    appState.distanceKm = resolvedRoute.distance;
+    appState.durationText = resolvedRoute.duration;
   }
 
   // 5. Passengers and Luggage
@@ -301,12 +374,18 @@ function calculateClientPrice(serviceType, distanceKm, stopsCount, vehicleCatego
   let grossTotal = 0;
 
   if (serviceType === 'TOUR') {
-    const tour = TOURS_DB[tourKey] || TOURS_DB['hallstatt'];
-    baseFare = tour.price;
-    if (tourHours > 8) {
-      overtimeFee = (tourHours - 8) * 50.0;
+    if (tourKey === 'salzburg-city') {
+      const cityHours = Math.max(3, parseFloat(tourHours) || 3);
+      baseFare = cityHours * 70.0;
+      grossTotal = baseFare;
+    } else {
+      const tour = TOURS_DB[tourKey] || TOURS_DB['hallstatt'];
+      baseFare = tour.price;
+      if (tourHours > 8) {
+        overtimeFee = (tourHours - 8) * 50.0;
+      }
+      grossTotal = baseFare + overtimeFee;
     }
-    grossTotal = baseFare + overtimeFee;
   } else {
     const raw = distanceKm * ratePerKm;
     if (raw < MIN_FARE) {
@@ -375,8 +454,32 @@ function setupBookingEventListeners() {
           else returnBox.classList.add('hidden');
         }
       }
+      updateHospitalityVisibility();
     });
   });
+
+  // Pickup & Destination Live Input Listeners (Airport ↔ City Center €45 floor sync)
+  const step1PickupInput = document.getElementById('step1-pickup');
+  const step1DropoffInput = document.getElementById('step1-dropoff');
+  const handleAddressChange = () => {
+    const p = step1PickupInput?.value || '';
+    const d = step1DropoffInput?.value || '';
+    appState.pickupAddress = p;
+    appState.dropoffAddress = d;
+    const info = resolveRouteInfo(p, d);
+    if (info) {
+      appState.distanceKm = info.distance;
+      appState.durationText = info.duration;
+    }
+  };
+  if (step1PickupInput) {
+    step1PickupInput.addEventListener('input', handleAddressChange);
+    step1PickupInput.addEventListener('change', handleAddressChange);
+  }
+  if (step1DropoffInput) {
+    step1DropoffInput.addEventListener('input', handleAddressChange);
+    step1DropoffInput.addEventListener('change', handleAddressChange);
+  }
 
   // Tour Select in Stage 1
   const step1TourSelect = document.getElementById('step1-tour-select');
@@ -524,6 +627,11 @@ function goToStep(step, pushHistory = true) {
       }
       appState.pickupAddress = pickup;
       appState.dropoffAddress = dropoff;
+      const info = resolveRouteInfo(pickup, dropoff);
+      if (info) {
+        appState.distanceKm = info.distance;
+        appState.durationText = info.duration;
+      }
     }
     const date = document.getElementById('step1-date')?.value;
     if (!date) {
@@ -540,11 +648,14 @@ function goToStep(step, pushHistory = true) {
   }
 
   // Validation before leaving Stage 2 (Vehicle & Capacity)
-  if (step === 3 && appState.currentStep === 2) {
-    if (appState.vehicleCategory === 'E_CLASS') {
-      if (appState.passengerCount > 3 || appState.largeLuggageCount > 2) {
-        alert('Mercedes-Benz E-Class is capped at max 3 passengers and 2 large suitcases. Please adjust party size or upgrade to V-Class.');
-        return;
+  if (step === 3) {
+    updateHospitalityVisibility();
+    if (appState.currentStep === 2) {
+      if (appState.vehicleCategory === 'E_CLASS') {
+        if (appState.passengerCount > 3 || appState.largeLuggageCount > 2) {
+          alert('Mercedes-Benz E-Class is capped at max 3 passengers and 2 large suitcases. Please adjust party size or upgrade to V-Class.');
+          return;
+        }
       }
     }
   }
@@ -693,6 +804,17 @@ function goToStep(step, pushHistory = true) {
 }
 
 // Capacity Safeguard & Auto-Upgrade Logic
+function updateHospitalityVisibility() {
+  const waterBlock = document.getElementById('water-preference-block');
+  if (waterBlock) {
+    if (appState.serviceType === 'TOUR') {
+      waterBlock.classList.remove('hidden');
+    } else {
+      waterBlock.classList.add('hidden');
+    }
+  }
+}
+
 function checkCapacityWarning() {
   const eclassWarn = document.getElementById('eclass-warning-banner');
   const fleetMaxWarn = document.getElementById('fleet-max-warning');

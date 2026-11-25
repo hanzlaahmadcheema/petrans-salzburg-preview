@@ -17,14 +17,20 @@ const ROUTES_DB = {
   'prague': { name: 'Prague Cross-Border', distance: 375, duration: '4h 15m', hero: '/images/destinations/prague-hero.webp' },
   'werfen-ice-caves': { name: 'Werfen Ice Caves & Fortress', distance: 55, duration: '50m', hero: '/images/destinations/werfen-ice-caves-hero.webp' },
   'swarovski-crystal-worlds': { name: 'Swarovski Crystal Worlds (Wattens)', distance: 165, duration: '1h 45m', hero: '/images/destinations/swarovski-crystal-worlds-hero.webp' },
+  'salzburg-airport': { name: 'Salzburg Airport W. A. Mozart (SZG)', distance: 5.5, duration: '18m', hero: '/images/salzburg-hero.webp' },
   'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distance: 5.5, duration: '18m', hero: '/images/salzburg-hero.jpg' }
 };
 
 const TOURS_DB = {
   'hallstatt': { title: 'Hallstatt & Salzkammergut Lakes (8 Hours)', price: 450.0, hero: '/images/destinations/hallstatt-hero.webp', distance: 160 },
+  'sound-of-music': { title: 'Sound of Music & Salzburg Lakes (8 Hours)', price: 450.0, hero: '/images/salzburg-hero.webp', distance: 140 },
+  'salzburg-city': { title: 'Salzburg City Tour (From €70/hr • Min 3h)', price: 210.0, hero: '/images/salzburg-hero.webp', distance: 25 },
+  'innsbruck-swarovski': { title: 'Innsbruck and Swarovski Day Tour (8-9 Hours)', price: 600.0, hero: '/images/destinations/innsbruck-hero.webp', distance: 380 },
+  'kaprun-zell-am-see': { title: 'Kaprun and Zell am See Day Tour (8 Hours)', price: 500.0, hero: '/images/destinations/zell-am-see-hero.webp', distance: 180 },
   'eagles-nest': { title: 'Eagles Nest & Berchtesgaden (6-8 Hours)', price: 450.0, hero: '/images/destinations/eagles-nest-hero.webp', distance: 80 },
+  'grossglockner': { title: 'Grossglockner High Alpine Glacier Road (8-9 Hours)', price: 550.0, hero: '/images/destinations/zell-am-see-hero.webp', distance: 260 },
   'werfen-ice-caves': { title: 'Werfen Ice Caves & Fortress (8 Hours)', price: 450.0, hero: '/images/destinations/werfen-ice-caves-hero.webp', distance: 110 },
-  'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 450.0, hero: '/images/destinations/zell-am-see-hero.webp', distance: 190 },
+  'zell-am-see': { title: 'Zell am See & Kaprun Alpine Glacier (8 Hours)', price: 500.0, hero: '/images/destinations/zell-am-see-hero.webp', distance: 190 },
   'bad-gastein': { title: 'Bad Gastein Thermal & Waterfall (8 Hours)', price: 450.0, hero: '/images/destinations/bad-gastein-hero.webp', distance: 210 },
   'swarovski-crystal-worlds': { title: 'Swarovski Crystal Worlds & Hall in Tirol (8 Hours)', price: 550.0, hero: '/images/destinations/swarovski-crystal-worlds-hero.webp', distance: 340 },
   'innsbruck': { title: 'Innsbruck & Tyrolean Alps Highlights (8-9 Hours)', price: 650.0, hero: '/images/destinations/innsbruck-hero.webp', distance: 380 }
@@ -191,8 +197,18 @@ class BookingStateManager {
     // Pickup & Dropoff
     const p = params.get('pickup');
     if (p) this.state.pickupAddress = p;
-    const d = params.get('dropoff');
+    const d = params.get('dropoff') || params.get('dest');
     if (d) this.state.dropoffAddress = d;
+
+    const pStr = (this.state.pickupAddress || '').toLowerCase();
+    const dStr = (this.state.dropoffAddress || '').toLowerCase();
+    const isAirport = (s) => /airport|szg|mozart/i.test(s);
+    const isCity = (s) => /old town|city|center|altstadt/i.test(s);
+    if ((isAirport(pStr) && isCity(dStr)) || (isAirport(dStr) && isCity(pStr))) {
+      this.state.distanceKm = 5.5;
+      this.state.durationText = '18m';
+      this.state.routeKey = 'salzburg-old-town';
+    }
 
     // Direct distance
     const dist = params.get('distance') || params.get('km');

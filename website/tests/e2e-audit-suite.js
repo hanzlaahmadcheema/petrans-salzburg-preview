@@ -289,6 +289,48 @@ async function runAll() {
     assert.strictEqual(quote.grossTotal, 650.00);
   });
 
+  runTest('Tour Pricing: Salzburg City Tour @ €70/hr min 3 hours (€210.00)', () => {
+    const quote = PRICING.calculatePetransQuote({
+      serviceType: 'TOUR',
+      tourKey: 'salzburg-city',
+      tourHours: 3
+    });
+    assert.strictEqual(quote.grossTotal, 210.00);
+  });
+
+  runTest('Tour Pricing: Innsbruck and Swarovski Day Tour flat €600.00', () => {
+    const quote = PRICING.calculatePetransQuote({
+      serviceType: 'TOUR',
+      tourKey: 'innsbruck-swarovski',
+      tourHours: 8
+    });
+    assert.strictEqual(quote.grossTotal, 600.00);
+  });
+
+  runTest('Tour Pricing: Kaprun and Zell am See Day Tour flat €500.00', () => {
+    const quote = PRICING.calculatePetransQuote({
+      serviceType: 'TOUR',
+      tourKey: 'kaprun-zell-am-see',
+      tourHours: 8
+    });
+    assert.strictEqual(quote.grossTotal, 500.00);
+  });
+
+  runTest('Airport Route: Salzburg Airport to Old Town enforces base floor of €45.00', () => {
+    const quoteE = PRICING.calculatePetransQuote({
+      serviceType: 'ONE_WAY',
+      distanceKm: 5.5,
+      vehicleCategory: 'E_CLASS'
+    });
+    assert.strictEqual(quoteE.grossTotal, 45.00);
+    const quoteV = PRICING.calculatePetransQuote({
+      serviceType: 'ONE_WAY',
+      distanceKm: 5.5,
+      vehicleCategory: 'V_CLASS'
+    });
+    assert.strictEqual(quoteV.grossTotal, 45.00);
+  });
+
   runTest('Tour Overtime: 10h on €450 tour (+2h @ €50/h = €550.00)', () => {
     const quote = PRICING.calculatePetransQuote({
       serviceType: 'TOUR',

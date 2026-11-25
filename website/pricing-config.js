@@ -97,7 +97,15 @@ const PETRANS_PRICING = {
       durationHours: 8,
       distanceKm: 73,
       tier: 2,
-      description: 'World Heritage Alpine lake village, Skywalk viewpoint, and Salzkammergut panorama.'
+      description: 'World Heritage Alpine lake village, Skywalk viewpoint, Red Bull Global Headquarters (Fuschl am See), and Imperial Bad Ischl.'
+    },
+    'sound-of-music': {
+      title: 'Sound of Music & Salzburg Lakes Tour',
+      basePrice: 450.0,
+      durationHours: 8,
+      distanceKm: 70,
+      tier: 2,
+      description: 'Salzburg Old Town, Mirabell Gardens, Leopoldskron Palace, Hellbrunn Gazebo, and Mondsee Wedding Church.'
     },
     'eagles-nest': {
       title: "Eagle's Nest & Berchtesgaden Tour",
@@ -106,6 +114,40 @@ const PETRANS_PRICING = {
       distanceKm: 30,
       tier: 1,
       description: 'Historic Kehlsteinhaus summit, Königsee emerald fjord, and Bavarian alpine peaks.'
+    },
+    'grossglockner': {
+      title: 'Grossglockner High Alpine Glacier Road Tour',
+      basePrice: 550.0,
+      durationHours: 8,
+      distanceKm: 130,
+      tier: 2,
+      description: 'Franz-Josefs-Höhe glacier viewpoint, Alpine Romantic Glacier Road, Edelweissspitze / Eggolaskerner, and Zell am See lake & town tour.'
+    },
+    'salzburg-city': {
+      title: 'Salzburg City Tour',
+      basePrice: 210.0,
+      hourlyRate: 70.0,
+      minHours: 3,
+      durationHours: 3,
+      distanceKm: 25,
+      tier: 1,
+      description: 'UNESCO Old Town, Mirabell Palace & Gardens, Mozart Birthplace, and Hohensalzburg Fortress views (€70/hour, min 3 hours).'
+    },
+    'innsbruck-swarovski': {
+      title: 'Innsbruck and Swarovski Day Tour',
+      basePrice: 600.0,
+      durationHours: 8,
+      distanceKm: 185,
+      tier: 3,
+      description: 'Swarovski Crystal Worlds Giant & Chamber of Wonders in Wattens combined with Innsbruck Imperial Hofburg and Golden Roof.'
+    },
+    'kaprun-zell-am-see': {
+      title: 'Kaprun and Zell am See Day Tour',
+      basePrice: 500.0,
+      durationHours: 8,
+      distanceKm: 85,
+      tier: 2,
+      description: 'Kitzsteinhorn Glacier, Sigmund Thun Gorge, Kaprun High Alpine Reservoirs, and Zell am See alpine promenade.'
     },
     'werfen-ice-caves': {
       title: 'Werfen Ice Caves & Hohenwerfen Fortress Tour',
@@ -185,6 +227,7 @@ const PETRANS_PRICING = {
     'vienna': { name: 'Vienna (City / VIE Airport)', distanceKm: 300, durationMin: 195, durationText: '3h 15m' },
     'prague': { name: 'Prague (Czech Republic)', distanceKm: 375, durationMin: 255, durationText: '4h 15m' },
     'saalbach': { name: 'Saalbach-Hinterglemm', distanceKm: 92, durationMin: 95, durationText: '1h 35m' },
+    'salzburg-airport': { name: 'Salzburg Airport (SZG)', distanceKm: 5.5, durationMin: 18, durationText: '18m' },
     'salzburg-old-town': { name: 'Salzburg City Center / Old Town', distanceKm: 5.5, durationMin: 18, durationText: '18m' },
     'salzburg-hbf': { name: 'Salzburg Central Station (Hbf)', distanceKm: 6.0, durationMin: 20, durationText: '20m' }
   }
@@ -218,15 +261,23 @@ function calculatePetransQuote(input) {
     grossTotal = baseFare;
   } else if (serviceType === 'TOUR') {
     const tourMeta = PETRANS_PRICING.TOUR_RATES[tourKey] || PETRANS_PRICING.TOUR_RATES['hallstatt'];
-    baseFare = tourMeta.basePrice;
-    appliedRules.push(`${tourMeta.title}: €${baseFare.toFixed(2)} (8 Hours Included)`);
+    if (tourKey === 'salzburg-city') {
+      const cityHours = Math.max(3, parseFloat(tourHours || input.hours) || 3);
+      baseFare = cityHours * 70.0;
+      appliedRules.push(`Salzburg City Tour: ${cityHours} Hours @ €70.00/hour (Min. 3h): €${baseFare.toFixed(2)}`);
+      grossTotal = baseFare;
+    } else {
+      baseFare = tourMeta.basePrice;
+      const standardHours = tourMeta.durationHours || 8;
+      appliedRules.push(`${tourMeta.title}: €${baseFare.toFixed(2)} (${standardHours} Hours Included)`);
 
-    if (tourHours > 8) {
-      const extraHours = Math.ceil(tourHours - 8);
-      overtimeFee = extraHours * PETRANS_PRICING.TOUR_OVERTIME_RATE_PER_HOUR;
-      appliedRules.push(`Overtime: ${extraHours}h @ €50.00/hour (+€${overtimeFee.toFixed(2)})`);
+      if (tourHours > standardHours) {
+        const extraHours = Math.ceil(tourHours - standardHours);
+        overtimeFee = extraHours * PETRANS_PRICING.TOUR_OVERTIME_RATE_PER_HOUR;
+        appliedRules.push(`Overtime: ${extraHours}h @ €50.00/hour (+€${overtimeFee.toFixed(2)})`);
+      }
+      grossTotal = baseFare + overtimeFee;
     }
-    grossTotal = baseFare + overtimeFee;
   } else {
     const rawDistanceFare = distanceKm * ratePerKm;
 
