@@ -22,3 +22,4 @@ website/.vercel/
 
 # Runtime Data Stores
 website/data/*.json
+website/public/images/maps/*.zip
