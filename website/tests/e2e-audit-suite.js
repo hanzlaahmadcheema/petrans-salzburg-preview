@@ -479,6 +479,17 @@ async function runAll() {
       assert.ok(content.includes('CAA328') || content.includes('E6C25B'), `Map ${cid} missing gold styling`);
       assert.ok(content.includes('0B0F19') || content.includes('182338'), `Map ${cid} missing obsidian background`);
     });
+
+    runTest(`Continuum City Card Map Image exists and is valid: ${cid}.png & ${cid}.webp`, () => {
+      const pngPath = path.join(publicDir, 'images', 'maps', `${cid}.png`);
+      const webpPath = path.join(publicDir, 'images', 'maps', `${cid}.webp`);
+      assert.ok(fs.existsSync(pngPath), `Missing Continuum map PNG: ${pngPath}`);
+      assert.ok(fs.existsSync(webpPath), `Missing Continuum map WebP: ${webpPath}`);
+      const pngSize = fs.statSync(pngPath).size;
+      const webpSize = fs.statSync(webpPath).size;
+      assert.ok(pngSize > 100000, `Map PNG file suspiciously small (${pngSize} bytes): ${pngPath}`);
+      assert.ok(webpSize > 20000, `Map WebP file suspiciously small (${webpSize} bytes): ${webpPath}`);
+    });
   }
 
   runTest('Senior / Low-Vision Accessibility: .elderly-mode CSS rules present', () => {
