@@ -626,7 +626,7 @@
       <div class="max-w-3xl mb-8 sm:mb-12 fleet-reveal reveal-init">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-3">
           <iconify-icon icon="lucide:car" width="14" height="14"></iconify-icon>
-          <span>Exclusively Obsidian Black Mercedes-Benz Fleet</span>
+          <span>Mercedes-Benz Fleet</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-bold font-outfit text-snow mb-3 leading-tight">
           Our Handcrafted Black Alpine Fleet
@@ -736,11 +736,11 @@
 
         <!-- AREA 4: Slide Controls (Chevrons + Numeric Indicator) & CTAs -->
         <div class="fleet-area-actions z-10">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 pt-2">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3 sm:gap-4 pt-2 border-t border-slate-800/80">
             
             <!-- Slide Counter & Chevron Navigation -->
-            <div class="flex items-center gap-3">
-              <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+              <div class="flex items-center gap-1.5 shrink-0">
                 <button type="button" class="fleet-chevron-btn min-w-[44px] min-h-[44px]" aria-label="Previous vehicle" onclick="prevFleetVehicle()">
                   <iconify-icon icon="lucide:chevron-left" width="20" height="20"></iconify-icon>
                 </button>
@@ -754,11 +754,11 @@
             </div>
 
             <!-- Action CTA Buttons -->
-            <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
-              <a href="#routes" class="btn-outline-gold text-xs py-3 px-3 sm:px-4 flex-1 sm:flex-none text-center min-h-[48px] inline-flex items-center justify-center whitespace-nowrap shrink-0">
-                Route Rates
+            <div class="flex items-center gap-2 sm:gap-3 w-full xl:w-auto">
+              <a href="/booking.html" class="btn-outline-gold text-xs py-2.5 px-3.5 sm:px-4 flex-1 xl:flex-none text-center min-h-[44px] inline-flex items-center justify-center whitespace-nowrap">
+                Direct Booking
               </a>
-              <button type="button" onclick="bookCurrentFleetVehicle()" class="btn-gold text-xs sm:text-sm py-3 px-3 sm:px-6 flex-1 sm:flex-none text-center min-h-[48px] shadow-lg shadow-gold/25 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0" id="carousel-book-cta">
+              <button type="button" onclick="bookCurrentFleetVehicle()" class="btn-gold text-xs sm:text-sm py-2.5 px-3 sm:px-5 flex-1 xl:flex-none text-center min-h-[44px] shadow-lg shadow-gold/25 inline-flex items-center justify-center gap-1.5 whitespace-nowrap" id="carousel-book-cta">
                 <span class="whitespace-nowrap">Book This Vehicle</span>
                 <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="shrink-0"></iconify-icon>
               </button>
@@ -955,152 +955,18 @@
           </div>
         </div>
 
-        <!-- Tour 5: Salzburg City Tour -->
-        <div class="glass-card spotlight-card card-tilt-3d rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative overflow-hidden aspect-video bg-midnight">
-            <img src="/images/salzburg-hero.webp" alt="Salzburg City Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
-            <div class="absolute top-3 left-3 flex items-center gap-2">
-              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">Min. 3 Hours</span>
-              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">Flexible</span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">€70.00 / Hour</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Salzburg City Tour</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                Personalized chauffeur tour through Salzburg's UNESCO baroque heritage. Flexible pacing with door-to-door comfort between city landmarks.
-              </p>
-              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
-                <div>• UNESCO World Heritage Old Town &amp; Getreidegasse</div>
-                <div>• Mirabell Palace, Gardens &amp; Pegasus Fountain</div>
-                <div>• Hohensalzburg Fortress Scenic Viewpoints</div>
-              </div>
-            </div>
-            <div class="border-t border-slate-800/80 pt-4">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Hourly Rate (Min. 3h)</span>
-                <span class="text-xl font-mono font-bold text-gold">€70.00 <span class="text-xs text-slate-400 font-normal">/ hour</span></span>
-              </div>
-              <div class="flex items-center gap-2">
-                <a href="/tours.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
-                <a href="/booking.html?service=TOUR&tour=salzburg-city" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tour 6: Innsbruck and Swarovski Day Tour -->
-        <div class="glass-card spotlight-card card-tilt-3d rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative overflow-hidden aspect-video bg-midnight">
-            <img src="/images/destinations/innsbruck-hero.webp" alt="Innsbruck and Swarovski Day Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
-            <div class="absolute top-3 left-3 flex items-center gap-2">
-              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">8-9 Hours</span>
-              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~380 km</span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">All-Inclusive</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Innsbruck &amp; Swarovski Day Tour</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                Marvel at the glittering Swarovski Crystal Worlds Giant in Wattens, followed by Innsbruck's Imperial Hofburg palace and the world-famous Golden Roof.
-              </p>
-              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
-                <div>• Swarovski Crystal Worlds Giant &amp; Chambers of Wonder</div>
-                <div>• Innsbruck Imperial Hofburg &amp; Golden Roof</div>
-                <div>• Panoramic Views of the Tyrolean Alps &amp; Nordkette</div>
-              </div>
-            </div>
-            <div class="border-t border-slate-800/80 pt-4">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
-                <span class="text-xl font-mono font-bold text-gold">€600.00</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <a href="/tours/innsbruck.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
-                <a href="/booking.html?service=TOUR&tour=innsbruck-swarovski" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tour 7: Kaprun and Zell am See Day Tour -->
-        <div class="glass-card spotlight-card card-tilt-3d rounded-2xl overflow-hidden border border-slate-800 hover:border-gold/40 transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative overflow-hidden aspect-video bg-midnight">
-            <img src="/images/destinations/zell-am-see-hero.webp" alt="Kaprun and Zell am See Day Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-black/30"></div>
-            <div class="absolute top-3 left-3 flex items-center gap-2">
-              <span class="bg-midnight/80 backdrop-blur-md text-gold text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-gold/30">8 Hours</span>
-              <span class="bg-midnight/80 backdrop-blur-md text-slate-200 text-[11px] font-medium px-2.5 py-1 rounded-full border border-slate-700">~180 km</span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300">
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-gold">Max 8 Guests</span>
-              <span class="inline-flex items-center gap-1 bg-midnight/80 backdrop-blur-sm px-2 py-0.5 rounded text-emerald-400">All-Inclusive</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-outfit font-bold text-lg text-snow group-hover:text-gold transition mb-2">Kaprun &amp; Zell am See Day Tour</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                Experience the breathtaking turquoise waters of Lake Zeller See, Kaprun's Kitzsteinhorn 3,000m glacier summit, and the dramatic Sigmund Thun Gorge.
-              </p>
-              <div class="space-y-1 text-xs text-slate-400 border-t border-slate-800/80 pt-3 mb-4">
-                <div>• Lake Zeller See Promenade &amp; Grand Hotel View</div>
-                <div>• Kitzsteinhorn Glacier Summit &amp; High Alpine Dam</div>
-                <div>• Sigmund Thun Natural Alpine Gorge Walk</div>
-              </div>
-            </div>
-            <div class="border-t border-slate-800/80 pt-4">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Flat Rate / Group</span>
-                <span class="text-xl font-mono font-bold text-gold">€500.00</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <a href="/tours/zell-am-see.html" class="btn-outline-gold text-xs py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Itinerary</a>
-                <a href="/booking.html?service=TOUR&tour=kaprun-zell-am-see" class="btn-gold text-xs font-bold py-2 px-3 flex-1 text-center min-h-[44px] flex items-center justify-center">Book Tour</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-    </div>
-  </section>
-
-  <!-- Dedicated Booking Engine Banner & Call to Action -->
-  <section class="py-16 sm:py-20 bg-surface/40 border-y border-gold/15">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center booking-reveal reveal-init">
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-gold/30 bg-midnight text-gold text-xs font-bold uppercase tracking-wider mb-3">
-        <iconify-icon icon="lucide:calendar-clock" width="14" height="14" class="shrink-0"></iconify-icon>
-        <span class="whitespace-nowrap">Dedicated Booking</span>
-      </div>
-      <h2 class="text-2xl sm:text-4xl font-bold font-cinzel text-snow mb-3">Ready to Reserve Your Chauffeur?</h2>
-      <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-6 leading-relaxed">
-        Instant fixed pricing, complimentary child seats, and zero upfront payment.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="/booking.html" class="btn-gold hero-action-pill px-8 py-3 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2">
-          <iconify-icon icon="lucide:calendar-check" width="18" height="18"></iconify-icon>
-          <span>Open Dedicated Booking Page</span>
-        </a>
-        <a href="/tours.html" class="btn-outline-gold hero-action-pill px-6 py-3 text-sm font-semibold min-h-[48px] inline-flex items-center justify-center gap-2">
+      <!-- View All Day Tours CTA Button -->
+      <div class="mt-12 text-center tour-reveal reveal-init" data-delay="150">
+        <a href="/tours.html" class="btn-gold hero-action-pill px-8 py-3.5 text-sm font-bold min-h-[48px] inline-flex items-center justify-center gap-2 shadow-xl">
           <iconify-icon icon="lucide:compass" width="18" height="18"></iconify-icon>
-          <span>Browse All Day Tours</span>
+          <span>Explore All 7 Alpine Day Tours &amp; Full Itineraries</span>
         </a>
       </div>
+
     </div>
   </section>
-
 
   <!-- European Grand Tours & Cross-Border Chauffeur Showcase (10 Countries) -->
   <section id="europe-tours" class="py-16 sm:py-24 bg-surface/20 border-t border-b border-gold/15">
@@ -1108,7 +974,7 @@
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="badge-gold">10 European Nations • Private Chauffeur Network</span>
+        <span class="badge-gold">10 European Nations</span>
         <h2 class="text-3xl sm:text-5xl font-bold font-cinzel text-snow mt-2 mb-4">European Grand Tours & Cross-Border Journeys</h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
           Embark on bespoke multi-country luxury travel across Central Europe and the Alps. Every itinerary features private door-to-door Mercedes transportation, English-speaking Austrian licensed chauffeurs, cross-border clearance, and all highway vignette tolls included.
@@ -1491,10 +1357,10 @@
       </div>
 
       <!-- View All Europe Tours CTA Button -->
-      <div class="mt-12 text-center">
-        <a href="/europe-tours.html" class="btn-gold hero-action-pill px-8 py-3.5 text-sm font-bold min-h-[50px] inline-flex items-center justify-center gap-2 shadow-2xl">
-          <iconify-icon icon="lucide:globe" width="18" height="18"></iconify-icon>
-          <span>Open Full European Grand Tours Guide (10 Countries)</span>
+      <div class="mt-8 text-center">
+        <a href="/europe-tours.html" class="btn-gold px-4 py-2.5 text-xs sm:text-sm font-bold min-h-[42px] inline-flex items-center justify-center gap-1.5 shadow-lg rounded-xl">
+          <iconify-icon icon="lucide:globe" width="16" height="16"></iconify-icon>
+          <span>Europe Tours Guide</span>
         </a>
       </div>
 
@@ -1502,7 +1368,7 @@
   </section>
 
 
-  <!-- 7. Programmatic Route Rates & Destination Guides -->
+  <!-- 7. Programmatic Route Rates & Destination Guides (Commented out per user request)
   <section id="routes" class="py-20 bg-midnight overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1716,6 +1582,7 @@
 
     </div>
   </section>
+  -->
 
   <!-- 8. Salzburg Airport Meet & Greet Guide Section -->
   <section id="airport-guide" class="py-20 bg-surface/40 border-t border-gold/15">
@@ -1777,14 +1644,18 @@
           <p class="text-xs text-slate-300 max-w-md mx-auto mb-4 sm:mb-6">
             Innsbrucker Bundesstraße 95, 5020 Salzburg. Direct terminal pickup zone.
           </p>
-          <div class="p-3.5 sm:p-4 bg-midnight rounded-xl border border-slate-800 text-left text-xs space-y-2">
-            <div class="flex items-center justify-between text-slate-400 gap-2 whitespace-nowrap text-[11px] sm:text-xs">
-              <span>Flight Status Integration:</span>
+          <div class="p-3.5 sm:p-4 bg-midnight rounded-xl border border-slate-800 text-left text-xs space-y-2.5">
+            <div class="flex items-center justify-between text-slate-400 gap-2 text-[11px] sm:text-xs">
+              <span class="flex items-center gap-1.5"><iconify-icon icon="lucide:activity" width="13" height="13" class="text-gold shrink-0"></iconify-icon>Flight Status:</span>
               <span class="text-emerald-400 font-bold shrink-0 inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 live-status-dot shrink-0"></span>Active Live Tracking</span>
             </div>
-            <div class="flex items-center justify-between text-slate-400 gap-2 whitespace-nowrap text-[11px] sm:text-xs">
-              <span>Lead Chauffeur Contact:</span>
-              <span class="text-snow font-bold shrink-0">Omer Farooq (+43 660 6416464)</span>
+            <div class="border-t border-slate-800/80 pt-2 flex items-center justify-between text-slate-400 gap-2 text-[11px] sm:text-xs">
+              <span class="flex items-center gap-1.5"><iconify-icon icon="lucide:user-check" width="13" height="13" class="text-gold shrink-0"></iconify-icon>Lead Chauffeur Person:</span>
+              <span class="text-snow font-bold shrink-0">Omer Farooq</span>
+            </div>
+            <div class="border-t border-slate-800/80 pt-2 flex items-center justify-between text-slate-400 gap-2 text-[11px] sm:text-xs">
+              <span class="flex items-center gap-1.5"><iconify-icon icon="lucide:phone" width="13" height="13" class="text-gold shrink-0"></iconify-icon>Lead Chauffeur Number:</span>
+              <a href="tel:+436606416464" class="text-gold hover:text-white font-mono font-bold transition shrink-0">+43 660 6416464</a>
             </div>
           </div>
         </div>
@@ -1844,11 +1715,11 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center text-gold gap-1">
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-1"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-2"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-3"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-4"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-5"></iconify-icon>
               </div>
               <span class="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/20">
                 <iconify-icon icon="lucide:check-circle" width="12" height="12"></iconify-icon>
@@ -1873,11 +1744,11 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center text-gold gap-1">
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
-                <iconify-icon icon="lucide:star" width="16" height="16"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-1"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-2"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-3"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-4"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" height="16" class="star-twinkle-5"></iconify-icon>
               </div>
               <span class="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/20">
                 <iconify-icon icon="lucide:check-circle" width="12" height="12"></iconify-icon>
@@ -1913,44 +1784,52 @@
 
       <div class="space-y-4 faq-reveal reveal-init" data-delay="100" id="faq-accordion">
         
-        <div class="glass-card p-5 rounded-xl border border-slate-800">
-          <h4 class="font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer">
+        <div class="faq-item glass-card p-5 rounded-xl border border-slate-800">
+          <div class="faq-trigger font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer select-none" role="button" tabindex="0" aria-expanded="false">
             <span>What happens if my flight to Salzburg is delayed?</span>
-            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="text-gold"></iconify-icon>
-          </h4>
-          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-            We track your flight number in real-time. If your arrival is delayed, your chauffeur automatically adjusts the pickup schedule. Your 60 minutes of complimentary waiting time starts only after your plane touches down on the runway.
-          </p>
+            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="faq-chevron text-gold shrink-0"></iconify-icon>
+          </div>
+          <div class="faq-answer">
+            <p class="text-xs text-slate-300 mt-2.5 leading-relaxed">
+              We track your flight number in real-time. If your arrival is delayed, your chauffeur automatically adjusts the pickup schedule. Your 60 minutes of complimentary waiting time starts only after your plane touches down on the runway.
+            </p>
+          </div>
         </div>
 
-        <div class="glass-card p-5 rounded-xl border border-slate-800">
-          <h4 class="font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer">
+        <div class="faq-item glass-card p-5 rounded-xl border border-slate-800">
+          <div class="faq-trigger font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer select-none" role="button" tabindex="0" aria-expanded="false">
             <span>Are child seats and ski equipment really free of charge?</span>
-            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="text-gold"></iconify-icon>
-          </h4>
-          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-            Yes, 100% free! We carry certified infant seats, child booster cushions, and ski/snowboard bags at zero additional fee. Just select the required quantities in Step 4 of the booking form so our driver can configure the vehicle in advance.
-          </p>
+            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="faq-chevron text-gold shrink-0"></iconify-icon>
+          </div>
+          <div class="faq-answer">
+            <p class="text-xs text-slate-300 mt-2.5 leading-relaxed">
+              Yes, 100% free! We carry certified infant seats, child booster cushions, and ski/snowboard bags at zero additional fee. Just select the required quantities in Step 4 of the booking form so our driver can configure the vehicle in advance.
+            </p>
+          </div>
         </div>
 
-        <div class="glass-card p-5 rounded-xl border border-slate-800">
-          <h4 class="font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer">
+        <div class="faq-item glass-card p-5 rounded-xl border border-slate-800">
+          <div class="faq-trigger font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer select-none" role="button" tabindex="0" aria-expanded="false">
             <span>Can I pay the driver in cash or by credit card upon arrival?</span>
-            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="text-gold"></iconify-icon>
-          </h4>
-          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-            Yes. You can choose to pay the driver directly upon arrival at your destination. Our chauffeurs carry mobile POS terminals accepting all major credit/debit cards (Visa, Mastercard, Maestro, Apple Pay) or cash in Euros. You can also choose to prepay online.
-          </p>
+            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="faq-chevron text-gold shrink-0"></iconify-icon>
+          </div>
+          <div class="faq-answer">
+            <p class="text-xs text-slate-300 mt-2.5 leading-relaxed">
+              Yes. You can choose to pay the driver directly upon arrival at your destination. Our chauffeurs carry mobile POS terminals accepting all major credit/debit cards (Visa, Mastercard, Maestro, Apple Pay) or cash in Euros. You can also choose to prepay online.
+            </p>
+          </div>
         </div>
 
-        <div class="glass-card p-5 rounded-xl border border-slate-800">
-          <h4 class="font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer">
+        <div class="faq-item glass-card p-5 rounded-xl border border-slate-800">
+          <div class="faq-trigger font-outfit font-bold text-snow text-base flex items-center justify-between cursor-pointer select-none" role="button" tabindex="0" aria-expanded="false">
             <span>What is your cancellation policy?</span>
-            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="text-gold"></iconify-icon>
-          </h4>
-          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-            We offer 100% free cancellation up to 24 hours prior to your scheduled pickup time. If your plans change, simply notify us by WhatsApp (+43 660 6416464) or email.
-          </p>
+            <iconify-icon icon="lucide:chevron-down" width="16" height="16" class="faq-chevron text-gold shrink-0"></iconify-icon>
+          </div>
+          <div class="faq-answer">
+            <p class="text-xs text-slate-300 mt-2.5 leading-relaxed">
+              We offer 100% free cancellation up to 24 hours prior to your scheduled pickup time. If your plans change, simply notify us by WhatsApp (+43 660 6416464) or email.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -1982,10 +1861,10 @@
 
       <!-- Col 2: Services -->
       <div>
-        <h4 class="font-outfit font-bold text-snow text-sm mb-2.5 sm:mb-4 uppercase tracking-wider text-gold">Our Services</h4>
-        <ul class="space-y-1.5">
+        <h4 class="font-outfit font-bold text-snow text-xs sm:text-sm mb-2 sm:mb-3 uppercase tracking-wider text-gold">Our Services</h4>
+        <ul class="space-y-1 text-[11px] leading-snug">
           <li><a href="/booking.html?service=one-way" class="hover:text-gold transition">Salzburg Airport Transfers</a></li>
-          <li><a href="/booking.html" class="hover:text-gold transition">Ski & Snowboard Shuttles</a></li>
+          <li><a href="/booking.html" class="hover:text-gold transition">Ski &amp; Snowboard Shuttles</a></li>
           <li><a href="/destinations/vienna.html" class="hover:text-gold transition">Intercity Chauffeur Service</a></li>
           <li><a href="/tours.html" class="hover:text-gold transition">8-Hour Private Day Tours</a></li>
           <li><a href="/europe-tours.html" class="hover:text-gold transition text-gold font-semibold">Europe Tours (10 Countries)</a></li>
@@ -1995,17 +1874,17 @@
 
       <!-- Col 3: Popular Routes -->
       <div>
-        <h4 class="font-outfit font-bold text-snow text-sm mb-2.5 sm:mb-4 uppercase tracking-wider text-gold">Popular Destinations</h4>
-        <ul class="space-y-1">
-          <li><a href="/tours/hallstatt.html" class="hover:text-gold transition">Day Tour Hallstatt (€450.00)</a></li>
-          <li><a href="/tours/eagles-nest.html" class="hover:text-gold transition">Eagle's Nest Tour (€450.00)</a></li>
-          <li><a href="/tours/werfen-ice-caves.html" class="hover:text-gold transition">Werfen Ice Caves Tour (€450.00)</a></li>
-          <li><a href="/tours/zell-am-see.html" class="hover:text-gold transition">Zell am See Tour (€450.00)</a></li>
-          <li><a href="/tours/swarovski-crystal-worlds.html" class="hover:text-gold transition">Swarovski Crystal Worlds (€550.00)</a></li>
-          <li><a href="/tours/bad-gastein.html" class="hover:text-gold transition">Bad Gastein Alpine Tour (€450.00)</a></li>
-          <li><a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport Transfer (€490.00)</a></li>
-          <li><a href="/destinations/prague.html" class="hover:text-gold transition">Prague VIP Transfer (€650.00)</a></li>
-          <li><a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna VIP Transfer (€660.00)</a></li>
+        <h4 class="font-outfit font-bold text-snow text-xs sm:text-sm mb-2 sm:mb-3 uppercase tracking-wider text-gold">Popular Destinations</h4>
+        <ul class="space-y-0.5 text-[11px] leading-tight">
+          <li><a href="/tours/hallstatt.html" class="hover:text-gold transition">Hallstatt Day Tour (€450)</a></li>
+          <li><a href="/tours/eagles-nest.html" class="hover:text-gold transition">Eagle's Nest Tour (€450)</a></li>
+          <li><a href="/tours/werfen-ice-caves.html" class="hover:text-gold transition">Werfen Ice Caves (€450)</a></li>
+          <li><a href="/tours/zell-am-see.html" class="hover:text-gold transition">Zell am See Tour (€450)</a></li>
+          <li><a href="/tours/swarovski-crystal-worlds.html" class="hover:text-gold transition">Swarovski Worlds (€550)</a></li>
+          <li><a href="/tours/bad-gastein.html" class="hover:text-gold transition">Bad Gastein Alpine (€450)</a></li>
+          <li><a href="/destinations/munich-airport.html" class="hover:text-gold transition">Munich Airport Transfer (€490)</a></li>
+          <li><a href="/destinations/prague.html" class="hover:text-gold transition">Prague VIP Transfer (€650)</a></li>
+          <li><a href="/destinations/vienna.html" class="hover:text-gold transition">Vienna VIP Transfer (€660)</a></li>
         </ul>
       </div>
 

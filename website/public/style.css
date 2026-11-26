@@ -536,7 +536,9 @@ iconify-icon {
 .fleet-area-actions {
   grid-area: actions;
   width: 100%;
+  max-width: 100%;
   z-index: 10;
+  overflow: visible;
 }
 
 /* 4. Vehicle Peek Stage & Wrapper (Mobile Base) */

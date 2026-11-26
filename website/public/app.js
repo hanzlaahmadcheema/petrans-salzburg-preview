@@ -774,9 +774,20 @@ function setupEventListeners() {
     if (trigger) {
       trigger.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(other => other.classList.remove('active'));
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('active');
+          const t = other.querySelector('.faq-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
         if (!isOpen) {
           item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
         }
       });
     }
