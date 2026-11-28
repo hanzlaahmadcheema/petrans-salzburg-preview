@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85mm" height="55mm" viewBox="0 0 1004 650">
+  <defs>
+    <linearGradient id="backGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="60%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#020408" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DFBF77" />
+      <stop offset="50%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#9A7B38" />
+    </linearGradient>
+    <filter id="softCardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Deep Midnight Slate Base -->
+  <rect width="1004" height="650" fill="url(#backGrad)" />
+
+  <!-- Vertical Left Gold Bar -->
+  <rect x="0" y="0" width="10" height="650" fill="url(#goldAccent)" />
+
+  <!-- Delicate Hairline Border -->
+  <rect x="22" y="22" width="960" height="606" fill="none" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1.2" />
+
+  <!-- LEFT: BIG TYPOGRAPHIC MONOGRAM & STATEMENT -->
+  <g transform="translate(65, 80)">
+    <!-- Watermark Brand Name in background -->
+    <text x="0" y="230" font-family="'Cinzel', serif" font-size="110" font-weight="900" fill="#1E293B" opacity="0.3" letter-spacing="8">PETRANS</text>
+
+    <!-- Forefront Typography -->
+    <g transform="translate(0, 30)">
+      <text x="0" y="30" font-family="'Cinzel', serif" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="4">PETRANS</text>
+      <text x="0" y="60" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#DFBF77" letter-spacing="3" text-transform="uppercase">Taxi &amp; Tour Salzburg</text>
+      <text x="0" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="500" fill="#94A3B8">Private Chauffeur Transfers &amp; Alpine Day Trips</text>
+    </g>
+
+    <!-- Route Matrix -->
+    <g transform="translate(0, 165)" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#E2E8F0">
+      <g transform="translate(0, 0)">
+        <rect width="180" height="28" rx="6" fill="#1E293B" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1" />
+        <text x="90" y="18" text-anchor="middle" font-weight="600" fill="#DFBF77">✈ Salzburg Airport SZG</text>
+      </g>
+      <g transform="translate(195, 0)">
+        <rect width="180" height="28" rx="6" fill="#1E293B" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1" />
+        <text x="90" y="18" text-anchor="middle" font-weight="600" fill="#DFBF77">🏔 Hallstatt Day Tour</text>
+      </g>
+      <g transform="translate(0, 38)">
+        <rect width="180" height="28" rx="6" fill="#1E293B" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1" />
+        <text x="90" y="18" text-anchor="middle" font-weight="600" fill="#DFBF77">❄ Zell am See Ski Shuttles</text>
+      </g>
+      <g transform="translate(195, 38)">
+        <rect width="180" height="28" rx="6" fill="#1E293B" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1" />
+        <text x="90" y="18" text-anchor="middle" font-weight="600" fill="#DFBF77">🚗 Munich &amp; Vienna VIP</text>
+      </g>
+    </g>
+
+    <!-- Legal & Founder Note -->
+    <g transform="translate(0, 390)" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#64748B">
+      <text x="0" y="0">Gewerbeberechtigung für das Mietwagen- &amp; Personentransportgewerbe</text>
+      <text x="0" y="18">WKO Salzburg • Registered Carrier Austria</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: FLOATING WHITE DUAL QR CONCIERGE DOCK -->
+  <g transform="translate(580, 70)" filter="url(#softCardShadow)">
+    <rect width="360" height="470" rx="16" fill="#FFFFFF" />
+
+    <!-- Card Header -->
+    <rect width="360" height="55" rx="16" fill="#F8FAFC" />
+    <rect y="35" width="360" height="20" fill="#F8FAFC" />
+    <line x1="0" y1="55" x2="360" y2="55" stroke="#E2E8F0" stroke-width="1" />
+
+    <text x="180" y="34" font-family="'Cinzel', serif" font-size="17" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="2">SMART CONCIERGE</text>
+
+    <!-- Subtitle -->
+    <text x="180" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Scan directly with camera for instant dispatch:</text>
+
+    <!-- QR 1: WhatsApp -->
+    <g transform="translate(30, 110)">
+      <rect width="140" height="210" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <rect width="140" height="32" rx="10" fill="#059669" />
+      <rect y="18" width="140" height="14" fill="#059669" />
+      <text x="70" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">WhatsApp</text>
+      <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACiCAIAAABNkIFMAAADE0lEQVR4nO3dsU7EMBAAUQ5RUlDz/992NQX90SAKnGJZ1msnM69EXDgysmRZjnN7PB5Purrn1V9AHcyMYGYEMyOYGeFl/NHr23v/9/jx+XH/9ZPx+4y/ExH5vyJXjnyf3e6hoxnBzAhmRjAzgpkRDmbao9zMNiI3+819KnKdyCw6dzfW3kNHM4KZEcyMYGYEMyOEZtqj3Jpt1Vr0bmvIOZ330NGMYGYEMyOYGcHMCMmZdqfcvDq356Rq98huHM0IZkYwM4KZEcyMcIKZdkRuZwiHoxnBzAhmRjAzgpkRkjPtzlXc3O6R/deZO7+hoxnBzAhmRjAzgpkRQjPta6wGr52xr72HjmYEMyOYGcHMCGZGuJ3xPO2qE0uuuit75GhGMDOCmRHMjGBmhNB52vufcR25cm5eXWXePD/yO45mBDMjmBnBzAhmRjiYaefmcp1nfeSu0yk3Y593nqGjGcHMCGZGMDOCmREOdo9Uzaur5o1Vs815q+5Vf33erhhHM4KZEcyMYGYEMyOE9mmf8VnC/d9r2XkPHc0IZkYwM4KZEcyMEFrTrtL5lGLne97X7m9xTVvfzIxgZgQzI5gZoWxNu1Pnc5S5K+/2DR3NCGZGMDOCmRHMjDBxTfuM+6vXvhPHfdr6FzMjmBnBzAhmRkiep73bmm3uyp1PKea4T1t/YGYEMyOYGcHMCKHztKt0zlo7d4CvPZ8k8ilHM4KZEcyMYGYEMyOEztOuco03m4/239/iaEYwM4KZEcyMYGaE1jXtiNystXPlOWK3Z0gdzQhmRjAzgpkRzIxwMNMe7f8M4Lz14Zzd3lnpaEYwM4KZEcyMYGaE0Ex7tPZtMp0nWkeuvP9quaMZwcwIZkYwM4KZEZIz7bV2298y71STqv/U0YxgZgQzI5gZwcwIJ5hpz9thMn6qaoac+1TVySc+EQllZgQzI5gZwcwIyZl25z7kec9IzjNvd03ubjiaEcyMYGYEMyOYGSE00167W2PeydhVn5q3n6TqU45mBDMjmBnBzAhmRki+I1Ln4mhGMDOCmRHMjGBmhC+LLoJiUWHWTwAAAABJRU5ErkJggg==" x="10" y="42" width="120" height="120" />
+      <text x="70" y="185" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#0F172A" text-anchor="middle">Direct Chat</text>
+      <text x="70" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B" text-anchor="middle">+43 660 6416464</text>
+    </g>
+
+    <!-- QR 2: Web Booking -->
+    <g transform="translate(190, 110)">
+      <rect width="140" height="210" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <rect width="140" height="32" rx="10" fill="#C5A059" />
+      <rect y="18" width="140" height="14" fill="#C5A059" />
+      <text x="70" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0B0F19" text-anchor="middle">Online Fare</text>
+      <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6CAIAAACWbMCmAAAD2klEQVR4nO3dsa4cJwBA0ThKmSJ1/v/bXKdI/9KlmVdwMTCsdE5p+e2O7StkBAM/vr6+foMxv7/9AHwSuRDIhUAuBHIh+OP5S3/+9ff55/jfv//8XPI5zz/F85NHfs/cJ4/81NPIE570fB6jC4FcCORCIBcCuRB8MzN6WjVbedr3P/+T86CTs553/y2MLgRyIZALgVwI5EIwNDN6Ovm/+n1zkxFzM6yTaz0n/y2MLgRyIZALgVwI5EIwOTO6zcjcZNUMYtVq1CcyuhDIhUAuBHIhkAvBR86MVq3I7Nvh9u77QfsYXQjkQiAXArkQyIVgcmb07prIqhMPRtz2NtC732V0IZALgVwI5EIgF4KhmdH9KyD73v1Z9Z7RvhMhTjK6EMiFQC4EciGQC8GP++8zOnm29ic+z0lGFwK5EMiFQC4EciEYus/o5Hs0J088OPlW0cknHOFsOraTC4FcCORCIBeCZScw7JsvnJyp7dvPdnIX3L7T0Y0uBHIhkAuBXAjkQvDNbrpV95a+u9K07y2ek2tYt+24M7oQyIVALgRyIZALwdCa0b550KoZxL45xck/+74dd6tmc0YXArkQyIVALgRyIdh4n9G+nWlz97redlrdvpMc9s0cjS4EciGQC4FcCORCMLSb7t29YfveV1r1Obfd9Oo9I64gFwK5EMiFQC4Ey07tvm2NZs5tT3jyb3WE0YVALgRyIZALgVwIhmZGq95kGfmpObfdXjT3yavsu1/J6EIgFwK5EMiFQC4Ek7vp9s2V5j7n/rtfb1tFsmbEdnIhkAuBXAjkQrDs1O59blsPevc88BGrzojwnhG/RC4EciGQC4FcCJad2n3Svm9/98al2+6EejK6EMiFQC4EciGQC8Hkqd0nT0V4uu1cgqeRJ9x3qvmT+4x4gVwI5EIgFwK5EGy8z+i2+cu7O+VW/dScke+ym47F5EIgFwK5EMiFYNmp3fusekfm5P1KT7c9zwgzI36JXAjkQiAXArkQfLNmdNstpavmFLfNg+a+fdV+P2fTsZ1cCORCIBcCuRBMnsCwytwur1Wf/O7a04jb9g0aXQjkQiAXArkQyIVg8j2jd8832Pddc2tPc+ctjJxNt4r3jHiBXAjkQiAXArkQbDyBYZ99d7+u+q59Z8qN2DfDMroQyIVALgRyIZALwUfOjFbtwVu1jrPqbtyTq0hPdtOxmFwI5EIgFwK5ECy7z2ifd091W7Vm9O761KpVLaMLgVwI5EIgFwK5EAzNjN49re62dZOT5zacvHl2hNGFQC4EciGQC4FcCD7gPiPuYXQhkAuBXAjkQiAXgv8AfmI1lUPMiT4AAAAASUVORK5CYII=" x="10" y="42" width="120" height="120" />
+      <text x="70" y="185" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#0F172A" text-anchor="middle">Fixed Price</text>
+      <text x="70" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B" text-anchor="middle">petrans-salzburg.at</text>
+    </g>
+
+    <!-- Bottom Helpline -->
+    <g transform="translate(180, 375)">
+      <text x="0" y="0" font-family="'Outfit', sans-serif" font-size="18" font-weight="800" fill="#0F172A" text-anchor="middle">+43 660 6416464</text>
+      <text x="0" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#C5A059" text-anchor="middle">24/7 Priority Chauffeur Hotline</text>
+    </g>
+  </g>
+</svg>

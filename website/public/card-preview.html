@@ -136,15 +136,15 @@
     .concept-nav {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 30px;
       flex-wrap: wrap;
     }
 
     .concept-btn {
-      padding: 12px 24px;
+      padding: 11px 20px;
       border-radius: 12px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       background: var(--bg-surface);
       border: 1px solid rgba(197, 160, 89, 0.3);
@@ -152,7 +152,7 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       transition: all 0.2s ease;
     }
 
@@ -172,12 +172,12 @@
     .concept-section {
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      margin-bottom: 50px;
+      gap: 25px;
+      margin-bottom: 45px;
     }
 
     .concept-banner {
-      background: rgba(20, 27, 45, 0.8);
+      background: rgba(20, 27, 45, 0.85);
       border: 1px solid var(--border-gold);
       border-radius: 16px;
       padding: 20px 26px;
@@ -190,7 +190,7 @@
 
     .concept-title-group h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: var(--text-snow);
       display: flex;
@@ -331,6 +331,11 @@
       background: #000000;
     }
 
+    .card-preview-frame.frame-light {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+    }
+
     .card-preview-frame img {
       width: 100%;
       height: auto;
@@ -360,11 +365,11 @@
     <!-- Client Review Header -->
     <div class="review-header">
       <div class="status-badge">
-        <iconify-icon icon="lucide:check-circle"></iconify-icon> Ready for Client Review &amp; Approval
+        <iconify-icon icon="lucide:check-circle"></iconify-icon> 3 Design Concepts Ready for Review
       </div>
       <h1>PETRANS Luxury Visiting Card Suite</h1>
       <p>
-        Compare design concepts tailored for PETRANS Taxi &amp; Tour Salzburg. Each design features the obsidian Mercedes-Benz V-Class, verified contact credentials, and instant QR codes.
+        Compare three distinctive visiting card concepts for PETRANS Taxi &amp; Tour Salzburg. Each design features the obsidian Mercedes-Benz V-Class, verified contact credentials, and instant QR codes.
       </p>
 
       <div class="client-meta">
@@ -386,25 +391,92 @@
     <!-- Design Concept Filter Bar -->
     <div class="concept-nav">
       <button type="button" class="concept-btn active" id="btn-show-all" onclick="showConcept('all')">
-        <iconify-icon icon="lucide:layers"></iconify-icon> All Concepts (Side-by-Side)
+        <iconify-icon icon="lucide:layers"></iconify-icon> All 3 Concepts (Side-by-Side)
+      </button>
+      <button type="button" class="concept-btn" id="btn-show-d3" onclick="showConcept('d3')">
+        <iconify-icon icon="lucide:sun"></iconify-icon> Concept 3: Alpine Platinum (New Light Minimalist)
       </button>
       <button type="button" class="concept-btn" id="btn-show-d2" onclick="showConcept('d2')">
-        <iconify-icon icon="lucide:sparkles"></iconify-icon> Concept 2: Executive Alpine Noir (Trending)
+        <iconify-icon icon="lucide:sparkles"></iconify-icon> Concept 2: Executive Alpine Noir (Dark Gold Hairline)
       </button>
       <button type="button" class="concept-btn" id="btn-show-d1" onclick="showConcept('d1')">
         <iconify-icon icon="lucide:flag"></iconify-icon> Concept 1: Luxury Racing Taxi (Template)
       </button>
     </div>
 
-    <!-- ========================================== -->
-    <!-- CONCEPT 2: EXECUTIVE ALPINE NOIR (TRENDING) -->
-    <!-- ========================================== -->
+    <!-- ============================================== -->
+    <!-- CONCEPT 3: ALPINE PLATINUM & CHAMPAGNE (NEW)   -->
+    <!-- ============================================== -->
+    <div class="concept-section" id="section-concept-3">
+      <div class="concept-banner">
+        <div class="concept-title-group">
+          <h2>
+            Concept 3: Alpine Platinum Minimalist
+            <span class="concept-tag">Fresh Light Theme</span>
+          </h2>
+          <p>Architectural Swiss minimalist light aesthetic: Platinum white card surface with high-contrast obsidian Mercedes V-Class, gold vertical pillar, and floating smart concierge dock.</p>
+        </div>
+        <div class="concept-actions">
+          <a href="/card/petrans_card_design3_complete.pdf" download="PETRANS_Card_Design3_Complete.pdf" class="btn btn-gold">
+            <iconify-icon icon="lucide:file-down"></iconify-icon> Single Combined PDF
+          </a>
+          <a href="/card/petrans_card_design3_single_sheet.pdf" download="PETRANS_Card_Design3_Sheet.pdf" class="btn btn-outline">
+            <iconify-icon icon="lucide:layout"></iconify-icon> A4 Print Sheet
+          </a>
+          <a href="/card/petrans_card_design3_front.vectorcraft" download class="btn btn-outline">
+            <iconify-icon icon="lucide:file-code"></iconify-icon> VectorCraft Source
+          </a>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <!-- Front Side -->
+        <div class="card-item">
+          <div class="card-item-top">
+            <div class="card-side-title">
+              <iconify-icon icon="lucide:credit-card" class="text-gold"></iconify-icon> Front Side — Platinum White Architectural
+            </div>
+            <div class="download-pills">
+              <a href="/card/petrans_card_design3_front.vectorcraft" download class="pill-link">.vectorcraft</a>
+              <a href="/card/petrans_card_design3_front.pdf" target="_blank" download class="pill-link">PDF</a>
+              <a href="/card/petrans_card_design3_front.svg" target="_blank" class="pill-link">SVG</a>
+              <a href="/card/petrans_card_design3_front.png" target="_blank" class="pill-link">PNG</a>
+            </div>
+          </div>
+          <div class="card-preview-frame frame-light">
+            <img src="/card/petrans_card_design3_front.png" alt="Concept 3 Front Side - Alpine Platinum Minimalist">
+          </div>
+        </div>
+
+        <!-- Back Side -->
+        <div class="card-item">
+          <div class="card-item-top">
+            <div class="card-side-title">
+              <iconify-icon icon="lucide:qr-code" class="text-gold"></iconify-icon> Back Side — Floating Concierge Dock
+            </div>
+            <div class="download-pills">
+              <a href="/card/petrans_card_design3_back.vectorcraft" download class="pill-link">.vectorcraft</a>
+              <a href="/card/petrans_card_design3_back.pdf" target="_blank" download class="pill-link">PDF</a>
+              <a href="/card/petrans_card_design3_back.svg" target="_blank" class="pill-link">SVG</a>
+              <a href="/card/petrans_card_design3_back.png" target="_blank" class="pill-link">PNG</a>
+            </div>
+          </div>
+          <div class="card-preview-frame">
+            <img src="/card/petrans_card_design3_back.png" alt="Concept 3 Back Side - Floating Concierge Dock">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- CONCEPT 2: EXECUTIVE ALPINE NOIR (DARK GOLD)   -->
+    <!-- ============================================== -->
     <div class="concept-section" id="section-concept-2">
       <div class="concept-banner">
-        <div class="concept-title_group">
+        <div class="concept-title-group">
           <h2>
             Concept 2: Executive Alpine Noir
-            <span class="concept-tag">Trending 2026 Chauffeur</span>
+            <span class="concept-tag">Quiet Luxury</span>
           </h2>
           <p>Ultra-sleek European quiet-luxury aesthetic with gold hairline borders, titanium podium lighting, and executive matrix layout.</p>
         </div>
@@ -460,12 +532,12 @@
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- CONCEPT 1: LUXURY RACING TAXI (TEMPLATE)   -->
-    <!-- ========================================== -->
+    <!-- ============================================== -->
+    <!-- CONCEPT 1: LUXURY RACING TAXI (TEMPLATE)       -->
+    <!-- ============================================== -->
     <div class="concept-section" id="section-concept-1">
       <div class="concept-banner">
-        <div class="concept-title_group">
+        <div class="concept-title-group">
           <h2>
             Concept 1: Luxury Racing Taxi
             <span class="concept-tag">Template Reference</span>
@@ -530,25 +602,36 @@
     function showConcept(concept) {
       const s1 = document.getElementById('section-concept-1');
       const s2 = document.getElementById('section-concept-2');
+      const s3 = document.getElementById('section-concept-3');
       const bAll = document.getElementById('btn-show-all');
       const bD1 = document.getElementById('btn-show-d1');
       const bD2 = document.getElementById('btn-show-d2');
+      const bD3 = document.getElementById('btn-show-d3');
 
       bAll.classList.remove('active');
       bD1.classList.remove('active');
       bD2.classList.remove('active');
+      bD3.classList.remove('active');
 
       if (concept === 'd1') {
         s1.style.display = 'flex';
         s2.style.display = 'none';
+        s3.style.display = 'none';
         bD1.classList.add('active');
       } else if (concept === 'd2') {
         s1.style.display = 'none';
         s2.style.display = 'flex';
+        s3.style.display = 'none';
         bD2.classList.add('active');
+      } else if (concept === 'd3') {
+        s1.style.display = 'none';
+        s2.style.display = 'none';
+        s3.style.display = 'flex';
+        bD3.classList.add('active');
       } else {
         s1.style.display = 'flex';
         s2.style.display = 'flex';
+        s3.style.display = 'flex';
         bAll.classList.add('active');
       }
     }
