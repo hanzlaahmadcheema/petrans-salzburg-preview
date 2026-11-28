@@ -180,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkAndApplySavedCustomer();
   setupCustomerLookup();
   initAccessibilityMode();
+  setupFloatingBarAndDrawer();
 });
 
 // Default dates
@@ -1370,3 +1371,100 @@ function initAccessibilityMode() {
 if (typeof document !== 'undefined') {
   initAccessibilityMode();
 }
+
+
+// Bottom Floating Action Bar & Mobile Drawer Controller for Unified Booking Engine
+function setupFloatingBarAndDrawer() {
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const drawerCloseBtn = document.getElementById("drawer-close-btn");
+  const mobileDrawer = document.getElementById("mobile-drawer");
+  const mobileDrawerBackdrop = document.getElementById("mobile-drawer-backdrop");
+  const menuIconOpen = document.getElementById("menu-icon-open");
+  const menuIconClose = document.getElementById("menu-icon-close");
+
+  function openDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.add("open");
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.add("open");
+    if (menuIconOpen) menuIconOpen.classList.add("hidden");
+    if (menuIconClose) menuIconClose.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.remove("open");
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.remove("open");
+    if (menuIconOpen) menuIconOpen.classList.remove("hidden");
+    if (menuIconClose) menuIconClose.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = mobileDrawer && mobileDrawer.classList.contains("open");
+      if (isOpen) closeDrawer(); else openDrawer();
+    });
+  }
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener("click", closeDrawer);
+  if (mobileDrawerBackdrop) mobileDrawerBackdrop.addEventListener("click", closeDrawer);
+
+  const chatToggle = document.getElementById("ai-chat-toggle");
+  const chatWindow = document.getElementById("ai-chat-window");
+  const chatClose = document.getElementById("ai-chat-close");
+
+  if (chatToggle && chatWindow) {
+    chatToggle.addEventListener("click", () => chatWindow.classList.toggle("hidden"));
+  }
+  if (chatClose && chatWindow) {
+    chatClose.addEventListener("click", () => chatWindow.classList.add("hidden"));
+  }
+
+  const chatSend = document.getElementById("ai-chat-send");
+  const chatInput = document.getElementById("ai-chat-input");
+  if (chatSend && chatInput) {
+    chatSend.addEventListener("click", () => sendAiMessage());
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendAiMessage();
+    });
+  }
+}
+
+async function sendAiMessage(customText) {
+  const inputEl = document.getElementById("ai-chat-input");
+  const message = customText || (inputEl ? inputEl.value.trim() : "");
+  if (!message) return;
+
+  const msgContainer = document.getElementById("ai-chat-messages");
+  if (!msgContainer) return;
+
+  const userDiv = document.createElement("div");
+  userDiv.className = "bg-gold/15 border border-gold/30 p-2.5 rounded-xl text-snow ml-6 text-right text-xs";
+  userDiv.textContent = message;
+  msgContainer.appendChild(userDiv);
+
+  if (!customText && inputEl) inputEl.value = "";
+  msgContainer.scrollTop = msgContainer.scrollHeight;
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, lang: "en" })
+    });
+
+    const data = await res.json();
+    const botDiv = document.createElement("div");
+    botDiv.className = "bg-surface p-3 rounded-xl border border-slate-800 text-slate-200 mr-4 text-xs";
+    botDiv.textContent = data.reply || "Thank you for reaching PETRANS. Omer Farooq will assist you promptly.";
+    msgContainer.appendChild(botDiv);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+  } catch (err) {
+    const errDiv = document.createElement("div");
+    errDiv.className = "bg-red-500/10 p-2 rounded text-red-300 text-xs";
+    errDiv.textContent = "Could not reach AI Concierge. Please contact +43 660 6416464 directly.";
+    msgContainer.appendChild(errDiv);
+  }
+}
+
+window.sendAiQuick = function(text) {
+  sendAiMessage(text);
+};
