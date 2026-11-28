@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85mm" height="55mm" viewBox="0 0 1004 650">
+  <defs>
+    <linearGradient id="goldLinearBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEDAA2" />
+      <stop offset="45%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#8F6E28" />
+    </linearGradient>
+    <linearGradient id="cardDarkBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1420" />
+      <stop offset="50%" stop-color="#070A10" />
+      <stop offset="100%" stop-color="#040608" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#C5A059" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#070A10" stop-opacity="0" />
+    </radialGradient>
+    <filter id="qrShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1004" height="650" fill="url(#cardDarkBack)" />
+  <circle cx="502.0" cy="325.0" r="380" fill="url(#centerGlow)" />
+
+  <!-- Micro-Border Hairline -->
+  <rect x="24" y="24" width="956" height="602" rx="8" fill="none" stroke="url(#goldLinearBack)" stroke-width="1.2" opacity="0.45" />
+
+  <!-- Corner Accents -->
+  <path d="M 24 45 L 24 24 L 45 24" fill="none" stroke="#C5A059" stroke-width="2.5" />
+  <path d="M 980 45 L 980 24 L 959 24" fill="none" stroke="#C5A059" stroke-width="2.5" />
+  <path d="M 24 605 L 24 626 L 45 626" fill="none" stroke="#C5A059" stroke-width="2.5" />
+  <path d="M 980 605 L 980 626 L 959 626" fill="none" stroke="#C5A059" stroke-width="2.5" />
+
+  <!-- LEFT: CENTERPIECE BRAND MONOGRAM & CREST -->
+  <g transform="translate(90, 110)">
+    <!-- Elegant Gold Ring Monogram -->
+    <circle cx="90" cy="90" r="75" fill="#141B2D" stroke="url(#goldLinearBack)" stroke-width="2" />
+    <circle cx="90" cy="90" r="67" fill="none" stroke="rgba(197, 160, 89, 0.3)" stroke-width="1" stroke-dasharray="4 3" />
+    <text x="90" y="112" font-family="'Cinzel', serif" font-size="64" font-weight="700" fill="url(#goldLinearBack)" text-anchor="middle">P</text>
+    
+    <!-- Title -->
+    <text x="90" y="205" font-family="'Cinzel', serif" font-size="32" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">PETRANS</text>
+    <text x="90" y="230" font-family="'Outfit', sans-serif" font-size="13" font-weight="700" fill="#C5A059" text-anchor="middle" letter-spacing="3" text-transform="uppercase">Taxi &amp; Tour Salzburg</text>
+    <text x="90" y="255" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#94A3B8" text-anchor="middle" letter-spacing="1">Gewerbeberechtigung • WKO Salzburg</text>
+  </g>
+
+  <!-- VERTICAL DIVIDER -->
+  <line x1="430" y1="90" x2="430" y2="560" stroke="url(#goldLinearBack)" stroke-width="1" opacity="0.3" />
+
+  <!-- RIGHT: DUAL LUXURY QR CODE CARDS & CONCIERGE -->
+  <g transform="translate(480, 85)">
+    <text x="0" y="20" font-family="'Outfit', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" letter-spacing="1">Instant Chauffeur Concierge</text>
+    <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#C5A059">Scan with your smartphone camera for live service:</text>
+
+    <!-- QR 1: WhatsApp Direct Concierge -->
+    <g transform="translate(0, 70)" filter="url(#qrShadow)">
+      <rect width="180" height="235" rx="12" fill="#141B2D" stroke="rgba(197, 160, 89, 0.4)" stroke-width="1.2" />
+      <!-- Gold Tab Header -->
+      <rect width="180" height="38" rx="12" fill="url(#goldLinearBack)" />
+      <rect y="22" width="180" height="16" fill="url(#goldLinearBack)" />
+      <text x="90" y="24" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#0B0F19" text-anchor="middle" letter-spacing="1">WHATSAPP CHAT</text>
+      <!-- QR Image Frame -->
+      <rect x="18" y="52" width="144" height="144" rx="8" fill="#FFFFFF" />
+      <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACiCAIAAABNkIFMAAADE0lEQVR4nO3dsU7EMBAAUQ5RUlDz/992NQX90SAKnGJZ1msnM69EXDgysmRZjnN7PB5Purrn1V9AHcyMYGYEMyOYGeFl/NHr23v/9/jx+XH/9ZPx+4y/ExH5vyJXjnyf3e6hoxnBzAhmRjAzgpkRDmbao9zMNiI3+819KnKdyCw6dzfW3kNHM4KZEcyMYGYEMyOEZtqj3Jpt1Vr0bmvIOZ330NGMYGYEMyOYGcHMCMmZdqfcvDq356Rq98huHM0IZkYwM4KZEcyMcIKZdkRuZwiHoxnBzAhmRjAzgpkRkjPtzlXc3O6R/deZO7+hoxnBzAhmRjAzgpkRQjPta6wGr52xr72HjmYEMyOYGcHMCGZGuJ3xPO2qE0uuuit75GhGMDOCmRHMjGBmhNB52vufcR25cm5eXWXePD/yO45mBDMjmBnBzAhmRjiYaefmcp1nfeSu0yk3Y593nqGjGcHMCGZGMDOCmREOdo9Uzaur5o1Vs815q+5Vf33erhhHM4KZEcyMYGYEMyOE9mmf8VnC/d9r2XkPHc0IZkYwM4KZEcyMEFrTrtL5lGLne97X7m9xTVvfzIxgZgQzI5gZoWxNu1Pnc5S5K+/2DR3NCGZGMDOCmRHMjDBxTfuM+6vXvhPHfdr6FzMjmBnBzAhmRkiep73bmm3uyp1PKea4T1t/YGYEMyOYGcHMCKHztKt0zlo7d4CvPZ8k8ilHM4KZEcyMYGYEMyOEztOuco03m4/239/iaEYwM4KZEcyMYGaE1jXtiNystXPlOWK3Z0gdzQhmRjAzgpkRzIxwMNMe7f8M4Lz14Zzd3lnpaEYwM4KZEcyMYGaE0Ex7tPZtMp0nWkeuvP9quaMZwcwIZkYwM4KZEZIz7bV2298y71STqv/U0YxgZgQzI5gZwcwIJ5hpz9thMn6qaoac+1TVySc+EQllZgQzI5gZwcwIyZl25z7kec9IzjNvd03ubjiaEcyMYGYEMyOYGSE00167W2PeydhVn5q3n6TqU45mBDMjmBnBzAhmRki+I1Ln4mhGMDOCmRHMjGBmhC+LLoJiUWHWTwAAAABJRU5ErkJggg==" x="20" y="54" width="140" height="140" />
+      <text x="90" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#CBD5E1" text-anchor="middle">+43 660 6416464</text>
+    </g>
+
+    <!-- QR 2: Fixed Fare Online Booking -->
+    <g transform="translate(225, 70)" filter="url(#qrShadow)">
+      <rect width="180" height="235" rx="12" fill="#141B2D" stroke="rgba(197, 160, 89, 0.4)" stroke-width="1.2" />
+      <rect width="180" height="38" rx="12" fill="url(#goldLinearBack)" />
+      <rect y="22" width="180" height="16" fill="url(#goldLinearBack)" />
+      <text x="90" y="24" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#0B0F19" text-anchor="middle" letter-spacing="1">ONLINE FARES</text>
+      <rect x="18" y="52" width="144" height="144" rx="8" fill="#FFFFFF" />
+      <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6CAIAAACWbMCmAAAD2klEQVR4nO3dsa4cJwBA0ThKmSJ1/v/bXKdI/9KlmVdwMTCsdE5p+e2O7StkBAM/vr6+foMxv7/9AHwSuRDIhUAuBHIh+OP5S3/+9ff55/jfv//8XPI5zz/F85NHfs/cJ4/81NPIE570fB6jC4FcCORCIBcCuRB8MzN6WjVbedr3P/+T86CTs553/y2MLgRyIZALgVwI5EIwNDN6Ovm/+n1zkxFzM6yTaz0n/y2MLgRyIZALgVwI5EIwOTO6zcjcZNUMYtVq1CcyuhDIhUAuBHIhkAvBR86MVq3I7Nvh9u77QfsYXQjkQiAXArkQyIVgcmb07prIqhMPRtz2NtC732V0IZALgVwI5EIgF4KhmdH9KyD73v1Z9Z7RvhMhTjK6EMiFQC4EciGQC8GP++8zOnm29ic+z0lGFwK5EMiFQC4EciEYus/o5Hs0J088OPlW0cknHOFsOraTC4FcCORCIBeCZScw7JsvnJyp7dvPdnIX3L7T0Y0uBHIhkAuBXAjkQvDNbrpV95a+u9K07y2ek2tYt+24M7oQyIVALgRyIZALwdCa0b550KoZxL45xck/+74dd6tmc0YXArkQyIVALgRyIdh4n9G+nWlz97redlrdvpMc9s0cjS4EciGQC4FcCORCMLSb7t29YfveV1r1Obfd9Oo9I64gFwK5EMiFQC4Ey07tvm2NZs5tT3jyb3WE0YVALgRyIZALgVwIhmZGq95kGfmpObfdXjT3yavsu1/J6EIgFwK5EMiFQC4Ek7vp9s2V5j7n/rtfb1tFsmbEdnIhkAuBXAjkQrDs1O59blsPevc88BGrzojwnhG/RC4EciGQC4FcCJad2n3Svm9/98al2+6EejK6EMiFQC4EciGQC8Hkqd0nT0V4uu1cgqeRJ9x3qvmT+4x4gVwI5EIgFwK5EGy8z+i2+cu7O+VW/dScke+ym47F5EIgFwK5EMiFYNmp3fusekfm5P1KT7c9zwgzI36JXAjkQiAXArkQfLNmdNstpavmFLfNg+a+fdV+P2fTsZ1cCORCIBcCuRBMnsCwytwur1Wf/O7a04jb9g0aXQjkQiAXArkQyIVg8j2jd8832Pddc2tPc+ctjJxNt4r3jHiBXAjkQiAXArkQbDyBYZ99d7+u+q59Z8qN2DfDMroQyIVALgRyIZALwUfOjFbtwVu1jrPqbtyTq0hPdtOxmFwI5EIgFwK5ECy7z2ifd091W7Vm9O761KpVLaMLgVwI5EIgFwK5EAzNjN49re62dZOT5zacvHl2hNGFQC4EciGQC4FcCD7gPiPuYXQhkAuBXAjkQiAXgv8AfmI1lUPMiT4AAAAASUVORK5CYII=" x="20" y="54" width="140" height="140" />
+      <text x="90" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#CBD5E1" text-anchor="middle">petrans-salzburg.at</text>
+    </g>
+
+    <!-- Bottom Route Pills -->
+    <g transform="translate(0, 335)" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#E2E8F0">
+      <text x="0" y="20" font-weight="600" fill="#94A3B8">Destinations: <tspan fill="#DFBF77">Salzburg Airport • Hallstatt • Zell am See • Munich • Vienna</tspan></text>
+    </g>
+  </g>
+</svg>
