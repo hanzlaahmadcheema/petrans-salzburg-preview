@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85mm" height="55mm" viewBox="0 0 1004 650">
+  <defs>
+    <linearGradient id="goldGradBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFBF77" />
+      <stop offset="50%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#9A7B38" />
+    </linearGradient>
+    <linearGradient id="darkBgBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141B2D" />
+      <stop offset="60%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#070A10" />
+    </linearGradient>
+    <pattern id="carbonPatternBack" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#0B0F19" />
+      <circle cx="1.5" cy="1.5" r="0.8" fill="#162032" opacity="0.6" />
+      <circle cx="4.5" cy="4.5" r="0.8" fill="#162032" opacity="0.6" />
+    </pattern>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Dark Base -->
+  <rect width="1004" height="650" fill="url(#darkBgBack)" />
+  <rect width="1004" height="650" fill="url(#carbonPatternBack)" opacity="0.8" />
+
+  <!-- Champagne Gold Polygon Wedge (Generous height starting at y=270) -->
+  <polygon points="0,270 860,650 0,650" fill="url(#goldGradBack)" />
+
+  <!-- Checkered Strip -->
+  <g id="checkered_strip_back">
+    <g transform="translate(-40,270) rotate(23.498565675952097)">
+<rect x="-16.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="0.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="16.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="32.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="48.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="64.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="80.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="96.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="112.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="128.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="144.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="160.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="176.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="192.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="208.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="224.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="240.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="256.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="272.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="288.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="304.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="320.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="336.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="352.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="368.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="384.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="400.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="416.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="432.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="448.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="464.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="480.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="496.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="512.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="528.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="544.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="560.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="576.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="592.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="608.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="624.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="640.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="656.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="672.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="688.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="704.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="720.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="736.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="752.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="768.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="784.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="800.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="816.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="832.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="848.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="864.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="880.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="896.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="912.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="928.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="944.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="960.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="976.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="992.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="1008.0" y="-16.0" width="16" height="16" fill="#0B0F19" />
+<rect x="1024.0" y="-16.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="-16.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="0.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="16.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="32.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="48.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="64.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="80.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="96.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="112.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="128.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="144.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="160.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="176.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="192.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="208.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="224.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="240.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="256.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="272.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="288.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="304.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="320.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="336.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="352.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="368.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="384.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="400.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="416.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="432.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="448.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="464.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="480.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="496.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="512.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="528.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="544.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="560.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="576.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="592.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="608.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="624.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="640.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="656.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="672.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="688.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="704.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="720.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="736.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="752.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="768.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="784.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="800.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="816.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="832.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="848.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="864.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="880.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="896.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="912.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="928.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="944.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="960.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="976.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="992.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+<rect x="1008.0" y="0.0" width="16" height="16" fill="#FFFFFF" />
+<rect x="1024.0" y="0.0" width="16" height="16" fill="#0B0F19" />
+</g>
+  </g>
+
+  <!-- WhatsApp QR Code Card -->
+  <g transform="translate(130, 30)" filter="url(#boxShadow)">
+    <rect width="170" height="205" rx="12" fill="#FFFFFF" />
+    <rect width="170" height="42" rx="12" fill="#C5A059" />
+    <rect y="25" width="170" height="17" fill="#C5A059" />
+    <text x="85" y="27" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#0B0F19" text-anchor="middle" letter-spacing="1">WhatsApp</text>
+    <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACiCAIAAABNkIFMAAADE0lEQVR4nO3dsU7EMBAAUQ5RUlDz/992NQX90SAKnGJZ1msnM69EXDgysmRZjnN7PB5Purrn1V9AHcyMYGYEMyOYGeFl/NHr23v/9/jx+XH/9ZPx+4y/ExH5vyJXjnyf3e6hoxnBzAhmRjAzgpkRDmbao9zMNiI3+819KnKdyCw6dzfW3kNHM4KZEcyMYGYEMyOEZtqj3Jpt1Vr0bmvIOZ330NGMYGYEMyOYGcHMCMmZdqfcvDq356Rq98huHM0IZkYwM4KZEcyMcIKZdkRuZwiHoxnBzAhmRjAzgpkRkjPtzlXc3O6R/deZO7+hoxnBzAhmRjAzgpkRQjPta6wGr52xr72HjmYEMyOYGcHMCGZGuJ3xPO2qE0uuuit75GhGMDOCmRHMjGBmhNB52vufcR25cm5eXWXePD/yO45mBDMjmBnBzAhmRjiYaefmcp1nfeSu0yk3Y593nqGjGcHMCGZGMDOCmREOdo9Uzaur5o1Vs815q+5Vf33erhhHM4KZEcyMYGYEMyOE9mmf8VnC/d9r2XkPHc0IZkYwM4KZEcyMEFrTrtL5lGLne97X7m9xTVvfzIxgZgQzI5gZoWxNu1Pnc5S5K+/2DR3NCGZGMDOCmRHMjDBxTfuM+6vXvhPHfdr6FzMjmBnBzAhmRkiep73bmm3uyp1PKea4T1t/YGYEMyOYGcHMCKHztKt0zlo7d4CvPZ8k8ilHM4KZEcyMYGYEMyOEztOuco03m4/239/iaEYwM4KZEcyMYGaE1jXtiNystXPlOWK3Z0gdzQhmRjAzgpkRzIxwMNMe7f8M4Lz14Zzd3lnpaEYwM4KZEcyMYGaE0Ex7tPZtMp0nWkeuvP9quaMZwcwIZkYwM4KZEZIz7bV2298y71STqv/U0YxgZgQzI5gZwcwIJ5hpz9thMn6qaoac+1TVySc+EQllZgQzI5gZwcwIyZl25z7kec9IzjNvd03ubjiaEcyMYGYEMyOYGSE00167W2PeydhVn5q3n6TqU45mBDMjmBnBzAhmRki+I1Ln4mhGMDOCmRHMjGBmhC+LLoJiUWHWTwAAAABJRU5ErkJggg==" x="15" y="50" width="140" height="140" />
+  </g>
+
+  <!-- Center Brand Logo Emblem -->
+  <g transform="translate(425, 55)">
+    <path d="M 0 0 L 225 0 C 245 0, 255 15, 255 35 L 255 65 C 255 90, 220 95, 185 95 L 0 95 Z" fill="url(#goldGradBack)" />
+    <g transform="translate(20, 18)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="7" height="7" fill="#0B0F19" />
+        <rect x="7" y="0" width="7" height="7" fill="#FFFFFF" />
+        <rect x="14" y="0" width="7" height="7" fill="#0B0F19" />
+        <rect x="21" y="0" width="7" height="7" fill="#FFFFFF" />
+        <rect x="0" y="7" width="7" height="7" fill="#FFFFFF" />
+        <rect x="7" y="7" width="7" height="7" fill="#0B0F19" />
+        <rect x="14" y="7" width="7" height="7" fill="#FFFFFF" />
+        <rect x="21" y="7" width="7" height="7" fill="#0B0F19" />
+      </g>
+      <text x="36" y="22" font-family="'Cinzel', serif" font-size="28" font-weight="800" fill="#0B0F19" letter-spacing="3">PETRANS</text>
+      <text x="36" y="42" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#0B0F19" letter-spacing="2">TAXI &amp; TOUR SALZBURG</text>
+      <text x="36" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#1E293B" letter-spacing="1">PREMIUM CHAUFFEUR</text>
+    </g>
+  </g>
+
+  <!-- Online Booking QR Code Card -->
+  <g transform="translate(750, 30)" filter="url(#boxShadow)">
+    <rect width="170" height="205" rx="12" fill="#FFFFFF" />
+    <rect width="170" height="42" rx="12" fill="#C5A059" />
+    <rect y="25" width="170" height="17" fill="#C5A059" />
+    <text x="85" y="27" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#0B0F19" text-anchor="middle" letter-spacing="1">Online Booking</text>
+    <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6CAIAAACWbMCmAAAD5klEQVR4nO3dsW7kNhRA0ThIuUXq/P+3pU6RfrZLEU3ByyUpjXFOuVh7xp4LwQ+kqK/X6/UbjPn97jfAJ5ELgVwI5EIgF4I/rv/048+/zr+P//z7z9//+5fr+7n+nzkjP+nJ93P1tM/C1YVALgRyIZALgVwI3kxGV/f+5b/v1UeMzEFz88vcz3XvZ+HqQiAXArkQyIVALgRDk9HVyVlg5NVXTRn7vvPVqtc6+Vm4uhDIhUAuBHIhkAvB5GR00tyqzckVmXt33J3k6kIgFwK5EMiFQC4EHzAZXY2skjx/n94nzkquLgRyIZALgVwI5EIwORk9f6bYd3bBqnMbRr5qxMnPwtWFQC4EciGQC4FcCIYmo3tPSBux6pyEuV1wc7vp5n6r934Wri4EciGQC4FcCORC8PX85xntu89o3/wywm46vjm5EMiFQC4EciF4MxntOzNt39yxan/dydPhTlo1J7q6EMiFQC4EciGQC8HQmtHzz+hetWZ0de/TizzplQ8mFwK5EMiFQC4Eb+4zWjUvrJognvYUpKun3UO0bwpzdSGQC4FcCORCIBeCod10I06u45x89X33K51c1Vp1Vp6rC4FcCORCIBcCuRBM7qZ72jrOyX1xI07embXvta5cXQjkQiAXArkQyIXg6GS06i//k+tBc05OfPtYM+KXyIVALgRyIZALweSTXq9O7p2bs+8shXvvYFq1U859RiwmFwK5EMiFQC4Ek/cZfddzvE++n32/5xHuM2I7uRDIhUAuBHIhGFozetrZBSNWreN81316V+4zYjG5EMiFQC4EciFYtpvu6t6nBe2bp/bNXHMnn69ae/KkVxaTC4FcCORCIBeCoRMYrk7uQ7vatyIz4t7Z7d6zL1xdCORCIBcCuRDIhWDZZDTiaXcnfeKpd6u4z4jt5EIgFwK5EMiF4M1uun1rPSfPHLh3r9q9p21fXd+hs+nYTi4EciGQC4FcCN5MRt9jvePq3nPeRpx8ZuscVxcCuRDIhUAuBHIhOLpmNGLkr/p95y2MWLX+MmLfU6LmpidXFwK5EMiFQC4EciFYdmr3nFV71e7dg7dvVtp30vjcV7m6EMiFQC4EciGQC8Hkqd2feALDySljztNWmpzAwC+RC4FcCORCIBeCjc8zWuXkHLTqdOvnn1Y39w5dXQjkQiAXArkQyIXgAyajEfuetTpi1Ry07/usenVXFwK5EMiFQC4EciGYnIyetgKyyqrzH/btNpybnlbNgK4uBHIhkAuBXAjkQjA0Gd17Wt29T1/dd0bEvrMdnMDAI8iFQC4EciGQC8HX6/W6+z3wMVxdCORCIBcCuRDIheAnv8QtqXQ+aV4AAAAASUVORK5CYII=" x="15" y="50" width="140" height="140" />
+  </g>
+
+  <!-- Service Badges -->
+  <g transform="translate(420, 175)" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#E2E8F0">
+    <g transform="translate(0, 0)">
+      <rect width="290" height="30" rx="15" fill="#161F30" stroke="#C5A059" stroke-width="1" opacity="0.95" />
+      <text x="145" y="20" text-anchor="middle" font-weight="600" fill="#DFBF77">★ Mercedes-Benz V-Class &amp; Vito</text>
+    </g>
+    <g transform="translate(0, 38)">
+      <rect width="290" height="30" rx="15" fill="#161F30" stroke="#C5A059" stroke-width="1" opacity="0.95" />
+      <text x="145" y="20" text-anchor="middle" font-weight="600" fill="#DFBF77">✈ Salzburg &amp; Munich Airport Transfers</text>
+    </g>
+    <g transform="translate(0, 76)">
+      <rect width="290" height="30" rx="15" fill="#161F30" stroke="#C5A059" stroke-width="1" opacity="0.95" />
+      <text x="145" y="20" text-anchor="middle" font-weight="600" fill="#DFBF77">🏔 Hallstatt • Zell am See • Eagles Nest</text>
+    </g>
+  </g>
+
+  <!-- Phone Callout & Dispatch (Positioned cleanly with >80px clearance) -->
+  <g transform="translate(55, 515)">
+    <circle cx="34" cy="34" r="28" fill="#0B0F19" />
+    <path d="M25 22 C25 21 26 20 27 20 L29 20 C30 20 31 21 31 22 L33 26 C33 27 33 28 32 29 L31 30 C31 31 34 36 37 39 L38 38 C39 37 40 37 41 38 L45 40 C46 40 47 41 47 42 L47 45 C47 46 46 47 45 47 C33 47 21 35 21 23 Z" fill="#DFBF77" />
+
+    <text x="80" y="20" font-family="'Outfit', sans-serif" font-size="13.5" font-weight="700" fill="#0B0F19" letter-spacing="1.5" text-transform="uppercase">Direct VIP Reservations &amp; Dispatch</text>
+    <text x="80" y="58" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="40" font-weight="800" fill="#0B0F19" letter-spacing="1">+43 660 6416464</text>
+  </g>
+</svg>

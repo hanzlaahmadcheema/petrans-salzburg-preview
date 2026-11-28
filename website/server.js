@@ -368,6 +368,10 @@ app.get('/booking/details', (req, res) => res.sendFile(path.join(__dirname, 'pub
 app.get('/booking/review', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'review.html')));
 app.get('/booking/confirmation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'booking', 'confirmation.html')));
 
+// 8. Client Review & Visiting Card Showcase Routes
+app.get('/card-preview', (req, res) => res.sendFile(path.join(__dirname, 'public', 'card-preview.html')));
+app.get('/visiting-card', (req, res) => res.sendFile(path.join(__dirname, 'public', 'card-preview.html')));
+
 // Start Server if executed directly
 if (require.main === module) {
   app.listen(PORT, '0.0.0.0', () => {
